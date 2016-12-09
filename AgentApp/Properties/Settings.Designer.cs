@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Agent_Application.Properties
+namespace AgentApp.Properties
 {
 
 
