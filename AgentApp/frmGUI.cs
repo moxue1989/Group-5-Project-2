@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AgentApp
 {
-    public partial class Form1 : Form
+    public partial class frmGUI : Form
     {
-        public Form1()
+        public frmGUI()
         {
             InitializeComponent();
         }
