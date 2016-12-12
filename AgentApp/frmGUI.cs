@@ -1,5 +1,4 @@
-﻿using MetroFramework.Forms;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,16 +10,11 @@ using System.Windows.Forms;
 
 namespace AgentApp
 {
-    public partial class frmGUI : MetroForm
+    public partial class frmGUI : Form
     {
         public frmGUI()
         {
             InitializeComponent();
-        }
-
-        private void metroButton1_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
     }
 }
