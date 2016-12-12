@@ -92,6 +92,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="ucLogin.resx">
       <DependentUpon>ucLogin.cs</DependentUpon>
@@ -112,6 +113,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MetroFramework.txt" />
+    <None Include="Resources\add-icon3.png" />
+    <None Include="Resources\add-icon2.png" />
+    <None Include="Resources\add-icon1.png" />
+    <None Include="Resources\add-icon.png" />
+    <None Include="Resources\bg1.jpg" />
+    <None Include="Resources\bg.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
