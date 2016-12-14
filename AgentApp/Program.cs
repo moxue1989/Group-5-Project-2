@@ -16,7 +16,7 @@ namespace AgentApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmGUI());
+            Application.Run(new frmUserLogin());
         }
     }
 }

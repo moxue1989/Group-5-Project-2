@@ -58,17 +58,11 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Supplier.cs" />
-    <Compile Include="ucLogin.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ucLogin.Designer.cs">
-      <DependentUpon>ucLogin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserLogin.cs">
+    <Compile Include="frmUserLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserLogin.Designer.cs">
-      <DependentUpon>UserLogin.cs</DependentUpon>
+    <Compile Include="frmUserLogin.Designer.cs">
+      <DependentUpon>frmUserLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Validation.cs" />
     <EmbeddedResource Include="frmGUI.en-CA.resx">
@@ -87,11 +81,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="ucLogin.resx">
-      <DependentUpon>ucLogin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserLogin.resx">
-      <DependentUpon>UserLogin.cs</DependentUpon>
+    <EmbeddedResource Include="frmUserLogin.resx">
+      <DependentUpon>frmUserLogin.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
