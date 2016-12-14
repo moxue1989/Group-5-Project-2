@@ -19,7 +19,9 @@ namespace AgentApp
 
         private void button2_Click(object sender, EventArgs e)
         {
-            DatabaseAccess.SqlQuery("SELECT * FROM Customers");
+            DataSet data = DatabaseAccess.GetData("Packages");
+            dgTest.DataSource = data;
+            dgTest.DataMember = "Packages";
         }
     }
 }

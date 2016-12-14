@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -10,24 +11,12 @@ namespace AgentApp
 {
     public static class DatabaseAccess
     {
-        //comment
-        private static SqlConnection SqlConnect()
-        {
-            SqlConnection conn = new SqlConnection(@"Data Source=ICTVM-FQQ06UJG2\SQLEXPRESS;" + "Database=TravelExperts;" + "User id=sa;" + "Password=sa;");
-
-            //conn.ConnectionString = @"Data Source=ICTVM-FQQ06UJG2\SQLEXPRESS;" +
-            //                        "Database=TravelExperts;" +
-            //                        "User id=sa;" +
-            //                        "Password=sa;";
-            return conn;
-        }
-
         public static void SqlQuery(string sqlString)
         {
             try
             {
                 SqlDataReader dataReader = null;
-                SqlConnection conn = SqlConnect();
+                SqlConnection conn = new SqlConnection(@"Data Source=ICTVM-FQQ06UJG2\SQLEXPRESS;" + "Database=TravelExperts;" + "User id=sa;" + "Password=sa;");
                 conn.Open();
                 SqlCommand command = new SqlCommand(sqlString, conn);
 
@@ -49,12 +38,15 @@ namespace AgentApp
             }
         }
 
-        //    List<string> data = new List<string>();
-        //            while (dataReader.Read())
-        //            {
-        //                data.Add(dataReader["CustLastName"].ToString());
-        //            }
-        //MessageBox.Show(data[4].ToString());
+        public static DataSet GetData(string tableName)
+        {
+            DataSet data = null;
+            SqlConnection conn = new SqlConnection(@"Data Source=ICTVM-FQQ06UJG2\SQLEXPRESS;" + "Database=TravelExperts;" + "User id=sa;" + "Password=sa;");
+            SqlDataAdapter sqlAdapter = new SqlDataAdapter("SELECT * FROM " + tableName, conn);
+            SqlCommandBuilder sqlCommand = new SqlCommandBuilder(sqlAdapter);
+            sqlAdapter.Fill(data, tableName);
+            return data;
+        }
 
     }
 }
