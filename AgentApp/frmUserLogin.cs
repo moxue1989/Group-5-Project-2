@@ -29,13 +29,16 @@ namespace AgentApp
             if (dt.Rows[0][0].ToString() == "1")
             {
                 this.Hide();
-                new frmGUI().Show();
+                frmGUI gui = new frmGUI();
+                gui.Show();
+                
             }
             else
             {
-                MessageBox.Show("Invalid username or password");
+                MessageBox.Show("Invalid username or password. \n  Please try again", "User Authentication Error");
             }
 
         }
+        
     }
 }

@@ -42,17 +42,18 @@ namespace AgentApp
             FormBorderStyle = FormBorderStyle.None;
 
         }
-
+        //Code written by Kasi Emmanuel
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Application.Exit();//closes application
         }
 
         private void btnMinimize_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
         }
-
+        //Code written by Kasi Emmanuel
+        //maximize and restore application window 
         private void btnMaximize_Click(object sender, EventArgs e)
         {
 
@@ -65,12 +66,7 @@ namespace AgentApp
                 WindowState = FormWindowState.Normal;
             }
         }
-
-        private void btnMax_Click(object sender, EventArgs e)
-        {
-            WindowState = FormWindowState.Maximized;
-        }
-
+        //Code written by Kasi Emmanuel
         private void frmGUI_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -79,15 +75,15 @@ namespace AgentApp
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HTCAPTION, 0);
             }
         }
-
+        //Code written by Kasi Emmanuel
         private void rtxtDesc_Enter(object sender, EventArgs e)
         {
             rtxtDesc.Clear();
         }
-
+        //Code written by Kasi Emmanuel
         private void rtxtDesc_Leave(object sender, EventArgs e)
         {
-            rtxtDesc.Text = "Enter Package Description";
+            rtxtDesc.Text = "Enter Package Description";//placeholder text
         }
     }
 }
