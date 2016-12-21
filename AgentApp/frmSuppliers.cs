@@ -23,10 +23,6 @@ namespace AgentApp
             this.suppliersTableAdapter.Fill(this.travelExpertsDataSet.Suppliers);//populate textboxes with existing records
         }
 
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            this.Close();//closes products form
-        }
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.suppliersBindingSource.CancelEdit();//cancels the edit command
@@ -44,6 +40,11 @@ namespace AgentApp
             this.Validate();
             this.suppliersBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.travelExpertsDataSet);
+        }
+
+        private void btnExit_Click_1(object sender, EventArgs e)
+        {
+            this.Close();//closes products form
         }
     }
 }

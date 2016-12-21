@@ -61,5 +61,13 @@ namespace AgentApp
                 supp.ShowDialog(this);
             }
         }
+
+        private void navProdSuppAddEdit_Click(object sender, EventArgs e)
+        {
+            using (frmProdSupp prodsupp = new frmProdSupp())
+            {
+                prodsupp.ShowDialog(this);
+            }
+        }
     }
 }

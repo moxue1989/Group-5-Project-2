@@ -70,6 +70,12 @@
     <Compile Include="frmMainGUI.Designer.cs">
       <DependentUpon>frmMainGUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmProdSupp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProdSupp.Designer.cs">
+      <DependentUpon>frmProdSupp.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmProducts.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +140,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMainGUI.resx">
       <DependentUpon>frmMainGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProdSupp.resx">
+      <DependentUpon>frmProdSupp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmProducts.resx">
       <DependentUpon>frmProducts.cs</DependentUpon>
