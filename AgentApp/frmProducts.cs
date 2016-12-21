@@ -19,7 +19,7 @@ namespace AgentApp
             InitializeComponent();
             FormBorderStyle = FormBorderStyle.None;
         }
-
+        //Code written by Kasi Emmanuel
         private void productsBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
@@ -27,7 +27,7 @@ namespace AgentApp
             this.tableAdapterManager.UpdateAll(this.travelExpertsDataSet);
 
         }
-
+        //Code written by Kasi Emmanuel
         private void frmProducts_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'travelExpertsDataSet.Products' table. You can move, or remove it, as needed.
@@ -39,12 +39,13 @@ namespace AgentApp
         {
             this.Close();//closes products form
         }
+        //Code written by Kasi Emmanuel
         private void btnOK_Click(object sender, EventArgs e)
         {
             this.tableAdapterManager.UpdateAll(this.travelExpertsDataSet);//update and refresh dataset
             Close();//close active form
         }
-
+        //Code written by Kasi Emmanuel
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.productsBindingSource.CancelEdit();//cancels the edit command

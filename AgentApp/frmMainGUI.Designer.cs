@@ -42,11 +42,18 @@
             this.packagesTableAdapter = new AgentApp.TravelExpertsDataSetTableAdapters.PackagesTableAdapter();
             this.tableAdapterManager = new AgentApp.TravelExpertsDataSetTableAdapters.TableAdapterManager();
             this.packagesBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.packagesBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.pkgNameTextBox = new System.Windows.Forms.TextBox();
             this.pkgStartDateDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.pkgEndDateDateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -56,23 +63,32 @@
             this.txtPkgId = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.eDITToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pRODUCTSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.navProdAddEdit = new System.Windows.Forms.ToolStripMenuItem();
             this.pRODUCTSUPPLIERSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.navProdSuppAddEdit = new System.Windows.Forms.ToolStripMenuItem();
             this.sUPPLIERSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.navSuppAddEdit = new System.Windows.Forms.ToolStripMenuItem();
             this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.productsTableAdapter = new AgentApp.TravelExpertsDataSetTableAdapters.ProductsTableAdapter();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
-            this.packagesBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.navSuppAddEdit = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addEditToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.eDITToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.vIEWToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.monthlyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.yearlyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.displayPackagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.packagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.hELPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewRecordsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.viewRecordsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.viewRecordsToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.label1 = new System.Windows.Forms.Label();
             pkgNameLabel = new System.Windows.Forms.Label();
             pkgStartDateLabel = new System.Windows.Forms.Label();
             pkgEndDateLabel = new System.Windows.Forms.Label();
@@ -127,7 +143,7 @@
             // pkgBasePriceLabel
             // 
             pkgBasePriceLabel.AutoSize = true;
-            pkgBasePriceLabel.Location = new System.Drawing.Point(186, 238);
+            pkgBasePriceLabel.Location = new System.Drawing.Point(186, 230);
             pkgBasePriceLabel.Name = "pkgBasePriceLabel";
             pkgBasePriceLabel.Size = new System.Drawing.Size(61, 13);
             pkgBasePriceLabel.TabIndex = 11;
@@ -136,7 +152,7 @@
             // pkgAgencyCommissionLabel
             // 
             pkgAgencyCommissionLabel.AutoSize = true;
-            pkgAgencyCommissionLabel.Location = new System.Drawing.Point(295, 238);
+            pkgAgencyCommissionLabel.Location = new System.Drawing.Point(295, 230);
             pkgAgencyCommissionLabel.Name = "pkgAgencyCommissionLabel";
             pkgAgencyCommissionLabel.Size = new System.Drawing.Size(65, 13);
             pkgAgencyCommissionLabel.TabIndex = 13;
@@ -211,12 +227,51 @@
             this.packagesBindingNavigator.TabIndex = 0;
             this.packagesBindingNavigator.Text = "bindingNavigator1";
             // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
+            // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
             this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
+            // 
+            // bindingNavigatorMoveFirstItem
+            // 
+            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
+            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Text = "Move first";
+            // 
+            // bindingNavigatorMovePreviousItem
+            // 
+            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
             // 
             // bindingNavigatorSeparator
             // 
@@ -237,10 +292,37 @@
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
+            // bindingNavigatorMoveNextItem
+            // 
+            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
+            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
+            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem.Text = "Move next";
+            // 
+            // bindingNavigatorMoveLastItem
+            // 
+            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
+            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem.Text = "Move last";
+            // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // packagesBindingNavigatorSaveItem
+            // 
+            this.packagesBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.packagesBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("packagesBindingNavigatorSaveItem.Image")));
+            this.packagesBindingNavigatorSaveItem.Name = "packagesBindingNavigatorSaveItem";
+            this.packagesBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
+            this.packagesBindingNavigatorSaveItem.Text = "Save Data";
+            this.packagesBindingNavigatorSaveItem.Click += new System.EventHandler(this.packagesBindingNavigatorSaveItem_Click);
             // 
             // pkgNameTextBox
             // 
@@ -272,14 +354,14 @@
             this.pkgDescTextBox.Location = new System.Drawing.Point(189, 170);
             this.pkgDescTextBox.MinimumSize = new System.Drawing.Size(4, 50);
             this.pkgDescTextBox.Name = "pkgDescTextBox";
-            this.pkgDescTextBox.Size = new System.Drawing.Size(200, 20);
+            this.pkgDescTextBox.Size = new System.Drawing.Size(200, 50);
             this.pkgDescTextBox.TabIndex = 10;
             // 
             // txtpkgBasePrice
             // 
             this.txtpkgBasePrice.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.packagesBindingSource, "PkgBasePrice", true));
             this.txtpkgBasePrice.Enabled = false;
-            this.txtpkgBasePrice.Location = new System.Drawing.Point(189, 254);
+            this.txtpkgBasePrice.Location = new System.Drawing.Point(189, 246);
             this.txtpkgBasePrice.Name = "txtpkgBasePrice";
             this.txtpkgBasePrice.Size = new System.Drawing.Size(91, 20);
             this.txtpkgBasePrice.TabIndex = 12;
@@ -288,7 +370,7 @@
             // 
             this.txtpkgCommission.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.packagesBindingSource, "PkgAgencyCommission", true));
             this.txtpkgCommission.Enabled = false;
-            this.txtpkgCommission.Location = new System.Drawing.Point(298, 254);
+            this.txtpkgCommission.Location = new System.Drawing.Point(298, 246);
             this.txtpkgCommission.Name = "txtpkgCommission";
             this.txtpkgCommission.Size = new System.Drawing.Size(91, 20);
             this.txtpkgCommission.TabIndex = 14;
@@ -305,12 +387,15 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.LightSteelBlue;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.eDITToolStripMenuItem,
+            this.eDITToolStripMenuItem1,
+            this.vIEWToolStripMenuItem1,
             this.pRODUCTSToolStripMenuItem,
             this.pRODUCTSUPPLIERSToolStripMenuItem,
-            this.sUPPLIERSToolStripMenuItem});
+            this.sUPPLIERSToolStripMenuItem,
+            this.hELPToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(942, 24);
@@ -323,18 +408,12 @@
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
             this.fileToolStripMenuItem.Text = "FILE";
             // 
-            // eDITToolStripMenuItem
-            // 
-            this.eDITToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.viewToolStripMenuItem});
-            this.eDITToolStripMenuItem.Name = "eDITToolStripMenuItem";
-            this.eDITToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
-            this.eDITToolStripMenuItem.Text = "PACKAGES";
-            // 
             // pRODUCTSToolStripMenuItem
             // 
             this.pRODUCTSToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.navProdAddEdit});
+            this.navProdAddEdit,
+            this.toolStripSeparator5,
+            this.viewRecordsToolStripMenuItem1});
             this.pRODUCTSToolStripMenuItem.Name = "pRODUCTSToolStripMenuItem";
             this.pRODUCTSToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
             this.pRODUCTSToolStripMenuItem.Text = "PRODUCTS";
@@ -349,18 +428,35 @@
             // pRODUCTSUPPLIERSToolStripMenuItem
             // 
             this.pRODUCTSUPPLIERSToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addEditToolStripMenuItem1});
+            this.navProdSuppAddEdit,
+            this.toolStripSeparator4,
+            this.viewRecordsToolStripMenuItem});
             this.pRODUCTSUPPLIERSToolStripMenuItem.Name = "pRODUCTSUPPLIERSToolStripMenuItem";
             this.pRODUCTSUPPLIERSToolStripMenuItem.Size = new System.Drawing.Size(132, 20);
             this.pRODUCTSUPPLIERSToolStripMenuItem.Text = "PRODUCT SUPPLIERS";
             // 
+            // navProdSuppAddEdit
+            // 
+            this.navProdSuppAddEdit.Name = "navProdSuppAddEdit";
+            this.navProdSuppAddEdit.Size = new System.Drawing.Size(152, 22);
+            this.navProdSuppAddEdit.Text = "Add/Edit";
+            // 
             // sUPPLIERSToolStripMenuItem
             // 
             this.sUPPLIERSToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.navSuppAddEdit});
+            this.navSuppAddEdit,
+            this.toolStripSeparator6,
+            this.viewRecordsToolStripMenuItem2});
             this.sUPPLIERSToolStripMenuItem.Name = "sUPPLIERSToolStripMenuItem";
             this.sUPPLIERSToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
             this.sUPPLIERSToolStripMenuItem.Text = "SUPPLIERS";
+            // 
+            // navSuppAddEdit
+            // 
+            this.navSuppAddEdit.Name = "navSuppAddEdit";
+            this.navSuppAddEdit.Size = new System.Drawing.Size(152, 22);
+            this.navSuppAddEdit.Text = "Add/Edit";
+            this.navSuppAddEdit.Click += new System.EventHandler(this.navSuppAddEdit_Click);
             // 
             // productsBindingSource
             // 
@@ -371,96 +467,136 @@
             // 
             this.productsTableAdapter.ClearBeforeFill = true;
             // 
-            // bindingNavigatorAddNewItem
+            // eDITToolStripMenuItem1
             // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
+            this.eDITToolStripMenuItem1.Name = "eDITToolStripMenuItem1";
+            this.eDITToolStripMenuItem1.Size = new System.Drawing.Size(43, 20);
+            this.eDITToolStripMenuItem1.Text = "EDIT";
             // 
-            // bindingNavigatorDeleteItem
+            // vIEWToolStripMenuItem1
             // 
-            this.bindingNavigatorDeleteItem.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
-            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
+            this.vIEWToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.reportsToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.monthlyToolStripMenuItem,
+            this.yearlyToolStripMenuItem,
+            this.toolStripSeparator3,
+            this.displayPackagesToolStripMenuItem,
+            this.toolStripSeparator2,
+            this.packagesToolStripMenuItem});
+            this.vIEWToolStripMenuItem1.Name = "vIEWToolStripMenuItem1";
+            this.vIEWToolStripMenuItem1.Size = new System.Drawing.Size(46, 20);
+            this.vIEWToolStripMenuItem1.Text = "VIEW";
             // 
-            // bindingNavigatorMoveFirstItem
+            // reportsToolStripMenuItem
             // 
-            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
-            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveFirstItem.Text = "Move first";
+            this.reportsToolStripMenuItem.Enabled = false;
+            this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
+            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.reportsToolStripMenuItem.Text = "Reports";
             // 
-            // bindingNavigatorMovePreviousItem
+            // monthlyToolStripMenuItem
             // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
+            this.monthlyToolStripMenuItem.Name = "monthlyToolStripMenuItem";
+            this.monthlyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.monthlyToolStripMenuItem.Text = "Monthly";
             // 
-            // bindingNavigatorMoveNextItem
+            // yearlyToolStripMenuItem
             // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
-            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveNextItem.Text = "Move next";
+            this.yearlyToolStripMenuItem.Name = "yearlyToolStripMenuItem";
+            this.yearlyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.yearlyToolStripMenuItem.Text = "Yearly";
             // 
-            // bindingNavigatorMoveLastItem
+            // toolStripSeparator1
             // 
-            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
-            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveLastItem.Text = "Move last";
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
             // 
-            // packagesBindingNavigatorSaveItem
+            // displayPackagesToolStripMenuItem
             // 
-            this.packagesBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.packagesBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("packagesBindingNavigatorSaveItem.Image")));
-            this.packagesBindingNavigatorSaveItem.Name = "packagesBindingNavigatorSaveItem";
-            this.packagesBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
-            this.packagesBindingNavigatorSaveItem.Text = "Save Data";
-            this.packagesBindingNavigatorSaveItem.Click += new System.EventHandler(this.packagesBindingNavigatorSaveItem_Click);
+            this.displayPackagesToolStripMenuItem.Enabled = false;
+            this.displayPackagesToolStripMenuItem.Name = "displayPackagesToolStripMenuItem";
+            this.displayPackagesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.displayPackagesToolStripMenuItem.Text = "Display";
             // 
-            // navSuppAddEdit
+            // toolStripSeparator2
             // 
-            this.navSuppAddEdit.Name = "navSuppAddEdit";
-            this.navSuppAddEdit.Size = new System.Drawing.Size(152, 22);
-            this.navSuppAddEdit.Text = "Add/Edit";
-            this.navSuppAddEdit.Click += new System.EventHandler(this.navSuppAddEdit_Click);
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
             // 
-            // viewToolStripMenuItem
+            // packagesToolStripMenuItem
             // 
-            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.viewToolStripMenuItem.Text = "View";
+            this.packagesToolStripMenuItem.Name = "packagesToolStripMenuItem";
+            this.packagesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.packagesToolStripMenuItem.Text = " Packages";
             // 
-            // addEditToolStripMenuItem1
+            // toolStripSeparator3
             // 
-            this.addEditToolStripMenuItem1.Name = "addEditToolStripMenuItem1";
-            this.addEditToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.addEditToolStripMenuItem1.Text = "Add/Edit";
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(149, 6);
+            // 
+            // hELPToolStripMenuItem
+            // 
+            this.hELPToolStripMenuItem.Name = "hELPToolStripMenuItem";
+            this.hELPToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
+            this.hELPToolStripMenuItem.Text = "HELP";
+            // 
+            // viewRecordsToolStripMenuItem
+            // 
+            this.viewRecordsToolStripMenuItem.Name = "viewRecordsToolStripMenuItem";
+            this.viewRecordsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.viewRecordsToolStripMenuItem.Text = "View Records";
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(149, 6);
+            // 
+            // viewRecordsToolStripMenuItem1
+            // 
+            this.viewRecordsToolStripMenuItem1.Name = "viewRecordsToolStripMenuItem1";
+            this.viewRecordsToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.viewRecordsToolStripMenuItem1.Text = "View Records";
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(149, 6);
+            // 
+            // viewRecordsToolStripMenuItem2
+            // 
+            this.viewRecordsToolStripMenuItem2.Name = "viewRecordsToolStripMenuItem2";
+            this.viewRecordsToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.viewRecordsToolStripMenuItem2.Text = "View Records";
+            // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(149, 6);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
+            this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label1.Location = new System.Drawing.Point(838, 2);
+            this.label1.MinimumSize = new System.Drawing.Size(80, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(80, 20);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "&Sign out";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // frmMainGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(942, 443);
+            this.Controls.Add(this.label1);
             this.Controls.Add(packageIdLabel);
             this.Controls.Add(this.txtPkgId);
             this.Controls.Add(pkgNameLabel);
@@ -523,15 +659,31 @@
         protected System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem eDITToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pRODUCTSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pRODUCTSUPPLIERSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sUPPLIERSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem navProdAddEdit;
         private System.Windows.Forms.BindingSource productsBindingSource;
         private TravelExpertsDataSetTableAdapters.ProductsTableAdapter productsTableAdapter;
-        private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem addEditToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem navProdSuppAddEdit;
         private System.Windows.Forms.ToolStripMenuItem navSuppAddEdit;
+        private System.Windows.Forms.ToolStripMenuItem eDITToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem vIEWToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem reportsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem monthlyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem yearlyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripMenuItem displayPackagesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripMenuItem packagesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem hELPToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripMenuItem viewRecordsToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripMenuItem viewRecordsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
+        private System.Windows.Forms.ToolStripMenuItem viewRecordsToolStripMenuItem2;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -223,6 +223,7 @@
     <None Include="Images\FAQ-icon.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Images\1482322966_profle.svg" />
     <Content Include="TravelExpertsDataSource.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>TravelExpertsDataSource.edmx</DependentUpon>
