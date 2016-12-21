@@ -29,7 +29,7 @@ namespace AgentApp
             if (dt.Rows[0][0].ToString() == "1")
             {
                 this.Hide();
-                frmGUI gui = new frmGUI();
+                frmMainGUI gui = new frmMainGUI();
                 gui.Show();
                 
             }
@@ -39,6 +39,10 @@ namespace AgentApp
             }
 
         }
-        
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+            txtPassword.UseSystemPasswordChar = true;
+        }
     }
 }

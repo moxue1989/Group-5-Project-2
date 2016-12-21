@@ -46,6 +46,7 @@
             this.txtUserName.Size = new System.Drawing.Size(159, 20);
             this.txtUserName.TabIndex = 0;
             this.txtUserName.Text = "Enter User Name";
+            this.txtUserName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtPassword
             // 
@@ -59,6 +60,8 @@
             this.txtPassword.Size = new System.Drawing.Size(158, 20);
             this.txtPassword.TabIndex = 1;
             this.txtPassword.Text = "Enter Password";
+            this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
             // btnLogin
             // 

@@ -12,18 +12,21 @@ namespace AgentApp
     using System;
     using System.Collections.Generic;
     
-    public partial class Supplier
+    public partial class Products_Suppliers
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Supplier()
+        public Products_Suppliers()
         {
-            this.Products_Suppliers = new HashSet<Products_Suppliers>();
+            this.Packages = new HashSet<Package>();
         }
     
-        public int SupplierId { get; set; }
-        public string SupName { get; set; }
+        public int ProductSupplierId { get; set; }
+        public Nullable<int> ProductId { get; set; }
+        public Nullable<int> SupplierId { get; set; }
     
+        public virtual Product Product { get; set; }
+        public virtual Supplier Supplier { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Products_Suppliers> Products_Suppliers { get; set; }
+        public virtual ICollection<Package> Packages { get; set; }
     }
 }

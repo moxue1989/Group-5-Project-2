@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tbBody = new System.Windows.Forms.TableLayoutPanel();
             this.panel12 = new System.Windows.Forms.Panel();
             this.button8 = new System.Windows.Forms.Button();
@@ -80,6 +81,9 @@
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnMaximize = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
+            this.travelExpertsDataSet = new AgentApp.TravelExpertsDataSet();
+            this.packagesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.packagesTableAdapter = new AgentApp.TravelExpertsDataSetTableAdapters.PackagesTableAdapter();
             this.tbBody.SuspendLayout();
             this.panel12.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -95,6 +99,8 @@
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.travelExpertsDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.packagesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tbBody
@@ -181,6 +187,8 @@
             // 
             // dateTimePicker2
             // 
+            this.dateTimePicker2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.packagesBindingSource, "PkgEndDate", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "d"));
+            this.dateTimePicker2.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.packagesBindingSource, "PkgEndDate", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "d"));
             this.dateTimePicker2.Location = new System.Drawing.Point(175, 29);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(120, 20);
@@ -188,6 +196,8 @@
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.packagesBindingSource, "PkgStartDate", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "d"));
+            this.dateTimePicker1.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.packagesBindingSource, "PkgStartDate", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "d"));
             this.dateTimePicker1.Location = new System.Drawing.Point(23, 29);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(120, 20);
@@ -229,6 +239,7 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.packagesBindingSource, "PkgName", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(23, 41);
             this.comboBox1.Name = "comboBox1";
@@ -248,6 +259,7 @@
             // 
             // textBox1
             // 
+            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.packagesBindingSource, "PackageId", true));
             this.textBox1.Enabled = false;
             this.textBox1.Location = new System.Drawing.Point(24, 93);
             this.textBox1.Name = "textBox1";
@@ -281,6 +293,7 @@
             // 
             // textBox3
             // 
+            this.textBox3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.packagesBindingSource, "PkgAgencyCommission", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "C2"));
             this.textBox3.Enabled = false;
             this.textBox3.Location = new System.Drawing.Point(180, 28);
             this.textBox3.Name = "textBox3";
@@ -300,6 +313,7 @@
             // 
             // textBox2
             // 
+            this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.packagesBindingSource, "PkgBasePrice", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "C2"));
             this.textBox2.Enabled = false;
             this.textBox2.Location = new System.Drawing.Point(17, 28);
             this.textBox2.Name = "textBox2";
@@ -330,6 +344,7 @@
             // rtxtDesc
             // 
             this.rtxtDesc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.rtxtDesc.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.packagesBindingSource, "PkgDesc", true));
             this.rtxtDesc.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.rtxtDesc.Location = new System.Drawing.Point(17, 41);
             this.rtxtDesc.Name = "rtxtDesc";
@@ -767,6 +782,20 @@
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // travelExpertsDataSet
+            // 
+            this.travelExpertsDataSet.DataSetName = "TravelExpertsDataSet";
+            this.travelExpertsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // packagesBindingSource
+            // 
+            this.packagesBindingSource.DataMember = "Packages";
+            this.packagesBindingSource.DataSource = this.travelExpertsDataSet;
+            // 
+            // packagesTableAdapter
+            // 
+            this.packagesTableAdapter.ClearBeforeFill = true;
+            // 
             // frmGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -780,6 +809,7 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agent GUI";
+            this.Load += new System.EventHandler(this.frmGUI_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frmGUI_MouseDown);
             this.tbBody.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
@@ -802,6 +832,8 @@
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel10.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.travelExpertsDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.packagesBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -859,6 +891,9 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Panel panel12;
+        private TravelExpertsDataSet travelExpertsDataSet;
+        private System.Windows.Forms.BindingSource packagesBindingSource;
+        private TravelExpertsDataSetTableAdapters.PackagesTableAdapter packagesTableAdapter;
     }
 }
 

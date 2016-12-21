@@ -85,5 +85,12 @@ namespace AgentApp
         {
             rtxtDesc.Text = "Enter Package Description";//placeholder text
         }
+
+        private void frmGUI_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'travelExpertsDataSet.Packages' table. You can move, or remove it, as needed.
+            this.packagesTableAdapter.Fill(this.travelExpertsDataSet.Packages);
+
+        }
     }
 }

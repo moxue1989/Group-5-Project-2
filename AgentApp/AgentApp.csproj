@@ -33,8 +33,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -53,16 +64,60 @@
     <Compile Include="frmGUI.Designer.cs">
       <DependentUpon>frmGUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="Package.cs" />
-    <Compile Include="Product.cs" />
+    <Compile Include="frmMainGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMainGUI.Designer.cs">
+      <DependentUpon>frmMainGUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmProducts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProducts.Designer.cs">
+      <DependentUpon>frmProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Package.cs">
+      <DependentUpon>TravelExpertsDataSource.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Product.cs">
+      <DependentUpon>TravelExpertsDataSource.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Products_Suppliers.cs">
+      <DependentUpon>TravelExpertsDataSource.tt</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Supplier.cs" />
+    <Compile Include="Supplier.cs">
+      <DependentUpon>TravelExpertsDataSource.tt</DependentUpon>
+    </Compile>
     <Compile Include="frmUserLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmUserLogin.Designer.cs">
       <DependentUpon>frmUserLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TravelExpertsDataSet.cs">
+      <DependentUpon>TravelExpertsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TravelExpertsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TravelExpertsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TravelExpertsDataSource.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TravelExpertsDataSource.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TravelExpertsDataSource.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TravelExpertsDataSource.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TravelExpertsDataSource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TravelExpertsDataSource.edmx</DependentUpon>
     </Compile>
     <Compile Include="Validation.cs" />
     <EmbeddedResource Include="frmGUI.en-CA.resx">
@@ -70,6 +125,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmGUI.resx">
       <DependentUpon>frmGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMainGUI.resx">
+      <DependentUpon>frmMainGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProducts.resx">
+      <DependentUpon>frmProducts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -84,6 +145,7 @@
     <EmbeddedResource Include="frmUserLogin.resx">
       <DependentUpon>frmUserLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -93,6 +155,24 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EntityDeploy Include="TravelExpertsDataSource.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>TravelExpertsDataSource.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="TravelExpertsDataSet.xsc">
+      <DependentUpon>TravelExpertsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="TravelExpertsDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TravelExpertsDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TravelExpertsDataSet.xss">
+      <DependentUpon>TravelExpertsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="TravelExpertsDataSource.edmx.diagram">
+      <DependentUpon>TravelExpertsDataSource.edmx</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -132,6 +212,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Images\FAQ-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="TravelExpertsDataSource.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TravelExpertsDataSource.edmx</DependentUpon>
+      <LastGenOutput>TravelExpertsDataSource.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="TravelExpertsDataSource.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TravelExpertsDataSource.edmx</DependentUpon>
+      <LastGenOutput>TravelExpertsDataSource.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
