@@ -31,7 +31,7 @@ namespace AgentApp
         private void frmProducts_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'travelExpertsDataSet.Products' table. You can move, or remove it, as needed.
-            this.productsTableAdapter.Fill(this.travelExpertsDataSet.Products);
+            this.productsTableAdapter.Fill(this.travelExpertsDataSet.Products);//populate textboxes with existing records
 
         }
         //Code written by Kasi Emmanuel
@@ -41,14 +41,14 @@ namespace AgentApp
         }
         private void btnOK_Click(object sender, EventArgs e)
         {
-            this.tableAdapterManager.UpdateAll(this.travelExpertsDataSet);
-            Close();
+            this.tableAdapterManager.UpdateAll(this.travelExpertsDataSet);//update and refresh dataset
+            Close();//close active form
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            this.productsBindingSource.CancelEdit();
-            Close();
+            this.productsBindingSource.CancelEdit();//cancels the edit command
+            Close();//close active form
         }
     }
 }

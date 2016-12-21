@@ -2298,9 +2298,13 @@ namespace AgentApp {
                 base.Columns.Add(this.columnSupName);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnSupplierId}, true));
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint2", new global::System.Data.DataColumn[] {
+                                this.columnSupName}, false));
                 this.columnSupplierId.AllowDBNull = false;
                 this.columnSupplierId.Unique = true;
-                this.columnSupName.MaxLength = 255;
+                this.columnSupName.AllowDBNull = false;
+                this.columnSupName.Unique = true;
+                this.columnSupName.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3278,28 +3282,11 @@ namespace AgentApp {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string SupName {
                 get {
-                    try {
-                        return ((string)(this[this.tableSuppliers.SupNameColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'SupName\' in table \'Suppliers\' is DBNull.", e);
-                    }
+                    return ((string)(this[this.tableSuppliers.SupNameColumn]));
                 }
                 set {
                     this[this.tableSuppliers.SupNameColumn] = value;
                 }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsSupNameNull() {
-                return this.IsNull(this.tableSuppliers.SupNameColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetSupNameNull() {
-                this[this.tableSuppliers.SupNameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6091,8 +6078,7 @@ SELECT SupplierId, SupName FROM Suppliers WHERE (SupplierId = @SupplierId)";
         public virtual int Delete(int Original_SupplierId, string Original_SupName) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_SupplierId));
             if ((Original_SupName == null)) {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Original_SupName");
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
@@ -6121,7 +6107,7 @@ SELECT SupplierId, SupName FROM Suppliers WHERE (SupplierId = @SupplierId)";
         public virtual int Insert(int SupplierId, string SupName) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(SupplierId));
             if ((SupName == null)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("SupName");
             }
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((string)(SupName));
@@ -6149,15 +6135,14 @@ SELECT SupplierId, SupName FROM Suppliers WHERE (SupplierId = @SupplierId)";
         public virtual int Update(int SupplierId, string SupName, int Original_SupplierId, string Original_SupName) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(SupplierId));
             if ((SupName == null)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("SupName");
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(SupName));
             }
             this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_SupplierId));
             if ((Original_SupName == null)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Original_SupName");
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(0));
