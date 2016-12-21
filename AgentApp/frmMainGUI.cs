@@ -26,6 +26,8 @@ namespace AgentApp
         }
         private void frmMainGUI_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'travelExpertsDataSet.Products' table. You can move, or remove it, as needed.
+            this.productsTableAdapter.Fill(this.travelExpertsDataSet.Products);
             // TODO: This line of code loads data into the 'travelExpertsDataSet.Packages' table. You can move, or remove it, as needed.
             this.packagesTableAdapter.Fill(this.travelExpertsDataSet.Packages);
 
@@ -44,12 +46,12 @@ namespace AgentApp
                 MessageBoxIcon.Information);
 
         }
-
-        private void btnProducts_Click(object sender, EventArgs e)
+        private void navProdAddEdit_Click(object sender, EventArgs e)
         {
-           frmProducts prod = new frmProducts();
-            prod.Show();
-            
+            using (frmProducts prod = new frmProducts())
+            {
+                prod.ShowDialog(this);
+            }
         }
     }
 }
