@@ -1,11 +1,15 @@
-﻿namespace AgentApp
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+using AgentApp.TravelExpertsDataSetTableAdapters;
+
+namespace AgentApp
 {
     partial class frmGUI
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -838,61 +842,61 @@
         }
 
         #endregion
-        private System.Windows.Forms.TableLayoutPanel tbBody;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.RichTextBox rtxtDesc;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel6;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel7;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel8;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel9;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
-        private System.Windows.Forms.TableLayoutPanel tbNavbar;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Button btnMinimize;
-        private System.Windows.Forms.Button btnMaximize;
-        private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Panel panel12;
+        private TableLayoutPanel tbBody;
+        private Panel panel3;
+        private TextBox textBox1;
+        private Label label2;
+        private Panel panel4;
+        private DateTimePicker dateTimePicker2;
+        private DateTimePicker dateTimePicker1;
+        private Label label4;
+        private Label label3;
+        private ComboBox comboBox1;
+        private Label label5;
+        private Panel panel5;
+        private RichTextBox rtxtDesc;
+        private Label label6;
+        private Label label9;
+        private Panel panel7;
+        private TextBox textBox2;
+        private TextBox textBox3;
+        private Label label8;
+        private Panel panel8;
+        private Button button4;
+        private Button button2;
+        private Button button1;
+        private Panel panel9;
+        private Button button5;
+        private Button button6;
+        private Button button7;
+        private Button button3;
+        private Panel panel11;
+        private Button button9;
+        private FlowLayoutPanel flowLayoutPanel6;
+        private FlowLayoutPanel flowLayoutPanel5;
+        private FlowLayoutPanel flowLayoutPanel7;
+        private FlowLayoutPanel flowLayoutPanel8;
+        private FlowLayoutPanel flowLayoutPanel9;
+        private FlowLayoutPanel flowLayoutPanel1;
+        private FlowLayoutPanel flowLayoutPanel2;
+        private FlowLayoutPanel flowLayoutPanel3;
+        private FlowLayoutPanel flowLayoutPanel4;
+        private TableLayoutPanel tbNavbar;
+        private Panel panel1;
+        private Label label1;
+        private Panel panel2;
+        private PictureBox pictureBox1;
+        private Panel panel10;
+        private Button btnMinimize;
+        private Button btnMaximize;
+        private Button btnExit;
+        private Label label10;
+        private Panel panel6;
+        private Button button8;
+        private Panel panel12;
         private TravelExpertsDataSet travelExpertsDataSet;
-        private System.Windows.Forms.BindingSource packagesBindingSource;
-        private TravelExpertsDataSetTableAdapters.PackagesTableAdapter packagesTableAdapter;
+        private BindingSource packagesBindingSource;
+        private PackagesTableAdapter packagesTableAdapter;
     }
 }
 

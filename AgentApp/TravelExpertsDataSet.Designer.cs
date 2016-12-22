@@ -3775,8 +3775,13 @@ SELECT PackageId, PkgName, PkgStartDate, PkgEndDate, PkgDesc, PkgBasePrice, PkgA
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_PackageId, string Original_PkgName, global::System.Nullable<global::System.DateTime> Original_PkgStartDate, global::System.Nullable<global::System.DateTime> Original_PkgEndDate, string Original_PkgDesc, decimal Original_PkgBasePrice, global::System.Nullable<decimal> Original_PkgAgencyCommission) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_PackageId));
+        public virtual int Delete(global::System.Nullable<int> Original_PackageId, string Original_PkgName, global::System.Nullable<global::System.DateTime> Original_PkgStartDate, global::System.Nullable<global::System.DateTime> Original_PkgEndDate, string Original_PkgDesc, decimal Original_PkgBasePrice, global::System.Nullable<decimal> Original_PkgAgencyCommission) {
+            if ((Original_PackageId.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_PackageId.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
             if ((Original_PkgName == null)) {
                 throw new global::System.ArgumentNullException("Original_PkgName");
             }
@@ -3888,7 +3893,7 @@ SELECT PackageId, PkgName, PkgStartDate, PkgEndDate, PkgDesc, PkgBasePrice, PkgA
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string PkgName, global::System.Nullable<global::System.DateTime> PkgStartDate, global::System.Nullable<global::System.DateTime> PkgEndDate, string PkgDesc, decimal PkgBasePrice, global::System.Nullable<decimal> PkgAgencyCommission, int Original_PackageId, string Original_PkgName, global::System.Nullable<global::System.DateTime> Original_PkgStartDate, global::System.Nullable<global::System.DateTime> Original_PkgEndDate, string Original_PkgDesc, decimal Original_PkgBasePrice, global::System.Nullable<decimal> Original_PkgAgencyCommission, int PackageId) {
+        public virtual int Update(string PkgName, global::System.Nullable<global::System.DateTime> PkgStartDate, global::System.Nullable<global::System.DateTime> PkgEndDate, string PkgDesc, decimal PkgBasePrice, global::System.Nullable<decimal> PkgAgencyCommission, global::System.Nullable<int> Original_PackageId, string Original_PkgName, global::System.Nullable<global::System.DateTime> Original_PkgStartDate, global::System.Nullable<global::System.DateTime> Original_PkgEndDate, string Original_PkgDesc, decimal Original_PkgBasePrice, global::System.Nullable<decimal> Original_PkgAgencyCommission, global::System.Nullable<int> PackageId) {
             if ((PkgName == null)) {
                 throw new global::System.ArgumentNullException("PkgName");
             }
@@ -3920,7 +3925,12 @@ SELECT PackageId, PkgName, PkgStartDate, PkgEndDate, PkgDesc, PkgBasePrice, PkgA
             else {
                 this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_PackageId));
+            if ((Original_PackageId.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_PackageId.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
             if ((Original_PkgName == null)) {
                 throw new global::System.ArgumentNullException("Original_PkgName");
             }
@@ -3960,7 +3970,12 @@ SELECT PackageId, PkgName, PkgStartDate, PkgEndDate, PkgDesc, PkgBasePrice, PkgA
                 this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(PackageId));
+            if ((PackageId.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(PackageId.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -3981,7 +3996,7 @@ SELECT PackageId, PkgName, PkgStartDate, PkgEndDate, PkgDesc, PkgBasePrice, PkgA
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string PkgName, global::System.Nullable<global::System.DateTime> PkgStartDate, global::System.Nullable<global::System.DateTime> PkgEndDate, string PkgDesc, decimal PkgBasePrice, global::System.Nullable<decimal> PkgAgencyCommission, int Original_PackageId, string Original_PkgName, global::System.Nullable<global::System.DateTime> Original_PkgStartDate, global::System.Nullable<global::System.DateTime> Original_PkgEndDate, string Original_PkgDesc, decimal Original_PkgBasePrice, global::System.Nullable<decimal> Original_PkgAgencyCommission) {
+        public virtual int Update(string PkgName, global::System.Nullable<global::System.DateTime> PkgStartDate, global::System.Nullable<global::System.DateTime> PkgEndDate, string PkgDesc, decimal PkgBasePrice, global::System.Nullable<decimal> PkgAgencyCommission, global::System.Nullable<int> Original_PackageId, string Original_PkgName, global::System.Nullable<global::System.DateTime> Original_PkgStartDate, global::System.Nullable<global::System.DateTime> Original_PkgEndDate, string Original_PkgDesc, decimal Original_PkgBasePrice, global::System.Nullable<decimal> Original_PkgAgencyCommission) {
             return this.Update(PkgName, PkgStartDate, PkgEndDate, PkgDesc, PkgBasePrice, PkgAgencyCommission, Original_PackageId, Original_PkgName, Original_PkgStartDate, Original_PkgEndDate, Original_PkgDesc, Original_PkgBasePrice, Original_PkgAgencyCommission, Original_PackageId);
         }
     }

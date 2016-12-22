@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AgentApp
@@ -89,7 +83,7 @@ namespace AgentApp
         private void frmGUI_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'travelExpertsDataSet.Packages' table. You can move, or remove it, as needed.
-            this.packagesTableAdapter.Fill(this.travelExpertsDataSet.Packages);
+            packagesTableAdapter.Fill(travelExpertsDataSet.Packages);
 
         }
     }

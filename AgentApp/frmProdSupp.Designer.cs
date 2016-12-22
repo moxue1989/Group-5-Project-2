@@ -1,11 +1,15 @@
-﻿namespace AgentApp
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+using AgentApp.TravelExpertsDataSetTableAdapters;
+
+namespace AgentApp
 {
     partial class frmProdSupp
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -29,30 +33,30 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProdSupp));
             System.Windows.Forms.Label label1;
             System.Windows.Forms.Label prodNameLabel;
             System.Windows.Forms.Label label3;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProdSupp));
             this.travelExpertsDataSet = new AgentApp.TravelExpertsDataSet();
             this.products_SuppliersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.products_SuppliersTableAdapter = new AgentApp.TravelExpertsDataSetTableAdapters.Products_SuppliersTableAdapter();
             this.tableAdapterManager = new AgentApp.TravelExpertsDataSetTableAdapters.TableAdapterManager();
             this.products_SuppliersBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.txtProdSupp = new System.Windows.Forms.TextBox();
-            this.txtProdId = new System.Windows.Forms.TextBox();
-            this.txtSuppId = new System.Windows.Forms.TextBox();
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.products_SuppliersBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.txtProdSupp = new System.Windows.Forms.TextBox();
+            this.txtProdId = new System.Windows.Forms.TextBox();
+            this.txtSuppId = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
@@ -78,6 +82,36 @@
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new System.Drawing.Font("Segoe UI", 10F);
+            label1.Location = new System.Drawing.Point(3, 31);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(76, 19);
+            label1.TabIndex = 1;
+            label1.Text = "Product Id:";
+            // 
+            // prodNameLabel
+            // 
+            prodNameLabel.AutoSize = true;
+            prodNameLabel.Font = new System.Drawing.Font("Segoe UI", 10F);
+            prodNameLabel.Location = new System.Drawing.Point(3, 57);
+            prodNameLabel.Name = "prodNameLabel";
+            prodNameLabel.Size = new System.Drawing.Size(77, 19);
+            prodNameLabel.TabIndex = 3;
+            prodNameLabel.Text = "Supplier Id:";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new System.Drawing.Font("Segoe UI", 10F);
+            label3.Location = new System.Drawing.Point(3, 5);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(129, 19);
+            label3.TabIndex = 7;
+            label3.Text = "Product Supplier Id:";
             // 
             // travelExpertsDataSet
             // 
@@ -131,64 +165,9 @@
             this.products_SuppliersBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.products_SuppliersBindingNavigator.Name = "products_SuppliersBindingNavigator";
             this.products_SuppliersBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.products_SuppliersBindingNavigator.Size = new System.Drawing.Size(384, 25);
+            this.products_SuppliersBindingNavigator.Size = new System.Drawing.Size(495, 25);
             this.products_SuppliersBindingNavigator.TabIndex = 0;
             this.products_SuppliersBindingNavigator.Text = "bindingNavigator1";
-            // 
-            // bindingNavigatorSeparator
-            // 
-            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorPositionItem
-            // 
-            this.bindingNavigatorPositionItem.AccessibleName = "Position";
-            this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
-            this.bindingNavigatorPositionItem.Text = "0";
-            this.bindingNavigatorPositionItem.ToolTipText = "Current position";
-            // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
-            // bindingNavigatorSeparator1
-            // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorSeparator2
-            // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // txtProdSupp
-            // 
-            this.txtProdSupp.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.products_SuppliersBindingSource, "ProductSupplierId", true));
-            this.txtProdSupp.Location = new System.Drawing.Point(145, 5);
-            this.txtProdSupp.Name = "txtProdSupp";
-            this.txtProdSupp.Size = new System.Drawing.Size(100, 20);
-            this.txtProdSupp.TabIndex = 2;
-            // 
-            // txtProdId
-            // 
-            this.txtProdId.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.products_SuppliersBindingSource, "ProductId", true));
-            this.txtProdId.Location = new System.Drawing.Point(145, 31);
-            this.txtProdId.Name = "txtProdId";
-            this.txtProdId.Size = new System.Drawing.Size(100, 20);
-            this.txtProdId.TabIndex = 4;
-            // 
-            // txtSuppId
-            // 
-            this.txtSuppId.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.products_SuppliersBindingSource, "SupplierId", true));
-            this.txtSuppId.Location = new System.Drawing.Point(145, 57);
-            this.txtSuppId.Name = "txtSuppId";
-            this.txtSuppId.Size = new System.Drawing.Size(100, 20);
-            this.txtSuppId.TabIndex = 6;
             // 
             // bindingNavigatorAddNewItem
             // 
@@ -198,6 +177,14 @@
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem.Text = "Add new";
+            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
             // bindingNavigatorDeleteItem
             // 
@@ -226,6 +213,25 @@
             this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMovePreviousItem.Text = "Move previous";
             // 
+            // bindingNavigatorSeparator
+            // 
+            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorPositionItem
+            // 
+            this.bindingNavigatorPositionItem.AccessibleName = "Position";
+            this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
+            this.bindingNavigatorPositionItem.Text = "0";
+            this.bindingNavigatorPositionItem.ToolTipText = "Current position";
+            // 
+            // bindingNavigatorSeparator1
+            // 
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
             // bindingNavigatorMoveNextItem
             // 
             this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -244,6 +250,11 @@
             this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveLastItem.Text = "Move last";
             // 
+            // bindingNavigatorSeparator2
+            // 
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
             // products_SuppliersBindingNavigatorSaveItem
             // 
             this.products_SuppliersBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -252,6 +263,30 @@
             this.products_SuppliersBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.products_SuppliersBindingNavigatorSaveItem.Text = "Save Data";
             this.products_SuppliersBindingNavigatorSaveItem.Click += new System.EventHandler(this.products_SuppliersBindingNavigatorSaveItem_Click);
+            // 
+            // txtProdSupp
+            // 
+            this.txtProdSupp.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.products_SuppliersBindingSource, "ProductSupplierId", true));
+            this.txtProdSupp.Location = new System.Drawing.Point(145, 5);
+            this.txtProdSupp.Name = "txtProdSupp";
+            this.txtProdSupp.Size = new System.Drawing.Size(100, 20);
+            this.txtProdSupp.TabIndex = 2;
+            // 
+            // txtProdId
+            // 
+            this.txtProdId.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.products_SuppliersBindingSource, "ProductId", true));
+            this.txtProdId.Location = new System.Drawing.Point(145, 31);
+            this.txtProdId.Name = "txtProdId";
+            this.txtProdId.Size = new System.Drawing.Size(100, 20);
+            this.txtProdId.TabIndex = 4;
+            // 
+            // txtSuppId
+            // 
+            this.txtSuppId.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.products_SuppliersBindingSource, "SupplierId", true));
+            this.txtSuppId.Location = new System.Drawing.Point(145, 57);
+            this.txtSuppId.Name = "txtSuppId";
+            this.txtSuppId.Size = new System.Drawing.Size(100, 20);
+            this.txtSuppId.TabIndex = 6;
             // 
             // tableLayoutPanel1
             // 
@@ -273,7 +308,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 27.40385F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 43.26923F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 29.32692F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(384, 208);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(495, 208);
             this.tableLayoutPanel1.TabIndex = 7;
             // 
             // panel1
@@ -285,40 +320,20 @@
             this.panel1.Controls.Add(prodNameLabel);
             this.panel1.Controls.Add(this.txtSuppId);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(60, 60);
+            this.panel1.Location = new System.Drawing.Point(77, 60);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(262, 83);
+            this.panel1.Size = new System.Drawing.Size(340, 83);
             this.panel1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            label1.Location = new System.Drawing.Point(3, 31);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(76, 19);
-            label1.TabIndex = 1;
-            label1.Text = "Product Id:";
-            // 
-            // prodNameLabel
-            // 
-            prodNameLabel.AutoSize = true;
-            prodNameLabel.Font = new System.Drawing.Font("Segoe UI", 10F);
-            prodNameLabel.Location = new System.Drawing.Point(3, 57);
-            prodNameLabel.Name = "prodNameLabel";
-            prodNameLabel.Size = new System.Drawing.Size(77, 19);
-            prodNameLabel.TabIndex = 3;
-            prodNameLabel.Text = "Supplier Id:";
             // 
             // panel10
             // 
             this.panel10.BackColor = System.Drawing.Color.SteelBlue;
             this.panel10.Controls.Add(this.btnExit);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel10.Location = new System.Drawing.Point(325, 0);
+            this.panel10.Location = new System.Drawing.Point(420, 0);
             this.panel10.Margin = new System.Windows.Forms.Padding(0);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(59, 57);
+            this.panel10.Size = new System.Drawing.Size(75, 57);
             this.panel10.TabIndex = 8;
             // 
             // btnExit
@@ -331,7 +346,7 @@
             this.btnExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.Image = global::AgentApp.Properties.Resources.delete_icon;
-            this.btnExit.Location = new System.Drawing.Point(20, 2);
+            this.btnExit.Location = new System.Drawing.Point(36, 2);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(32, 30);
             this.btnExit.TabIndex = 0;
@@ -345,7 +360,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(57, 57);
+            this.panel2.Size = new System.Drawing.Size(74, 57);
             this.panel2.TabIndex = 9;
             // 
             // panel4
@@ -353,10 +368,10 @@
             this.panel4.BackColor = System.Drawing.Color.SteelBlue;
             this.panel4.Controls.Add(this.label2);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(57, 0);
+            this.panel4.Location = new System.Drawing.Point(74, 0);
             this.panel4.Margin = new System.Windows.Forms.Padding(0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(268, 57);
+            this.panel4.Size = new System.Drawing.Size(346, 57);
             this.panel4.TabIndex = 10;
             // 
             // label2
@@ -366,9 +381,9 @@
             this.label2.ForeColor = System.Drawing.Color.MintCream;
             this.label2.Location = new System.Drawing.Point(3, 16);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(255, 25);
+            this.label2.Size = new System.Drawing.Size(333, 25);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Products - Travel Experts Inc.";
+            this.label2.Text = "Products Suppliers- Travel Experts Inc.";
             // 
             // panel5
             // 
@@ -376,10 +391,10 @@
             this.panel5.Controls.Add(this.btnCancel);
             this.panel5.Controls.Add(this.btnOK);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(57, 146);
+            this.panel5.Location = new System.Drawing.Point(74, 146);
             this.panel5.Margin = new System.Windows.Forms.Padding(0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(268, 62);
+            this.panel5.Size = new System.Drawing.Size(346, 62);
             this.panel5.TabIndex = 12;
             // 
             // btnCancel
@@ -422,28 +437,18 @@
             this.panel3.Location = new System.Drawing.Point(0, 146);
             this.panel3.Margin = new System.Windows.Forms.Padding(0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(57, 62);
+            this.panel3.Size = new System.Drawing.Size(74, 62);
             this.panel3.TabIndex = 13;
             // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.Transparent;
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(325, 146);
+            this.panel6.Location = new System.Drawing.Point(420, 146);
             this.panel6.Margin = new System.Windows.Forms.Padding(0);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(59, 62);
+            this.panel6.Size = new System.Drawing.Size(75, 62);
             this.panel6.TabIndex = 14;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new System.Drawing.Font("Segoe UI", 10F);
-            label3.Location = new System.Drawing.Point(3, 5);
-            label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(129, 19);
-            label3.TabIndex = 7;
-            label3.Text = "Product Supplier Id:";
             // 
             // frmProdSupp
             // 
@@ -452,7 +457,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(384, 208);
+            this.ClientSize = new System.Drawing.Size(495, 208);
             this.Controls.Add(this.products_SuppliersBindingNavigator);
             this.Controls.Add(this.tableLayoutPanel1);
             this.MaximizeBox = false;
@@ -481,36 +486,36 @@
         #endregion
 
         private TravelExpertsDataSet travelExpertsDataSet;
-        private System.Windows.Forms.BindingSource products_SuppliersBindingSource;
-        private TravelExpertsDataSetTableAdapters.Products_SuppliersTableAdapter products_SuppliersTableAdapter;
-        private TravelExpertsDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.BindingNavigator products_SuppliersBindingNavigator;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
-        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
-        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.ToolStripButton products_SuppliersBindingNavigatorSaveItem;
-        private System.Windows.Forms.TextBox txtProdSupp;
-        private System.Windows.Forms.TextBox txtProdId;
-        private System.Windows.Forms.TextBox txtSuppId;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnOK;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel6;
+        private BindingSource products_SuppliersBindingSource;
+        private Products_SuppliersTableAdapter products_SuppliersTableAdapter;
+        private TableAdapterManager tableAdapterManager;
+        private BindingNavigator products_SuppliersBindingNavigator;
+        private ToolStripButton bindingNavigatorAddNewItem;
+        private ToolStripLabel bindingNavigatorCountItem;
+        private ToolStripButton bindingNavigatorDeleteItem;
+        private ToolStripButton bindingNavigatorMoveFirstItem;
+        private ToolStripButton bindingNavigatorMovePreviousItem;
+        private ToolStripSeparator bindingNavigatorSeparator;
+        private ToolStripTextBox bindingNavigatorPositionItem;
+        private ToolStripSeparator bindingNavigatorSeparator1;
+        private ToolStripButton bindingNavigatorMoveNextItem;
+        private ToolStripButton bindingNavigatorMoveLastItem;
+        private ToolStripSeparator bindingNavigatorSeparator2;
+        private ToolStripButton products_SuppliersBindingNavigatorSaveItem;
+        private TextBox txtProdSupp;
+        private TextBox txtProdId;
+        private TextBox txtSuppId;
+        private TableLayoutPanel tableLayoutPanel1;
+        private Panel panel1;
+        private Panel panel10;
+        private Button btnExit;
+        private Panel panel2;
+        private Panel panel4;
+        private Label label2;
+        private Panel panel5;
+        private Button btnCancel;
+        private Button btnOK;
+        private Panel panel3;
+        private Panel panel6;
     }
 }

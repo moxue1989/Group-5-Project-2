@@ -1,19 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AgentApp
 {
-    public partial class frmUserLogin : Form
+    public partial class FrmUserLogin : Form
     {
-        public frmUserLogin()
+        public FrmUserLogin()
         {
             InitializeComponent();
         }
@@ -28,14 +22,14 @@ namespace AgentApp
             sda.Fill(dt);
             if (dt.Rows[0][0].ToString() == "1")
             {
-                this.Hide();
-                frmMainGUI gui = new frmMainGUI();
+                Hide();
+                FrmMainGui gui = new FrmMainGui();
                 gui.Show();
                 
             }
             else
             {
-                MessageBox.Show("Invalid username or password. \n  Please try again", "User Authentication Error");
+                MessageBox.Show(@"Invalid username or password. \n  Please try again", @"User Authentication Error");
             }
 
         }

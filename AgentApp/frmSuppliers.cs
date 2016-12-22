@@ -1,18 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace AgentApp
 {
-    public partial class frmSuppliers : Form
+    public partial class FrmSuppliers : Form
     {
-        public frmSuppliers()
+        public FrmSuppliers()
         {
             InitializeComponent();
             FormBorderStyle = FormBorderStyle.None;
@@ -20,31 +15,66 @@ namespace AgentApp
 
         private void frmSuppliers_Load(object sender, EventArgs e)
         {
-            this.suppliersTableAdapter.Fill(this.travelExpertsDataSet.Suppliers);//populate textboxes with existing records
+            suppliersTableAdapter.Fill(travelExpertsDataSet.Suppliers); //populate textboxes with existing records
+
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            this.suppliersBindingSource.CancelEdit();//cancels the edit command
-            Close();//close active form
+            suppliersBindingSource.CancelEdit(); //cancels the edit command
+            Close(); //close active form
         }
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            this.tableAdapterManager.UpdateAll(this.travelExpertsDataSet);//update and refresh dataset
-            Close();//close active form
+            tableAdapterManager.UpdateAll(travelExpertsDataSet); //update and refresh dataset
+            Close(); //close active form
         }
 
         private void productsBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.suppliersBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.travelExpertsDataSet);
+            try
+            {
+                Validate();
+                suppliersBindingSource.EndEdit();
+                tableAdapterManager.UpdateAll(travelExpertsDataSet);
+            }
+            catch (DBConcurrencyException)
+            {
+                MessageBox.Show(@"A error occurred. " + "Some rows were not updated.", "Concurrency Exception");
+                suppliersTableAdapter.Fill(travelExpertsDataSet.Suppliers); //populate textboxes with existing records
+            }
+            catch (DataException ex)
+            {
+                MessageBox.Show(ex.Message, ex.GetType().ToString());
+                suppliersBindingSource.CancelEdit(); //cancels the edit command
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(@"Database error # " + ex.Number + @": " + ex.Message, ex.GetType().ToString());
+            }
         }
 
         private void btnExit_Click_1(object sender, EventArgs e)
         {
-            this.Close();//closes products form
+            Close(); //closes products form
+        }
+
+        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                tableAdapterManager.UpdateAll(travelExpertsDataSet);
+            }
+            catch (NoNullAllowedException)
+            {
+                MessageBox.Show(@"Fields must contain information. ", @"Data Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                suppliersBindingSource.CancelEdit(); //cancels the edit command
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(@"Database error # " + ex.Number + @": " + ex.Message, ex.GetType().ToString());
+            }
         }
     }
 }

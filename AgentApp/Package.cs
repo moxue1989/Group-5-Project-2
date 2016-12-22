@@ -7,14 +7,15 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System;
+using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
+
 namespace AgentApp
 {
-    using System;
-    using System.Collections.Generic;
-    
     public partial class Package
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        [SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Package()
         {
             this.Products_Suppliers = new HashSet<Products_Suppliers>();
@@ -22,13 +23,13 @@ namespace AgentApp
     
         public int PackageId { get; set; }
         public string PkgName { get; set; }
-        public Nullable<System.DateTime> PkgStartDate { get; set; }
-        public Nullable<System.DateTime> PkgEndDate { get; set; }
+        public Nullable<DateTime> PkgStartDate { get; set; }
+        public Nullable<DateTime> PkgEndDate { get; set; }
         public string PkgDesc { get; set; }
         public decimal PkgBasePrice { get; set; }
         public Nullable<decimal> PkgAgencyCommission { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Products_Suppliers> Products_Suppliers { get; set; }
     }
 }

@@ -1,11 +1,15 @@
-﻿namespace AgentApp
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+using AgentApp.TravelExpertsDataSetTableAdapters;
+
+namespace AgentApp
 {
-    partial class frmProducts
+    partial class FrmProducts
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -31,7 +35,7 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label productIdLabel;
             System.Windows.Forms.Label prodNameLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProducts));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProducts));
             this.travelExpertsDataSet = new AgentApp.TravelExpertsDataSet();
             this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.productsTableAdapter = new AgentApp.TravelExpertsDataSetTableAdapters.ProductsTableAdapter();
@@ -436,7 +440,7 @@
             this.Controls.Add(this.productsBindingNavigator);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmProducts";
+            this.Name = "FrmProducts";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmProducts";
             this.TopMost = true;
@@ -461,35 +465,35 @@
         #endregion
 
         private TravelExpertsDataSet travelExpertsDataSet;
-        private System.Windows.Forms.BindingSource productsBindingSource;
-        private TravelExpertsDataSetTableAdapters.ProductsTableAdapter productsTableAdapter;
-        private TravelExpertsDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.BindingNavigator productsBindingNavigator;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
-        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
-        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.ToolStripButton productsBindingNavigatorSaveItem;
-        private System.Windows.Forms.TextBox productIdTextBox;
-        private System.Windows.Forms.TextBox prodNameTextBox;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnOK;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel6;
+        private BindingSource productsBindingSource;
+        private ProductsTableAdapter productsTableAdapter;
+        private TableAdapterManager tableAdapterManager;
+        private BindingNavigator productsBindingNavigator;
+        private ToolStripButton bindingNavigatorAddNewItem;
+        private ToolStripLabel bindingNavigatorCountItem;
+        private ToolStripButton bindingNavigatorDeleteItem;
+        private ToolStripButton bindingNavigatorMoveFirstItem;
+        private ToolStripButton bindingNavigatorMovePreviousItem;
+        private ToolStripSeparator bindingNavigatorSeparator;
+        private ToolStripTextBox bindingNavigatorPositionItem;
+        private ToolStripSeparator bindingNavigatorSeparator1;
+        private ToolStripButton bindingNavigatorMoveNextItem;
+        private ToolStripButton bindingNavigatorMoveLastItem;
+        private ToolStripSeparator bindingNavigatorSeparator2;
+        private ToolStripButton productsBindingNavigatorSaveItem;
+        private TextBox productIdTextBox;
+        private TextBox prodNameTextBox;
+        private TableLayoutPanel tableLayoutPanel1;
+        private Panel panel1;
+        private Panel panel10;
+        private Button btnExit;
+        private Panel panel2;
+        private Panel panel4;
+        private Label label1;
+        private Panel panel5;
+        private Button btnCancel;
+        private Button btnOK;
+        private Panel panel3;
+        private Panel panel6;
     }
 }

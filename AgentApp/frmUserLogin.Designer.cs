@@ -1,11 +1,14 @@
-﻿namespace AgentApp
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+
+namespace AgentApp
 {
-    partial class frmUserLogin
+    partial class FrmUserLogin
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -113,7 +116,7 @@
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtUserName);
             this.Controls.Add(this.txtPassword);
-            this.Name = "frmUserLogin";
+            this.Name = "FrmUserLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UserLogin";
             this.ResumeLayout(false);
@@ -123,10 +126,10 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtUserName;
-        private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.Button btnLogin;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private TextBox txtUserName;
+        private TextBox txtPassword;
+        private Button btnLogin;
+        private Label label1;
+        private Label label2;
     }
 }
