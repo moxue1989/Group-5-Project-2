@@ -16,6 +16,7 @@ namespace AgentApp
         public FrmProducts()
         {
             InitializeComponent();
+            FormBorderStyle = FormBorderStyle.None;
         }
 
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
@@ -64,6 +65,11 @@ namespace AgentApp
             // TODO: This line of code loads data into the 'travelExpertsDataSet.Products' table. You can move, or remove it, as needed.
             this.productsTableAdapter.Fill(this.travelExpertsDataSet.Products);
         }
-        
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            productsBindingSource.CancelEdit(); //Cancel Add/Edit Operations
+            Close();//close form
+        }
     }
 }
