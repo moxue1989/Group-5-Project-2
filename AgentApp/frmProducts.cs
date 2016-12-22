@@ -13,6 +13,7 @@ namespace AgentApp
 {
     public partial class FrmProducts : Form
     {
+        const int MinValue = 0; // Minimum Value for ID
         public FrmProducts()
         {
             InitializeComponent();
@@ -32,32 +33,47 @@ namespace AgentApp
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(@"Database error # " + ex.Number + @": " + ex.Message, ex.GetType().ToString());
+                MessageBox.Show(@"Database error # " + ex.Number + @": " + ex.Message, ex.GetType().ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         
         private void productsBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            try
+            if (IsValidData())
             {
-                Validate();
-                productsBindingSource.EndEdit();
-                tableAdapterManager.UpdateAll(travelExpertsDataSet);
+                try
+                {
+                    Validate();
+                    productsBindingSource.EndEdit();
+                    tableAdapterManager.UpdateAll(travelExpertsDataSet);
+                }
+                catch (DBConcurrencyException)
+                {
+                    MessageBox.Show(@"A error occurred. " + @"Some rows were not updated.", @"Concurrency Exception", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    productsTableAdapter.Fill(travelExpertsDataSet.Products); //populate textboxes with existing records
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show(@"Database error # " + ex.Number + @": " + ex.Message, ex.GetType().ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            catch (DBConcurrencyException)
+            else
             {
-                MessageBox.Show(@"A error occurred. " + @"Some rows were not updated.", @"Concurrency Exception");
-                productsTableAdapter.Fill(travelExpertsDataSet.Products); //populate textboxes with existing records
+                try
+                {
+                    tableAdapterManager.UpdateAll(travelExpertsDataSet);
+                }
+                catch (DBConcurrencyException)
+                {
+                    MessageBox.Show(@"A error occurred. " + @"Some rows were not updated.", @"Concurrency Exception Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    productsTableAdapter.Fill(travelExpertsDataSet.Products); //populate textboxes with existing records
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show(@"Database error # " + ex.Number + @": " + ex.Message, ex.GetType().ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            catch (DataException ex)
-            {
-                MessageBox.Show(ex.Message, ex.GetType().ToString());
-                productsBindingSource.CancelEdit(); //cancels the edit command
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show(@"Database error # " + ex.Number + @": " + ex.Message, ex.GetType().ToString());
-            }
+           
         }
 
         private void frmProducts_Load(object sender, EventArgs e)
@@ -70,6 +86,25 @@ namespace AgentApp
         {
             productsBindingSource.CancelEdit(); //Cancel Add/Edit Operations
             Close();//close form
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            productsBindingSource.CancelEdit();
+        }
+
+        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(@"This record will be permanently deleted.", @"Delete", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+        //binding validator class to textbox fields
+        private bool IsValidData()
+        {
+            return
+                Validator.IsPresent(txtProductId) &&
+                Validator.IsInt(txtProductId) &&
+                Validator.IsPositiveNum(txtProductId, MinValue) &&
+                Validator.IsPresent(txtProdName);
         }
     }
 }

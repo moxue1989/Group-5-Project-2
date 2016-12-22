@@ -50,7 +50,7 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.productsBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.txtProductId = new System.Windows.Forms.TextBox();
-            this.txtprodName = new System.Windows.Forms.TextBox();
+            this.txtProdName = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -61,6 +61,9 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.btnExit = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             label1 = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.travelExpertsDataSet)).BeginInit();
@@ -117,7 +120,10 @@
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
-            this.productsBindingNavigatorSaveItem});
+            this.toolStripSeparator2,
+            this.productsBindingNavigatorSaveItem,
+            this.toolStripSeparator1,
+            this.btnCancel});
             this.productsBindingNavigator.Location = new System.Drawing.Point(0, 166);
             this.productsBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.productsBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -154,6 +160,7 @@
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorDeleteItem.Text = "Delete";
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -231,14 +238,16 @@
             this.txtProductId.Name = "txtProductId";
             this.txtProductId.Size = new System.Drawing.Size(121, 20);
             this.txtProductId.TabIndex = 2;
+            this.txtProductId.Tag = "Product ID";
             // 
-            // txtprodName
+            // txtProdName
             // 
-            this.txtprodName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productsBindingSource, "ProdName", true));
-            this.txtprodName.Location = new System.Drawing.Point(117, 36);
-            this.txtprodName.Name = "txtprodName";
-            this.txtprodName.Size = new System.Drawing.Size(121, 20);
-            this.txtprodName.TabIndex = 4;
+            this.txtProdName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productsBindingSource, "ProdName", true));
+            this.txtProdName.Location = new System.Drawing.Point(117, 36);
+            this.txtProdName.Name = "txtProdName";
+            this.txtProdName.Size = new System.Drawing.Size(121, 20);
+            this.txtProdName.TabIndex = 4;
+            this.txtProdName.Tag = "Product Name";
             // 
             // tableLayoutPanel1
             // 
@@ -265,7 +274,7 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.txtprodName);
+            this.panel1.Controls.Add(this.txtProdName);
             this.panel1.Controls.Add(label1);
             this.panel1.Controls.Add(this.txtProductId);
             this.panel1.Controls.Add(label2);
@@ -385,6 +394,27 @@
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnCancel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.btnCancel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnCancel.ImageTransparentColor = System.Drawing.Color.Lime;
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(47, 22);
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
             // FrmProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -432,7 +462,7 @@
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton productsBindingNavigatorSaveItem;
         private System.Windows.Forms.TextBox txtProductId;
-        private System.Windows.Forms.TextBox txtprodName;
+        private System.Windows.Forms.TextBox txtProdName;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
@@ -443,5 +473,8 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.ToolStripButton btnCancel;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     }
 }

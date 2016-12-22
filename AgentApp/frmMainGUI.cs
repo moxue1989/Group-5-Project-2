@@ -28,14 +28,15 @@ namespace AgentApp
             {
                 MessageBox.Show(@"Database error # " + ex.Number + @": " + ex.Message, ex.GetType().ToString());
             }
-            
+
         }
+
         private void frmMainGUI_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'travelExpertsDataSet.Packages' table. You can move, or remove it, as needed.
             packagesTableAdapter.Fill(travelExpertsDataSet.Packages);
         }
-        
+
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
         {
             txtPkgId.Enabled = true;
@@ -59,9 +60,20 @@ namespace AgentApp
         //Add/Edit Products
         private void navProdAddEdit_Click(object sender, EventArgs e)
         {
-            using (FrmProducts prod = new FrmProducts())
+            try
             {
-                prod.ShowDialog(this);
+                using (FrmProducts prod = new FrmProducts())
+                {
+                    prod.ShowDialog(this);
+                }
+            }
+            catch (DataException)
+            {
+                MessageBox.Show(@"Cancel/Save Data before viewing other records. Try Again.", @"User Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(@"Database error # " + ex.Number + @": " + ex.Message, ex.GetType().ToString());
             }
         }
 

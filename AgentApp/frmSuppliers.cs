@@ -22,7 +22,7 @@ namespace AgentApp
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(@"Database error # " + ex.Number + @": " + ex.Message, ex.GetType().ToString());
+                MessageBox.Show(@"Database error # " + ex.Number + @": " + ex.Message, ex.GetType().ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -43,12 +43,12 @@ namespace AgentApp
                 }
                 catch (DBConcurrencyException)
                 {
-                    MessageBox.Show(@"A error occurred. " + @"Some rows were not updated.", @"Concurrency Exception");
+                    MessageBox.Show(@"A error occurred. " + @"Some rows were not updated.", @"Concurrency Exception", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     suppliersTableAdapter.Fill(travelExpertsDataSet.Suppliers); //populate textboxes with existing records
                 }
                 catch (SqlException ex)
                 {
-                    MessageBox.Show(@"Database error # " + ex.Number + @": " + ex.Message, ex.GetType().ToString());
+                    MessageBox.Show(@"Database error # " + ex.Number + @": " + ex.Message, ex.GetType().ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
@@ -59,12 +59,12 @@ namespace AgentApp
                 }
                 catch (DBConcurrencyException)
                 {
-                    MessageBox.Show(@"A error occurred. " + @"Some rows were not updated.", @"Concurrency Exception Error");
+                    MessageBox.Show(@"A error occurred. " + @"Some rows were not updated.", @"Concurrency Exception Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     suppliersTableAdapter.Fill(travelExpertsDataSet.Suppliers); //populate textboxes with existing records
                 }
                 catch (SqlException ex)
                 {
-                    MessageBox.Show(@"Database error # " + ex.Number + @": " + ex.Message, ex.GetType().ToString());
+                    MessageBox.Show(@"Database error # " + ex.Number + @": " + ex.Message, ex.GetType().ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -83,6 +83,12 @@ namespace AgentApp
                 Validator.IsInt(txtSupplierId)&&
                 Validator.IsPositiveNum(txtSupplierId, MinValue)&& 
                 Validator.IsPresent(txtSupName);
+        }
+
+        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(@"This record will be permanently deleted.", @"Delete", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+          
         }
     }
 }

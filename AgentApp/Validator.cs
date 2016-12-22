@@ -16,7 +16,7 @@ namespace AgentApp
             }
             else
             {
-                MessageBox.Show(@"The " + tb.Tag + @" field is required", @"Entry Error");// Show error message when txtbox is empty
+                MessageBox.Show(@"The " + tb.Tag + @" field is required.", @"Entry Error", MessageBoxButtons.OK, MessageBoxIcon.Error);// Show error message when txtbox is empty
                 tb.Focus();
                 return false;
             }
@@ -32,7 +32,7 @@ namespace AgentApp
             }
             else
             {
-                MessageBox.Show(tb.Tag + @" must be a positive number", @"Entry Error");// Show error message when not a number
+                MessageBox.Show(tb.Tag + @" must be a positive number.", @"Entry Error", MessageBoxButtons.OK, MessageBoxIcon.Error);// Show error message when not a number
                 tb.Focus();
                 return false;
             }
@@ -48,7 +48,7 @@ namespace AgentApp
             }
             else
             {
-                MessageBox.Show(tb.Tag + @" must be a number", @"Entry Error");// Show error message when not a number
+                MessageBox.Show(tb.Tag + @" must be a number.", @"Entry Error", MessageBoxButtons.OK, MessageBoxIcon.Error);// Show error message when not a number
                 tb.Focus();
                 return false;
             }
@@ -63,7 +63,7 @@ namespace AgentApp
             }
             else
             {
-                MessageBox.Show(tb.Tag + @" must be equal to or above " + min, @"Entry Error");
+                MessageBox.Show(tb.Tag + @" must be equal to or above " + min + @".", @"Entry Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 tb.Focus();
                 return false;
             }
@@ -78,7 +78,7 @@ namespace AgentApp
             }
             else
             {
-                MessageBox.Show(tb.Tag + @" must be a positve number " + min, @"Entry Error");
+                MessageBox.Show(tb.Tag + @" must be a positve number " + min + @".", @"Entry Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 tb.Focus();
                 return false;
             }
