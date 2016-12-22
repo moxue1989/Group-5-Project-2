@@ -89,14 +89,15 @@ namespace AgentApp
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.viewRecordsToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.hELPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.productsTableAdapter = new AgentApp.TravelExpertsDataSetTableAdapters.ProductsTableAdapter();
+            this.suppliersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.suppliersTableAdapter = new AgentApp.TravelExpertsDataSetTableAdapters.ProductsTableAdapter();
             this.label1 = new System.Windows.Forms.Label();
             this.packagesProductsSuppliersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.packages_Products_SuppliersTableAdapter = new AgentApp.TravelExpertsDataSetTableAdapters.Packages_Products_SuppliersTableAdapter();
             this.txtPkgName = new System.Windows.Forms.TextBox();
-            this.btnCancel = new System.Windows.Forms.ToolStripButton();
             this.productsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnOK = new System.Windows.Forms.Button();
             pkgNameLabel = new System.Windows.Forms.Label();
             pkgStartDateLabel = new System.Windows.Forms.Label();
             pkgEndDateLabel = new System.Windows.Forms.Label();
@@ -109,7 +110,7 @@ namespace AgentApp
             ((System.ComponentModel.ISupportInitialize)(this.packagesBindingNavigator)).BeginInit();
             this.packagesBindingNavigator.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.suppliersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.packagesProductsSuppliersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource1)).BeginInit();
             this.SuspendLayout();
@@ -117,38 +118,42 @@ namespace AgentApp
             // pkgNameLabel
             // 
             pkgNameLabel.AutoSize = true;
-            pkgNameLabel.Location = new System.Drawing.Point(57, 95);
+            pkgNameLabel.Font = new System.Drawing.Font("Segoe UI", 10F);
+            pkgNameLabel.Location = new System.Drawing.Point(61, 90);
             pkgNameLabel.Name = "pkgNameLabel";
-            pkgNameLabel.Size = new System.Drawing.Size(60, 13);
+            pkgNameLabel.Size = new System.Drawing.Size(102, 19);
             pkgNameLabel.TabIndex = 3;
-            pkgNameLabel.Text = "Pkg Name:";
+            pkgNameLabel.Text = "Package Name:";
             // 
             // pkgStartDateLabel
             // 
             pkgStartDateLabel.AutoSize = true;
-            pkgStartDateLabel.Location = new System.Drawing.Point(57, 122);
+            pkgStartDateLabel.Font = new System.Drawing.Font("Segoe UI", 10F);
+            pkgStartDateLabel.Location = new System.Drawing.Point(61, 121);
             pkgStartDateLabel.Name = "pkgStartDateLabel";
-            pkgStartDateLabel.Size = new System.Drawing.Size(80, 13);
+            pkgStartDateLabel.Size = new System.Drawing.Size(74, 19);
             pkgStartDateLabel.TabIndex = 5;
-            pkgStartDateLabel.Text = "Pkg Start Date:";
+            pkgStartDateLabel.Text = "Start Date:";
             // 
             // pkgEndDateLabel
             // 
             pkgEndDateLabel.AutoSize = true;
-            pkgEndDateLabel.Location = new System.Drawing.Point(57, 148);
+            pkgEndDateLabel.Font = new System.Drawing.Font("Segoe UI", 10F);
+            pkgEndDateLabel.Location = new System.Drawing.Point(61, 144);
             pkgEndDateLabel.Name = "pkgEndDateLabel";
-            pkgEndDateLabel.Size = new System.Drawing.Size(77, 13);
+            pkgEndDateLabel.Size = new System.Drawing.Size(68, 19);
             pkgEndDateLabel.TabIndex = 7;
-            pkgEndDateLabel.Text = "Pkg End Date:";
+            pkgEndDateLabel.Text = "End Date:";
             // 
             // pkgDescLabel
             // 
             pkgDescLabel.AutoSize = true;
-            pkgDescLabel.Location = new System.Drawing.Point(57, 173);
+            pkgDescLabel.Font = new System.Drawing.Font("Segoe UI", 10F);
+            pkgDescLabel.Location = new System.Drawing.Point(61, 170);
             pkgDescLabel.Name = "pkgDescLabel";
-            pkgDescLabel.Size = new System.Drawing.Size(57, 13);
+            pkgDescLabel.Size = new System.Drawing.Size(78, 19);
             pkgDescLabel.TabIndex = 9;
-            pkgDescLabel.Text = "Pkg Desc:";
+            pkgDescLabel.Text = "Description";
             // 
             // pkgBasePriceLabel
             // 
@@ -171,11 +176,12 @@ namespace AgentApp
             // packageIdLabel
             // 
             packageIdLabel.AutoSize = true;
-            packageIdLabel.Location = new System.Drawing.Point(57, 71);
+            packageIdLabel.Font = new System.Drawing.Font("Segoe UI", 10F);
+            packageIdLabel.Location = new System.Drawing.Point(61, 64);
             packageIdLabel.Name = "packageIdLabel";
-            packageIdLabel.Size = new System.Drawing.Size(65, 13);
+            packageIdLabel.Size = new System.Drawing.Size(80, 19);
             packageIdLabel.TabIndex = 14;
-            packageIdLabel.Text = "Package Id:";
+            packageIdLabel.Text = "Package ID:";
             // 
             // travelExpertsDataSet
             // 
@@ -223,8 +229,7 @@ namespace AgentApp
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
-            this.packagesBindingNavigatorSaveItem,
-            this.btnCancel});
+            this.packagesBindingNavigatorSaveItem});
             this.packagesBindingNavigator.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.packagesBindingNavigator.Location = new System.Drawing.Point(0, 418);
             this.packagesBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
@@ -343,7 +348,7 @@ namespace AgentApp
             this.dpPkgStartDate.Name = "dpPkgStartDate";
             this.dpPkgStartDate.Size = new System.Drawing.Size(200, 20);
             this.dpPkgStartDate.TabIndex = 6;
-            this.dpPkgStartDate.ValueChanged += new System.EventHandler(this.dpPkgStartDate_ValueChanged);
+            this.dpPkgStartDate.Tag = "Package Start Date";
             // 
             // dpPkgEndDate
             // 
@@ -353,7 +358,7 @@ namespace AgentApp
             this.dpPkgEndDate.Name = "dpPkgEndDate";
             this.dpPkgEndDate.Size = new System.Drawing.Size(200, 20);
             this.dpPkgEndDate.TabIndex = 8;
-            this.dpPkgEndDate.ValueChanged += new System.EventHandler(this.dpPkgEndDate_ValueChanged);
+            this.dpPkgEndDate.Tag = "Package End Date";
             // 
             // txtPkgDesc
             // 
@@ -364,6 +369,7 @@ namespace AgentApp
             this.txtPkgDesc.Name = "txtPkgDesc";
             this.txtPkgDesc.Size = new System.Drawing.Size(200, 20);
             this.txtPkgDesc.TabIndex = 10;
+            this.txtPkgDesc.Tag = "Package Description";
             // 
             // txtpkgBasePrice
             // 
@@ -373,6 +379,7 @@ namespace AgentApp
             this.txtpkgBasePrice.Name = "txtpkgBasePrice";
             this.txtpkgBasePrice.Size = new System.Drawing.Size(91, 20);
             this.txtpkgBasePrice.TabIndex = 12;
+            this.txtpkgBasePrice.Tag = "Base Price";
             // 
             // txtpkgCommission
             // 
@@ -382,6 +389,7 @@ namespace AgentApp
             this.txtpkgCommission.Name = "txtpkgCommission";
             this.txtpkgCommission.Size = new System.Drawing.Size(91, 20);
             this.txtpkgCommission.TabIndex = 14;
+            this.txtpkgCommission.Tag = "Agency Commission";
             // 
             // txtPkgId
             // 
@@ -391,6 +399,7 @@ namespace AgentApp
             this.txtPkgId.Name = "txtPkgId";
             this.txtPkgId.Size = new System.Drawing.Size(200, 20);
             this.txtPkgId.TabIndex = 15;
+            this.txtPkgId.Tag = "Package Id";
             this.txtPkgId.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
             // 
             // menuStrip1
@@ -576,12 +585,12 @@ namespace AgentApp
             // 
             // productsBindingSource
             // 
-            this.productsBindingSource.DataMember = "Products";
-            this.productsBindingSource.DataSource = this.travelExpertsDataSet;
+            this.suppliersBindingSource.DataMember = "Products";
+            this.suppliersBindingSource.DataSource = this.travelExpertsDataSet;
             // 
             // productsTableAdapter
             // 
-            this.productsTableAdapter.ClearBeforeFill = true;
+            this.suppliersTableAdapter.ClearBeforeFill = true;
             // 
             // label1
             // 
@@ -616,20 +625,45 @@ namespace AgentApp
             this.txtPkgName.Name = "txtPkgName";
             this.txtPkgName.Size = new System.Drawing.Size(200, 20);
             this.txtPkgName.TabIndex = 21;
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.btnCancel.ImageTransparentColor = System.Drawing.Color.Transparent;
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(47, 22);
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.txtPkgName.Tag = "Package Name";
             // 
             // productsBindingSource1
             // 
             this.productsBindingSource1.DataMember = "Products";
             this.productsBindingSource1.DataSource = this.travelExpertsDataSet;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.btnCancel.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnCancel.Location = new System.Drawing.Point(278, 306);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 23;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnOK
+            // 
+            this.btnOK.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnOK.FlatAppearance.BorderColor = System.Drawing.Color.RoyalBlue;
+            this.btnOK.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOK.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOK.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnOK.Location = new System.Drawing.Point(135, 306);
+            this.btnOK.Name = "btnOK";
+            this.btnOK.Size = new System.Drawing.Size(75, 23);
+            this.btnOK.TabIndex = 22;
+            this.btnOK.Text = "OK";
+            this.btnOK.UseVisualStyleBackColor = false;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // FrmMainGui
             // 
@@ -637,6 +671,8 @@ namespace AgentApp
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(942, 443);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnOK);
             this.Controls.Add(this.txtPkgName);
             this.Controls.Add(this.label1);
             this.Controls.Add(packageIdLabel);
@@ -666,7 +702,7 @@ namespace AgentApp
             this.packagesBindingNavigator.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.suppliersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.packagesProductsSuppliersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource1)).EndInit();
             this.ResumeLayout(false);
@@ -705,8 +741,8 @@ namespace AgentApp
         private ToolStripMenuItem pRODUCTSUPPLIERSToolStripMenuItem;
         private ToolStripMenuItem sUPPLIERSToolStripMenuItem;
         private ToolStripMenuItem navProdAddEdit;
-        private BindingSource productsBindingSource;
-        private ProductsTableAdapter productsTableAdapter;
+        private BindingSource suppliersBindingSource;
+        private ProductsTableAdapter suppliersTableAdapter;
         private ToolStripMenuItem navProdSuppAddEdit;
         private ToolStripMenuItem navSuppAddEdit;
         private ToolStripMenuItem eDITToolStripMenuItem1;
@@ -730,7 +766,8 @@ namespace AgentApp
         private BindingSource packagesProductsSuppliersBindingSource;
         private Packages_Products_SuppliersTableAdapter packages_Products_SuppliersTableAdapter;
         private TextBox txtPkgName;
-        private ToolStripButton btnCancel;
         private BindingSource productsBindingSource1;
+        private Button btnCancel;
+        private Button btnOK;
     }
 }
