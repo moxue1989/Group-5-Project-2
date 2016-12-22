@@ -16,18 +16,18 @@ namespace AgentApp
         //Code written by Kasi Emmanuel
         private void productsBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            if (IsValidData())
-            {
-                    Validate();
-                    productsBindingSource.EndEdit();
-                    tableAdapterManager.UpdateAll(travelExpertsDataSet);
-            }
+            //if (IsValidData())
+            //{
+            //        Validate();
+            //        productsBindingSource.EndEdit();
+            //        tableAdapterManager.UpdateAll(travelExpertsDataSet);
+            //}
 
         }
         //Code written by Kasi Emmanuel
         private void frmProducts_Load(object sender, EventArgs e)
         {
-            productsTableAdapter.Fill(travelExpertsDataSet.Products); //populate textboxes with existing records
+            //productsTableAdapter.Fill(travelExpertsDataSet.Products); //populate textboxes with existing records
         }
 
         //Code written by Kasi Emmanuel
@@ -50,11 +50,11 @@ namespace AgentApp
             productsBindingSource.CancelEdit();//cancels the Add command
         }
         //Validate Customer Input Fields
-        private bool IsValidData()//Call the Validator Method
-        {
-            return
-                Validator.IsPresent(txtProductId) &&
-                Validator.IsPresent(txtProdName);
-        }
+        //private bool IsValidData()//Call the Validator Method
+        //{
+        //    return
+        //        Validator.IsPresent(txtProductId) &&
+        //        Validator.IsPresent(txtProdName);
+        //}
     }
 }
