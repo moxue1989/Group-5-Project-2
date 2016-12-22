@@ -7,6 +7,7 @@ namespace AgentApp
 {
     public partial class FrmSuppliers : Form
     {
+        const int MinValue = 0; // Minimum Value for ID
         public FrmSuppliers()
         {
             InitializeComponent();
@@ -56,62 +57,32 @@ namespace AgentApp
                 {
                     tableAdapterManager.UpdateAll(travelExpertsDataSet);
                 }
-                catch (ArgumentException ex)
-                {
-                    MessageBox.Show(ex.Message, @"ArgumentException Error");
-                    suppliersBindingSource.CancelEdit(); //cancels the edit command
-                }
                 catch (DBConcurrencyException)
                 {
                     MessageBox.Show(@"A error occurred. " + @"Some rows were not updated.", @"Concurrency Exception Error");
                     suppliersTableAdapter.Fill(travelExpertsDataSet.Suppliers); //populate textboxes with existing records
-                }
-                catch (DataException ex)
-                {
-                    MessageBox.Show(ex.Message, @"DataException Error");
-                    suppliersBindingSource.CancelEdit(); //cancels the edit command
                 }
                 catch (SqlException ex)
                 {
                     MessageBox.Show(@"Database error # " + ex.Number + @": " + ex.Message, ex.GetType().ToString());
                 }
             }
-            
         }
 
-        private void btnExit_Click_1(object sender, EventArgs e)
+        private void btnExit_Click(object sender, EventArgs e)
         {
+            suppliersBindingSource.CancelEdit(); //cancels the edit command
             Close(); //closes products form
         }
 
-        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                tableAdapterManager.UpdateAll(travelExpertsDataSet);
-            }
-            catch (DBConcurrencyException)
-            {
-                MessageBox.Show(@"A error occurred. " + @"Some rows were not updated.", @"Concurrency Exception");
-                suppliersTableAdapter.Fill(travelExpertsDataSet.Suppliers); //populate textboxes with existing records
-            }
-            catch (DataException ex)
-            {
-                MessageBox.Show(ex.Message, ex.GetType().ToString());
-                suppliersBindingSource.CancelEdit(); //cancels the edit command
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show(@"Database error # " + ex.Number + @": " + ex.Message, ex.GetType().ToString());
-            }
-        }
-
+        //binding validator class to textbox fields
         private bool IsValidData()
         {
             return
                 Validator.IsPresent(txtSupplierId) &&
-                Validator.IsPresent(txtSupName) &&
-                Validator.IsInt(txtSupplierId);
+                Validator.IsInt(txtSupplierId)&&
+                Validator.IsPositiveNum(txtSupplierId, MinValue)&& 
+                Validator.IsPresent(txtSupName);
         }
     }
 }

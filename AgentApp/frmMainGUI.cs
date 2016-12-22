@@ -68,14 +68,21 @@ namespace AgentApp
         //Add/Edit Suppliers
         private void navSuppAddEdit_Click(object sender, EventArgs e)
         {
-           
+            try
+            {
                 using (FrmSuppliers supp = new FrmSuppliers())
                 {
                     supp.ShowDialog(this);
                 }
-            
-            
-
+            }
+            catch (DataException)
+            {
+                MessageBox.Show(@"Cancel/Save Data before viewing other records. Try Again.", @"User Input Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(@"Database error # " + ex.Number + @": " + ex.Message, ex.GetType().ToString());
+            }
         }
 
         private void navProdSuppAddEdit_Click(object sender, EventArgs e)

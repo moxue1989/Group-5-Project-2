@@ -32,7 +32,7 @@ namespace AgentApp
             }
             else
             {
-                MessageBox.Show(tb.Tag + @" must be positive number", @"Entry Error");// Show error message when not a number
+                MessageBox.Show(tb.Tag + @" must be a positive number", @"Entry Error");// Show error message when not a number
                 tb.Focus();
                 return false;
             }
@@ -48,13 +48,13 @@ namespace AgentApp
             }
             else
             {
-                MessageBox.Show(tb.Tag + @" must be number", @"Entry Error");// Show error message when not a number
+                MessageBox.Show(tb.Tag + @" must be a number", @"Entry Error");// Show error message when not a number
                 tb.Focus();
                 return false;
             }
         }
         //Checks if Decimal value in textbox is within given range
-        public static bool IsWithinRange(TextBox tb, decimal min)
+        public static bool IsPositiveDeci(TextBox tb, decimal min)
         {
             decimal value = Convert.ToDecimal(tb.Text);
             if (value >= min)
@@ -64,6 +64,21 @@ namespace AgentApp
             else
             {
                 MessageBox.Show(tb.Tag + @" must be equal to or above " + min, @"Entry Error");
+                tb.Focus();
+                return false;
+            }
+
+        }
+        public static bool IsPositiveNum(TextBox tb, int min)
+        {
+            int value = Convert.ToInt32(tb.Text);
+            if (value >= min)
+            {
+                return true;
+            }
+            else
+            {
+                MessageBox.Show(tb.Tag + @" must be a positve number " + min, @"Entry Error");
                 tb.Focus();
                 return false;
             }
