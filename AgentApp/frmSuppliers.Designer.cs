@@ -55,6 +55,7 @@ namespace AgentApp
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.productsBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.btnCancel = new System.Windows.Forms.ToolStripButton();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
@@ -65,7 +66,6 @@ namespace AgentApp
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.btnCancel = new System.Windows.Forms.ToolStripButton();
             productIdLabel = new System.Windows.Forms.Label();
             prodNameLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.suppliersBindingSource)).BeginInit();
@@ -130,6 +130,7 @@ namespace AgentApp
             this.supplierIdTextBox.Name = "supplierIdTextBox";
             this.supplierIdTextBox.Size = new System.Drawing.Size(136, 20);
             this.supplierIdTextBox.TabIndex = 1;
+            this.supplierIdTextBox.Tag = "Supplier ID";
             // 
             // supNameTextBox
             // 
@@ -140,6 +141,7 @@ namespace AgentApp
             this.supNameTextBox.Name = "supNameTextBox";
             this.supNameTextBox.Size = new System.Drawing.Size(136, 40);
             this.supNameTextBox.TabIndex = 3;
+            this.supNameTextBox.Tag = "Supplier Name";
             // 
             // suppliersBindingNavigator
             // 
@@ -270,6 +272,16 @@ namespace AgentApp
             this.productsBindingNavigatorSaveItem.Text = "Save Data";
             this.productsBindingNavigatorSaveItem.Click += new System.EventHandler(this.productsBindingNavigatorSaveItem_Click);
             // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnCancel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.btnCancel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(47, 22);
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 3;
@@ -325,7 +337,6 @@ namespace AgentApp
             this.btnExit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            //this.btnExit.Image = global::AgentApp.Properties.Resources.delete_icon;
             this.btnExit.Location = new System.Drawing.Point(20, 2);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(32, 30);
@@ -394,16 +405,6 @@ namespace AgentApp
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(59, 60);
             this.panel6.TabIndex = 14;
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnCancel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.btnCancel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(47, 22);
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // FrmSuppliers
             // 
