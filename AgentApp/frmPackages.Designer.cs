@@ -51,7 +51,7 @@
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.btnDelete = new System.Windows.Forms.ToolStripButton();
             this.bnavMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bnavMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -61,7 +61,7 @@
             this.bnavMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.pkgBnavSave = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.btnCancel = new System.Windows.Forms.ToolStripButton();
             label1 = new System.Windows.Forms.Label();
@@ -168,7 +168,6 @@
             // txtPkgName
             // 
             this.txtPkgName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.packagesBindingSource, "PkgName", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.txtPkgName.Enabled = false;
             this.txtPkgName.Location = new System.Drawing.Point(251, 74);
             this.txtPkgName.Name = "txtPkgName";
             this.txtPkgName.Size = new System.Drawing.Size(200, 20);
@@ -178,7 +177,6 @@
             // txtPkgId
             // 
             this.txtPkgId.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.packagesBindingSource, "PackageId", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "N0"));
-            this.txtPkgId.Enabled = false;
             this.txtPkgId.Location = new System.Drawing.Point(251, 48);
             this.txtPkgId.Name = "txtPkgId";
             this.txtPkgId.Size = new System.Drawing.Size(200, 20);
@@ -188,7 +186,6 @@
             // dpPkgStartDate
             // 
             this.dpPkgStartDate.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.packagesBindingSource, "PkgStartDate", true));
-            this.dpPkgStartDate.Enabled = false;
             this.dpPkgStartDate.Location = new System.Drawing.Point(251, 102);
             this.dpPkgStartDate.Name = "dpPkgStartDate";
             this.dpPkgStartDate.Size = new System.Drawing.Size(200, 20);
@@ -198,7 +195,6 @@
             // dpPkgEndDate
             // 
             this.dpPkgEndDate.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.packagesBindingSource, "PkgEndDate", true));
-            this.dpPkgEndDate.Enabled = false;
             this.dpPkgEndDate.Location = new System.Drawing.Point(251, 128);
             this.dpPkgEndDate.Name = "dpPkgEndDate";
             this.dpPkgEndDate.Size = new System.Drawing.Size(200, 20);
@@ -208,18 +204,16 @@
             // txtPkgDesc
             // 
             this.txtPkgDesc.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.packagesBindingSource, "PkgDesc", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.txtPkgDesc.Enabled = false;
             this.txtPkgDesc.Location = new System.Drawing.Point(251, 154);
             this.txtPkgDesc.MinimumSize = new System.Drawing.Size(4, 50);
             this.txtPkgDesc.Name = "txtPkgDesc";
-            this.txtPkgDesc.Size = new System.Drawing.Size(200, 50);
+            this.txtPkgDesc.Size = new System.Drawing.Size(200, 20);
             this.txtPkgDesc.TabIndex = 29;
             this.txtPkgDesc.Tag = "Description";
             // 
             // txtpkgBasePrice
             // 
             this.txtpkgBasePrice.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.packagesBindingSource, "PkgBasePrice", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "C2"));
-            this.txtpkgBasePrice.Enabled = false;
             this.txtpkgBasePrice.Location = new System.Drawing.Point(251, 230);
             this.txtpkgBasePrice.Name = "txtpkgBasePrice";
             this.txtpkgBasePrice.Size = new System.Drawing.Size(91, 20);
@@ -229,7 +223,6 @@
             // txtpkgCommission
             // 
             this.txtpkgCommission.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.packagesBindingSource, "PkgAgencyCommission", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "C2"));
-            this.txtpkgCommission.Enabled = false;
             this.txtpkgCommission.Location = new System.Drawing.Point(360, 230);
             this.txtpkgCommission.Name = "txtpkgCommission";
             this.txtpkgCommission.Size = new System.Drawing.Size(91, 20);
@@ -242,7 +235,7 @@
             this.bindingNavigator1.BackColor = System.Drawing.Color.Transparent;
             this.bindingNavigator1.BindingSource = this.packagesBindingSource;
             this.bindingNavigator1.CountItem = this.toolStripLabel1;
-            this.bindingNavigator1.DeleteItem = this.toolStripButton2;
+            this.bindingNavigator1.DeleteItem = this.btnDelete;
             this.bindingNavigator1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.bindingNavigator1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -256,9 +249,9 @@
             this.bnavMoveLastItem,
             this.toolStripSeparator3,
             this.toolStripButton1,
-            this.toolStripButton2,
+            this.btnDelete,
             this.toolStripSeparator7,
-            this.toolStripButton3,
+            this.pkgBnavSave,
             this.toolStripSeparator8,
             this.btnCancel});
             this.bindingNavigator1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
@@ -290,15 +283,16 @@
             this.toolStripLabel1.Text = "of {0}";
             this.toolStripLabel1.ToolTipText = "Total number of items";
             // 
-            // toolStripButton2
+            // btnDelete
             // 
-            this.toolStripButton2.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.RightToLeftAutoMirrorImage = true;
-            this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton2.Text = "Delete";
+            this.btnDelete.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btnDelete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.RightToLeftAutoMirrorImage = true;
+            this.btnDelete.Size = new System.Drawing.Size(23, 22);
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // bnavMoveFirstItem
             // 
@@ -365,13 +359,14 @@
             this.toolStripSeparator7.Name = "toolStripSeparator7";
             this.toolStripSeparator7.Size = new System.Drawing.Size(6, 25);
             // 
-            // toolStripButton3
+            // pkgBnavSave
             // 
-            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton3.Text = "Save Data";
+            this.pkgBnavSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.pkgBnavSave.Image = ((System.Drawing.Image)(resources.GetObject("pkgBnavSave.Image")));
+            this.pkgBnavSave.Name = "pkgBnavSave";
+            this.pkgBnavSave.Size = new System.Drawing.Size(23, 22);
+            this.pkgBnavSave.Text = "Save Data";
+            this.pkgBnavSave.Click += new System.EventHandler(this.pkgBnavSave_Click);
             // 
             // toolStripSeparator8
             // 
@@ -387,6 +382,7 @@
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(47, 22);
             this.btnCancel.Text = "Cancel";
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // FrmPackages
             // 
@@ -438,7 +434,7 @@
         private System.Windows.Forms.BindingNavigator bindingNavigator1;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
-        protected System.Windows.Forms.ToolStripButton toolStripButton2;
+        protected System.Windows.Forms.ToolStripButton btnDelete;
         private System.Windows.Forms.ToolStripButton bnavMoveFirstItem;
         private System.Windows.Forms.ToolStripButton bnavMovePreviousItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
@@ -448,7 +444,7 @@
         private System.Windows.Forms.ToolStripButton bnavMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
-        private System.Windows.Forms.ToolStripButton toolStripButton3;
+        private System.Windows.Forms.ToolStripButton pkgBnavSave;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
         private System.Windows.Forms.ToolStripButton btnCancel;
     }
