@@ -69,7 +69,8 @@ namespace AgentApp
             }
             catch (DataException)
             {
-                MessageBox.Show(@"Cancel/Save Data before viewing other records. Try Again.", @"User Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(@"Cancel/Save Data before viewing other records. Try Again.", @"User Input Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (SqlException ex)
             {
@@ -89,7 +90,8 @@ namespace AgentApp
             }
             catch (DataException)
             {
-                MessageBox.Show(@"Cancel/Save Data before viewing other records. Try Again.", @"User Input Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(@"Cancel/Save Data before viewing other records. Try Again.", @"User Input Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (SqlException ex)
             {
@@ -99,12 +101,22 @@ namespace AgentApp
 
         private void navProdSuppAddEdit_Click(object sender, EventArgs e)
         {
-            using (frmProdSupp prodsupp = new frmProdSupp())
+            try
             {
-                prodsupp.ShowDialog(this);
+                using (FrmProdSupp prodsupp = new FrmProdSupp())
+                {
+                    prodsupp.ShowDialog(this);
+                }
+            }
+            catch (DataException)
+            {
+                MessageBox.Show(@"Cancel/Save Data before viewing other records. Try Again.", @"User Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(@"Database error # " + ex.Number + @": " + ex.Message, ex.GetType().ToString());
             }
         }
-        
 
         private void btnCancel_Click(object sender, EventArgs e)
         {

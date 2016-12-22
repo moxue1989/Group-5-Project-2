@@ -1556,7 +1556,6 @@ namespace AgentApp {
                 this.columnProductSupplierId.AutoIncrement = true;
                 this.columnProductSupplierId.AutoIncrementSeed = 93;
                 this.columnProductSupplierId.AllowDBNull = false;
-                this.columnProductSupplierId.ReadOnly = true;
                 this.columnProductSupplierId.Unique = true;
             }
             
@@ -2301,6 +2300,7 @@ namespace AgentApp {
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint2", new global::System.Data.DataColumn[] {
                                 this.columnSupName}, false));
                 this.columnSupplierId.AllowDBNull = false;
+                this.columnSupplierId.ReadOnly = true;
                 this.columnSupplierId.Unique = true;
                 this.columnSupName.AllowDBNull = false;
                 this.columnSupName.Unique = true;

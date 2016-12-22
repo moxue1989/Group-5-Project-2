@@ -4,7 +4,7 @@ using AgentApp.TravelExpertsDataSetTableAdapters;
 
 namespace AgentApp
 {
-    partial class frmProdSupp
+    partial class FrmProdSupp
     {
         /// <summary>
         /// Required designer variable.
@@ -36,7 +36,7 @@ namespace AgentApp
             System.Windows.Forms.Label label1;
             System.Windows.Forms.Label prodNameLabel;
             System.Windows.Forms.Label label3;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProdSupp));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProdSupp));
             this.travelExpertsDataSet = new AgentApp.TravelExpertsDataSet();
             this.products_SuppliersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.products_SuppliersTableAdapter = new AgentApp.TravelExpertsDataSetTableAdapters.Products_SuppliersTableAdapter();
@@ -53,7 +53,10 @@ namespace AgentApp
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.products_SuppliersBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnCancel = new System.Windows.Forms.ToolStripButton();
             this.txtProdSupp = new System.Windows.Forms.TextBox();
             this.txtProdId = new System.Windows.Forms.TextBox();
             this.txtSuppId = new System.Windows.Forms.TextBox();
@@ -65,8 +68,6 @@ namespace AgentApp
             this.panel4 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnOK = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             label1 = new System.Windows.Forms.Label();
@@ -80,7 +81,6 @@ namespace AgentApp
             this.panel1.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -145,6 +145,7 @@ namespace AgentApp
             this.products_SuppliersBindingNavigator.CountItem = this.bindingNavigatorCountItem;
             this.products_SuppliersBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
             this.products_SuppliersBindingNavigator.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.products_SuppliersBindingNavigator.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.products_SuppliersBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
@@ -157,7 +158,10 @@ namespace AgentApp
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
-            this.products_SuppliersBindingNavigatorSaveItem});
+            this.toolStripSeparator2,
+            this.products_SuppliersBindingNavigatorSaveItem,
+            this.toolStripSeparator1,
+            this.btnCancel});
             this.products_SuppliersBindingNavigator.Location = new System.Drawing.Point(0, 183);
             this.products_SuppliersBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.products_SuppliersBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -165,6 +169,7 @@ namespace AgentApp
             this.products_SuppliersBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.products_SuppliersBindingNavigator.Name = "products_SuppliersBindingNavigator";
             this.products_SuppliersBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
+            this.products_SuppliersBindingNavigator.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.products_SuppliersBindingNavigator.Size = new System.Drawing.Size(495, 25);
             this.products_SuppliersBindingNavigator.TabIndex = 0;
             this.products_SuppliersBindingNavigator.Text = "bindingNavigator1";
@@ -177,7 +182,6 @@ namespace AgentApp
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem.Text = "Add new";
-            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
             // 
             // bindingNavigatorCountItem
             // 
@@ -194,6 +198,7 @@ namespace AgentApp
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorDeleteItem.Text = "Delete";
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -255,6 +260,11 @@ namespace AgentApp
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
             // products_SuppliersBindingNavigatorSaveItem
             // 
             this.products_SuppliersBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -264,29 +274,47 @@ namespace AgentApp
             this.products_SuppliersBindingNavigatorSaveItem.Text = "Save Data";
             this.products_SuppliersBindingNavigatorSaveItem.Click += new System.EventHandler(this.products_SuppliersBindingNavigatorSaveItem_Click);
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnCancel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.btnCancel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(47, 22);
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // txtProdSupp
             // 
-            this.txtProdSupp.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.products_SuppliersBindingSource, "ProductSupplierId", true));
+            this.txtProdSupp.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.products_SuppliersBindingSource, "ProductSupplierId", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "N0"));
             this.txtProdSupp.Location = new System.Drawing.Point(145, 5);
             this.txtProdSupp.Name = "txtProdSupp";
             this.txtProdSupp.Size = new System.Drawing.Size(100, 20);
             this.txtProdSupp.TabIndex = 2;
+            this.txtProdSupp.Tag = "Product Supplier ID";
             // 
             // txtProdId
             // 
-            this.txtProdId.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.products_SuppliersBindingSource, "ProductId", true));
+            this.txtProdId.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.products_SuppliersBindingSource, "ProductId", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "N0"));
             this.txtProdId.Location = new System.Drawing.Point(145, 31);
             this.txtProdId.Name = "txtProdId";
             this.txtProdId.Size = new System.Drawing.Size(100, 20);
             this.txtProdId.TabIndex = 4;
+            this.txtProdId.Tag = "Product ID";
             // 
             // txtSuppId
             // 
-            this.txtSuppId.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.products_SuppliersBindingSource, "SupplierId", true));
+            this.txtSuppId.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.products_SuppliersBindingSource, "SupplierId", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "N0"));
             this.txtSuppId.Location = new System.Drawing.Point(145, 57);
             this.txtSuppId.Name = "txtSuppId";
             this.txtSuppId.Size = new System.Drawing.Size(100, 20);
             this.txtSuppId.TabIndex = 6;
+            this.txtSuppId.Tag = "Supplier ID";
             // 
             // tableLayoutPanel1
             // 
@@ -345,7 +373,7 @@ namespace AgentApp
             this.btnExit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.Image = global::AgentApp.Properties.Resources.delete_icon;
+            this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
             this.btnExit.Location = new System.Drawing.Point(36, 2);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(32, 30);
@@ -388,47 +416,12 @@ namespace AgentApp
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Transparent;
-            this.panel5.Controls.Add(this.btnCancel);
-            this.panel5.Controls.Add(this.btnOK);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(74, 146);
             this.panel5.Margin = new System.Windows.Forms.Padding(0);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(346, 62);
             this.panel5.TabIndex = 12;
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.btnCancel.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnCancel.Location = new System.Drawing.Point(163, 8);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 12;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // btnOK
-            // 
-            this.btnOK.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnOK.FlatAppearance.BorderColor = System.Drawing.Color.RoyalBlue;
-            this.btnOK.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOK.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOK.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnOK.Location = new System.Drawing.Point(20, 8);
-            this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(75, 23);
-            this.btnOK.TabIndex = 11;
-            this.btnOK.Text = "OK";
-            this.btnOK.UseVisualStyleBackColor = false;
-            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // panel3
             // 
@@ -450,19 +443,17 @@ namespace AgentApp
             this.panel6.Size = new System.Drawing.Size(75, 62);
             this.panel6.TabIndex = 14;
             // 
-            // frmProdSupp
+            // FrmProdSupp
             // 
-            this.AcceptButton = this.btnOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(495, 208);
             this.Controls.Add(this.products_SuppliersBindingNavigator);
             this.Controls.Add(this.tableLayoutPanel1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmProdSupp";
+            this.Name = "FrmProdSupp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmProdSupp";
             this.Load += new System.EventHandler(this.frmProdSupp_Load);
@@ -477,7 +468,6 @@ namespace AgentApp
             this.panel10.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            this.panel5.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -513,9 +503,10 @@ namespace AgentApp
         private Panel panel4;
         private Label label2;
         private Panel panel5;
-        private Button btnCancel;
-        private Button btnOK;
         private Panel panel3;
         private Panel panel6;
+        private ToolStripButton btnCancel;
+        private ToolStripSeparator toolStripSeparator2;
+        private ToolStripSeparator toolStripSeparator1;
     }
 }

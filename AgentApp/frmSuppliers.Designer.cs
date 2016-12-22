@@ -36,10 +36,6 @@ namespace AgentApp
             System.Windows.Forms.Label productIdLabel;
             System.Windows.Forms.Label prodNameLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSuppliers));
-            this.suppliersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.travelExpertsDataSet = new AgentApp.TravelExpertsDataSet();
-            this.suppliersTableAdapter = new AgentApp.TravelExpertsDataSetTableAdapters.SuppliersTableAdapter();
-            this.tableAdapterManager = new AgentApp.TravelExpertsDataSetTableAdapters.TableAdapterManager();
             this.txtSupplierId = new System.Windows.Forms.TextBox();
             this.txtSupName = new System.Windows.Forms.TextBox();
             this.suppliersBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
@@ -68,16 +64,20 @@ namespace AgentApp
             this.btnExit = new System.Windows.Forms.Button();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.suppliersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.travelExpertsDataSet = new AgentApp.TravelExpertsDataSet();
+            this.suppliersTableAdapter = new AgentApp.TravelExpertsDataSetTableAdapters.SuppliersTableAdapter();
+            this.tableAdapterManager = new AgentApp.TravelExpertsDataSetTableAdapters.TableAdapterManager();
             productIdLabel = new System.Windows.Forms.Label();
             prodNameLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.suppliersBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.travelExpertsDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.suppliersBindingNavigator)).BeginInit();
             this.suppliersBindingNavigator.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.suppliersBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.travelExpertsDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // productIdLabel
@@ -100,34 +100,9 @@ namespace AgentApp
             prodNameLabel.TabIndex = 3;
             prodNameLabel.Text = "Supplier Name:";
             // 
-            // suppliersBindingSource
-            // 
-            this.suppliersBindingSource.DataMember = "Suppliers";
-            this.suppliersBindingSource.DataSource = this.travelExpertsDataSet;
-            // 
-            // travelExpertsDataSet
-            // 
-            this.travelExpertsDataSet.DataSetName = "TravelExpertsDataSet";
-            this.travelExpertsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // suppliersTableAdapter
-            // 
-            this.suppliersTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.Packages_Products_SuppliersTableAdapter = null;
-            this.tableAdapterManager.PackagesTableAdapter = null;
-            this.tableAdapterManager.Products_SuppliersTableAdapter = null;
-            this.tableAdapterManager.ProductsTableAdapter = null;
-            this.tableAdapterManager.SupplierContactsTableAdapter = null;
-            this.tableAdapterManager.SuppliersTableAdapter = this.suppliersTableAdapter;
-            this.tableAdapterManager.UpdateOrder = AgentApp.TravelExpertsDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
             // txtSupplierId
             // 
-            this.txtSupplierId.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.suppliersBindingSource, "SupplierId", true));
+            this.txtSupplierId.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.suppliersBindingSource, "SupplierId", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "N0"));
             this.txtSupplierId.Location = new System.Drawing.Point(119, 9);
             this.txtSupplierId.Name = "txtSupplierId";
             this.txtSupplierId.Size = new System.Drawing.Size(136, 20);
@@ -136,7 +111,7 @@ namespace AgentApp
             // 
             // txtSupName
             // 
-            this.txtSupName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.suppliersBindingSource, "SupName", true));
+            this.txtSupName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.suppliersBindingSource, "SupName", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.txtSupName.Location = new System.Drawing.Point(119, 34);
             this.txtSupName.MinimumSize = new System.Drawing.Size(4, 40);
             this.txtSupName.Multiline = true;
@@ -421,6 +396,31 @@ namespace AgentApp
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
+            // suppliersBindingSource
+            // 
+            this.suppliersBindingSource.DataMember = "Suppliers";
+            this.suppliersBindingSource.DataSource = this.travelExpertsDataSet;
+            // 
+            // travelExpertsDataSet
+            // 
+            this.travelExpertsDataSet.DataSetName = "TravelExpertsDataSet";
+            this.travelExpertsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // suppliersTableAdapter
+            // 
+            this.suppliersTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.Packages_Products_SuppliersTableAdapter = null;
+            this.tableAdapterManager.PackagesTableAdapter = null;
+            this.tableAdapterManager.Products_SuppliersTableAdapter = null;
+            this.tableAdapterManager.ProductsTableAdapter = null;
+            this.tableAdapterManager.SupplierContactsTableAdapter = null;
+            this.tableAdapterManager.SuppliersTableAdapter = this.suppliersTableAdapter;
+            this.tableAdapterManager.UpdateOrder = AgentApp.TravelExpertsDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
             // FrmSuppliers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -433,8 +433,6 @@ namespace AgentApp
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmSuppliers";
             this.Load += new System.EventHandler(this.frmSuppliers_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.suppliersBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.travelExpertsDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.suppliersBindingNavigator)).EndInit();
             this.suppliersBindingNavigator.ResumeLayout(false);
             this.suppliersBindingNavigator.PerformLayout();
@@ -444,6 +442,8 @@ namespace AgentApp
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel10.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.suppliersBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.travelExpertsDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
