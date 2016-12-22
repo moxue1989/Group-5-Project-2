@@ -15,7 +15,14 @@ namespace AgentApp
 
         private void frmSuppliers_Load(object sender, EventArgs e)
         {
-            suppliersTableAdapter.Fill(travelExpertsDataSet.Suppliers); //populate textboxes with existing records
+            try
+            {
+                suppliersTableAdapter.Fill(travelExpertsDataSet.Suppliers); //populate textboxes with existing records
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(@"Database error # " + ex.Number + @": " + ex.Message, ex.GetType().ToString());
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -57,6 +64,11 @@ namespace AgentApp
             try
             {
                 tableAdapterManager.UpdateAll(travelExpertsDataSet);
+            }
+            catch (DBConcurrencyException)
+            {
+                MessageBox.Show(@"A error occurred. " + @"Some rows were not updated.", @"Concurrency Exception");
+                suppliersTableAdapter.Fill(travelExpertsDataSet.Suppliers); //populate textboxes with existing records
             }
             catch (NoNullAllowedException)
             {

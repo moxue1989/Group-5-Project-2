@@ -55,6 +55,8 @@ namespace AgentApp
                 MessageBoxIcon.Information);
 
         }
+
+        //Add/Edit Products
         private void navProdAddEdit_Click(object sender, EventArgs e)
         {
             using (FrmProducts prod = new FrmProducts())
@@ -63,15 +65,17 @@ namespace AgentApp
             }
         }
 
+        //Add/Edit Suppliers
         private void navSuppAddEdit_Click(object sender, EventArgs e)
         {
-            
+           
                 using (FrmSuppliers supp = new FrmSuppliers())
                 {
                     supp.ShowDialog(this);
                 }
             
             
+
         }
 
         private void navProdSuppAddEdit_Click(object sender, EventArgs e)

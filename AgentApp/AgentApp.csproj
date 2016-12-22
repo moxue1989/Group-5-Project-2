@@ -131,7 +131,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TravelExpertsDataSource.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Validation.cs" />
+    <Compile Include="Validator.cs" />
     <EmbeddedResource Include="frmGUI.en-CA.resx">
       <DependentUpon>frmGUI.cs</DependentUpon>
     </EmbeddedResource>
