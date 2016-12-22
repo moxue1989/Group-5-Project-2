@@ -97,6 +97,8 @@ namespace AgentApp
             this.packages_Products_SuppliersTableAdapter = new AgentApp.TravelExpertsDataSetTableAdapters.Packages_Products_SuppliersTableAdapter();
             this.txtPkgName = new System.Windows.Forms.TextBox();
             this.productsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             pkgNameLabel = new System.Windows.Forms.Label();
             pkgStartDateLabel = new System.Windows.Forms.Label();
             pkgEndDateLabel = new System.Windows.Forms.Label();
@@ -223,7 +225,9 @@ namespace AgentApp
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
+            this.toolStripSeparator7,
             this.packagesBindingNavigatorSaveItem,
+            this.toolStripSeparator8,
             this.btnCancel});
             this.packagesBindingNavigator.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.packagesBindingNavigator.Location = new System.Drawing.Point(0, 418);
@@ -337,7 +341,9 @@ namespace AgentApp
             // 
             // btnCancel
             // 
+            this.btnCancel.BackColor = System.Drawing.Color.RoyalBlue;
             this.btnCancel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.btnCancel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnCancel.ImageTransparentColor = System.Drawing.Color.Transparent;
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(47, 22);
@@ -366,7 +372,7 @@ namespace AgentApp
             // 
             // txtPkgDesc
             // 
-            this.txtPkgDesc.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.packagesBindingSource, "PkgDesc", true));
+            this.txtPkgDesc.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.packagesBindingSource, "PkgDesc", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.txtPkgDesc.Enabled = false;
             this.txtPkgDesc.Location = new System.Drawing.Point(189, 170);
             this.txtPkgDesc.MinimumSize = new System.Drawing.Size(4, 50);
@@ -623,7 +629,7 @@ namespace AgentApp
             // 
             // txtPkgName
             // 
-            this.txtPkgName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.packagesBindingSource, "PkgName", true));
+            this.txtPkgName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.packagesBindingSource, "PkgName", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.txtPkgName.Enabled = false;
             this.txtPkgName.Location = new System.Drawing.Point(189, 90);
             this.txtPkgName.Name = "txtPkgName";
@@ -635,6 +641,16 @@ namespace AgentApp
             // 
             this.productsBindingSource1.DataMember = "Products";
             this.productsBindingSource1.DataSource = this.travelExpertsDataSet;
+            // 
+            // toolStripSeparator7
+            // 
+            this.toolStripSeparator7.Name = "toolStripSeparator7";
+            this.toolStripSeparator7.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripSeparator8
+            // 
+            this.toolStripSeparator8.Name = "toolStripSeparator8";
+            this.toolStripSeparator8.Size = new System.Drawing.Size(6, 25);
             // 
             // FrmMainGui
             // 
@@ -737,5 +753,7 @@ namespace AgentApp
         private TextBox txtPkgName;
         private ToolStripButton btnCancel;
         private BindingSource productsBindingSource1;
+        private ToolStripSeparator toolStripSeparator7;
+        private ToolStripSeparator toolStripSeparator8;
     }
 }
