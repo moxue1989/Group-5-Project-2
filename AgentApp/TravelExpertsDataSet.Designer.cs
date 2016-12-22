@@ -982,7 +982,10 @@ namespace AgentApp {
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnPackageId,
                                 this.columnProductSupplierId}, true));
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint2", new global::System.Data.DataColumn[] {
+                                this.columnPackageId}, false));
                 this.columnPackageId.AllowDBNull = false;
+                this.columnPackageId.Unique = true;
                 this.columnProductSupplierId.AllowDBNull = false;
             }
             
@@ -4467,7 +4470,7 @@ SELECT PackageId, ProductSupplierId FROM Packages_Products_Suppliers WHERE (Pack
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(TravelExpertsDataSet.SuppliersDataTable dataTable) {
+        public virtual int Fill(TravelExpertsDataSet.ProductsDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();

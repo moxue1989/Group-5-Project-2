@@ -3,9 +3,9 @@ using System.Windows.Forms;
 
 namespace AgentApp
 {
-    public partial class FrmProdSupp : Form
+    public partial class frmProdSupp : Form
     {
-        public FrmProdSupp()
+        public frmProdSupp()
         {
             InitializeComponent();
             FormBorderStyle = FormBorderStyle.None;
@@ -29,6 +29,7 @@ namespace AgentApp
         private void btnCancel_Click(object sender, EventArgs e)
         {
             products_SuppliersBindingSource.CancelEdit();//cancels the edit command
+            Close();//close active form
         }
 
         private void btnOK_Click(object sender, EventArgs e)

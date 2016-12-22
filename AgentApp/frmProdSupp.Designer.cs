@@ -4,7 +4,7 @@ using AgentApp.TravelExpertsDataSetTableAdapters;
 
 namespace AgentApp
 {
-    partial class FrmProdSupp
+    partial class frmProdSupp
     {
         /// <summary>
         /// Required designer variable.
@@ -36,7 +36,7 @@ namespace AgentApp
             System.Windows.Forms.Label label1;
             System.Windows.Forms.Label prodNameLabel;
             System.Windows.Forms.Label label3;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProdSupp));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProdSupp));
             this.travelExpertsDataSet = new AgentApp.TravelExpertsDataSet();
             this.products_SuppliersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.products_SuppliersTableAdapter = new AgentApp.TravelExpertsDataSetTableAdapters.Products_SuppliersTableAdapter();
@@ -89,9 +89,9 @@ namespace AgentApp
             label1.Font = new System.Drawing.Font("Segoe UI", 10F);
             label1.Location = new System.Drawing.Point(3, 31);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(78, 19);
+            label1.Size = new System.Drawing.Size(76, 19);
             label1.TabIndex = 1;
-            label1.Text = "Product ID:";
+            label1.Text = "Product Id:";
             // 
             // prodNameLabel
             // 
@@ -99,9 +99,9 @@ namespace AgentApp
             prodNameLabel.Font = new System.Drawing.Font("Segoe UI", 10F);
             prodNameLabel.Location = new System.Drawing.Point(3, 57);
             prodNameLabel.Name = "prodNameLabel";
-            prodNameLabel.Size = new System.Drawing.Size(79, 19);
+            prodNameLabel.Size = new System.Drawing.Size(77, 19);
             prodNameLabel.TabIndex = 3;
-            prodNameLabel.Text = "Supplier ID:";
+            prodNameLabel.Text = "Supplier Id:";
             // 
             // label3
             // 
@@ -109,9 +109,9 @@ namespace AgentApp
             label3.Font = new System.Drawing.Font("Segoe UI", 10F);
             label3.Location = new System.Drawing.Point(3, 5);
             label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(131, 19);
+            label3.Size = new System.Drawing.Size(129, 19);
             label3.TabIndex = 7;
-            label3.Text = "Product Supplier ID:";
+            label3.Text = "Product Supplier Id:";
             // 
             // travelExpertsDataSet
             // 
@@ -271,7 +271,6 @@ namespace AgentApp
             this.txtProdSupp.Name = "txtProdSupp";
             this.txtProdSupp.Size = new System.Drawing.Size(100, 20);
             this.txtProdSupp.TabIndex = 2;
-            this.txtProdSupp.Tag = "Product Supplier ID";
             // 
             // txtProdId
             // 
@@ -280,7 +279,6 @@ namespace AgentApp
             this.txtProdId.Name = "txtProdId";
             this.txtProdId.Size = new System.Drawing.Size(100, 20);
             this.txtProdId.TabIndex = 4;
-            this.txtProdId.Tag = "Product ID";
             // 
             // txtSuppId
             // 
@@ -289,7 +287,6 @@ namespace AgentApp
             this.txtSuppId.Name = "txtSuppId";
             this.txtSuppId.Size = new System.Drawing.Size(100, 20);
             this.txtSuppId.TabIndex = 6;
-            this.txtSuppId.Tag = "Supplier ID";
             // 
             // tableLayoutPanel1
             // 
@@ -453,7 +450,7 @@ namespace AgentApp
             this.panel6.Size = new System.Drawing.Size(75, 62);
             this.panel6.TabIndex = 14;
             // 
-            // FrmProdSupp
+            // frmProdSupp
             // 
             this.AcceptButton = this.btnOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -465,7 +462,7 @@ namespace AgentApp
             this.Controls.Add(this.tableLayoutPanel1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FrmProdSupp";
+            this.Name = "frmProdSupp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmProdSupp";
             this.Load += new System.EventHandler(this.frmProdSupp_Load);

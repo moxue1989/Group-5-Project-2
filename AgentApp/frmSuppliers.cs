@@ -22,54 +22,45 @@ namespace AgentApp
         private void btnCancel_Click(object sender, EventArgs e)
         {
             suppliersBindingSource.CancelEdit(); //cancels the edit command
+            Close(); //close active form
         }
 
-        private void suppliersbindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        private void btnOK_Click(object sender, EventArgs e)
         {
-            if (IsValidData())
+            tableAdapterManager.UpdateAll(travelExpertsDataSet); //update and refresh dataset
+            Close(); //close active form
+        }
+
+        private void productsBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            try
             {
-                try
-                {
-                    Validate();
-                    suppliersBindingSource.EndEdit();
-                    tableAdapterManager.UpdateAll(travelExpertsDataSet);
-                }
-                catch (DBConcurrencyException)
-                {
-                    MessageBox.Show(@"A error occurred. " + @"Some rows were not updated.", @"Concurrency Exception");
-                    suppliersTableAdapter.Fill(travelExpertsDataSet.Suppliers); //populate textboxes with existing records
-                }
-                catch (DataException ex)
-                {
-                    //MessageBox.Show(ex.Message, ex.GetType().ToString());
-                    MessageBox.Show(@"Product ID is required.", @"Data Entry Error");
-                    suppliersBindingSource.CancelEdit(); //cancels the edit command
-                }
+                Validate();
+                suppliersBindingSource.EndEdit();
+                tableAdapterManager.UpdateAll(travelExpertsDataSet);
             }
-            else
+            catch (DBConcurrencyException)
             {
-                try
-                {
-                    tableAdapterManager.UpdateAll(travelExpertsDataSet);
-                }
-                catch (DBConcurrencyException)
-                {
-                    MessageBox.Show(@"A error occurred. " + @"Some rows were not updated.", @"Concurrency Exception");
-                    suppliersTableAdapter.Fill(travelExpertsDataSet.Suppliers); //populate textboxes with existing records
-                }
-                catch (SqlException ex)
-                {
-                    MessageBox.Show(ex.Number + @": " + @"is required.", @"Data Entry Error");
-                }
+                MessageBox.Show(@"A error occurred. " + "Some rows were not updated.", "Concurrency Exception");
+                suppliersTableAdapter.Fill(travelExpertsDataSet.Suppliers); //populate textboxes with existing records
+            }
+            catch (DataException ex)
+            {
+                MessageBox.Show(ex.Message, ex.GetType().ToString());
+                suppliersBindingSource.CancelEdit(); //cancels the edit command
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(@"Database error # " + ex.Number + @": " + ex.Message, ex.GetType().ToString());
             }
         }
 
-        private void btnExit_Click(object sender, EventArgs e)
+        private void btnExit_Click_1(object sender, EventArgs e)
         {
             Close(); //closes products form
         }
 
-        private void suppliersbindingNavigatorAddNewItem_Click(object sender, EventArgs e)
+        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
         {
             try
             {
@@ -84,12 +75,6 @@ namespace AgentApp
             {
                 MessageBox.Show(@"Database error # " + ex.Number + @": " + ex.Message, ex.GetType().ToString());
             }
-        }
-        private bool IsValidData()//Call the Validator Method
-        {
-            return
-                Validator.IsPresent(txtSupplierId) &&
-                Validator.IsPresent(txtSupName);
         }
     }
 }

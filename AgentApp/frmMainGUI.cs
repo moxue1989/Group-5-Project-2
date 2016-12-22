@@ -17,13 +17,12 @@ namespace AgentApp
             try
             {
                 Validate();
-                packagesBindingSource.EndEdit();
+                this.packagesBindingSource.EndEdit();
                 tableAdapterManager.UpdateAll(travelExpertsDataSet);
             }
             catch (NoNullAllowedException)
             {
                 MessageBox.Show(@"Input error ", @"Data Error");
-                packagesBindingSource.CancelEdit();
             }
             catch (SqlException ex)
             {
@@ -58,31 +57,14 @@ namespace AgentApp
         }
         private void navProdAddEdit_Click(object sender, EventArgs e)
         {
-            try
+            using (FrmProducts prod = new FrmProducts())
             {
-                using(FrmProducts prod = new FrmProducts())
                 prod.ShowDialog(this);
-            }
-           
-            catch (NoNullAllowedException)
-            {
-                MessageBox.Show(@"Cancel/Save data before viewing records. Try Again.", @"Data Error");
-                suppliersBindingSource.CancelEdit();
-
-            }
-            catch (DBConcurrencyException)
-            {
-                MessageBox.Show(@"Another user is currently using this table. Data entered was not updated.", @"Concurrent Error");
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show(@"Database error # " + ex.Number + @": " + ex.Message, ex.GetType().ToString());
             }
         }
 
         private void navSuppAddEdit_Click(object sender, EventArgs e)
         {
-            
             try
             {
                 using (FrmSuppliers supp = new FrmSuppliers())
@@ -92,33 +74,39 @@ namespace AgentApp
             }
             catch (NoNullAllowedException)
             {
-                MessageBox.Show(@"Cancel/Save data before viewing records. Try Again.", @"Data Error");
-                suppliersBindingSource.CancelEdit(); //cancels the edit command
+                MessageBox.Show(@"Fields must contain information. ", @"Data Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                using (FrmSuppliers supp = new FrmSuppliers())
+                {
+                    supp.ShowDialog(this);
+                }
             }
-            
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.Number + @": " + @"is required.", @"Data Entry Error");
+                MessageBox.Show(@"Database error # " + ex.Number + @": " + ex.Message, ex.GetType().ToString());
             }
-
         }
 
         private void navProdSuppAddEdit_Click(object sender, EventArgs e)
         {
-            using (FrmProdSupp prodsupp = new FrmProdSupp())
+            using (frmProdSupp prodsupp = new frmProdSupp())
             {
                 prodsupp.ShowDialog(this);
             }
         }
-        
+
+        private void dpPkgEndDate_ValueChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void dpPkgStartDate_ValueChanged(object sender, EventArgs e)
+        {
+          
+        }
+
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.packagesBindingSource.CancelEdit();
-        }
-
-        private void btnOK_Click(object sender, EventArgs e)
-        {
-            tableAdapterManager.UpdateAll(travelExpertsDataSet);//update and refresh dataset
         }
     }
 }
