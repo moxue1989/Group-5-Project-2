@@ -32,26 +32,51 @@ namespace AgentApp
 
         private void productsBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            try
+            if (IsValidData())
             {
-                Validate();
-                suppliersBindingSource.EndEdit();
-                tableAdapterManager.UpdateAll(travelExpertsDataSet);
+                try
+                {
+                    Validate();
+                    suppliersBindingSource.EndEdit();
+                    tableAdapterManager.UpdateAll(travelExpertsDataSet);
+                }
+                catch (DBConcurrencyException)
+                {
+                    MessageBox.Show(@"A error occurred. " + @"Some rows were not updated.", @"Concurrency Exception");
+                    suppliersTableAdapter.Fill(travelExpertsDataSet.Suppliers); //populate textboxes with existing records
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show(@"Database error # " + ex.Number + @": " + ex.Message, ex.GetType().ToString());
+                }
             }
-            catch (DBConcurrencyException)
+            else
             {
-                MessageBox.Show(@"A error occurred. " + @"Some rows were not updated.", @"Concurrency Exception");
-                suppliersTableAdapter.Fill(travelExpertsDataSet.Suppliers); //populate textboxes with existing records
+                try
+                {
+                    tableAdapterManager.UpdateAll(travelExpertsDataSet);
+                }
+                catch (ArgumentException ex)
+                {
+                    MessageBox.Show(ex.Message, @"ArgumentException Error");
+                    suppliersBindingSource.CancelEdit(); //cancels the edit command
+                }
+                catch (DBConcurrencyException)
+                {
+                    MessageBox.Show(@"A error occurred. " + @"Some rows were not updated.", @"Concurrency Exception Error");
+                    suppliersTableAdapter.Fill(travelExpertsDataSet.Suppliers); //populate textboxes with existing records
+                }
+                catch (DataException ex)
+                {
+                    MessageBox.Show(ex.Message, @"DataException Error");
+                    suppliersBindingSource.CancelEdit(); //cancels the edit command
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show(@"Database error # " + ex.Number + @": " + ex.Message, ex.GetType().ToString());
+                }
             }
-            catch (DataException ex)
-            {
-                MessageBox.Show(ex.Message, ex.GetType().ToString());
-                suppliersBindingSource.CancelEdit(); //cancels the edit command
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show(@"Database error # " + ex.Number + @": " + ex.Message, ex.GetType().ToString());
-            }
+            
         }
 
         private void btnExit_Click_1(object sender, EventArgs e)
@@ -70,15 +95,23 @@ namespace AgentApp
                 MessageBox.Show(@"A error occurred. " + @"Some rows were not updated.", @"Concurrency Exception");
                 suppliersTableAdapter.Fill(travelExpertsDataSet.Suppliers); //populate textboxes with existing records
             }
-            catch (NoNullAllowedException)
+            catch (DataException ex)
             {
-                MessageBox.Show(@"Fields must contain information. ", @"Data Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, ex.GetType().ToString());
                 suppliersBindingSource.CancelEdit(); //cancels the edit command
             }
             catch (SqlException ex)
             {
                 MessageBox.Show(@"Database error # " + ex.Number + @": " + ex.Message, ex.GetType().ToString());
             }
+        }
+
+        private bool IsValidData()
+        {
+            return
+                Validator.IsPresent(txtSupplierId) &&
+                Validator.IsPresent(txtSupName) &&
+                Validator.IsInt(txtSupplierId);
         }
     }
 }

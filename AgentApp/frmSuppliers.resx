@@ -129,6 +129,9 @@
   <metadata name="travelExpertsDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <metadata name="travelExpertsDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <metadata name="suppliersTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>360, 17</value>
   </metadata>
@@ -208,6 +211,15 @@
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         wwAADsMBx2+oZAAAAExJREFUOE9joAr49u3bf1IxVCsEgAWC58Dxh/cf4RhZDETHTNiHaQgpBoAwzBCo
         dtINAGGiDUDGyGpoawAxeNSAQWkAORiqnRLAwAAA9EMMU8Daa3MAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="btnExit.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAC3SURBVDhPpdJBCgIxDIXhbr2AIIhn8AKe0Z2HEASXHs98qZXOOCNif3hMmuaFpp2ywDF0Cd1C
+        15fEcvZW2YQUnUMHiRly9tSonSBxD51y9R01aidNdP3F3FDLk5jL0Rrb0K6GE+TsNXjyTnTqZ1b4CO1z
+        VRHL9Y158hRueE4z+PbxnPR6piWacc2M9A43GB5h+BKHnxE6/f0jYfhXhoSujtbfSUPOnpoPc4+5FLlh
+        z0RiuffMlVKeA5ArcQnKmOEAAAAASUVORK5CYII=
 </value>
   </data>
 </root>

@@ -40,8 +40,8 @@ namespace AgentApp
             this.travelExpertsDataSet = new AgentApp.TravelExpertsDataSet();
             this.suppliersTableAdapter = new AgentApp.TravelExpertsDataSetTableAdapters.SuppliersTableAdapter();
             this.tableAdapterManager = new AgentApp.TravelExpertsDataSetTableAdapters.TableAdapterManager();
-            this.supplierIdTextBox = new System.Windows.Forms.TextBox();
-            this.supNameTextBox = new System.Windows.Forms.TextBox();
+            this.txtSupplierId = new System.Windows.Forms.TextBox();
+            this.txtSupName = new System.Windows.Forms.TextBox();
             this.suppliersBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -123,25 +123,25 @@ namespace AgentApp
             this.tableAdapterManager.SuppliersTableAdapter = this.suppliersTableAdapter;
             this.tableAdapterManager.UpdateOrder = AgentApp.TravelExpertsDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // supplierIdTextBox
+            // txtSupplierId
             // 
-            this.supplierIdTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.suppliersBindingSource, "SupplierId", true));
-            this.supplierIdTextBox.Location = new System.Drawing.Point(119, 9);
-            this.supplierIdTextBox.Name = "supplierIdTextBox";
-            this.supplierIdTextBox.Size = new System.Drawing.Size(136, 20);
-            this.supplierIdTextBox.TabIndex = 1;
-            this.supplierIdTextBox.Tag = "Supplier ID";
+            this.txtSupplierId.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.suppliersBindingSource, "SupplierId", true));
+            this.txtSupplierId.Location = new System.Drawing.Point(119, 9);
+            this.txtSupplierId.Name = "txtSupplierId";
+            this.txtSupplierId.Size = new System.Drawing.Size(136, 20);
+            this.txtSupplierId.TabIndex = 1;
+            this.txtSupplierId.Tag = "Supplier ID";
             // 
-            // supNameTextBox
+            // txtSupName
             // 
-            this.supNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.suppliersBindingSource, "SupName", true));
-            this.supNameTextBox.Location = new System.Drawing.Point(119, 34);
-            this.supNameTextBox.MinimumSize = new System.Drawing.Size(4, 40);
-            this.supNameTextBox.Multiline = true;
-            this.supNameTextBox.Name = "supNameTextBox";
-            this.supNameTextBox.Size = new System.Drawing.Size(136, 40);
-            this.supNameTextBox.TabIndex = 3;
-            this.supNameTextBox.Tag = "Supplier Name";
+            this.txtSupName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.suppliersBindingSource, "SupName", true));
+            this.txtSupName.Location = new System.Drawing.Point(119, 34);
+            this.txtSupName.MinimumSize = new System.Drawing.Size(4, 40);
+            this.txtSupName.Multiline = true;
+            this.txtSupName.Name = "txtSupName";
+            this.txtSupName.Size = new System.Drawing.Size(136, 40);
+            this.txtSupName.TabIndex = 3;
+            this.txtSupName.Tag = "Supplier Name";
             // 
             // suppliersBindingNavigator
             // 
@@ -289,12 +289,12 @@ namespace AgentApp
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
             this.tableLayoutPanel1.Controls.Add(this.panel1, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.panel10, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel4, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel5, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.panel3, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.panel6, 2, 2);
+            this.tableLayoutPanel1.Controls.Add(this.panel10, 2, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -308,8 +308,8 @@ namespace AgentApp
             // panel1
             // 
             this.panel1.Controls.Add(productIdLabel);
-            this.panel1.Controls.Add(this.supplierIdTextBox);
-            this.panel1.Controls.Add(this.supNameTextBox);
+            this.panel1.Controls.Add(this.txtSupplierId);
+            this.panel1.Controls.Add(this.txtSupName);
             this.panel1.Controls.Add(prodNameLabel);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(60, 65);
@@ -337,6 +337,7 @@ namespace AgentApp
             this.btnExit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
             this.btnExit.Location = new System.Drawing.Point(20, 2);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(32, 30);
@@ -439,8 +440,8 @@ namespace AgentApp
         private TravelExpertsDataSet travelExpertsDataSet;
         private SuppliersTableAdapter suppliersTableAdapter;
         private TableAdapterManager tableAdapterManager;
-        private TextBox supplierIdTextBox;
-        private TextBox supNameTextBox;
+        private TextBox txtSupplierId;
+        private TextBox txtSupName;
         private BindingNavigator suppliersBindingNavigator;
         private ToolStripButton bindingNavigatorAddNewItem;
         private ToolStripLabel bindingNavigatorCountItem;
