@@ -16,19 +16,11 @@ namespace AgentApp
         private void frmSuppliers_Load(object sender, EventArgs e)
         {
             suppliersTableAdapter.Fill(travelExpertsDataSet.Suppliers); //populate textboxes with existing records
-
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             suppliersBindingSource.CancelEdit(); //cancels the edit command
-            Close(); //close active form
-        }
-
-        private void btnOK_Click(object sender, EventArgs e)
-        {
-            tableAdapterManager.UpdateAll(travelExpertsDataSet); //update and refresh dataset
-            Close(); //close active form
         }
 
         private void productsBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -41,7 +33,7 @@ namespace AgentApp
             }
             catch (DBConcurrencyException)
             {
-                MessageBox.Show(@"A error occurred. " + "Some rows were not updated.", "Concurrency Exception");
+                MessageBox.Show(@"A error occurred. " + @"Some rows were not updated.", @"Concurrency Exception");
                 suppliersTableAdapter.Fill(travelExpertsDataSet.Suppliers); //populate textboxes with existing records
             }
             catch (DataException ex)

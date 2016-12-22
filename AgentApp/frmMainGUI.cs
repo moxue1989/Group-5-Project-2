@@ -65,25 +65,13 @@ namespace AgentApp
 
         private void navSuppAddEdit_Click(object sender, EventArgs e)
         {
-            try
-            {
+            
                 using (FrmSuppliers supp = new FrmSuppliers())
                 {
                     supp.ShowDialog(this);
                 }
-            }
-            catch (NoNullAllowedException)
-            {
-                MessageBox.Show(@"Fields must contain information. ", @"Data Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                using (FrmSuppliers supp = new FrmSuppliers())
-                {
-                    supp.ShowDialog(this);
-                }
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show(@"Database error # " + ex.Number + @": " + ex.Message, ex.GetType().ToString());
-            }
+            
+            
         }
 
         private void navProdSuppAddEdit_Click(object sender, EventArgs e)
@@ -93,16 +81,7 @@ namespace AgentApp
                 prodsupp.ShowDialog(this);
             }
         }
-
-        private void dpPkgEndDate_ValueChanged(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void dpPkgStartDate_ValueChanged(object sender, EventArgs e)
-        {
-          
-        }
+        
 
         private void btnCancel_Click(object sender, EventArgs e)
         {

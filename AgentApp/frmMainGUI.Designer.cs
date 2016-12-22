@@ -343,7 +343,6 @@ namespace AgentApp
             this.dpPkgStartDate.Name = "dpPkgStartDate";
             this.dpPkgStartDate.Size = new System.Drawing.Size(200, 20);
             this.dpPkgStartDate.TabIndex = 6;
-            this.dpPkgStartDate.ValueChanged += new System.EventHandler(this.dpPkgStartDate_ValueChanged);
             // 
             // dpPkgEndDate
             // 
@@ -353,7 +352,6 @@ namespace AgentApp
             this.dpPkgEndDate.Name = "dpPkgEndDate";
             this.dpPkgEndDate.Size = new System.Drawing.Size(200, 20);
             this.dpPkgEndDate.TabIndex = 8;
-            this.dpPkgEndDate.ValueChanged += new System.EventHandler(this.dpPkgEndDate_ValueChanged);
             // 
             // txtPkgDesc
             // 
