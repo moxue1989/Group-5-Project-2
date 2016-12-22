@@ -14,27 +14,57 @@ namespace AgentApp
 
         private void packagesBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            try
+            if (IsValidData())
             {
-                Validate();
-                this.packagesBindingSource.EndEdit();
-                tableAdapterManager.UpdateAll(travelExpertsDataSet);
+                try
+                {
+                    Validate();
+                    packagesBindingSource.EndEdit();
+                    tableAdapterManager.UpdateAll(travelExpertsDataSet);
+                }
+                catch (NoNullAllowedException)
+                {
+                    MessageBox.Show(@"Input error ", @"Data Error");
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show(@"Database error # " + ex.Number + @": " + ex.Message, ex.GetType().ToString());
+                }
             }
-            catch (NoNullAllowedException)
+            else
             {
-                MessageBox.Show(@"Input error ", @"Data Error");
+                try
+                {
+                    tableAdapterManager.UpdateAll(travelExpertsDataSet);
+                }
+                catch (DBConcurrencyException)
+                {
+                    MessageBox.Show(@"A error occurred. " + @"Some rows were not updated.", @"Concurrency Exception Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    packagesTableAdapter.Fill(travelExpertsDataSet.Packages); //populate textboxes with existing records
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show(@"Database error # " + ex.Number + @": " + ex.Message, ex.GetType().ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            catch (SqlException ex)
-            {
-                MessageBox.Show(@"Database error # " + ex.Number + @": " + ex.Message, ex.GetType().ToString());
-            }
-
         }
 
         private void frmMainGUI_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'travelExpertsDataSet.Packages' table. You can move, or remove it, as needed.
-            packagesTableAdapter.Fill(travelExpertsDataSet.Packages);
+            try
+            {
+                // TODO: This line of code loads data into the 'travelExpertsDataSet.Packages' table. You can move, or remove it, as needed.
+                packagesTableAdapter.Fill(travelExpertsDataSet.Packages);
+            }
+            catch (DataException ex)
+            {
+                MessageBox.Show(ex.Message, ex.GetType().ToString());
+                packagesBindingSource.CancelEdit();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(@"Database error # " + ex.Number + @": " + ex.Message, ex.GetType().ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
@@ -54,7 +84,6 @@ namespace AgentApp
         {
             MessageBox.Show(@"This record will be permanently deleted.", @"Delete", MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
-
         }
 
         //Add/Edit Products
@@ -121,6 +150,25 @@ namespace AgentApp
         private void btnCancel_Click(object sender, EventArgs e)
         {
            packagesBindingSource.CancelEdit();
+        }
+        
+        private void navPkgAddEdit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (FrmPackages pkg = new FrmPackages())
+                {
+                    pkg.ShowDialog(this);
+                }
+            }
+            catch (NoNullAllowedException)
+            {
+                MessageBox.Show(@"Cancel/Save Data before viewing other records. Try Again.", @"User Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(@"Database error # " + ex.Number + @": " + ex.Message, ex.GetType().ToString());
+            }
         }
     }
 }
