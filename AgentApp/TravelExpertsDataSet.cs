@@ -19,7 +19,7 @@ namespace AgentApp
             private void Packages_TableNewRow(object sender, DataTableNewRowEventArgs e)
             {
                 TravelExpertsDataSet.PackagesRow pkgRow = null;
-                pkgRow = ((TravelExpertsDataSet.PackagesRow) (e.Row));
+                pkgRow = ((TravelExpertsDataSet.PackagesRow)(e.Row));
 
             }
         }

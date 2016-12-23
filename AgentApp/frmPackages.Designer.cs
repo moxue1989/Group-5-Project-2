@@ -36,8 +36,8 @@
             System.Windows.Forms.Label label5;
             System.Windows.Forms.Label label6;
             System.Windows.Forms.Label label7;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPackages));
             System.Windows.Forms.Label prodNameLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPackages));
             this.travelExpertsDataSet = new AgentApp.TravelExpertsDataSet();
             this.packagesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.packagesTableAdapter = new AgentApp.TravelExpertsDataSetTableAdapters.PackagesTableAdapter();
@@ -67,6 +67,8 @@
             this.btnCancel = new System.Windows.Forms.ToolStripButton();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.prodNameComboBox = new System.Windows.Forms.ComboBox();
+            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel10 = new System.Windows.Forms.Panel();
             this.btnExit = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -75,9 +77,8 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.productsTableAdapter = new AgentApp.TravelExpertsDataSetTableAdapters.ProductsTableAdapter();
-            this.prodNameComboBox = new System.Windows.Forms.ComboBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             label1 = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
@@ -92,9 +93,10 @@
             this.bindingNavigator1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
             this.panel10.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -166,6 +168,15 @@
             label7.Size = new System.Drawing.Size(87, 19);
             label7.TabIndex = 32;
             label7.Text = "Commission:";
+            // 
+            // prodNameLabel
+            // 
+            prodNameLabel.AutoSize = true;
+            prodNameLabel.Location = new System.Drawing.Point(207, 75);
+            prodNameLabel.Name = "prodNameLabel";
+            prodNameLabel.Size = new System.Drawing.Size(63, 13);
+            prodNameLabel.TabIndex = 36;
+            prodNameLabel.Text = "Prod Name:";
             // 
             // travelExpertsDataSet
             // 
@@ -460,6 +471,23 @@
             this.panel1.Size = new System.Drawing.Size(522, 234);
             this.panel1.TabIndex = 0;
             // 
+            // prodNameComboBox
+            // 
+            this.prodNameComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productsBindingSource, "ProdName", true));
+            this.prodNameComboBox.DataSource = this.productsBindingSource;
+            this.prodNameComboBox.DisplayMember = "ProdName";
+            this.prodNameComboBox.FormattingEnabled = true;
+            this.prodNameComboBox.Location = new System.Drawing.Point(276, 72);
+            this.prodNameComboBox.Name = "prodNameComboBox";
+            this.prodNameComboBox.Size = new System.Drawing.Size(121, 21);
+            this.prodNameComboBox.TabIndex = 37;
+            this.prodNameComboBox.SelectedIndexChanged += new System.EventHandler(this.prodNameComboBox_SelectedIndexChanged);
+            // 
+            // productsBindingSource
+            // 
+            this.productsBindingSource.DataMember = "Products";
+            this.productsBindingSource.DataSource = this.travelExpertsDataSet;
+            // 
             // panel10
             // 
             this.panel10.BackColor = System.Drawing.Color.SteelBlue;
@@ -550,35 +578,14 @@
             this.panel6.Size = new System.Drawing.Size(114, 69);
             this.panel6.TabIndex = 14;
             // 
-            // productsBindingSource
-            // 
-            this.productsBindingSource.DataMember = "Products";
-            this.productsBindingSource.DataSource = this.travelExpertsDataSet;
-            // 
             // productsTableAdapter
             // 
             this.productsTableAdapter.ClearBeforeFill = true;
             // 
-            // prodNameLabel
+            // errorProvider1
             // 
-            prodNameLabel.AutoSize = true;
-            prodNameLabel.Location = new System.Drawing.Point(207, 75);
-            prodNameLabel.Name = "prodNameLabel";
-            prodNameLabel.Size = new System.Drawing.Size(63, 13);
-            prodNameLabel.TabIndex = 36;
-            prodNameLabel.Text = "Prod Name:";
-            // 
-            // prodNameComboBox
-            // 
-            this.prodNameComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productsBindingSource, "ProdName", true));
-            this.prodNameComboBox.DataSource = this.productsBindingSource;
-            this.prodNameComboBox.DisplayMember = "ProdName";
-            this.prodNameComboBox.FormattingEnabled = true;
-            this.prodNameComboBox.Location = new System.Drawing.Point(276, 72);
-            this.prodNameComboBox.Name = "prodNameComboBox";
-            this.prodNameComboBox.Size = new System.Drawing.Size(121, 21);
-            this.prodNameComboBox.TabIndex = 37;
-            this.prodNameComboBox.SelectedIndexChanged += new System.EventHandler(this.prodNameComboBox_SelectedIndexChanged);
+            this.errorProvider1.ContainerControl = this;
+            this.errorProvider1.DataSource = this.packagesBindingSource;
             // 
             // FrmPackages
             // 
@@ -599,10 +606,11 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
             this.panel10.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -650,5 +658,6 @@
         private System.Windows.Forms.BindingSource productsBindingSource;
         private TravelExpertsDataSetTableAdapters.ProductsTableAdapter productsTableAdapter;
         private System.Windows.Forms.ComboBox prodNameComboBox;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

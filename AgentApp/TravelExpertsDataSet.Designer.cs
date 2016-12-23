@@ -982,10 +982,7 @@ namespace AgentApp {
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnPackageId,
                                 this.columnProductSupplierId}, true));
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint2", new global::System.Data.DataColumn[] {
-                                this.columnPackageId}, false));
                 this.columnPackageId.AllowDBNull = false;
-                this.columnPackageId.Unique = true;
                 this.columnProductSupplierId.AllowDBNull = false;
             }
             
@@ -1557,6 +1554,8 @@ namespace AgentApp {
                 this.columnProductSupplierId.AutoIncrementSeed = 93;
                 this.columnProductSupplierId.AllowDBNull = false;
                 this.columnProductSupplierId.Unique = true;
+                this.columnProductId.AllowDBNull = false;
+                this.columnSupplierId.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2738,12 +2737,7 @@ namespace AgentApp {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int ProductId {
                 get {
-                    try {
-                        return ((int)(this[this.tableProducts_Suppliers.ProductIdColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ProductId\' in table \'Products_Suppliers\' is DBNull.", e);
-                    }
+                    return ((int)(this[this.tableProducts_Suppliers.ProductIdColumn]));
                 }
                 set {
                     this[this.tableProducts_Suppliers.ProductIdColumn] = value;
@@ -2754,12 +2748,7 @@ namespace AgentApp {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int SupplierId {
                 get {
-                    try {
-                        return ((int)(this[this.tableProducts_Suppliers.SupplierIdColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'SupplierId\' in table \'Products_Suppliers\' is DBNull.", e);
-                    }
+                    return ((int)(this[this.tableProducts_Suppliers.SupplierIdColumn]));
                 }
                 set {
                     this[this.tableProducts_Suppliers.SupplierIdColumn] = value;
@@ -2786,30 +2775,6 @@ namespace AgentApp {
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["Products_Suppliers_FK01"]);
                 }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsProductIdNull() {
-                return this.IsNull(this.tableProducts_Suppliers.ProductIdColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetProductIdNull() {
-                this[this.tableProducts_Suppliers.ProductIdColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsSupplierIdNull() {
-                return this.IsNull(this.tableProducts_Suppliers.SupplierIdColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetSupplierIdNull() {
-                this[this.tableProducts_Suppliers.SupplierIdColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4877,24 +4842,12 @@ SELECT ProductSupplierId, ProductId, SupplierId FROM Products_Suppliers WHERE (P
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ProductSupplierId, global::System.Nullable<int> Original_ProductId, global::System.Nullable<int> Original_SupplierId) {
+        public virtual int Delete(int Original_ProductSupplierId, int Original_ProductId, int Original_SupplierId) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ProductSupplierId));
-            if ((Original_ProductId.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_ProductId.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            if ((Original_SupplierId.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_SupplierId.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
+            this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_ProductId));
+            this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+            this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_SupplierId));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4915,19 +4868,9 @@ SELECT ProductSupplierId, ProductId, SupplierId FROM Products_Suppliers WHERE (P
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<int> ProductId, global::System.Nullable<int> SupplierId) {
-            if ((ProductId.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((int)(ProductId.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            if ((SupplierId.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((int)(SupplierId.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
+        public virtual int Insert(int ProductId, int SupplierId) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(ProductId));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(SupplierId));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4948,36 +4891,14 @@ SELECT ProductSupplierId, ProductId, SupplierId FROM Products_Suppliers WHERE (P
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> ProductId, global::System.Nullable<int> SupplierId, int Original_ProductSupplierId, global::System.Nullable<int> Original_ProductId, global::System.Nullable<int> Original_SupplierId, int ProductSupplierId) {
-            if ((ProductId.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(ProductId.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            if ((SupplierId.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(SupplierId.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
+        public virtual int Update(int ProductId, int SupplierId, int Original_ProductSupplierId, int Original_ProductId, int Original_SupplierId, int ProductSupplierId) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(ProductId));
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(SupplierId));
             this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_ProductSupplierId));
-            if ((Original_ProductId.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_ProductId.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            if ((Original_SupplierId.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_SupplierId.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(0));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_ProductId));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_SupplierId));
             this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(ProductSupplierId));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -4999,7 +4920,7 @@ SELECT ProductSupplierId, ProductId, SupplierId FROM Products_Suppliers WHERE (P
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> ProductId, global::System.Nullable<int> SupplierId, int Original_ProductSupplierId, global::System.Nullable<int> Original_ProductId, global::System.Nullable<int> Original_SupplierId) {
+        public virtual int Update(int ProductId, int SupplierId, int Original_ProductSupplierId, int Original_ProductId, int Original_SupplierId) {
             return this.Update(ProductId, SupplierId, Original_ProductSupplierId, Original_ProductId, Original_SupplierId, Original_ProductSupplierId);
         }
     }

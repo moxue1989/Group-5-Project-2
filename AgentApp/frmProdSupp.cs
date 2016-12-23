@@ -27,12 +27,21 @@ namespace AgentApp
                 }
                 catch (DBConcurrencyException)
                 {
-                    MessageBox.Show(@"A error occurred. " + @"Some rows were not updated.", @"Concurrency Exception", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    products_SuppliersTableAdapter.Fill(travelExpertsDataSet.Products_Suppliers); //populate textboxes with existing records
+                    MessageBox.Show(@"A error occurred. " + @"Some rows were not updated.", @"Concurrency Exception",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    products_SuppliersTableAdapter.Fill(travelExpertsDataSet.Products_Suppliers);
+                        //populate textboxes with existing records
+                }
+                catch (FormatException ex)
+                {
+                    MessageBox.Show(@"A error occurred. " + ex.Message, ex.GetType().ToString(),
+                       MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    products_SuppliersBindingSource.CancelEdit();
                 }
                 catch (SqlException ex)
                 {
                     MessageBox.Show(@"Database error # " + ex.Number + @": " + ex.Message, ex.GetType().ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    products_SuppliersBindingSource.CancelEdit();
                 }
             }
             else

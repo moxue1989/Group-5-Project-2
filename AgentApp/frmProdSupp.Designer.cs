@@ -70,6 +70,7 @@ namespace AgentApp
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.FrmProdSuppErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             label1 = new System.Windows.Forms.Label();
             prodNameLabel = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
@@ -81,6 +82,7 @@ namespace AgentApp
             this.panel1.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.FrmProdSuppErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -443,6 +445,11 @@ namespace AgentApp
             this.panel6.Size = new System.Drawing.Size(75, 62);
             this.panel6.TabIndex = 14;
             // 
+            // FrmProdSuppErrorProvider
+            // 
+            this.FrmProdSuppErrorProvider.ContainerControl = this;
+            this.FrmProdSuppErrorProvider.DataSource = this.products_SuppliersBindingSource;
+            // 
             // FrmProdSupp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -468,6 +475,7 @@ namespace AgentApp
             this.panel10.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.FrmProdSuppErrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -508,5 +516,6 @@ namespace AgentApp
         private ToolStripButton btnCancel;
         private ToolStripSeparator toolStripSeparator2;
         private ToolStripSeparator toolStripSeparator1;
+        private ErrorProvider FrmProdSuppErrorProvider;
     }
 }
