@@ -16,7 +16,7 @@ namespace AgentApp
         public FrmPackages()
         {
             InitializeComponent();
-            //FormBorderStyle = FormBorderStyle.None;
+            FormBorderStyle = FormBorderStyle.None;
         }
 
         private void pkgBnavSave_Click(object sender, EventArgs e)
@@ -59,6 +59,10 @@ namespace AgentApp
 
         private void frmPackages_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'travelExpertsDataSet.Products' table. You can move, or remove it, as needed.
+            this.productsTableAdapter.Fill(this.travelExpertsDataSet.Products);
+            // TODO: This line of code loads data into the 'travelExpertsDataSet.Products_Suppliers' table. You can move, or remove it, as needed.
+            this.productsTableAdapter.Fill(this.travelExpertsDataSet.Products);
             // TODO: This line of code loads data into the 'travelExpertsDataSet.Packages' table. You can move, or remove it, as needed.
             this.packagesTableAdapter.Fill(this.travelExpertsDataSet.Packages);
         }
@@ -80,6 +84,17 @@ namespace AgentApp
         private void btnCancel_Click(object sender, EventArgs e)
         {
             packagesBindingSource.CancelEdit();//cancels the edit command
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            packagesBindingSource.CancelEdit();//cancels the edit command
+            Close();
+        }
+
+        private void prodNameComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            productsTableAdapter.FillByProdNames(travelExpertsDataSet.Products);
         }
     }
 }

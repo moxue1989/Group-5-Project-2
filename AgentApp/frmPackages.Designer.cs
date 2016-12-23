@@ -37,6 +37,7 @@
             System.Windows.Forms.Label label6;
             System.Windows.Forms.Label label7;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPackages));
+            System.Windows.Forms.Label prodNameLabel;
             this.travelExpertsDataSet = new AgentApp.TravelExpertsDataSet();
             this.packagesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.packagesTableAdapter = new AgentApp.TravelExpertsDataSetTableAdapters.PackagesTableAdapter();
@@ -64,6 +65,19 @@
             this.pkgBnavSave = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.btnCancel = new System.Windows.Forms.ToolStripButton();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.productsTableAdapter = new AgentApp.TravelExpertsDataSetTableAdapters.ProductsTableAdapter();
+            this.prodNameComboBox = new System.Windows.Forms.ComboBox();
             label1 = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
@@ -71,72 +85,85 @@
             label5 = new System.Windows.Forms.Label();
             label6 = new System.Windows.Forms.Label();
             label7 = new System.Windows.Forms.Label();
+            prodNameLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.travelExpertsDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.packagesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel10.SuspendLayout();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(119, 55);
+            label1.Font = new System.Drawing.Font("Segoe UI", 10F);
+            label1.Location = new System.Drawing.Point(14, 14);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(65, 13);
+            label1.Size = new System.Drawing.Size(78, 19);
             label1.TabIndex = 33;
             label1.Text = "Package Id:";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(119, 79);
+            label2.Font = new System.Drawing.Font("Segoe UI", 10F);
+            label2.Location = new System.Drawing.Point(14, 38);
             label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(84, 13);
+            label2.Size = new System.Drawing.Size(102, 19);
             label2.TabIndex = 23;
             label2.Text = "Package Name:";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(119, 106);
+            label3.Font = new System.Drawing.Font("Segoe UI", 10F);
+            label3.Location = new System.Drawing.Point(394, 18);
             label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(58, 13);
+            label3.Size = new System.Drawing.Size(74, 19);
             label3.TabIndex = 24;
             label3.Text = "Start Date:";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new System.Drawing.Point(119, 132);
+            label4.Font = new System.Drawing.Font("Segoe UI", 10F);
+            label4.Location = new System.Drawing.Point(394, 104);
             label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(55, 13);
+            label4.Size = new System.Drawing.Size(68, 19);
             label4.TabIndex = 26;
             label4.Text = "End Date:";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new System.Drawing.Point(119, 157);
+            label5.Font = new System.Drawing.Font("Segoe UI", 10F);
+            label5.Location = new System.Drawing.Point(14, 104);
             label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(63, 13);
+            label5.Size = new System.Drawing.Size(81, 19);
             label5.TabIndex = 28;
             label5.Text = "Description:";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new System.Drawing.Point(248, 214);
+            label6.Font = new System.Drawing.Font("Segoe UI", 10F);
+            label6.Location = new System.Drawing.Point(142, 154);
             label6.Name = "label6";
-            label6.Size = new System.Drawing.Size(61, 13);
+            label6.Size = new System.Drawing.Size(73, 19);
             label6.TabIndex = 30;
             label6.Text = "Base Price:";
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new System.Drawing.Point(357, 214);
+            label7.Font = new System.Drawing.Font("Segoe UI", 10F);
+            label7.Location = new System.Drawing.Point(251, 154);
             label7.Name = "label7";
-            label7.Size = new System.Drawing.Size(65, 13);
+            label7.Size = new System.Drawing.Size(87, 19);
             label7.TabIndex = 32;
             label7.Text = "Commission:";
             // 
@@ -168,7 +195,7 @@
             // txtPkgName
             // 
             this.txtPkgName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.packagesBindingSource, "PkgName", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.txtPkgName.Location = new System.Drawing.Point(251, 74);
+            this.txtPkgName.Location = new System.Drawing.Point(146, 40);
             this.txtPkgName.Name = "txtPkgName";
             this.txtPkgName.Size = new System.Drawing.Size(200, 20);
             this.txtPkgName.TabIndex = 36;
@@ -177,7 +204,7 @@
             // txtPkgId
             // 
             this.txtPkgId.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.packagesBindingSource, "PackageId", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "N0"));
-            this.txtPkgId.Location = new System.Drawing.Point(251, 48);
+            this.txtPkgId.Location = new System.Drawing.Point(146, 14);
             this.txtPkgId.Name = "txtPkgId";
             this.txtPkgId.Size = new System.Drawing.Size(200, 20);
             this.txtPkgId.TabIndex = 35;
@@ -186,35 +213,36 @@
             // dpPkgStartDate
             // 
             this.dpPkgStartDate.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.packagesBindingSource, "PkgStartDate", true));
-            this.dpPkgStartDate.Location = new System.Drawing.Point(251, 102);
+            this.dpPkgStartDate.Location = new System.Drawing.Point(370, 40);
             this.dpPkgStartDate.Name = "dpPkgStartDate";
-            this.dpPkgStartDate.Size = new System.Drawing.Size(200, 20);
+            this.dpPkgStartDate.Size = new System.Drawing.Size(138, 20);
             this.dpPkgStartDate.TabIndex = 25;
             this.dpPkgStartDate.Tag = "Start Date";
             // 
             // dpPkgEndDate
             // 
             this.dpPkgEndDate.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.packagesBindingSource, "PkgEndDate", true));
-            this.dpPkgEndDate.Location = new System.Drawing.Point(251, 128);
+            this.dpPkgEndDate.Location = new System.Drawing.Point(370, 126);
             this.dpPkgEndDate.Name = "dpPkgEndDate";
-            this.dpPkgEndDate.Size = new System.Drawing.Size(200, 20);
+            this.dpPkgEndDate.Size = new System.Drawing.Size(138, 20);
             this.dpPkgEndDate.TabIndex = 27;
             this.dpPkgEndDate.Tag = "End Date";
             // 
             // txtPkgDesc
             // 
             this.txtPkgDesc.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.packagesBindingSource, "PkgDesc", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.txtPkgDesc.Location = new System.Drawing.Point(251, 154);
+            this.txtPkgDesc.Location = new System.Drawing.Point(146, 101);
             this.txtPkgDesc.MinimumSize = new System.Drawing.Size(4, 50);
+            this.txtPkgDesc.Multiline = true;
             this.txtPkgDesc.Name = "txtPkgDesc";
-            this.txtPkgDesc.Size = new System.Drawing.Size(200, 20);
+            this.txtPkgDesc.Size = new System.Drawing.Size(200, 50);
             this.txtPkgDesc.TabIndex = 29;
             this.txtPkgDesc.Tag = "Description";
             // 
             // txtpkgBasePrice
             // 
             this.txtpkgBasePrice.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.packagesBindingSource, "PkgBasePrice", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "C2"));
-            this.txtpkgBasePrice.Location = new System.Drawing.Point(251, 230);
+            this.txtpkgBasePrice.Location = new System.Drawing.Point(145, 176);
             this.txtpkgBasePrice.Name = "txtpkgBasePrice";
             this.txtpkgBasePrice.Size = new System.Drawing.Size(91, 20);
             this.txtpkgBasePrice.TabIndex = 31;
@@ -223,7 +251,7 @@
             // txtpkgCommission
             // 
             this.txtpkgCommission.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.packagesBindingSource, "PkgAgencyCommission", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "C2"));
-            this.txtpkgCommission.Location = new System.Drawing.Point(360, 230);
+            this.txtpkgCommission.Location = new System.Drawing.Point(254, 176);
             this.txtpkgCommission.Name = "txtpkgCommission";
             this.txtpkgCommission.Size = new System.Drawing.Size(91, 20);
             this.txtpkgCommission.TabIndex = 34;
@@ -255,7 +283,7 @@
             this.toolStripSeparator8,
             this.btnCancel});
             this.bindingNavigator1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
-            this.bindingNavigator1.Location = new System.Drawing.Point(0, 266);
+            this.bindingNavigator1.Location = new System.Drawing.Point(0, 351);
             this.bindingNavigator1.MoveFirstItem = this.bnavMoveFirstItem;
             this.bindingNavigator1.MoveLastItem = this.bnavMoveLastItem;
             this.bindingNavigator1.MoveNextItem = this.bnavMoveNextItem;
@@ -263,7 +291,7 @@
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = this.toolStripTextBox1;
             this.bindingNavigator1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.bindingNavigator1.Size = new System.Drawing.Size(595, 25);
+            this.bindingNavigator1.Size = new System.Drawing.Size(755, 25);
             this.bindingNavigator1.TabIndex = 22;
             this.bindingNavigator1.Text = "bindingNavigator1";
             // 
@@ -384,26 +412,179 @@
             this.btnCancel.Text = "Cancel";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tableLayoutPanel1.Controls.Add(this.panel1, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.panel10, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.panel4, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.panel5, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.panel3, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.panel6, 2, 2);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.94872F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 64.10256F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.23362F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(755, 376);
+            this.tableLayoutPanel1.TabIndex = 37;
+            // 
+            // panel1
+            // 
+            this.panel1.AutoScroll = true;
+            this.panel1.Controls.Add(prodNameLabel);
+            this.panel1.Controls.Add(this.prodNameComboBox);
+            this.panel1.Controls.Add(this.txtPkgName);
+            this.panel1.Controls.Add(label1);
+            this.panel1.Controls.Add(this.txtPkgId);
+            this.panel1.Controls.Add(label2);
+            this.panel1.Controls.Add(label3);
+            this.panel1.Controls.Add(this.dpPkgStartDate);
+            this.panel1.Controls.Add(this.txtpkgCommission);
+            this.panel1.Controls.Add(label4);
+            this.panel1.Controls.Add(label7);
+            this.panel1.Controls.Add(this.dpPkgEndDate);
+            this.panel1.Controls.Add(this.txtpkgBasePrice);
+            this.panel1.Controls.Add(label5);
+            this.panel1.Controls.Add(label6);
+            this.panel1.Controls.Add(this.txtPkgDesc);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(116, 70);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(522, 234);
+            this.panel1.TabIndex = 0;
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel10.Controls.Add(this.btnExit);
+            this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel10.Location = new System.Drawing.Point(641, 0);
+            this.panel10.Margin = new System.Windows.Forms.Padding(0);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(114, 67);
+            this.panel10.TabIndex = 8;
+            // 
+            // btnExit
+            // 
+            this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExit.BackColor = System.Drawing.Color.Transparent;
+            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
+            this.btnExit.Location = new System.Drawing.Point(75, 2);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(32, 30);
+            this.btnExit.TabIndex = 0;
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(113, 67);
+            this.panel2.TabIndex = 9;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel4.Controls.Add(this.label10);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(113, 0);
+            this.panel4.Margin = new System.Windows.Forms.Padding(0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(528, 67);
+            this.panel4.TabIndex = 10;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.MintCream;
+            this.label10.Location = new System.Drawing.Point(3, 16);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(333, 25);
+            this.label10.TabIndex = 3;
+            this.label10.Text = "Products Suppliers- Travel Experts Inc.";
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.Transparent;
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.Location = new System.Drawing.Point(113, 307);
+            this.panel5.Margin = new System.Windows.Forms.Padding(0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(528, 69);
+            this.panel5.TabIndex = 12;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(0, 307);
+            this.panel3.Margin = new System.Windows.Forms.Padding(0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(113, 69);
+            this.panel3.TabIndex = 13;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.Transparent;
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel6.Location = new System.Drawing.Point(641, 307);
+            this.panel6.Margin = new System.Windows.Forms.Padding(0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(114, 69);
+            this.panel6.TabIndex = 14;
+            // 
+            // productsBindingSource
+            // 
+            this.productsBindingSource.DataMember = "Products";
+            this.productsBindingSource.DataSource = this.travelExpertsDataSet;
+            // 
+            // productsTableAdapter
+            // 
+            this.productsTableAdapter.ClearBeforeFill = true;
+            // 
+            // prodNameLabel
+            // 
+            prodNameLabel.AutoSize = true;
+            prodNameLabel.Location = new System.Drawing.Point(207, 75);
+            prodNameLabel.Name = "prodNameLabel";
+            prodNameLabel.Size = new System.Drawing.Size(63, 13);
+            prodNameLabel.TabIndex = 36;
+            prodNameLabel.Text = "Prod Name:";
+            // 
+            // prodNameComboBox
+            // 
+            this.prodNameComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productsBindingSource, "ProdName", true));
+            this.prodNameComboBox.FormattingEnabled = true;
+            this.prodNameComboBox.Location = new System.Drawing.Point(276, 72);
+            this.prodNameComboBox.Name = "prodNameComboBox";
+            this.prodNameComboBox.Size = new System.Drawing.Size(121, 21);
+            this.prodNameComboBox.TabIndex = 37;
+            this.prodNameComboBox.SelectedIndexChanged += new System.EventHandler(this.prodNameComboBox_SelectedIndexChanged);
+            // 
             // FrmPackages
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(595, 291);
-            this.Controls.Add(this.txtPkgName);
-            this.Controls.Add(label1);
-            this.Controls.Add(this.txtPkgId);
-            this.Controls.Add(label2);
-            this.Controls.Add(label3);
-            this.Controls.Add(this.dpPkgStartDate);
-            this.Controls.Add(label4);
-            this.Controls.Add(this.dpPkgEndDate);
-            this.Controls.Add(label5);
-            this.Controls.Add(this.txtPkgDesc);
-            this.Controls.Add(label6);
-            this.Controls.Add(this.txtpkgBasePrice);
-            this.Controls.Add(label7);
-            this.Controls.Add(this.txtpkgCommission);
+            this.ClientSize = new System.Drawing.Size(755, 376);
             this.Controls.Add(this.bindingNavigator1);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "FrmPackages";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmPackages";
@@ -413,6 +594,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel10.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -447,5 +635,18 @@
         private System.Windows.Forms.ToolStripButton pkgBnavSave;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
         private System.Windows.Forms.ToolStripButton btnCancel;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.BindingSource productsBindingSource;
+        private TravelExpertsDataSetTableAdapters.ProductsTableAdapter productsTableAdapter;
+        private System.Windows.Forms.ComboBox prodNameComboBox;
     }
 }

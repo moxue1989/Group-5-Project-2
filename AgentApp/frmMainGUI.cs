@@ -71,6 +71,7 @@ namespace AgentApp
             catch (DataException)
             {
                 MessageBox.Show(@"Cancel/Save Data before viewing other records. Try Again.", @"User Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                
             }
             catch (SqlException ex)
             {

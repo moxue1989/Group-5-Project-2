@@ -225,4 +225,22 @@
         dtINAGGiDUDGyGpoawAxeNSAQWkAORiqnRLAwAAA9EMMU8Daa3MAAAAASUVORK5CYII=
 </value>
   </data>
+  <metadata name="prodNameLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="productsBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>496, 56</value>
+  </metadata>
+  <data name="btnExit.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAALdJREFUOE+l
+        0kEKAjEMheFuvYAgiGfwAp7RnYcQBJcez3yplc44I2J/eEya5oWmnbLAMXQJ3ULXl8Ry9lbZhBSdQweJ
+        GXL21KidIHEPnXL1HTVqJ010/cXcUMuTmMvRGtvQroYT5Ow1ePJOdOpnVvgI7XNVEcv1jXnyFG54TjP4
+        9vGc9HqmJZpxzYz0DjcYHmH4EoefETr9/SNh+FeGhK6O1t9JQ86emg9zj7kUuWHPRGK598yVUp4DkCtx
+        CcqY4QAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <metadata name="productsTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>675, 56</value>
+  </metadata>
 </root>
