@@ -16,7 +16,8 @@ namespace AgentApp
             }
             else
             {
-                MessageBox.Show(@"The " + tb.Tag + @" field is required.", @"Entry Error", MessageBoxButtons.OK, MessageBoxIcon.Error);// Show error message when txtbox is empty
+                MessageBox.Show(@"The " + tb.Tag + @" field is required.", @"Entry Error", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error); // Show error message when txtbox is empty
                 tb.Focus();
                 return false;
             }
@@ -32,7 +33,8 @@ namespace AgentApp
             }
             else
             {
-                MessageBox.Show(tb.Tag + @" must be a positive number.", @"Entry Error", MessageBoxButtons.OK, MessageBoxIcon.Error);// Show error message when not a number
+                MessageBox.Show(tb.Tag + @" must be a positive number.", @"Entry Error", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error); // Show error message when not a number
                 tb.Focus();
                 return false;
             }
@@ -48,11 +50,13 @@ namespace AgentApp
             }
             else
             {
-                MessageBox.Show(tb.Tag + @" must be a number.", @"Entry Error", MessageBoxButtons.OK, MessageBoxIcon.Error);// Show error message when not a number
+                MessageBox.Show(tb.Tag + @" must be a number.", @"Entry Error", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error); // Show error message when not a number
                 tb.Focus();
                 return false;
             }
         }
+
         //Checks if Decimal value in textbox is within given range
         public static bool IsPositiveDeci(TextBox tb, decimal min)
         {
@@ -63,12 +67,14 @@ namespace AgentApp
             }
             else
             {
-                MessageBox.Show(tb.Tag + @" must be equal to or above " + min + @".", @"Entry Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(tb.Tag + @" must be equal to or above " + min + @".", @"Entry Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 tb.Focus();
                 return false;
             }
 
         }
+
         public static bool IsPositiveNum(TextBox tb, int min)
         {
             int value = Convert.ToInt32(tb.Text);
@@ -78,7 +84,8 @@ namespace AgentApp
             }
             else
             {
-                MessageBox.Show(tb.Tag + @" must be a positve number " + min + @".", @"Entry Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(tb.Tag + @" must be a positve number " + min + @".", @"Entry Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 tb.Focus();
                 return false;
             }

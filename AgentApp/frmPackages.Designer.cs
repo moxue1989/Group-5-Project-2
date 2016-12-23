@@ -53,13 +53,13 @@
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.btnDelete = new System.Windows.Forms.ToolStripButton();
-            this.bnavMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bnavMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.bnavFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bnavPreviousItem = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bnavMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bnavMoveLastItem = new System.Windows.Forms.ToolStripButton();
+            this.bnavNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bnavLastItem = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.pkgBnavSave = new System.Windows.Forms.ToolStripButton();
@@ -194,7 +194,7 @@
             // 
             // txtPkgName
             // 
-            this.txtPkgName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.packagesBindingSource, "PkgName", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.txtPkgName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.packagesBindingSource, "PkgName", true));
             this.txtPkgName.Location = new System.Drawing.Point(146, 40);
             this.txtPkgName.Name = "txtPkgName";
             this.txtPkgName.Size = new System.Drawing.Size(200, 20);
@@ -203,7 +203,7 @@
             // 
             // txtPkgId
             // 
-            this.txtPkgId.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.packagesBindingSource, "PackageId", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "N0"));
+            this.txtPkgId.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.packagesBindingSource, "PackageId", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N0"));
             this.txtPkgId.Location = new System.Drawing.Point(146, 14);
             this.txtPkgId.Name = "txtPkgId";
             this.txtPkgId.Size = new System.Drawing.Size(200, 20);
@@ -212,7 +212,7 @@
             // 
             // dpPkgStartDate
             // 
-            this.dpPkgStartDate.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.packagesBindingSource, "PkgStartDate", true));
+            this.dpPkgStartDate.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.packagesBindingSource, "PkgStartDate", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "d"));
             this.dpPkgStartDate.Location = new System.Drawing.Point(370, 40);
             this.dpPkgStartDate.Name = "dpPkgStartDate";
             this.dpPkgStartDate.Size = new System.Drawing.Size(138, 20);
@@ -221,7 +221,7 @@
             // 
             // dpPkgEndDate
             // 
-            this.dpPkgEndDate.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.packagesBindingSource, "PkgEndDate", true));
+            this.dpPkgEndDate.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.packagesBindingSource, "PkgEndDate", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "d"));
             this.dpPkgEndDate.Location = new System.Drawing.Point(370, 126);
             this.dpPkgEndDate.Name = "dpPkgEndDate";
             this.dpPkgEndDate.Size = new System.Drawing.Size(138, 20);
@@ -230,7 +230,7 @@
             // 
             // txtPkgDesc
             // 
-            this.txtPkgDesc.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.packagesBindingSource, "PkgDesc", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.txtPkgDesc.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.packagesBindingSource, "PkgDesc", true));
             this.txtPkgDesc.Location = new System.Drawing.Point(146, 101);
             this.txtPkgDesc.MinimumSize = new System.Drawing.Size(4, 50);
             this.txtPkgDesc.Multiline = true;
@@ -241,7 +241,7 @@
             // 
             // txtpkgBasePrice
             // 
-            this.txtpkgBasePrice.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.packagesBindingSource, "PkgBasePrice", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "C2"));
+            this.txtpkgBasePrice.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.packagesBindingSource, "PkgBasePrice", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
             this.txtpkgBasePrice.Location = new System.Drawing.Point(145, 176);
             this.txtpkgBasePrice.Name = "txtpkgBasePrice";
             this.txtpkgBasePrice.Size = new System.Drawing.Size(91, 20);
@@ -250,7 +250,7 @@
             // 
             // txtpkgCommission
             // 
-            this.txtpkgCommission.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.packagesBindingSource, "PkgAgencyCommission", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "C2"));
+            this.txtpkgCommission.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.packagesBindingSource, "PkgAgencyCommission", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
             this.txtpkgCommission.Location = new System.Drawing.Point(254, 176);
             this.txtpkgCommission.Name = "txtpkgCommission";
             this.txtpkgCommission.Size = new System.Drawing.Size(91, 20);
@@ -267,14 +267,14 @@
             this.bindingNavigator1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.bindingNavigator1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bnavMoveFirstItem,
-            this.bnavMovePreviousItem,
+            this.bnavFirstItem,
+            this.bnavPreviousItem,
             this.toolStripSeparator1,
             this.toolStripTextBox1,
             this.toolStripLabel1,
             this.toolStripSeparator2,
-            this.bnavMoveNextItem,
-            this.bnavMoveLastItem,
+            this.bnavNextItem,
+            this.bnavLastItem,
             this.toolStripSeparator3,
             this.toolStripButton1,
             this.btnDelete,
@@ -284,10 +284,10 @@
             this.btnCancel});
             this.bindingNavigator1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.bindingNavigator1.Location = new System.Drawing.Point(0, 351);
-            this.bindingNavigator1.MoveFirstItem = this.bnavMoveFirstItem;
-            this.bindingNavigator1.MoveLastItem = this.bnavMoveLastItem;
-            this.bindingNavigator1.MoveNextItem = this.bnavMoveNextItem;
-            this.bindingNavigator1.MovePreviousItem = this.bnavMovePreviousItem;
+            this.bindingNavigator1.MoveFirstItem = this.bnavFirstItem;
+            this.bindingNavigator1.MoveLastItem = this.bnavLastItem;
+            this.bindingNavigator1.MoveNextItem = this.bnavNextItem;
+            this.bindingNavigator1.MovePreviousItem = this.bnavPreviousItem;
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = this.toolStripTextBox1;
             this.bindingNavigator1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
@@ -322,23 +322,23 @@
             this.btnDelete.Text = "Delete";
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // bnavMoveFirstItem
+            // bnavFirstItem
             // 
-            this.bnavMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bnavMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bnavMoveFirstItem.Image")));
-            this.bnavMoveFirstItem.Name = "bnavMoveFirstItem";
-            this.bnavMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bnavMoveFirstItem.Size = new System.Drawing.Size(23, 22);
-            this.bnavMoveFirstItem.Text = "Move first";
+            this.bnavFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bnavFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bnavFirstItem.Image")));
+            this.bnavFirstItem.Name = "bnavFirstItem";
+            this.bnavFirstItem.RightToLeftAutoMirrorImage = true;
+            this.bnavFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bnavFirstItem.Text = "Move first";
             // 
-            // bnavMovePreviousItem
+            // bnavPreviousItem
             // 
-            this.bnavMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bnavMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bnavMovePreviousItem.Image")));
-            this.bnavMovePreviousItem.Name = "bnavMovePreviousItem";
-            this.bnavMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bnavMovePreviousItem.Size = new System.Drawing.Size(23, 22);
-            this.bnavMovePreviousItem.Text = "Move previous";
+            this.bnavPreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bnavPreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bnavPreviousItem.Image")));
+            this.bnavPreviousItem.Name = "bnavPreviousItem";
+            this.bnavPreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bnavPreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bnavPreviousItem.Text = "Move previous";
             // 
             // toolStripSeparator1
             // 
@@ -359,23 +359,23 @@
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
-            // bnavMoveNextItem
+            // bnavNextItem
             // 
-            this.bnavMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bnavMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bnavMoveNextItem.Image")));
-            this.bnavMoveNextItem.Name = "bnavMoveNextItem";
-            this.bnavMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bnavMoveNextItem.Size = new System.Drawing.Size(23, 22);
-            this.bnavMoveNextItem.Text = "Move next";
+            this.bnavNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bnavNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bnavNextItem.Image")));
+            this.bnavNextItem.Name = "bnavNextItem";
+            this.bnavNextItem.RightToLeftAutoMirrorImage = true;
+            this.bnavNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bnavNextItem.Text = "Move next";
             // 
-            // bnavMoveLastItem
+            // bnavLastItem
             // 
-            this.bnavMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bnavMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bnavMoveLastItem.Image")));
-            this.bnavMoveLastItem.Name = "bnavMoveLastItem";
-            this.bnavMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bnavMoveLastItem.Size = new System.Drawing.Size(23, 22);
-            this.bnavMoveLastItem.Text = "Move last";
+            this.bnavLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bnavLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bnavLastItem.Image")));
+            this.bnavLastItem.Name = "bnavLastItem";
+            this.bnavLastItem.RightToLeftAutoMirrorImage = true;
+            this.bnavLastItem.Size = new System.Drawing.Size(23, 22);
+            this.bnavLastItem.Text = "Move last";
             // 
             // toolStripSeparator3
             // 
@@ -571,6 +571,8 @@
             // prodNameComboBox
             // 
             this.prodNameComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productsBindingSource, "ProdName", true));
+            this.prodNameComboBox.DataSource = this.productsBindingSource;
+            this.prodNameComboBox.DisplayMember = "ProdName";
             this.prodNameComboBox.FormattingEnabled = true;
             this.prodNameComboBox.Location = new System.Drawing.Point(276, 72);
             this.prodNameComboBox.Name = "prodNameComboBox";
@@ -623,13 +625,13 @@
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         protected System.Windows.Forms.ToolStripButton btnDelete;
-        private System.Windows.Forms.ToolStripButton bnavMoveFirstItem;
-        private System.Windows.Forms.ToolStripButton bnavMovePreviousItem;
+        private System.Windows.Forms.ToolStripButton bnavFirstItem;
+        private System.Windows.Forms.ToolStripButton bnavPreviousItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripButton bnavMoveNextItem;
-        private System.Windows.Forms.ToolStripButton bnavMoveLastItem;
+        private System.Windows.Forms.ToolStripButton bnavNextItem;
+        private System.Windows.Forms.ToolStripButton bnavLastItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
         private System.Windows.Forms.ToolStripButton pkgBnavSave;
