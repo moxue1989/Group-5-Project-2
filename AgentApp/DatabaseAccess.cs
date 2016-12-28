@@ -38,13 +38,13 @@ namespace AgentApp
             }
         }
 
-        public static DataSet GetData(string tableName)
+        public static DataTable GetData(string tableName)
         {
-            DataSet data = new DataSet();
+            DataTable data = new DataTable();
             SqlConnection conn = new SqlConnection(@"Data Source=ICTVM-FQQ06UJG2\SQLEXPRESS;" + "Database=TravelExperts;" + "User id=sa;" + "Password=sa;");
             SqlDataAdapter sqlAdapter = new SqlDataAdapter("SELECT * FROM " + tableName, conn);
             SqlCommandBuilder sqlCommand = new SqlCommandBuilder(sqlAdapter);
-            sqlAdapter.Fill(data, tableName);
+            sqlAdapter.Fill(data);
             return data;
         }
 

@@ -20,17 +20,17 @@ namespace AgentApp
         private void button2_Click(object sender, EventArgs e)
         {
             string table = "Packages";
-            DataSet data = DatabaseAccess.GetData(table);
+            DataTable data = DatabaseAccess.GetData(table);
             dgTest.DataSource = data;
-            dgTest.DataMember = table;
+            //dgTest.DataMember = table;
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             string table = "Products";
-            DataSet data = DatabaseAccess.GetData(table);
+            DataTable data = DatabaseAccess.GetData(table);
             dgTest.DataSource = data;
-            dgTest.DataMember = table;
+            //dgTest.DataMember = table;
         }
     }
 }
