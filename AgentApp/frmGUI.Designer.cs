@@ -28,22 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.dgTest = new System.Windows.Forms.DataGridView();
             this.button4 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgTest)).BeginInit();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
@@ -55,23 +43,6 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(80, 56);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(100, 33);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Dwhani button";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // dgTest
-            // 
-            this.dgTest.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgTest.Location = new System.Drawing.Point(265, 26);
-            this.dgTest.Name = "dgTest";
-            this.dgTest.Size = new System.Drawing.Size(279, 292);
-            this.dgTest.TabIndex = 3;
-            // 
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(31, 194);
@@ -82,30 +53,32 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(295, 36);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(230, 277);
+            this.listBox1.TabIndex = 5;
+            // 
             // frmGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(579, 358);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.dgTest);
-            this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Name = "frmGUI";
             this.Text = "Agent GUI";
-            ((System.ComponentModel.ISupportInitialize)(this.dgTest)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.DataGridView dgTest;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
 

@@ -8,14 +8,18 @@ namespace AgentApp
 {
     public class Product
     {
-        int Product_ID { get; set; }
-        string Product_Name { get; set; }
+        int ProductId { get; set; }
+        string ProdName { get; set; }
 
         //constructor with default initial values provided
-        public Product (int id = 0, string name = "")
+        //public Product (int id = 0, string name = "")
+        //{
+        //    ProductId = id;
+        //    ProdName = name;
+        public override string ToString()
         {
-            Product_ID = id;
-            Product_Name = name;
+            return ProductId + " " + ProdName;
         }
     }
 }
+

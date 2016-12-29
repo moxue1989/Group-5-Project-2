@@ -19,18 +19,23 @@ namespace AgentApp
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string table = "Packages";
-            DataTable data = DatabaseAccess.GetData(table);
-            dgTest.DataSource = data;
+            List<Package> packages = DatabaseAccess.GetPackages();
+            foreach (Package package in packages)
+            {
+                listBox1.Items.Add(package);
+            }
             //dgTest.DataMember = table;
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            string table = "Products";
-            DataTable data = DatabaseAccess.GetData(table);
-            dgTest.DataSource = data;
             //dgTest.DataMember = table;
+            List<Product> products = DatabaseAccess.GetProducts();
+            foreach (Product product in products)
+            {
+                listBox1.Items.Add(product);
+            }
+            
         }
     }
 }

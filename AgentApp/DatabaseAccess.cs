@@ -6,11 +6,34 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Dapper;
 
 namespace AgentApp
 {
     public static class DatabaseAccess
     {
+        public static List<Product> GetProducts()
+        {
+            var results = new List<Product>();
+            using (SqlConnection conn = new SqlConnection(Settings.ConnectionString))
+            {
+                conn.Open();
+                results.AddRange(conn.Query<Product>(Settings.ProductsQuery));
+            }
+            return results;
+        }
+
+        public static List<Package> GetPackages()
+        {
+            var results = new List<Package>();
+            using (SqlConnection conn = new SqlConnection(Settings.ConnectionString))
+            {
+                conn.Open();
+                results.AddRange(conn.Query<Package>(Settings.PackagesQuery));
+            }
+            return results;
+        }
+
         public static void SqlQuery(string sqlString)
         {
             try
