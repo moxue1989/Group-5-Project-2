@@ -14,11 +14,12 @@ namespace AgentApp
         private string PkgEndDate { get; set; }
         private string PkgDesc { get; set; }
         private decimal PkgBasePrice { get; set; }
+        private decimal PkgAgencyCommission { get; set; }
 
         public override string ToString()
         {
             return PackageId + " " + PkgName + " " + PkgStartDate + " " + PkgEndDate + " " + PkgDesc + " " +
-                   PkgBasePrice;
+                   PkgBasePrice + " " + PkgAgencyCommission;
         }
     }
 }

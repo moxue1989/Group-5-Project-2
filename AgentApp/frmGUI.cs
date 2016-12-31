@@ -30,12 +30,17 @@ namespace AgentApp
         private void button4_Click(object sender, EventArgs e)
         {
             //dgTest.DataMember = table;
-            List<Product> products = DatabaseAccess.GetProducts();
+            IList<Product> products = DatabaseAccess.GetProducts();
             foreach (Product product in products)
             {
                 listBox1.Items.Add(product);
             }
             
+        }
+
+        private void btnProducts_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = DatabaseAccess.GetProductsData();
         }
     }
 }
