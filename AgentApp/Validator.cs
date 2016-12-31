@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
 
-// for TextBox
-
+//coded by Kasi Emmanuel
+//validator constructor for textboxes
 namespace AgentApp
 {
     public static class Validator

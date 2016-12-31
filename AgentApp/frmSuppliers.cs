@@ -3,6 +3,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
+//coded by Kasi Emmanuel
 namespace AgentApp
 {
     public partial class FrmSuppliers : Form
@@ -81,7 +82,6 @@ namespace AgentApp
             return
                 Validator.IsPresent(txtSupplierId) &&
                 Validator.IsInt(txtSupplierId, MinValue) &&
-                Validator.IsPositiveNum(txtSupplierId, MinValue)&& 
                 Validator.IsPresent(txtSupName);
         }
 
