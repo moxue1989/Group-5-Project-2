@@ -59,6 +59,8 @@ namespace AgentApp
 
         private void frmPackages_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'travelExpertsDataSet.Packages_Products_Suppliers' table. You can move, or remove it, as needed.
+            this.packages_Products_SuppliersTableAdapter.Fill(this.travelExpertsDataSet.Packages_Products_Suppliers);
             // TODO: This line of code loads data into the 'travelExpertsDataSet.Products' table. You can move, or remove it, as needed.
             this.productsTableAdapter.Fill(this.travelExpertsDataSet.Products);
             // TODO: This line of code loads data into the 'travelExpertsDataSet.Products_Suppliers' table. You can move, or remove it, as needed.
@@ -95,6 +97,56 @@ namespace AgentApp
         private void prodNameComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             productsTableAdapter.FillByProdNames(travelExpertsDataSet.Products);
+        }
+
+        private void FrmPackages_FormClosing(object sender, FormClosingEventArgs e)
+        {
+        }
+
+        private void pkgBnav_Validating(object sender, CancelEventArgs e)
+        {
+            if (IsValidData())
+            {
+                this.Validate();
+                this.packagesBindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(this.travelExpertsDataSet);
+                e.Cancel = true;
+            }
+            else
+            {
+                e.Cancel = false;
+            }
+        }
+
+        private void pkgBnav_Click(object sender, EventArgs e)
+        {
+            if (IsValidData())
+            {
+                this.Validate();
+                this.packagesBindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(this.travelExpertsDataSet);
+                return;
+            }
+            else
+            {
+                this.Validate();
+                packagesBindingSource.CancelEdit();//cancels the edit command
+                MessageBox.Show("Test");
+              
+            }
+            
+                //MovePreviousItem: `this.myBindingSource.MovePrevious();`
+                //MoveNextItem: `this.myBindingSource.MoveNext();`
+                //MoveLastItem: `this.myBindingSource.MoveLast();`
+                //AddNewItem: `this.myBindingSource.AddNew();`
+                //DeleteItem: `this.myBindingSource.RemoveCurrent();`
+        }
+
+        private void bindingNavigatorMovePreviousItem_Click(object sender, EventArgs e)
+        {
+            if (IsValidData())
+                return;
+            packagesBindingSource.MoveFirst();
         }
     }
 }

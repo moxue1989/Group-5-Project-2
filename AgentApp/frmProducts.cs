@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -20,23 +19,6 @@ namespace AgentApp
             FormBorderStyle = FormBorderStyle.None;
         }
 
-        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                tableAdapterManager.UpdateAll(travelExpertsDataSet);
-            }
-            catch (NoNullAllowedException)
-            {
-                MessageBox.Show(@"Fields must contain information. ", @"Data Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                productsBindingSource.CancelEdit(); //cancels the edit command
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show(@"Database error # " + ex.Number + @": " + ex.Message, ex.GetType().ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-        
         private void productsBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             if (IsValidData())
@@ -63,6 +45,11 @@ namespace AgentApp
                 {
                     tableAdapterManager.UpdateAll(travelExpertsDataSet);
                 }
+                catch (DataException)
+                {
+                    MessageBox.Show(@"Fields must contain information. ", @"Data Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    productsBindingSource.CancelEdit(); //cancels the edit command
+                }
                 catch (DBConcurrencyException)
                 {
                     MessageBox.Show(@"A error occurred. " + @"Some rows were not updated.", @"Concurrency Exception Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -78,8 +65,21 @@ namespace AgentApp
 
         private void frmProducts_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'travelExpertsDataSet.Products' table. You can move, or remove it, as needed.
-            this.productsTableAdapter.Fill(this.travelExpertsDataSet.Products);
+            try
+            {
+                // TODO: This line of code loads data into the 'travelExpertsDataSet.Products' table. You can move, or remove it, as needed.
+                this.productsTableAdapter.Fill(this.travelExpertsDataSet.Products);
+            }
+            catch (DataException)
+            {
+                MessageBox.Show(@"aaaaaaaaa. ", @"Data Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                productsBindingSource.CancelEdit(); //cancels the edit command
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(@"Database error # " + ex.Number + @": " + ex.Message, ex.GetType().ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -102,8 +102,8 @@ namespace AgentApp
         {
             return
                 Validator.IsPresent(txtProductId) &&
-                Validator.IsInt(txtProductId) &&
-                Validator.IsPositiveNum(txtProductId, MinValue) &&
+                Validator.IsInt(txtProductId, MinValue) &&
+                //Validator.IsPositiveNum(txtProductId, MinValue) &&
                 Validator.IsPresent(txtProdName);
         }
     }

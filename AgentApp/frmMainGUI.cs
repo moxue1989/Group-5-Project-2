@@ -83,23 +83,11 @@ namespace AgentApp
 
         private void navPkgAddEdit_Click(object sender, EventArgs e)
         {
-            try
+            using (FrmPackages pkg = new FrmPackages())
             {
-
-                using (FrmPackages pkg = new FrmPackages())
-                {
-                    pkg.ShowDialog(this);
-                }
+                pkg.ShowDialog(this);
             }
-            catch (DataException)
-            {
-
-                MessageBox.Show(@"Cancel/Save Data before viewing other records. Try Again.", @"User Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show(@"Database error # " + ex.Number + @": " + ex.Message, ex.GetType().ToString());
-            }
+           
         }
        
     }

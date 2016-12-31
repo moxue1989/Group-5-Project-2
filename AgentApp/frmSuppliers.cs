@@ -80,7 +80,7 @@ namespace AgentApp
         {
             return
                 Validator.IsPresent(txtSupplierId) &&
-                Validator.IsInt(txtSupplierId)&&
+                Validator.IsInt(txtSupplierId, MinValue) &&
                 Validator.IsPositiveNum(txtSupplierId, MinValue)&& 
                 Validator.IsPresent(txtSupName);
         }

@@ -4431,7 +4431,12 @@ SELECT PackageId, ProductSupplierId FROM Packages_Products_Suppliers WHERE (Pack
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT        ProdName\r\nFROM            Products";
+            this._commandCollection[1].CommandText = @"SELECT        Products.ProdName, Products.ProductId, Packages.PackageId, Products_Suppliers.ProductSupplierId, Products_Suppliers.ProductId AS Expr1, 
+                         Packages_Products_Suppliers.PackageId AS Expr2, Packages_Products_Suppliers.ProductSupplierId AS Expr3
+FROM            Packages_Products_Suppliers INNER JOIN
+                         Packages ON Packages_Products_Suppliers.PackageId = Packages.PackageId INNER JOIN
+                         Products_Suppliers ON Packages_Products_Suppliers.ProductSupplierId = Products_Suppliers.ProductSupplierId INNER JOIN
+                         Products ON Products_Suppliers.ProductId = Products.ProductId";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
         }
         
