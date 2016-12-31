@@ -16,7 +16,7 @@ namespace AgentApp
         public FrmPackages()
         {
             InitializeComponent();
-            FormBorderStyle = FormBorderStyle.None;
+            FormBorderStyle = FormBorderStyle.None;//remove the form border style
         }
 
         private void pkgBnavSave_Click(object sender, EventArgs e)
@@ -68,6 +68,8 @@ namespace AgentApp
             // TODO: This line of code loads data into the 'travelExpertsDataSet.Packages' table. You can move, or remove it, as needed.
             this.packagesTableAdapter.Fill(this.travelExpertsDataSet.Packages);
         }
+
+        //bind validator to textboxes
         private bool IsValidData()
         {
             return
@@ -80,7 +82,7 @@ namespace AgentApp
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(@"This record will be permanently deleted.", @"Delete", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            MessageBox.Show(@"This record will be permanently deleted.", @"Delete", MessageBoxButtons.OK, MessageBoxIcon.Warning);//delete active record
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -99,54 +101,36 @@ namespace AgentApp
             productsTableAdapter.FillByProdNames(travelExpertsDataSet.Products);
         }
 
-        private void FrmPackages_FormClosing(object sender, FormClosingEventArgs e)
-        {
-        }
-
-        private void pkgBnav_Validating(object sender, CancelEventArgs e)
-        {
-            if (IsValidData())
-            {
-                this.Validate();
-                this.packagesBindingSource.EndEdit();
-                this.tableAdapterManager.UpdateAll(this.travelExpertsDataSet);
-                e.Cancel = true;
-            }
-            else
-            {
-                e.Cancel = false;
-            }
-        }
-
-        private void pkgBnav_Click(object sender, EventArgs e)
-        {
-            if (IsValidData())
-            {
-                this.Validate();
-                this.packagesBindingSource.EndEdit();
-                this.tableAdapterManager.UpdateAll(this.travelExpertsDataSet);
-                return;
-            }
-            else
-            {
-                this.Validate();
-                packagesBindingSource.CancelEdit();//cancels the edit command
-                MessageBox.Show("Test");
-              
-            }
-            
-                //MovePreviousItem: `this.myBindingSource.MovePrevious();`
-                //MoveNextItem: `this.myBindingSource.MoveNext();`
-                //MoveLastItem: `this.myBindingSource.MoveLast();`
-                //AddNewItem: `this.myBindingSource.AddNew();`
-                //DeleteItem: `this.myBindingSource.RemoveCurrent();`
-        }
-
         private void bindingNavigatorMovePreviousItem_Click(object sender, EventArgs e)
         {
             if (IsValidData())
-                return;
-            packagesBindingSource.MoveFirst();
+            {
+                packagesBindingSource?.MovePrevious();//if all textbox data are valid, move to previous record
+            }
+        }
+
+        private void bNavMoveNex_Click(object sender, EventArgs e)
+        {
+            if (IsValidData())
+            {
+                packagesBindingSource?.MoveNext();//if all textbox data are valid, move to next record
+            }
+        }
+
+        private void bNavMoveFirst_Click(object sender, EventArgs e)
+        {
+            if (IsValidData())
+            {
+                packagesBindingSource?.MoveFirst();//if all textbox data are valid, move to first record
+            }
+        }
+
+        private void bNavMoveLast_Click(object sender, EventArgs e)
+        {
+            if (IsValidData())
+            {
+                packagesBindingSource?.MoveLast();//if all textbox data are valid, move to last record
+            }
         }
     }
 }

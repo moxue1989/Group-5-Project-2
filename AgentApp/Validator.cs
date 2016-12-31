@@ -13,15 +13,15 @@ namespace AgentApp
             ErrorProvider e = new ErrorProvider();
             if (tb.Text != "")
             {
-                e.SetError(tb, null);
+                //e.SetError(tb, null);
                 return true;
             }
             else
             {
-               
-                e.SetError(tb, @"The " + tb.Tag + @" field is required.");
-                //MessageBox.Show(@"The " + tb.Tag + @" field is required.", @"Entry Error", MessageBoxButtons.OK,
-                //    MessageBoxIcon.Error); // Show error message when txtbox is empty
+
+                //e.SetError(tb, @"The " + tb.Tag + @" field is required.");
+                MessageBox.Show(@"The " + tb.Tag + @" field is required.", @"Entry Error", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error); // Show error message when txtbox is empty
                 tb.Focus();
                 return false;
             }
