@@ -99,5 +99,37 @@ namespace AgentApp
                 Validator.IsPresent(txtSuppId) &&
                 Validator.IsPositiveNum(txtSuppId, MinValue);
         }
+
+        private void bNavMovePrev_Click(object sender, EventArgs e)
+        {
+            if (IsValidData())
+            {
+                products_SuppliersBindingSource?.MovePrevious();//if all textbox data are valid, move to previous record
+            }
+        }
+
+        private void bNavMoveNext_Click(object sender, EventArgs e)
+        {
+            if (IsValidData())
+            {
+                products_SuppliersBindingSource?.MoveNext();//if all textbox data are valid, move to next record
+            }
+        }
+
+        private void bNavMoveFirst_Click(object sender, EventArgs e)
+        {
+            if (IsValidData())
+            {
+                products_SuppliersBindingSource?.MoveFirst();//if all textbox data are valid, move to first record
+            }
+        }
+
+        private void bNavMoveLast_Click(object sender, EventArgs e)
+        {
+            if (IsValidData())
+            {
+                products_SuppliersBindingSource?.MoveLast();//if all textbox data are valid, move to last record
+            }
+        }
     }
 }

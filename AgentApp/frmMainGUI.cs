@@ -21,63 +21,26 @@ namespace AgentApp
         //Add/Edit Products
         private void navProdAddEdit_Click(object sender, EventArgs e)
         {
-            try
+            using (FrmProducts prod = new FrmProducts())
             {
-                using (FrmProducts prod = new FrmProducts())
-                {
-                    prod.ShowDialog(this);
-                }
-            }
-            catch (DataException)
-            {
-                MessageBox.Show(@"Cancel/Save Data before viewing other records. Try Again.", @"User Input Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show(@"Database error # " + ex.Number + @": " + ex.Message, ex.GetType().ToString());
+                prod.ShowDialog(this);
             }
         }
 
         //Add/Edit Suppliers
         private void navSuppAddEdit_Click(object sender, EventArgs e)
         {
-
-            FrmSuppliers supp = new FrmSuppliers();
-           
-                //using (FrmSuppliers supp = new FrmSuppliers())
-                //{
-                    supp.ShowDialog(this);
-                //}
-           
-            //catch (DataException)
-            //{
-            //    MessageBox.Show(@"Cancel/Save Data before viewing other records. Try Again.", @"User Input Error",
-            //        MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
-            //catch (SqlException ex)
-            //{
-            //    MessageBox.Show(@"Database error # " + ex.Number + @": " + ex.Message, ex.GetType().ToString());
-            //}
+            using (FrmSuppliers supp = new FrmSuppliers())
+            {
+                supp.ShowDialog(this);
+            }
         }
 
         private void navProdSuppAddEdit_Click(object sender, EventArgs e)
         {
-            try
+            using (FrmProdSupp prodsupp = new FrmProdSupp())
             {
-                using (FrmProdSupp prodsupp = new FrmProdSupp())
-                {
-                    prodsupp.ShowDialog(this);
-                }
-            }
-            catch (DataException)
-            {
-                MessageBox.Show(@"Cancel/Save Data before viewing other records. Try Again.", @"User Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show(@"Database error # " + ex.Number + @": " + ex.Message, ex.GetType().ToString());
+                prodsupp.ShowDialog(this);
             }
         }
 
@@ -87,7 +50,6 @@ namespace AgentApp
             {
                 pkg.ShowDialog(this);
             }
-           
         }
        
     }

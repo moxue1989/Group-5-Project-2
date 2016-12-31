@@ -41,17 +41,17 @@ namespace AgentApp
             this.products_SuppliersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.products_SuppliersTableAdapter = new AgentApp.TravelExpertsDataSetTableAdapters.Products_SuppliersTableAdapter();
             this.tableAdapterManager = new AgentApp.TravelExpertsDataSetTableAdapters.TableAdapterManager();
-            this.products_SuppliersBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bnavProd_Supp = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.bNavMoveFirst = new System.Windows.Forms.ToolStripButton();
+            this.bNavMovePrev = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+            this.bNavMoveNext = new System.Windows.Forms.ToolStripButton();
+            this.bNavMoveLast = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.products_SuppliersBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
@@ -76,8 +76,8 @@ namespace AgentApp
             label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.travelExpertsDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.products_SuppliersBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.products_SuppliersBindingNavigator)).BeginInit();
-            this.products_SuppliersBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bnavProd_Supp)).BeginInit();
+            this.bnavProd_Supp.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel10.SuspendLayout();
@@ -140,23 +140,23 @@ namespace AgentApp
             this.tableAdapterManager.SuppliersTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = AgentApp.TravelExpertsDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // products_SuppliersBindingNavigator
+            // bnavProd_Supp
             // 
-            this.products_SuppliersBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
-            this.products_SuppliersBindingNavigator.BindingSource = this.products_SuppliersBindingSource;
-            this.products_SuppliersBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.products_SuppliersBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
-            this.products_SuppliersBindingNavigator.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.products_SuppliersBindingNavigator.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.products_SuppliersBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorMoveFirstItem,
-            this.bindingNavigatorMovePreviousItem,
+            this.bnavProd_Supp.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.bnavProd_Supp.BindingSource = this.products_SuppliersBindingSource;
+            this.bnavProd_Supp.CountItem = this.bindingNavigatorCountItem;
+            this.bnavProd_Supp.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.bnavProd_Supp.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.bnavProd_Supp.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.bnavProd_Supp.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bNavMoveFirst,
+            this.bNavMovePrev,
             this.bindingNavigatorSeparator,
             this.bindingNavigatorPositionItem,
             this.bindingNavigatorCountItem,
             this.bindingNavigatorSeparator1,
-            this.bindingNavigatorMoveNextItem,
-            this.bindingNavigatorMoveLastItem,
+            this.bNavMoveNext,
+            this.bNavMoveLast,
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
@@ -164,17 +164,17 @@ namespace AgentApp
             this.products_SuppliersBindingNavigatorSaveItem,
             this.toolStripSeparator1,
             this.btnCancel});
-            this.products_SuppliersBindingNavigator.Location = new System.Drawing.Point(0, 183);
-            this.products_SuppliersBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.products_SuppliersBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.products_SuppliersBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.products_SuppliersBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.products_SuppliersBindingNavigator.Name = "products_SuppliersBindingNavigator";
-            this.products_SuppliersBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.products_SuppliersBindingNavigator.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.products_SuppliersBindingNavigator.Size = new System.Drawing.Size(495, 25);
-            this.products_SuppliersBindingNavigator.TabIndex = 0;
-            this.products_SuppliersBindingNavigator.Text = "bindingNavigator1";
+            this.bnavProd_Supp.Location = new System.Drawing.Point(0, 183);
+            this.bnavProd_Supp.MoveFirstItem = null;
+            this.bnavProd_Supp.MoveLastItem = null;
+            this.bnavProd_Supp.MoveNextItem = null;
+            this.bnavProd_Supp.MovePreviousItem = null;
+            this.bnavProd_Supp.Name = "bnavProd_Supp";
+            this.bnavProd_Supp.PositionItem = this.bindingNavigatorPositionItem;
+            this.bnavProd_Supp.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.bnavProd_Supp.Size = new System.Drawing.Size(495, 25);
+            this.bnavProd_Supp.TabIndex = 0;
+            this.bnavProd_Supp.Text = "bindingNavigator1";
             // 
             // bindingNavigatorAddNewItem
             // 
@@ -202,23 +202,25 @@ namespace AgentApp
             this.bindingNavigatorDeleteItem.Text = "Delete";
             this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
-            // bindingNavigatorMoveFirstItem
+            // bNavMoveFirst
             // 
-            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
-            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveFirstItem.Text = "Move first";
+            this.bNavMoveFirst.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bNavMoveFirst.Image = ((System.Drawing.Image)(resources.GetObject("bNavMoveFirst.Image")));
+            this.bNavMoveFirst.Name = "bNavMoveFirst";
+            this.bNavMoveFirst.RightToLeftAutoMirrorImage = true;
+            this.bNavMoveFirst.Size = new System.Drawing.Size(23, 22);
+            this.bNavMoveFirst.Text = "Move first";
+            this.bNavMoveFirst.Click += new System.EventHandler(this.bNavMoveFirst_Click);
             // 
-            // bindingNavigatorMovePreviousItem
+            // bNavMovePrev
             // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
+            this.bNavMovePrev.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bNavMovePrev.Image = ((System.Drawing.Image)(resources.GetObject("bNavMovePrev.Image")));
+            this.bNavMovePrev.Name = "bNavMovePrev";
+            this.bNavMovePrev.RightToLeftAutoMirrorImage = true;
+            this.bNavMovePrev.Size = new System.Drawing.Size(23, 22);
+            this.bNavMovePrev.Text = "Move previous";
+            this.bNavMovePrev.Click += new System.EventHandler(this.bNavMovePrev_Click);
             // 
             // bindingNavigatorSeparator
             // 
@@ -230,6 +232,7 @@ namespace AgentApp
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
+            this.bindingNavigatorPositionItem.ReadOnly = true;
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
@@ -239,23 +242,25 @@ namespace AgentApp
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
-            // bindingNavigatorMoveNextItem
+            // bNavMoveNext
             // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
-            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveNextItem.Text = "Move next";
+            this.bNavMoveNext.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bNavMoveNext.Image = ((System.Drawing.Image)(resources.GetObject("bNavMoveNext.Image")));
+            this.bNavMoveNext.Name = "bNavMoveNext";
+            this.bNavMoveNext.RightToLeftAutoMirrorImage = true;
+            this.bNavMoveNext.Size = new System.Drawing.Size(23, 22);
+            this.bNavMoveNext.Text = "Move next";
+            this.bNavMoveNext.Click += new System.EventHandler(this.bNavMoveNext_Click);
             // 
-            // bindingNavigatorMoveLastItem
+            // bNavMoveLast
             // 
-            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
-            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveLastItem.Text = "Move last";
+            this.bNavMoveLast.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bNavMoveLast.Image = ((System.Drawing.Image)(resources.GetObject("bNavMoveLast.Image")));
+            this.bNavMoveLast.Name = "bNavMoveLast";
+            this.bNavMoveLast.RightToLeftAutoMirrorImage = true;
+            this.bNavMoveLast.Size = new System.Drawing.Size(23, 22);
+            this.bNavMoveLast.Text = "Move last";
+            this.bNavMoveLast.Click += new System.EventHandler(this.bNavMoveLast_Click);
             // 
             // bindingNavigatorSeparator2
             // 
@@ -456,7 +461,7 @@ namespace AgentApp
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(495, 208);
-            this.Controls.Add(this.products_SuppliersBindingNavigator);
+            this.Controls.Add(this.bnavProd_Supp);
             this.Controls.Add(this.tableLayoutPanel1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -466,9 +471,9 @@ namespace AgentApp
             this.Load += new System.EventHandler(this.frmProdSupp_Load);
             ((System.ComponentModel.ISupportInitialize)(this.travelExpertsDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.products_SuppliersBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.products_SuppliersBindingNavigator)).EndInit();
-            this.products_SuppliersBindingNavigator.ResumeLayout(false);
-            this.products_SuppliersBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bnavProd_Supp)).EndInit();
+            this.bnavProd_Supp.ResumeLayout(false);
+            this.bnavProd_Supp.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -487,17 +492,17 @@ namespace AgentApp
         private BindingSource products_SuppliersBindingSource;
         private Products_SuppliersTableAdapter products_SuppliersTableAdapter;
         private TableAdapterManager tableAdapterManager;
-        private BindingNavigator products_SuppliersBindingNavigator;
+        private BindingNavigator bnavProd_Supp;
         private ToolStripButton bindingNavigatorAddNewItem;
         private ToolStripLabel bindingNavigatorCountItem;
         private ToolStripButton bindingNavigatorDeleteItem;
-        private ToolStripButton bindingNavigatorMoveFirstItem;
-        private ToolStripButton bindingNavigatorMovePreviousItem;
+        private ToolStripButton bNavMoveFirst;
+        private ToolStripButton bNavMovePrev;
         private ToolStripSeparator bindingNavigatorSeparator;
         private ToolStripTextBox bindingNavigatorPositionItem;
         private ToolStripSeparator bindingNavigatorSeparator1;
-        private ToolStripButton bindingNavigatorMoveNextItem;
-        private ToolStripButton bindingNavigatorMoveLastItem;
+        private ToolStripButton bNavMoveNext;
+        private ToolStripButton bNavMoveLast;
         private ToolStripSeparator bindingNavigatorSeparator2;
         private ToolStripButton products_SuppliersBindingNavigatorSaveItem;
         private TextBox txtProdSupp;

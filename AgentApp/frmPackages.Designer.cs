@@ -479,8 +479,6 @@
             this.pkgBnav.Size = new System.Drawing.Size(755, 25);
             this.pkgBnav.TabIndex = 38;
             this.pkgBnav.Text = "bindingNavigator1";
-            this.pkgBnav.Click += new System.EventHandler(this.pkgBnav_Click);
-            this.pkgBnav.Validating += new System.ComponentModel.CancelEventHandler(this.pkgBnav_Validating);
             // 
             // bindingNavigatorAddNewItem
             // 
