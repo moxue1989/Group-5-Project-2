@@ -18,7 +18,7 @@ namespace AgentApp
             
         }
 
-        //Add/Edit Products
+        //launch Products form
         private void navProdAddEdit_Click(object sender, EventArgs e)
         {
             using (FrmProducts prod = new FrmProducts())
@@ -27,7 +27,7 @@ namespace AgentApp
             }
         }
 
-        //Add/Edit Suppliers
+        //launch Suppliers form
         private void navSuppAddEdit_Click(object sender, EventArgs e)
         {
             using (FrmSuppliers supp = new FrmSuppliers())
@@ -36,6 +36,7 @@ namespace AgentApp
             }
         }
 
+        //launch Product Suppliers form
         private void navProdSuppAddEdit_Click(object sender, EventArgs e)
         {
             using (FrmProdSupp prodsupp = new FrmProdSupp())
@@ -44,6 +45,7 @@ namespace AgentApp
             }
         }
 
+        //launch packages form
         private void navPkgAddEdit_Click(object sender, EventArgs e)
         {
             using (FrmPackages pkg = new FrmPackages())

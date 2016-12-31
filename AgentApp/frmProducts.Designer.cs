@@ -36,17 +36,17 @@
             this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.productsTableAdapter = new AgentApp.TravelExpertsDataSetTableAdapters.ProductsTableAdapter();
             this.tableAdapterManager = new AgentApp.TravelExpertsDataSetTableAdapters.TableAdapterManager();
-            this.productsBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bNavProd = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.bNavMoveFirst = new System.Windows.Forms.ToolStripButton();
+            this.bNavMovePrev = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
+            this.bNavPosition = new System.Windows.Forms.ToolStripTextBox();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+            this.bNavMoveNext = new System.Windows.Forms.ToolStripButton();
+            this.bNavMoveLast = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.productsBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
@@ -64,18 +64,18 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.btnExit = new System.Windows.Forms.Button();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.eProducts = new System.Windows.Forms.ErrorProvider(this.components);
             label1 = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.travelExpertsDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productsBindingNavigator)).BeginInit();
-            this.productsBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bNavProd)).BeginInit();
+            this.bNavProd.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eProducts)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -123,22 +123,22 @@
             this.tableAdapterManager.SuppliersTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = AgentApp.TravelExpertsDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // productsBindingNavigator
+            // bNavProd
             // 
-            this.productsBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
-            this.productsBindingNavigator.BindingSource = this.productsBindingSource;
-            this.productsBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.productsBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
-            this.productsBindingNavigator.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.productsBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorMoveFirstItem,
-            this.bindingNavigatorMovePreviousItem,
+            this.bNavProd.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.bNavProd.BindingSource = this.productsBindingSource;
+            this.bNavProd.CountItem = this.bindingNavigatorCountItem;
+            this.bNavProd.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.bNavProd.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.bNavProd.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bNavMoveFirst,
+            this.bNavMovePrev,
             this.bindingNavigatorSeparator,
-            this.bindingNavigatorPositionItem,
+            this.bNavPosition,
             this.bindingNavigatorCountItem,
             this.bindingNavigatorSeparator1,
-            this.bindingNavigatorMoveNextItem,
-            this.bindingNavigatorMoveLastItem,
+            this.bNavMoveNext,
+            this.bNavMoveLast,
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
@@ -146,16 +146,16 @@
             this.productsBindingNavigatorSaveItem,
             this.toolStripSeparator1,
             this.btnCancel});
-            this.productsBindingNavigator.Location = new System.Drawing.Point(0, 166);
-            this.productsBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.productsBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.productsBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.productsBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.productsBindingNavigator.Name = "productsBindingNavigator";
-            this.productsBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.productsBindingNavigator.Size = new System.Drawing.Size(384, 25);
-            this.productsBindingNavigator.TabIndex = 0;
-            this.productsBindingNavigator.Text = "bindingNavigator1";
+            this.bNavProd.Location = new System.Drawing.Point(0, 166);
+            this.bNavProd.MoveFirstItem = null;
+            this.bNavProd.MoveLastItem = null;
+            this.bNavProd.MoveNextItem = null;
+            this.bNavProd.MovePreviousItem = null;
+            this.bNavProd.Name = "bNavProd";
+            this.bNavProd.PositionItem = this.bNavPosition;
+            this.bNavProd.Size = new System.Drawing.Size(384, 25);
+            this.bNavProd.TabIndex = 0;
+            this.bNavProd.Text = "ProductsBNav";
             // 
             // bindingNavigatorAddNewItem
             // 
@@ -183,60 +183,65 @@
             this.bindingNavigatorDeleteItem.Text = "Delete";
             this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
-            // bindingNavigatorMoveFirstItem
+            // bNavMoveFirst
             // 
-            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
-            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveFirstItem.Text = "Move first";
+            this.bNavMoveFirst.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bNavMoveFirst.Image = ((System.Drawing.Image)(resources.GetObject("bNavMoveFirst.Image")));
+            this.bNavMoveFirst.Name = "bNavMoveFirst";
+            this.bNavMoveFirst.RightToLeftAutoMirrorImage = true;
+            this.bNavMoveFirst.Size = new System.Drawing.Size(23, 22);
+            this.bNavMoveFirst.Text = "Move first";
+            this.bNavMoveFirst.Click += new System.EventHandler(this.bNavMoveFirst_Click);
             // 
-            // bindingNavigatorMovePreviousItem
+            // bNavMovePrev
             // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
+            this.bNavMovePrev.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bNavMovePrev.Image = ((System.Drawing.Image)(resources.GetObject("bNavMovePrev.Image")));
+            this.bNavMovePrev.Name = "bNavMovePrev";
+            this.bNavMovePrev.RightToLeftAutoMirrorImage = true;
+            this.bNavMovePrev.Size = new System.Drawing.Size(23, 22);
+            this.bNavMovePrev.Text = "Move previous";
+            this.bNavMovePrev.Click += new System.EventHandler(this.bNavMovePrev_Click);
             // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
             this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
             // 
-            // bindingNavigatorPositionItem
+            // bNavPosition
             // 
-            this.bindingNavigatorPositionItem.AccessibleName = "Position";
-            this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
-            this.bindingNavigatorPositionItem.Text = "0";
-            this.bindingNavigatorPositionItem.ToolTipText = "Current position";
+            this.bNavPosition.AccessibleName = "Position";
+            this.bNavPosition.AutoSize = false;
+            this.bNavPosition.Name = "bNavPosition";
+            this.bNavPosition.ReadOnly = true;
+            this.bNavPosition.Size = new System.Drawing.Size(50, 23);
+            this.bNavPosition.Text = "0";
+            this.bNavPosition.ToolTipText = "Current position";
             // 
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
-            // bindingNavigatorMoveNextItem
+            // bNavMoveNext
             // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
-            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveNextItem.Text = "Move next";
+            this.bNavMoveNext.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bNavMoveNext.Image = ((System.Drawing.Image)(resources.GetObject("bNavMoveNext.Image")));
+            this.bNavMoveNext.Name = "bNavMoveNext";
+            this.bNavMoveNext.RightToLeftAutoMirrorImage = true;
+            this.bNavMoveNext.Size = new System.Drawing.Size(23, 22);
+            this.bNavMoveNext.Text = "Move next";
+            this.bNavMoveNext.Click += new System.EventHandler(this.bNavMoveNext_Click);
             // 
-            // bindingNavigatorMoveLastItem
+            // bNavMoveLast
             // 
-            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
-            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveLastItem.Text = "Move last";
+            this.bNavMoveLast.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bNavMoveLast.Image = ((System.Drawing.Image)(resources.GetObject("bNavMoveLast.Image")));
+            this.bNavMoveLast.Name = "bNavMoveLast";
+            this.bNavMoveLast.RightToLeftAutoMirrorImage = true;
+            this.bNavMoveLast.Size = new System.Drawing.Size(23, 22);
+            this.bNavMoveLast.Text = "Move last";
+            this.bNavMoveLast.Click += new System.EventHandler(this.bNavMoveLast_Click);
             // 
             // bindingNavigatorSeparator2
             // 
@@ -275,7 +280,7 @@
             // 
             // txtProductId
             // 
-            this.txtProductId.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productsBindingSource, "ProductId", true));
+            this.txtProductId.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productsBindingSource, "ProductId", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N0"));
             this.txtProductId.Location = new System.Drawing.Point(117, 9);
             this.txtProductId.Name = "txtProductId";
             this.txtProductId.Size = new System.Drawing.Size(121, 20);
@@ -416,17 +421,17 @@
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // errorProvider1
+            // eProducts
             // 
-            this.errorProvider1.ContainerControl = this;
-            this.errorProvider1.DataSource = this.productsBindingSource;
+            this.eProducts.ContainerControl = this;
+            this.eProducts.DataSource = this.productsBindingSource;
             // 
             // FrmProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 191);
-            this.Controls.Add(this.productsBindingNavigator);
+            this.Controls.Add(this.bNavProd);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "FrmProducts";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -434,16 +439,16 @@
             this.Load += new System.EventHandler(this.frmProducts_Load);
             ((System.ComponentModel.ISupportInitialize)(this.travelExpertsDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productsBindingNavigator)).EndInit();
-            this.productsBindingNavigator.ResumeLayout(false);
-            this.productsBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bNavProd)).EndInit();
+            this.bNavProd.ResumeLayout(false);
+            this.bNavProd.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel10.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eProducts)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -455,17 +460,17 @@
         private System.Windows.Forms.BindingSource productsBindingSource;
         private TravelExpertsDataSetTableAdapters.ProductsTableAdapter productsTableAdapter;
         private TravelExpertsDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.BindingNavigator productsBindingNavigator;
+        private System.Windows.Forms.BindingNavigator bNavProd;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
+        private System.Windows.Forms.ToolStripButton bNavMoveFirst;
+        private System.Windows.Forms.ToolStripButton bNavMovePrev;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
-        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
+        private System.Windows.Forms.ToolStripTextBox bNavPosition;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
+        private System.Windows.Forms.ToolStripButton bNavMoveNext;
+        private System.Windows.Forms.ToolStripButton bNavMoveLast;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton productsBindingNavigatorSaveItem;
         private System.Windows.Forms.TextBox txtProductId;
@@ -483,6 +488,6 @@
         private System.Windows.Forms.ToolStripButton btnCancel;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ErrorProvider eProducts;
     }
 }

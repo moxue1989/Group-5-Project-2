@@ -90,5 +90,37 @@ namespace AgentApp
             MessageBox.Show(@"This record will be permanently deleted.", @"Delete", MessageBoxButtons.OK, MessageBoxIcon.Warning);
           
         }
+
+        private void bNavMovePrev_Click(object sender, EventArgs e)
+        {
+            if (IsValidData())
+            {
+                suppliersBindingSource?.MovePrevious();//if all textbox data are valid, move to previous record
+            }
+        }
+
+        private void bNavMoveFirst_Click(object sender, EventArgs e)
+        {
+            if (IsValidData())
+            {
+                suppliersBindingSource?.MoveFirst();//if all textbox data are valid, move to first record
+            }
+        }
+
+        private void bNavMoveNext_Click(object sender, EventArgs e)
+        {
+            if (IsValidData())
+            {
+                suppliersBindingSource?.MoveNext();//if all textbox data are valid, move to next record
+            }
+        }
+
+        private void bNavMoveLast_Click(object sender, EventArgs e)
+        {
+            if (IsValidData())
+            {
+                suppliersBindingSource?.MoveLast();//if all textbox data are valid, move to last record
+            }
+        }
     }
 }

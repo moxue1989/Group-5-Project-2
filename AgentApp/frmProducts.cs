@@ -91,11 +91,14 @@ namespace AgentApp
         private void btnCancel_Click(object sender, EventArgs e)
         {
             productsBindingSource.CancelEdit();
+            eProducts.SetError(txtProductId, null);
+            eProducts.SetError(txtProdName, null);
         }
 
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show(@"This record will be permanently deleted.", @"Delete", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            eProducts.Clear();
         }
         //binding validator class to textbox fields
         private bool IsValidData()
@@ -105,6 +108,38 @@ namespace AgentApp
                 Validator.IsInt(txtProductId, MinValue) &&
                 //Validator.IsPositiveNum(txtProductId, MinValue) &&
                 Validator.IsPresent(txtProdName);
+        }
+
+        private void bNavMovePrev_Click(object sender, EventArgs e)
+        {
+            if (IsValidData())
+            {
+                productsBindingSource?.MovePrevious();//if all textbox data are valid, move to previous record
+            }
+        }
+
+        private void bNavMoveNext_Click(object sender, EventArgs e)
+        {
+            if (IsValidData())
+            {
+                productsBindingSource?.MoveNext();//if all textbox data are valid, move to next record
+            }
+        }
+
+        private void bNavMoveLast_Click(object sender, EventArgs e)
+        {
+            if (IsValidData())
+            {
+                productsBindingSource?.MoveLast();//if all textbox data are valid, move to last record
+            }
+        }
+
+        private void bNavMoveFirst_Click(object sender, EventArgs e)
+        {
+            if (IsValidData())
+            {
+                productsBindingSource?.MoveFirst();//if all textbox data are valid, move to first record
+            }
         }
     }
 }

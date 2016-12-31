@@ -13,12 +13,12 @@ namespace AgentApp
             ErrorProvider e = new ErrorProvider();
             if (tb.Text != "")
             {
-                //e.SetError(tb, null);
+                //e.Clear();
+                //e.SetError(tb, "");
                 return true;
             }
             else
             {
-
                 //e.SetError(tb, @"The " + tb.Tag + @" field is required.");
                 MessageBox.Show(@"The " + tb.Tag + @" field is required.", @"Entry Error", MessageBoxButtons.OK,
                     MessageBoxIcon.Error); // Show error message when txtbox is empty
