@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Windows.Forms;
 
 //coded by Kasi Emmanuel
@@ -7,6 +8,7 @@ namespace AgentApp
 {
     public partial class FrmMainGui : Form
     {
+        private TravelExpertsEntities db;
         public FrmMainGui()
         {
             InitializeComponent();
@@ -14,7 +16,10 @@ namespace AgentApp
         
         private void frmMainGUI_Load(object sender, EventArgs e)
         {
-            
+            db=new TravelExpertsEntities();
+            BindingSource packages = new BindingSource();
+            packages.DataSource = db.Packages.ToList();
+            dataGrid.DataSource = packages;
         }
 
         //launch Products form

@@ -49,6 +49,8 @@ namespace AgentApp
             this.packagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pACKAGESToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.navPkgAddEdit = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
+            this.viewRecordsToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.pRODUCTSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.navProdAddEdit = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
@@ -68,18 +70,24 @@ namespace AgentApp
             this.packagesProductsSuppliersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.packages_Products_SuppliersTableAdapter = new AgentApp.TravelExpertsDataSetTableAdapters.Packages_Products_SuppliersTableAdapter();
             this.productsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.viewRecordsToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
+            this.dataGrid = new System.Windows.Forms.DataGridView();
+            this.packageBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.packagesProductsSuppliersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.packageBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tableAdapterManager
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.Connection = null;
             this.tableAdapterManager.Packages_Products_SuppliersTableAdapter = null;
+            this.tableAdapterManager.PackagesTableAdapter = null;
             this.tableAdapterManager.Products_SuppliersTableAdapter = null;
             this.tableAdapterManager.ProductsTableAdapter = null;
             this.tableAdapterManager.SupplierContactsTableAdapter = null;
@@ -191,9 +199,20 @@ namespace AgentApp
             // navPkgAddEdit
             // 
             this.navPkgAddEdit.Name = "navPkgAddEdit";
-            this.navPkgAddEdit.Size = new System.Drawing.Size(121, 22);
+            this.navPkgAddEdit.Size = new System.Drawing.Size(144, 22);
             this.navPkgAddEdit.Text = "Add/Edit";
             this.navPkgAddEdit.Click += new System.EventHandler(this.navPkgAddEdit_Click);
+            // 
+            // toolStripSeparator7
+            // 
+            this.toolStripSeparator7.Name = "toolStripSeparator7";
+            this.toolStripSeparator7.Size = new System.Drawing.Size(141, 6);
+            // 
+            // viewRecordsToolStripMenuItem3
+            // 
+            this.viewRecordsToolStripMenuItem3.Name = "viewRecordsToolStripMenuItem3";
+            this.viewRecordsToolStripMenuItem3.Size = new System.Drawing.Size(144, 22);
+            this.viewRecordsToolStripMenuItem3.Text = "View Records";
             // 
             // pRODUCTSToolStripMenuItem
             // 
@@ -321,16 +340,24 @@ namespace AgentApp
             // 
             this.productsBindingSource1.DataMember = "Products";
             // 
-            // viewRecordsToolStripMenuItem3
+            // dataGrid
             // 
-            this.viewRecordsToolStripMenuItem3.Name = "viewRecordsToolStripMenuItem3";
-            this.viewRecordsToolStripMenuItem3.Size = new System.Drawing.Size(152, 22);
-            this.viewRecordsToolStripMenuItem3.Text = "View Records";
+            this.dataGrid.AllowUserToAddRows = false;
+            this.dataGrid.AllowUserToDeleteRows = false;
+            this.dataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGrid.Location = new System.Drawing.Point(14, 36);
+            this.dataGrid.Name = "dataGrid";
+            this.dataGrid.ReadOnly = true;
+            this.dataGrid.Size = new System.Drawing.Size(802, 292);
+            this.dataGrid.TabIndex = 20;
             // 
-            // toolStripSeparator7
+            // packageBindingSource
             // 
-            this.toolStripSeparator7.Name = "toolStripSeparator7";
-            this.toolStripSeparator7.Size = new System.Drawing.Size(149, 6);
+            this.packageBindingSource.DataSource = typeof(AgentApp.Package);
+            // 
+            // productBindingSource
+            // 
+            this.productBindingSource.DataSource = typeof(AgentApp.Product);
             // 
             // FrmMainGui
             // 
@@ -338,6 +365,7 @@ namespace AgentApp
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(942, 443);
+            this.Controls.Add(this.dataGrid);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -350,6 +378,9 @@ namespace AgentApp
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.packagesProductsSuppliersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.packageBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -392,5 +423,8 @@ namespace AgentApp
         private ToolStripMenuItem navPkgAddEdit;
         private ToolStripSeparator toolStripSeparator7;
         private ToolStripMenuItem viewRecordsToolStripMenuItem3;
+        private DataGridView dataGrid;
+        private BindingSource packageBindingSource;
+        private BindingSource productBindingSource;
     }
 }
