@@ -25,6 +25,16 @@ namespace AgentApp
                 listBox1.Items.Add(package);
             }
             //dgTest.DataMember = table;
+            //var packagesList = new BindingList<Package>(packages);
+            //packageBindingSource.DataSource = packagesList;
+
+            var products = new List<Product>()
+            {
+                new Product {},
+                new Product {},
+            };
+
+            dataGridView.DataSource = products;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -40,7 +50,7 @@ namespace AgentApp
 
         private void btnProducts_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = DatabaseAccess.GetProductsData();
+            dataGridView.DataSource = DatabaseAccess.GetProductsData();
         }
     }
 }
