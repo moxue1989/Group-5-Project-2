@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{531070B3-2F2F-4A03-947F-6C5395F449D8}</ProjectGuid>
+    <ProjectGuid>{2F77D4F1-9EE2-4B8B-92C1-C06EA5E5E0F8}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AgentApp</RootNamespace>
-    <AssemblyName>AgentApp</AssemblyName>
+    <RootNamespace>Agent_App_V2</RootNamespace>
+    <AssemblyName>Agent App V2</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -41,20 +41,9 @@
       <HintPath>packages\Dapper.Contrib.1.50.0\lib\net45\Dapper.Contrib.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -66,51 +55,38 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DatabaseAccess.cs" />
-    <Compile Include="EntityModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EntityModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EntityModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EntityModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EntityModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EntityModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="frmGUI.cs">
+    <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmGUI.Designer.cs">
-      <DependentUpon>frmGUI.cs</DependentUpon>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Package.cs">
-      <DependentUpon>EntityModel.tt</DependentUpon>
+    <Compile Include="frmPackages.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Product.cs">
-      <DependentUpon>EntityModel.tt</DependentUpon>
+    <Compile Include="frmPackages.Designer.cs">
+      <DependentUpon>frmPackages.cs</DependentUpon>
     </Compile>
-    <Compile Include="Products_Suppliers.cs">
-      <DependentUpon>EntityModel.tt</DependentUpon>
+    <Compile Include="frmSuppliers.cs">
+      <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmSuppliers.Designer.cs">
+      <DependentUpon>frmSuppliers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Package.cs" />
+    <Compile Include="Package_Product_Supplier.cs" />
+    <Compile Include="Product.cs" />
+    <Compile Include="Product_Supplier.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings.cs" />
-    <Compile Include="Supplier.cs">
-      <DependentUpon>EntityModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TravelExpertsDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TravelExpertsDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Validation.cs" />
-    <EmbeddedResource Include="frmGUI.resx">
-      <DependentUpon>frmGUI.cs</DependentUpon>
+    <Compile Include="Supplier.cs" />
+    <Compile Include="TravelExpertsDB.cs" />
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPackages.resx">
+      <DependentUpon>frmPackages.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -121,13 +97,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EntityDeploy Include="EntityModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>EntityModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="EntityModel.edmx.diagram">
-      <DependentUpon>EntityModel.edmx</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -138,38 +107,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="TravelExpertsDataSet.xsc">
-      <DependentUpon>TravelExpertsDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="TravelExpertsDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>TravelExpertsDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="TravelExpertsDataSet.xss">
-      <DependentUpon>TravelExpertsDataSet.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Properties\DataSources\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="EntityModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>EntityModel.edmx</DependentUpon>
-      <LastGenOutput>EntityModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="EntityModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>EntityModel.edmx</DependentUpon>
-      <LastGenOutput>EntityModel.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

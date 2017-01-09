@@ -12,7 +12,7 @@ namespace AgentApp
 {
     public static class DatabaseAccess
     {
-        public static IList<Product> GetProducts()
+        public static List<Product> GetProducts()
         {
             var results = new List<Product>();
             using (SqlConnection conn = new SqlConnection(Settings.ConnectionString))

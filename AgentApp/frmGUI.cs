@@ -25,16 +25,10 @@ namespace AgentApp
                 listBox1.Items.Add(package);
             }
             //dgTest.DataMember = table;
-            //var packagesList = new BindingList<Package>(packages);
+            var packagesList = new BindingList<Package>(packages);
             //packageBindingSource.DataSource = packagesList;
 
-            var products = new List<Product>()
-            {
-                new Product {},
-                new Product {},
-            };
-
-            dataGridView.DataSource = products;
+            
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -50,7 +44,35 @@ namespace AgentApp
 
         private void btnProducts_Click(object sender, EventArgs e)
         {
-            dataGridView.DataSource = DatabaseAccess.GetProductsData();
+            //dataGridView1.DataSource = DatabaseAccess.GetProductsData();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var products = new List<Product>()
+            {
+                new Product(5,"game"),
+                new Product(5,"pop"),
+            };
+
+            //dataGridView1.DataSource = products;
+        }
+
+        private void productsBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.productsBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.travelExpertsDataSet);
+
+        }
+
+        private void frmGUI_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'travelExpertsDataSet.Products_Suppliers' table. You can move, or remove it, as needed.
+            this.products_SuppliersTableAdapter.Fill(this.travelExpertsDataSet.Products_Suppliers);
+            // TODO: This line of code loads data into the 'travelExpertsDataSet.Products' table. You can move, or remove it, as needed.
+            this.productsTableAdapter.Fill(this.travelExpertsDataSet.Products);
+
         }
     }
 }
