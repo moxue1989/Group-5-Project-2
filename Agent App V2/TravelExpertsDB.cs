@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Dapper;
+using System.Configuration;
 
 namespace Agent_App_V2
 {
@@ -17,7 +18,7 @@ namespace Agent_App_V2
             using (SqlConnection conn = new SqlConnection(Settings.connectionString))
             {
                 conn.Open();
-                pps.AddRange(conn.Query<Package_Product_Supplier>(Settings.productSuppliersQuery, new {packageId}));
+                pps.AddRange(conn.Query<Package_Product_Supplier>(Settings.productSuppliersQuery, new { packageId }));
             }
             return pps;
         }
@@ -25,32 +26,52 @@ namespace Agent_App_V2
         //coded by Kasi Emmanuel
         public static List<Product> GetProducts()
         {
-            var prod = new List<Product>();
+            //var prod = new List<Product>();
+           
             using (SqlConnection con = new SqlConnection(Settings.connectionString))
             {
                 if (con.State == ConnectionState.Closed)
                 {
                     con.Open();
-                    prod.AddRange(con.Query<Product>(Settings.productsQuery));
+                    //prod.AddRange(con.Query<Product>(Settings.productsQuery));
                 }
                 con.Close();
-                //return con.Query<Product>(Settings.productsQuery).ToList();
-                return prod;
+                return con.Query<Product>(Settings.productsQuery).ToList();
+                //return prod;
             }
         }
 
-        public static List<Product> GetProductSuppByProdID(int productId)
+        public static List<Product> GetProductSuppBySuppID(int supplierId)
         {
-            var prod = new List<Product_Supplier>();
-            using (IDbConnection con = new SqlConnection(Settings.connectionString))
+            //var prod = new List<Product_Supplier>();
+            using (SqlConnection con = new SqlConnection(Settings.connectionString))
             {
                 if (con.State == ConnectionState.Closed)
                 {
                     con.Open();
 
                 }
-                return con.Query<Product>(Settings.productSupplierSP, new { ProductId = productId}, commandType:CommandType.StoredProcedure).ToList();
+                return con.Query<Product>(Settings.productSupplierSP, new { SupplierId = supplierId }, commandType: CommandType.StoredProcedure).ToList();
             }
         }
+
+        public static List<Supplier> GetSuppliers()
+        {
+
+            using (SqlConnection con = new SqlConnection(Settings.connectionString))
+            {
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                    //prod.AddRange(con.Query<Product>(Settings.productsQuery));
+                }
+                con.Close();
+                return con.Query<Supplier>(Settings.supplierQuery).ToList();
+                //return prod;
+            }
+        }
+
+        
+
     }
 }

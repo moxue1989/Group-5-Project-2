@@ -11,4 +11,5 @@ namespace Agent_App_V2
         public int ProductId { get; set; }
         public string ProdName { get; set; }
     }
+    
 }

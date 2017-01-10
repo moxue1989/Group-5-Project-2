@@ -9,8 +9,9 @@ namespace Agent_App_V2
     public static class Settings
     {
         public static string connectionString =
-            @"Data Source=ICTVM-M1JAMLFO8\SQLEXPRESS;Initial
-            Catalog=TravelExperts;Integrated Security=True";
+            @"Data Source=ICTVM-M1JAMLFO8\SQLEXPRESS;Initial Catalog=TravelExperts;Integrated Security=True";
+
+        
 
         public static string productSuppliersQuery =
             @"SELECT [ProductSupplierId], [ProductId], [SupplierId]
@@ -18,10 +19,10 @@ namespace Agent_App_V2
             WHERE ps.[ProductSupplierId] = pps.[ProductSupplierId]
             AND pps.[PackageId] = @PackageID";
 
-        public static string productsQuery =
-            @"SELECT * FROM [Products]";
+        public static string productsQuery = @"SELECT * FROM [Products]";
 
-        public static string productSupplierSP =
-            @"spGetProdSuppByProdID";
+        public static string supplierQuery = @"SELECT SupplierId, SupName FROM [Suppliers]";
+
+        public static string productSupplierSP = @"spGetProdSuppByProdID";
     }
 }
