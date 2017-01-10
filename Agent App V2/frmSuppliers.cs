@@ -16,5 +16,28 @@ namespace Agent_App_V2
         {
             InitializeComponent();
         }
+
+        private void frmSuppliers_Load(object sender, EventArgs e)
+        {
+            cbProducts.DataSource = TravelExpertsDB.GetProducts();
+            cbProducts.DisplayMember = "ProdName";
+            cbProducts.ValueMember = "ProductId";
+            Product obj = cbProducts.SelectedItem as Product;
+
+            if (obj != null)
+            {
+                dataGridProdSupp.DataSource = TravelExpertsDB.GetProductSuppByProdID(obj.ProductId);
+            }
+        }
+
+        private void cbProducts_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            Product obj = cbProducts.SelectedItem as Product;
+
+            if (obj != null)
+            {
+                dataGridProdSupp.DataSource = TravelExpertsDB.GetProductSuppByProdID(obj.ProductId);
+            }
+        }
     }
 }

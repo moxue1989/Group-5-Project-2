@@ -17,5 +17,11 @@ namespace Agent_App_V2
             FROM [Products_Suppliers] ps, [Packages_Products_Suppliers] pps
             WHERE ps.[ProductSupplierId] = pps.[ProductSupplierId]
             AND pps.[PackageId] = @PackageID";
+
+        public static string productsQuery =
+            @"SELECT * FROM [Products]";
+
+        public static string productSupplierSP =
+            @"spGetProdSuppByProdID";
     }
 }

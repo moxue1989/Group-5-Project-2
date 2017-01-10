@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -21,9 +22,35 @@ namespace Agent_App_V2
             return pps;
         }
 
-        public static Product_Supplier GetProductSupplier(int productSupplierId)
+        //coded by Kasi Emmanuel
+        public static List<Product> GetProducts()
         {
-            var ps = new Product_Supplier();
+            var prod = new List<Product>();
+            using (SqlConnection con = new SqlConnection(Settings.connectionString))
+            {
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                    prod.AddRange(con.Query<Product>(Settings.productsQuery));
+                }
+                con.Close();
+                //return con.Query<Product>(Settings.productsQuery).ToList();
+                return prod;
+            }
+        }
+
+        public static List<Product> GetProductSuppByProdID(int productId)
+        {
+            var prod = new List<Product_Supplier>();
+            using (IDbConnection con = new SqlConnection(Settings.connectionString))
+            {
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+
+                }
+                return con.Query<Product>(Settings.productSupplierSP, new { ProductId = productId}, commandType:CommandType.StoredProcedure).ToList();
+            }
         }
     }
 }

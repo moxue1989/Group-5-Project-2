@@ -11,9 +11,6 @@ namespace Agent_App_V2
         public int PackageID { get; set; }
         public int ProductSupplierId { get; set; }
 
-        public Product_Supplier GetProductSupplier()
-        {
-            return TravelExpertsDB.GetProductSupplier(ProductSupplierId);
-        }
+        
     }
 }
