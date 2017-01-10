@@ -9,7 +9,7 @@ namespace Agent_App_V2
     public static class Settings
     {
         public static string connectionString =
-            @"Data Source=ICTVM-FQQ06UJG2\SQLEXPRESS;Initial
+            @"Data Source=ICTVM-M1JAMLFO8\SQLEXPRESS;Initial
             Catalog=TravelExperts;Integrated Security=True";
 
         public static string productSuppliersQuery =
