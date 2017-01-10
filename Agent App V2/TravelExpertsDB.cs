@@ -40,7 +40,7 @@ namespace Agent_App_V2
                 //return prod;
             }
         }
-
+        //coded by Kasi Emmanuel
         public static List<Product> GetProductSuppBySuppID(int supplierId)
         {
             //var prod = new List<Product_Supplier>();
@@ -54,8 +54,21 @@ namespace Agent_App_V2
                 return con.Query<Product>(Settings.productSupplierSP, new { SupplierId = supplierId }, commandType: CommandType.StoredProcedure).ToList();
             }
         }
-
+        //coded by Kasi Emmanuel
         public static List<Supplier> GetSuppliers()
+        {
+            using (SqlConnection con = new SqlConnection(Settings.connectionString))
+            {
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+                con.Close();
+                return con.Query<Supplier>(Settings.supplierQuery).ToList();
+            }
+        }
+        //coded by Kasi Emmanuel
+        public static int UpdateCustomer(Product_Supplier newProds)
         {
 
             using (SqlConnection con = new SqlConnection(Settings.connectionString))
@@ -63,15 +76,17 @@ namespace Agent_App_V2
                 if (con.State == ConnectionState.Closed)
                 {
                     con.Open();
-                    //prod.AddRange(con.Query<Product>(Settings.productsQuery));
+                    
                 }
-                con.Close();
-                return con.Query<Supplier>(Settings.supplierQuery).ToList();
-                //return prod;
-            }
-        }
+                int rowsAffectd = con.Execute(Settings.addProductQuery, newProds);
+                Settings.SetIdentity<int>(con, id => newProds.SupplierId = id);
 
-        
+                con.Close();
+                return rowsAffectd;
+               
+            }
+            
+        }
 
     }
 }
