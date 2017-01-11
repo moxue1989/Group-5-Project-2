@@ -10,7 +10,6 @@ namespace Agent_App_V2
     {
         public int PackageID { get; set; }
         public int ProductSupplierId { get; set; }
-
-        
+      
     }
 }
