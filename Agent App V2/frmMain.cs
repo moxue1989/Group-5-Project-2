@@ -22,5 +22,11 @@ namespace Agent_App_V2
             var packageForm = new frmPackages();
             packageForm.ShowDialog();
         }
+
+        private void btnProductSuppliers_Click(object sender, EventArgs e)
+        {
+            var frmSuppliers = new frmSuppliers();
+            frmSuppliers.ShowDialog();
+        }
     }
 }

@@ -12,10 +12,21 @@ namespace Agent_App_V2
 {
     public static class Settings
     {
-
+        /// <summary>
+        /// Modify this connection string to work with local database!
+        /// </summary>
         public static string connectionString =
              @"Data Source=ICTVM-FQQ06UJG2\SQLEXPRESS;Initial Catalog=TravelExperts;Integrated Security=True";
-      
+        /// <summary>
+        /// Modify this connection string to work with local database!
+        /// </summary>
+
+
+
+
+        /// 
+        /// KASI SQL QUERIES
+        /// 
         //coded by Kasi Emmanuel
         public static void SetIdentity<T>(SqlConnection connection, Action<T> setId)
         {
@@ -33,9 +44,23 @@ namespace Agent_App_V2
         public static string addProductQuery = "INSERT INTO Products_Suppliers " + "(ProductSupplierId, ProductId, SupplierId) " + "VALUES (@ProductSupplierId, @ProductId, @SupplierId)";
 
 
-        ///
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         /// frmPackage Queries
-        /// Mo Xue
+        /// Coded by Mo Xue
+        /// 
         public static string GetPackagesQuery =
             @"SELECT PackageId,PkgName,PkgStartDate,PkgEndDate,PkgDesc,
                 PkgBasePrice,PkgAgencyCommission
