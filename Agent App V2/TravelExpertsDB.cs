@@ -30,12 +30,8 @@ namespace Agent_App_V2
            
             using (SqlConnection con = new SqlConnection(Settings.connectionString))
             {
-                if (con.State == ConnectionState.Closed)
-                {
                     con.Open();
-                    //prod.AddRange(con.Query<Product>(Settings.productsQuery));
-                }
-                con.Close();
+                
                 return con.Query<Product>(Settings.productsQuery).ToList();
                 //return prod;
             }
@@ -46,12 +42,10 @@ namespace Agent_App_V2
             //var prod = new List<Product_Supplier>();
             using (SqlConnection con = new SqlConnection(Settings.connectionString))
             {
-                if (con.State == ConnectionState.Closed)
-                {
                     con.Open();
-
-                }
-                return con.Query<Product>(Settings.productSupplierSP, new { SupplierId = supplierId }, commandType: CommandType.StoredProcedure).ToList();
+                
+                return con.Query<Product>(Settings.productSupplierSP, new { SupplierId = supplierId },
+                    commandType: CommandType.StoredProcedure).ToList();
             }
         }
         //coded by Kasi Emmanuel

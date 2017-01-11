@@ -16,7 +16,7 @@ namespace Agent_App_V2
         {
             InitializeComponent();
         }
-        Product prod = new Product();
+        //Product prod = new Product();
         List<Product> products = new List<Product>();
         private void frmSuppliers_Load(object sender, EventArgs e)
         {
