@@ -10,20 +10,28 @@ namespace Agent_App_V2
 {
     public static class TravelExpertsDB
     {
-        public static List<Package_Product_Supplier> GetPPS(int packageId)
+        
+
+        public static List<Product> GetAllProducts()
         {
-            var pps = new List<Package_Product_Supplier>();
+            var products = new List<Product>();
             using (SqlConnection conn = new SqlConnection(Settings.connectionString))
             {
                 conn.Open();
-                pps.AddRange(conn.Query<Package_Product_Supplier>(Settings.productSuppliersQuery, new {packageId}));
+                products.AddRange(conn.Query<Product>(Settings.GetAllProductsQuery));
             }
-            return pps;
+            return products;
         }
 
-        public static Product_Supplier GetProductSupplier(int productSupplierId)
+        public static List<Supplier> GetAllSuppliers()
         {
-            var ps = new Product_Supplier();
+            var suppliers = new List<Supplier>();
+            using (SqlConnection conn = new SqlConnection(Settings.connectionString))
+            {
+                conn.Open();
+                suppliers.AddRange(conn.Query<Supplier>(Settings.GetAllSuppliersQuery));
+            }
+            return suppliers;
         }
     }
 }

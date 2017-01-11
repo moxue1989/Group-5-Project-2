@@ -10,5 +10,10 @@ namespace Agent_App_V2
     {
         public int ProductId { get; set; }
         public string ProdName { get; set; }
+
+        public override string ToString()
+        {
+            return ProdName;
+        }
     }
 }
