@@ -16,5 +16,11 @@ namespace Agent_App_V2
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var packageForm = new frmPackages();
+            packageForm.ShowDialog();
+        }
     }
 }

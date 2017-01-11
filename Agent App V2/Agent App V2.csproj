@@ -56,6 +56,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmAddEditPackage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddEditPackage.Designer.cs">
+      <DependentUpon>frmAddEditPackage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEditPackageProducts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditPackageProducts.Designer.cs">
+      <DependentUpon>frmEditPackageProducts.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +87,7 @@
       <DependentUpon>frmSuppliers.cs</DependentUpon>
     </Compile>
     <Compile Include="Package.cs" />
+    <Compile Include="PackageDB.cs" />
     <Compile Include="Package_Product_Supplier.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="Product_Supplier.cs" />
@@ -83,6 +96,12 @@
     <Compile Include="Settings.cs" />
     <Compile Include="Supplier.cs" />
     <Compile Include="TravelExpertsDB.cs" />
+    <EmbeddedResource Include="frmAddEditPackage.resx">
+      <DependentUpon>frmAddEditPackage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditPackageProducts.resx">
+      <DependentUpon>frmEditPackageProducts.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>

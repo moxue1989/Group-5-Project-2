@@ -16,9 +16,38 @@ namespace Agent_App_V2
         public decimal PkgBasePrice { get; set; }
         public decimal PkgAgencyCommission { get; set; }
 
-        public List<Package_Product_Supplier> GetPPS()
+        public List<Product_Supplier> GetAddedPS()
         {
-            return TravelExpertsDB.GetPPS(PackageId);
+            return PackageDB.GetAddedPS(PackageId);
         }
+
+        public List<Product_Supplier> GetNotAddedPS()
+        {
+            return PackageDB.GetNotAddedPS(PackageId);
+        }
+
+        public int AddPackage()
+        {
+            return PackageDB.AddPackage(this);
+        }
+
+        public void Update()
+        {
+            PackageDB.UpdatePackage(this);
+        }
+
+        public void RemoveProducts()
+        {
+            PackageDB.RemoveAllPSForPkg(this.PackageId);
+        }
+
+        public void Delete()
+        {
+            PackageDB.DeletePackage(this);
+        }
+        //public override string ToString()
+        //{
+        //    return PkgName + PkgDesc + PkgStartDate;
+        //}
     }
 }
