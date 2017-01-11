@@ -12,10 +12,12 @@ namespace Agent_App_V2
 {
     public partial class frmPackages : Form
     {
+
         private List<Package> packageList;
         private Package currentPackage;
         private List<Product_Supplier> currentPSList;
         private int count = 0;
+
 
         public frmPackages()
         {
@@ -72,6 +74,7 @@ namespace Agent_App_V2
 
         private void Package_Button_Click(object sender, EventArgs e)
         {
+
             // set current package and get current product_supplier list for current package
             currentPackage = packageList[Convert.ToInt32(((Button) sender).Tag)];
             currentPSList = currentPackage.GetAddedPS();
