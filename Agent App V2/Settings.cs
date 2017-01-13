@@ -17,6 +17,12 @@ namespace Agent_App_V2
         /// </summary>
         public static string connectionString =
              @"Data Source=ICTVM-FQQ06UJG2\SQLEXPRESS;Initial Catalog=TravelExperts;Integrated Security=True";
+
+        public static string connectionString2 = @"Data Source=ICTVM-M1JAMLFO8\SQLEXPRESS;Initial Catalog=TravelExperts;Integrated Security=True";
+            //"Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\TravelExperts.mdf;Integrated Security=True;Connect Timeout=30";
+        
+
+
         /// <summary>
         /// Modify this connection string to work with local database!
         /// </summary>
@@ -34,18 +40,36 @@ namespace Agent_App_V2
             T newId = (T)identity.Id;
             setId(newId);
         }
-        //coded by Kasi Emmanuel
+       
         public static string productsQuery = @"SELECT * FROM [Products]";
-        //coded by Kasi Emmanuel
+
+
+        public static string AddProductsQuery = @"INSERT INTO Products VALUES (@ProdName); SELECT CAST(SCOPE_IDENTITY() as int)";
+
+        public static string UpdateProductQuery = @"UPDATE Products SET ProdName = @ProdName " + 
+            "WHERE ProductId = @ProductId";
+
+        public static string DeleteProductQuery =@"DELETE FROM Products WHERE ProductId = @ProductId";
+
+        public static string LastProductQuery =
+            @"SELECT IDENT_CURRENT('Products')";
+      
+        public static string AddSupplierQuery = @"INSERT INTO Supplier VALUES (@SupplierId, @SupName)";
+
+       
         public static string supplierQuery = @"SELECT SupplierId, SupName FROM [Suppliers]";
-        //coded by Kasi Emmanuel
+        
+
         public static string productSupplierSP = @"spGetProdSuppByProdID";
-        //coded by Kasi Emmanuel
-        public static string addProductQuery = "INSERT INTO Products_Suppliers " + "(ProductSupplierId, ProductId, SupplierId) " + "VALUES (@ProductSupplierId, @ProductId, @SupplierId)";
+       
+
+        public static string AddProdToSuppByIDQuery = "INSERT INTO Products_Suppliers " + "(ProductSupplierId, ProductId, SupplierId) " + 
+                                               "VALUES (@ProductSupplierId, @ProductId, @SupplierId)";
 
 
-
-
+        public static string GetNotAddedProdSuppQuery = @"SELECT * FROM Products WHERE ProductId not in " + 
+                                                             "(select productId from Products_Suppliers WHERE SupplierId = @SupplierId)";
+        
 
 
 

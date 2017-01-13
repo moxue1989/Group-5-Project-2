@@ -11,6 +11,15 @@ namespace Agent_App_V2
         public int ProductId { get; set; }
         public string ProdName { get; set; }
 
+        public void UpdateProd()
+        {
+            ProductDB.UpdateProduct(this);
+        }
+        public void Delete()
+        {
+            ProductDB.DeleteProduct(this);
+        }
+
         public override string ToString()
         {
             return ProdName;
