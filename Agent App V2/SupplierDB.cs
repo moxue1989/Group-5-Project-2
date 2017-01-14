@@ -18,11 +18,11 @@ namespace Agent_App_V2
                 try
                 {
                     conn.Open();
-                    conn.Execute(Settings.AddSupplierQuery, new { supp.SupName });
+                    conn.Execute(Settings.AddSuppliersQuery, new { supp.SupplierId, supp.SupName });
                     returnId = Convert.ToInt32(conn.ExecuteScalar(Settings.LastSuppQuery));
                     //returnId = conn.Query(Settings.AddSuppliersQuery, supp).SingleOrDefault();
 
-                    //supp.SupplierId = returnId;
+                    ///supp.SupplierId = returnId;
                 }
                 catch (Exception ex)
                 {

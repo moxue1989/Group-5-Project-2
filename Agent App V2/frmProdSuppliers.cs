@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using System.Windows.Forms;
 
 namespace Agent_App_V2
@@ -25,11 +26,29 @@ namespace Agent_App_V2
 
         private void frmSuppliers_Load(object sender, EventArgs e)
         {
-            cbProducts.DataSource = ProductsSuppliersDB.GetSuppliers();
-            cbProducts.DisplayMember = "SupName";
-            cbProducts.ValueMember = "SupplierId";
+            FindProductSuppliers();
 
-            currentSupp = cbProducts.SelectedItem as Supplier;
+            //lvProd.View = View.Details;
+
+            //foreach (Product p in prodSupp)
+            //{
+
+            //    ListViewItem item = new ListViewItem(p.ProductId.ToString());
+            //    item.SubItems.Add(p.ProdName);
+
+            //    //Add Items
+            //    lvProd.Items.Add(item);//Add user input in List View
+            //}
+
+        }
+
+        private void FindProductSuppliers()
+        {
+            cbProdSupp.DataSource = ProductsSuppliersDB.GetSuppliers();
+            cbProdSupp.DisplayMember = "SupName";
+            cbProdSupp.ValueMember = "SupplierId";
+
+            currentSupp = cbProdSupp.SelectedItem as Supplier;
 
             if (currentSupp != null)
             {
@@ -37,19 +56,6 @@ namespace Agent_App_V2
                 GetSuppliersProducts(currentSupp.SupplierId);
                 Display();
             }
-
-            //lvProd.View = View.Details;
-            
-            //foreach (Product p in prodSupp)
-            //{
-               
-            //    ListViewItem item = new ListViewItem(p.ProductId.ToString());
-            //    item.SubItems.Add(p.ProdName);
-                
-            //    //Add Items
-            //    lvProd.Items.Add(item);//Add user input in List View
-            //}
-            
         }
 
         private void GetSuppliersProducts(int supplierId)
@@ -68,7 +74,7 @@ namespace Agent_App_V2
         private void cbProducts_SelectionChangeCommitted(object sender, EventArgs e)
         {
             
-            Supplier obj = cbProducts.SelectedItem as Supplier;
+            Supplier obj = cbProdSupp.SelectedItem as Supplier;
             if (obj != null)
             {
                 GetProdSuppliers(obj.SupplierId);
@@ -117,11 +123,6 @@ namespace Agent_App_V2
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-           
-        }
-
         private void dataGridNotInSupp_SelectionChanged(object sender, EventArgs e)
         {
             currentProd = (Product)dataGridNotInSupp.CurrentRow.DataBoundItem;
@@ -162,7 +163,7 @@ namespace Agent_App_V2
             if (res == DialogResult.OK)
             {
                 currentProd = editProdForm.product;
-                Supplier obj = cbProducts.SelectedItem as Supplier;
+                Supplier obj = cbProdSupp.SelectedItem as Supplier;
                 if (obj != null)
                 {
                     GetProdSuppliers(obj.SupplierId);
@@ -183,7 +184,7 @@ namespace Agent_App_V2
 
         private void Refresh()
         {
-            //cbProducts.DataSource = null;
+            cbProdSupp.DataSource = null;
             dataGridProdSupp.DataSource = prodSuppList;
             dataGridNotInSupp.DataSource = null;
         }
@@ -215,11 +216,12 @@ namespace Agent_App_V2
             DialogResult res = addSuppfrm.ShowDialog();
             if (res == DialogResult.OK)
             {
+                //Supplier newSupp = new Supplier();
                 currentSupp = addSuppfrm.supplier;
-                suppList.Add(currentSupp);
+                FindProductSuppliers();
 
-                Refresh();
-                Display();
+                //Refresh();
+                //Display();
             }
         }
 
@@ -227,42 +229,39 @@ namespace Agent_App_V2
         {
             frmAddEditSupplier editSuppfrm = new frmAddEditSupplier();
 
-            Supplier currentSupp = cbProducts.SelectedItem as Supplier;
+            Supplier currentSupp = cbProdSupp.SelectedItem as Supplier;
             if (currentSupp != null)
             {
                 editSuppfrm.supplier = currentSupp;
                 editSuppfrm.AddSuppliers = false;
-
                 
                 //cbProducts.DataSource = null;
                 DialogResult res = editSuppfrm.ShowDialog();
                 if (res == DialogResult.OK)
                 {
                     currentSupp = editSuppfrm.supplier;
-                    cbProducts.SelectedItem = currentSupp;
-                    cbProducts.DataSource = ProductsSuppliersDB.GetSuppliers();
-                    cbProducts.DisplayMember = "SupName";
-                    cbProducts.ValueMember = "SupplierId";
-
+                    cbProdSupp.SelectedItem = currentSupp;
+                    FindProductSuppliers();
                     
-                    
-                    //Display();
                 }
-
-               
+                
             }
             
         }
 
         private void btnDeleteSupp_Click(object sender, EventArgs e)
         {
+            Supplier obj = cbProdSupp.SelectedItem as Supplier;
+            currentSupp = obj;
             if (MessageBox.Show(@"Are you sure you want to delete: " + currentSupp.SupName, @"Delete Supplier", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                Supplier obj = cbProducts.SelectedItem as Supplier;
+               
                 if (obj != null)
                 {
-                    obj.DeleteSupp();
-
+                    
+                    currentSupp.DeleteSupp();
+                    Refresh();
+                    FindProductSuppliers();
                     Display();
                 }
                 

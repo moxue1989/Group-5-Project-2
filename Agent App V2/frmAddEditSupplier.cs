@@ -26,25 +26,28 @@ namespace Agent_App_V2
             //Add Suppliers 
             if (AddSuppliers)
             {
-                supplier = new Supplier();
-                AddSuppliersData(supplier);
+                Supplier newSupp = new Supplier();
+                
+                AddSuppliersData(newSupp);
                 try
                 {
-                    supplier.SupplierId = SupplierDB.AddSupplier(supplier);
+                    supplier = newSupp;
+                    supplier.SupplierId = SupplierDB.AddSupplier(newSupp);
                     DialogResult = DialogResult.OK;
                 }
 
                 catch (Exception ex)
 
                 {
-                    MessageBox.Show(ex.Message, ex.GetType().ToString());
+                MessageBox.Show(ex.Message, ex.GetType().ToString());
                 }
             }
             else //Update Suppliers
             {
                 Supplier newSupp = new Supplier();
                 newSupp.SupplierId = supplier.SupplierId;
-                AddSuppliersData(newSupp);
+                supplier.SupName = txtSuppName.Text;
+              
                 try
                 {
                     if (supplier == newSupp)
@@ -65,8 +68,9 @@ namespace Agent_App_V2
             }
         }
 
-        private void AddSuppliersData(Supplier supp)//add data from controls to object
+        private void AddSuppliersData(Supplier supplier)//add data from controls to object
         {
+            supplier.SupplierId = Convert.ToInt32(txtSuppId.Text);
             supplier.SupName = txtSuppName.Text;
         }
 
@@ -92,10 +96,12 @@ namespace Agent_App_V2
             if (AddSuppliers)
             {
                 Text = @"Add Supplier";//name of dialog form to Add Supplier
+                txtSuppId.Enabled = true;
             }
             else
             {
                 Text = @"Modify Supplier";//name of dialog form to Modify Supplier
+                txtSuppId.Enabled = false;
                 DisplaySupplier();
             }
         }

@@ -49,12 +49,12 @@ namespace Agent_App_V2
         public static string LastProductQuery =
             @"SELECT IDENT_CURRENT('Products')";
 
-        public static string AddSupplierQuery = @"INSERT INTO Supplier VALUES (@SupplierId, @SupName)";
+        //public static string AddSupplierQuery = @"INSERT INTO Supplier VALUES (@SupplierId, @SupName)";
 
 
         public static string suppQuery = @"SELECT SupplierId, SupName FROM [Suppliers]";
 
-        public static string AddSuppliersQuery = @"INSERT INTO Suppliers VALUES (@SupName); SELECT CAST(SCOPE_IDENTITY() as int)";
+        public static string AddSuppliersQuery = @"INSERT INTO Suppliers(SupplierId, SupName) VALUES (@SupplierId, @SupName); SELECT CAST(SCOPE_IDENTITY() as int)";
 
         public static string LastSuppQuery =
             @"SELECT IDENT_CURRENT('Suppliers')";

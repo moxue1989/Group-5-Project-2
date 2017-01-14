@@ -31,11 +31,10 @@ namespace Agent_App_V2
         /// </summary>
         private void InitializeComponent()
         {
-            this.cbProducts = new System.Windows.Forms.ComboBox();
+            this.cbProdSupp = new System.Windows.Forms.ComboBox();
             this.dataGridProdSupp = new System.Windows.Forms.DataGridView();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.dataGridNotInSupp = new System.Windows.Forms.DataGridView();
             this.btnAddProducts = new System.Windows.Forms.Button();
             this.btnEditProd = new System.Windows.Forms.Button();
@@ -47,17 +46,17 @@ namespace Agent_App_V2
             ((System.ComponentModel.ISupportInitialize)(this.dataGridNotInSupp)).BeginInit();
             this.SuspendLayout();
             // 
-            // cbProducts
+            // cbProdSupp
             // 
-            this.cbProducts.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbProducts.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cbProducts.FormattingEnabled = true;
-            this.cbProducts.Location = new System.Drawing.Point(150, 16);
-            this.cbProducts.Name = "cbProducts";
-            this.cbProducts.Size = new System.Drawing.Size(210, 21);
-            this.cbProducts.Sorted = true;
-            this.cbProducts.TabIndex = 1;
-            this.cbProducts.SelectionChangeCommitted += new System.EventHandler(this.cbProducts_SelectionChangeCommitted);
+            this.cbProdSupp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbProdSupp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cbProdSupp.FormattingEnabled = true;
+            this.cbProdSupp.Location = new System.Drawing.Point(150, 16);
+            this.cbProdSupp.Name = "cbProdSupp";
+            this.cbProdSupp.Size = new System.Drawing.Size(210, 21);
+            this.cbProdSupp.Sorted = true;
+            this.cbProdSupp.TabIndex = 1;
+            this.cbProdSupp.SelectionChangeCommitted += new System.EventHandler(this.cbProducts_SelectionChangeCommitted);
             // 
             // dataGridProdSupp
             // 
@@ -91,16 +90,6 @@ namespace Agent_App_V2
             this.btnRemove.Text = ">";
             this.btnRemove.UseVisualStyleBackColor = true;
             this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(381, 278);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // dataGridNotInSupp
             // 
@@ -188,11 +177,10 @@ namespace Agent_App_V2
             this.Controls.Add(this.btnEditProd);
             this.Controls.Add(this.btnAddProducts);
             this.Controls.Add(this.dataGridNotInSupp);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dataGridProdSupp);
-            this.Controls.Add(this.cbProducts);
+            this.Controls.Add(this.cbProdSupp);
             this.Name = "frmProdSuppliers";
             this.Text = "frmSuppliers";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmSuppliers_FormClosed);
@@ -204,11 +192,10 @@ namespace Agent_App_V2
         }
 
         #endregion
-        private ComboBox cbProducts;
+        private ComboBox cbProdSupp;
         private DataGridView dataGridProdSupp;
         private Button btnAdd;
         private Button btnRemove;
-        private Button button1;
         private DataGridView dataGridNotInSupp;
         private Button btnAddProducts;
         private Button btnEditProd;
