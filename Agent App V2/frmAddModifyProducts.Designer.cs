@@ -1,11 +1,14 @@
-﻿namespace Agent_App_V2
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+
+namespace Agent_App_V2
 {
-    partial class frmAddModifyProducts
+    partial class FrmAddModifyProducts
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -88,7 +91,7 @@
             this.Controls.Add(this.txtProdID);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtProdName);
-            this.Name = "frmAddModifyProducts";
+            this.Name = "FrmAddModifyProducts";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAddProducts";
             this.Load += new System.EventHandler(this.frmAddProducts_Load);
@@ -99,10 +102,10 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtProdName;
-        private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtProdID;
+        private TextBox txtProdName;
+        private Button btnSave;
+        private Label label2;
+        private Label label1;
+        private TextBox txtProdID;
     }
 }

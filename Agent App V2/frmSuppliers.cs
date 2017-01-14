@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Agent_App_V2
@@ -40,8 +34,7 @@ namespace Agent_App_V2
             {
 
                 GetSuppliersProducts(obj.SupplierId);
-                dataGridProdSupp.DataSource = suppList;
-                dataGridNotInSupp.DataSource = productsList;
+                DisplayProduct();
             }
 
             //lvProd.View = View.Details;
@@ -79,9 +72,7 @@ namespace Agent_App_V2
             {
                 GetProdSuppliers(obj.SupplierId);
 
-                dataGridProdSupp.DataSource = suppList;
-                dataGridNotInSupp.DataSource = productsList;
-                //AddProds();
+                DisplayProduct();
             }
         }
 
@@ -137,8 +128,8 @@ namespace Agent_App_V2
 
         private void btnAddProducts_Click(object sender, EventArgs e)
         {
-            frmAddModifyProducts addProductsForm = new frmAddModifyProducts();
-            addProductsForm.addProducts = true;
+            FrmAddModifyProducts addProductsForm = new FrmAddModifyProducts();
+            addProductsForm.AddProducts = true;
             
             DialogResult res = addProductsForm.ShowDialog();
             if (res == DialogResult.OK)
@@ -147,44 +138,45 @@ namespace Agent_App_V2
                 productsList.Add(currentProd);
 
                 RefreshProducts();
-                dataGridNotInSupp.DataSource = productsList;
-                
-                
-                
+                DisplayProduct();
             }
-            
         }
         public void DisplayProduct()
         {
-          
-            //productsList.Add(currentProd);
-            dataGridNotInSupp.Update();
+            dataGridProdSupp.DataSource = suppList;
             
             dataGridNotInSupp.DataSource = productsList;
-
+            DataGridViewColumn prodID = dataGridNotInSupp.Columns[0];
+            DataGridViewColumn prodName = dataGridNotInSupp.Columns[1];
+            prodID.Width = 60;
+            prodName.Width = 175;
         }
         private void btnEditProd_Click(object sender, EventArgs e)
         {
-            
-
-            frmAddModifyProducts editProdForm = new frmAddModifyProducts();
-
-            editProdForm.addProducts = false;
+            FrmAddModifyProducts editProdForm = new FrmAddModifyProducts();
+            editProdForm.AddProducts = false;
             editProdForm.product = currentProd;
 
             DialogResult res = editProdForm.ShowDialog();
             if (res == DialogResult.OK)
             {
                 currentProd = editProdForm.product;
-                RefreshProducts();
-                //productsList.Add(currentProd);
-                this.DisplayProduct();
+                Supplier obj = cbProducts.SelectedItem as Supplier;
+                if (obj != null)
+                {
+                    GetProdSuppliers(obj.SupplierId);
+
+                    DisplayProduct();
+                }
+                //dataGridNotInSupp.DataSource = productsList;
+                //DisplayProduct();
+
             }
             else if (res == DialogResult.Retry)
             {
-                this.GetSuppliersProducts(currentProd.ProductId);
+                GetSuppliersProducts(currentProd.ProductId);
                 if (currentProd != null)
-                    this.DisplayProduct();
+                    DisplayProduct();
                 else
                     editProdForm.ClearControls();
             }
@@ -192,29 +184,28 @@ namespace Agent_App_V2
 
         private void RefreshProducts()
         {
-            
-            //currentProd = null;
-            //suppList = null;
-            //productsList = null;
             dataGridProdSupp.DataSource = suppList;
             dataGridNotInSupp.DataSource = null;
-            dataGridNotInSupp.Update();
-            dataGridNotInSupp.Refresh();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Are you sure you want to delete: " + currentProd.ProdName, "Delete Product", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                //dataGridNotInSupp.CurrentRow
+               
                 currentProd = (Product)dataGridNotInSupp.CurrentRow.DataBoundItem;
 
                 currentProd.Delete();
                 RefreshProducts();
-                productsList.Add(currentProd);
                 dataGridNotInSupp.DataSource = productsList;
+                
             }
 
+        }
+
+        private void frmSuppliers_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            RefreshProducts();
         }
     }
 }

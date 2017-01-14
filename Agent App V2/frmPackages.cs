@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Agent_App_V2
@@ -16,7 +11,7 @@ namespace Agent_App_V2
         private List<Package> packageList;
         private Package currentPackage;
         private List<Product_Supplier> currentPSList;
-        private int count = 0;
+        private int count;
 
 
         public frmPackages()

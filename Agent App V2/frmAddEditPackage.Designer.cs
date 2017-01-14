@@ -1,11 +1,14 @@
-﻿namespace Agent_App_V2
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+
+namespace Agent_App_V2
 {
     partial class frmAddEditPackage
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -163,16 +166,16 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox tbPkgAgencyCommission;
-        private System.Windows.Forms.TextBox tbPkgBasePrice;
-        private System.Windows.Forms.TextBox tbPkgDesc;
-        private System.Windows.Forms.TextBox tbPkgName;
-        private System.Windows.Forms.DateTimePicker dtpPkgStartDate;
-        private System.Windows.Forms.DateTimePicker dtpPkgEndDate;
-        private System.Windows.Forms.DataGridView dgvAddedPS;
-        private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button btnRemove;
-        private System.Windows.Forms.DataGridView dgvNotAddedPS;
-        private System.Windows.Forms.Button btnSave;
+        private TextBox tbPkgAgencyCommission;
+        private TextBox tbPkgBasePrice;
+        private TextBox tbPkgDesc;
+        private TextBox tbPkgName;
+        private DateTimePicker dtpPkgStartDate;
+        private DateTimePicker dtpPkgEndDate;
+        private DataGridView dgvAddedPS;
+        private Button btnAdd;
+        private Button btnRemove;
+        private DataGridView dgvNotAddedPS;
+        private Button btnSave;
     }
 }

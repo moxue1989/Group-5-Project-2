@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
 
 namespace Agent_App_V2
 {
@@ -28,7 +23,7 @@ namespace Agent_App_V2
 
         public void AddToPackage(int packageId)
         {
-            PackageDB.AddPSByID(packageId, this.ProductSupplierId);
+            PackageDB.AddPSByID(packageId, ProductSupplierId);
         }
 
         

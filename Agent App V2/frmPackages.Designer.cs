@@ -1,11 +1,14 @@
-﻿namespace Agent_App_V2
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+
+namespace Agent_App_V2
 {
     partial class frmPackages
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -173,18 +176,18 @@
         }
 
         #endregion
-        private System.Windows.Forms.ListView lvProducts;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.TextBox tbPackageID;
-        private System.Windows.Forms.TextBox tbPkgName;
-        private System.Windows.Forms.TextBox tbPkgStartDate;
-        private System.Windows.Forms.TextBox tbPkgEndDate;
-        private System.Windows.Forms.TextBox tbPkgDesc;
-        private System.Windows.Forms.TextBox tbPkgBasePrice;
-        private System.Windows.Forms.TextBox tbPkgAgencyCommission;
-        private System.Windows.Forms.Button btnAddPackage;
-        private System.Windows.Forms.Button btnEditPackage;
-        private System.Windows.Forms.Button btnDeletePackage;
+        private ListView lvProducts;
+        private ColumnHeader columnHeader1;
+        private ColumnHeader columnHeader2;
+        private TextBox tbPackageID;
+        private TextBox tbPkgName;
+        private TextBox tbPkgStartDate;
+        private TextBox tbPkgEndDate;
+        private TextBox tbPkgDesc;
+        private TextBox tbPkgBasePrice;
+        private TextBox tbPkgAgencyCommission;
+        private Button btnAddPackage;
+        private Button btnEditPackage;
+        private Button btnDeletePackage;
     }
 }
