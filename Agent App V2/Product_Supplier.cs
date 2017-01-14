@@ -13,6 +13,16 @@ namespace Agent_App_V2
         public string ProdName { get; set; }
         public string SupName { get; set; }
 
+        public void AddProductToSupp(int SupplierId)//method to update products
+        {
+            //ProductsSuppliersDB.AddToProdSupp(SupplierId, ProductId, ProductSupplierId);
+        }
+
+        public void RemoveProduct(int SupplierId)
+        {
+            ProductsSuppliersDB.RemoveProdFromSupp(this);
+        }
+
         public string[] toListViewItem()
         {
             string[] item = new string[2];

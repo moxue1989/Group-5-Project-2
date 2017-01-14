@@ -28,13 +28,8 @@ namespace Agent_App_V2
         /// 
         /// KASI SQL QUERIES
         /// 
-        //coded by Kasi Emmanuel
-        public static void SetIdentity<T>(SqlConnection connection, Action<T> setId)
-        {
-            dynamic identity = connection.Query("SELECT @@IDENTITY AS Id").Single();
-            T newId = (T)identity.Id;
-            setId(newId);
-        }
+        //PRODUCTS SQL QUERIES
+       
        
         public static string productsQuery = @"SELECT * FROM [Products]";
 
@@ -52,6 +47,12 @@ namespace Agent_App_V2
         //public static string AddSupplierQuery = @"INSERT INTO Supplier VALUES (@SupplierId, @SupName)";
 
 
+        /// 
+        /// KASI SQL QUERIES
+        /// 
+        //SUPPLIERS SQL QUERIES
+
+
         public static string suppQuery = @"SELECT SupplierId, SupName FROM [Suppliers]";
 
         public static string AddSuppliersQuery = @"INSERT INTO Suppliers(SupplierId, SupName) VALUES (@SupplierId, @SupName); SELECT CAST(SCOPE_IDENTITY() as int)";
@@ -66,26 +67,36 @@ namespace Agent_App_V2
         public static string DeleteSuppQuery = 
             @"DELETE FROM Suppliers WHERE SupplierId = @SupplierId";
 
-        public static string productSupplierSP = 
-            @"spGetProdSuppByProdID";
+
+        /// 
+        /// KASI SQL QUERIES
+        /// 
+        //PRODUCT SUPPLIER SQL QUERIES
+        public static string ProductSupplierSp =
+            @"select p.ProductId, p.ProdName,s.SupplierId, s.SupName, ps.ProductSupplierId " + 
+            "from Products_Suppliers ps inner join Suppliers s " + 
+            "on ps.SupplierId = s.SupplierId inner join Products p " + 
+            "on p.ProductId = ps.ProductId " + 
+            "where s.SupplierId= @SupplierId";
        
 
         public static string AddProdToSuppByIDQuery = 
             @"INSERT INTO Products_Suppliers " + 
-            "(ProductSupplierId, ProductId, SupplierId) " + 
-            "VALUES (@ProductSupplierId, @ProductId, @SupplierId)";
+            "(ProductId, SupplierId) " +
+            "VALUES (@ProductId, @SupplierId); SELECT CAST(SCOPE_IDENTITY() as int)";
+
+        public static string LastProdSuppQuery =
+            @"SELECT IDENT_CURRENT('Products_Suppliers')";
 
 
         public static string GetNotAddedProdSuppQuery = @"SELECT * FROM Products WHERE ProductId not in " + 
                                                              "(select productId from Products_Suppliers WHERE SupplierId = @SupplierId)";
+
+        public static string RemoveProdsFromSuppQuery = @"DELETE FROM Products_Suppliers " + 
+            "WHERE " + 
+            "SupplierId = @SupplierId and ProductId = @ProductId";
+
         
-
-
-
-
-
-
-
 
 
 

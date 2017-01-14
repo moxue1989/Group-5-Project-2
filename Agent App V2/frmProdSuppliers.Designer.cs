@@ -33,8 +33,8 @@ namespace Agent_App_V2
         {
             this.cbProdSupp = new System.Windows.Forms.ComboBox();
             this.dataGridProdSupp = new System.Windows.Forms.DataGridView();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnRemove = new System.Windows.Forms.Button();
+            this.btnAddProdToList = new System.Windows.Forms.Button();
+            this.btnRemoveProdFrList = new System.Windows.Forms.Button();
             this.dataGridNotInSupp = new System.Windows.Forms.DataGridView();
             this.btnAddProducts = new System.Windows.Forms.Button();
             this.btnEditProd = new System.Windows.Forms.Button();
@@ -42,6 +42,9 @@ namespace Agent_App_V2
             this.btnDeleteSupp = new System.Windows.Forms.Button();
             this.btnEditSupp = new System.Windows.Forms.Button();
             this.btnAddSupp = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridProdSupp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridNotInSupp)).BeginInit();
             this.SuspendLayout();
@@ -51,9 +54,9 @@ namespace Agent_App_V2
             this.cbProdSupp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbProdSupp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbProdSupp.FormattingEnabled = true;
-            this.cbProdSupp.Location = new System.Drawing.Point(150, 16);
+            this.cbProdSupp.Location = new System.Drawing.Point(390, 76);
             this.cbProdSupp.Name = "cbProdSupp";
-            this.cbProdSupp.Size = new System.Drawing.Size(210, 21);
+            this.cbProdSupp.Size = new System.Drawing.Size(206, 21);
             this.cbProdSupp.Sorted = true;
             this.cbProdSupp.TabIndex = 1;
             this.cbProdSupp.SelectionChangeCommitted += new System.EventHandler(this.cbProducts_SelectionChangeCommitted);
@@ -64,32 +67,33 @@ namespace Agent_App_V2
             this.dataGridProdSupp.AllowUserToDeleteRows = false;
             this.dataGridProdSupp.AllowUserToOrderColumns = true;
             this.dataGridProdSupp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridProdSupp.Location = new System.Drawing.Point(26, 105);
+            this.dataGridProdSupp.Location = new System.Drawing.Point(26, 170);
             this.dataGridProdSupp.Name = "dataGridProdSupp";
             this.dataGridProdSupp.ReadOnly = true;
             this.dataGridProdSupp.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridProdSupp.Size = new System.Drawing.Size(334, 274);
             this.dataGridProdSupp.TabIndex = 2;
+            this.dataGridProdSupp.SelectionChanged += new System.EventHandler(this.dataGridProdSupp_SelectionChanged);
             // 
-            // btnAdd
+            // btnAddProdToList
             // 
-            this.btnAdd.Location = new System.Drawing.Point(428, 97);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(28, 30);
-            this.btnAdd.TabIndex = 3;
-            this.btnAdd.Text = "<";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            this.btnAddProdToList.Location = new System.Drawing.Point(477, 256);
+            this.btnAddProdToList.Name = "btnAddProdToList";
+            this.btnAddProdToList.Size = new System.Drawing.Size(28, 30);
+            this.btnAddProdToList.TabIndex = 3;
+            this.btnAddProdToList.Text = "<";
+            this.btnAddProdToList.UseVisualStyleBackColor = true;
+            this.btnAddProdToList.Click += new System.EventHandler(this.btnAddProdToList_Click);
             // 
-            // btnRemove
+            // btnRemoveProdFrList
             // 
-            this.btnRemove.Location = new System.Drawing.Point(428, 185);
-            this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(28, 30);
-            this.btnRemove.TabIndex = 4;
-            this.btnRemove.Text = ">";
-            this.btnRemove.UseVisualStyleBackColor = true;
-            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
+            this.btnRemoveProdFrList.Location = new System.Drawing.Point(477, 344);
+            this.btnRemoveProdFrList.Name = "btnRemoveProdFrList";
+            this.btnRemoveProdFrList.Size = new System.Drawing.Size(28, 30);
+            this.btnRemoveProdFrList.TabIndex = 4;
+            this.btnRemoveProdFrList.Text = ">";
+            this.btnRemoveProdFrList.UseVisualStyleBackColor = true;
+            this.btnRemoveProdFrList.Click += new System.EventHandler(this.btnRemoveProdFrList_Click);
             // 
             // dataGridNotInSupp
             // 
@@ -97,17 +101,17 @@ namespace Agent_App_V2
             this.dataGridNotInSupp.AllowUserToDeleteRows = false;
             this.dataGridNotInSupp.AllowUserToOrderColumns = true;
             this.dataGridNotInSupp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridNotInSupp.Location = new System.Drawing.Point(538, 49);
+            this.dataGridNotInSupp.Location = new System.Drawing.Point(615, 170);
             this.dataGridNotInSupp.Name = "dataGridNotInSupp";
             this.dataGridNotInSupp.ReadOnly = true;
             this.dataGridNotInSupp.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridNotInSupp.Size = new System.Drawing.Size(292, 330);
+            this.dataGridNotInSupp.Size = new System.Drawing.Size(292, 274);
             this.dataGridNotInSupp.TabIndex = 5;
             this.dataGridNotInSupp.SelectionChanged += new System.EventHandler(this.dataGridNotInSupp_SelectionChanged);
             // 
             // btnAddProducts
             // 
-            this.btnAddProducts.Location = new System.Drawing.Point(761, 20);
+            this.btnAddProducts.Location = new System.Drawing.Point(837, 141);
             this.btnAddProducts.Name = "btnAddProducts";
             this.btnAddProducts.Size = new System.Drawing.Size(70, 23);
             this.btnAddProducts.TabIndex = 6;
@@ -117,7 +121,7 @@ namespace Agent_App_V2
             // 
             // btnEditProd
             // 
-            this.btnEditProd.Location = new System.Drawing.Point(645, 20);
+            this.btnEditProd.Location = new System.Drawing.Point(724, 141);
             this.btnEditProd.Name = "btnEditProd";
             this.btnEditProd.Size = new System.Drawing.Size(70, 23);
             this.btnEditProd.TabIndex = 7;
@@ -127,7 +131,7 @@ namespace Agent_App_V2
             // 
             // btnDeleteProd
             // 
-            this.btnDeleteProd.Location = new System.Drawing.Point(537, 20);
+            this.btnDeleteProd.Location = new System.Drawing.Point(615, 141);
             this.btnDeleteProd.Name = "btnDeleteProd";
             this.btnDeleteProd.Size = new System.Drawing.Size(62, 23);
             this.btnDeleteProd.TabIndex = 8;
@@ -137,7 +141,7 @@ namespace Agent_App_V2
             // 
             // btnDeleteSupp
             // 
-            this.btnDeleteSupp.Location = new System.Drawing.Point(47, 76);
+            this.btnDeleteSupp.Location = new System.Drawing.Point(26, 141);
             this.btnDeleteSupp.Name = "btnDeleteSupp";
             this.btnDeleteSupp.Size = new System.Drawing.Size(61, 23);
             this.btnDeleteSupp.TabIndex = 11;
@@ -147,7 +151,7 @@ namespace Agent_App_V2
             // 
             // btnEditSupp
             // 
-            this.btnEditSupp.Location = new System.Drawing.Point(155, 76);
+            this.btnEditSupp.Location = new System.Drawing.Point(150, 141);
             this.btnEditSupp.Name = "btnEditSupp";
             this.btnEditSupp.Size = new System.Drawing.Size(69, 23);
             this.btnEditSupp.TabIndex = 10;
@@ -157,7 +161,7 @@ namespace Agent_App_V2
             // 
             // btnAddSupp
             // 
-            this.btnAddSupp.Location = new System.Drawing.Point(271, 76);
+            this.btnAddSupp.Location = new System.Drawing.Point(291, 141);
             this.btnAddSupp.Name = "btnAddSupp";
             this.btnAddSupp.Size = new System.Drawing.Size(69, 23);
             this.btnAddSupp.TabIndex = 9;
@@ -165,11 +169,44 @@ namespace Agent_App_V2
             this.btnAddSupp.UseVisualStyleBackColor = true;
             this.btnAddSupp.Click += new System.EventHandler(this.btnAddSupp_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.label1.Location = new System.Drawing.Point(145, 102);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(90, 25);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Suppliers";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.label2.Location = new System.Drawing.Point(719, 102);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(86, 25);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Products";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.label3.Location = new System.Drawing.Point(385, 28);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(211, 25);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "Suppliers and  Products";
+            // 
             // frmProdSuppliers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1104, 419);
+            this.ClientSize = new System.Drawing.Size(954, 484);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnDeleteSupp);
             this.Controls.Add(this.btnEditSupp);
             this.Controls.Add(this.btnAddSupp);
@@ -177,8 +214,8 @@ namespace Agent_App_V2
             this.Controls.Add(this.btnEditProd);
             this.Controls.Add(this.btnAddProducts);
             this.Controls.Add(this.dataGridNotInSupp);
-            this.Controls.Add(this.btnRemove);
-            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.btnRemoveProdFrList);
+            this.Controls.Add(this.btnAddProdToList);
             this.Controls.Add(this.dataGridProdSupp);
             this.Controls.Add(this.cbProdSupp);
             this.Name = "frmProdSuppliers";
@@ -188,14 +225,15 @@ namespace Agent_App_V2
             ((System.ComponentModel.ISupportInitialize)(this.dataGridProdSupp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridNotInSupp)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
         private ComboBox cbProdSupp;
         private DataGridView dataGridProdSupp;
-        private Button btnAdd;
-        private Button btnRemove;
+        private Button btnAddProdToList;
+        private Button btnRemoveProdFrList;
         private DataGridView dataGridNotInSupp;
         private Button btnAddProducts;
         private Button btnEditProd;
@@ -203,5 +241,8 @@ namespace Agent_App_V2
         private Button btnDeleteSupp;
         private Button btnEditSupp;
         private Button btnAddSupp;
+        private Label label1;
+        private Label label2;
+        private Label label3;
     }
 }

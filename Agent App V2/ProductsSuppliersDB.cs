@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -31,8 +32,8 @@ namespace Agent_App_V2
             {
                 con.Open();
 
-                return con.Query<Product>(Settings.productSupplierSP, new {SupplierId = supplierId},
-                    commandType: CommandType.StoredProcedure).ToList();
+                return con.Query<Product>(Settings.ProductSupplierSp, new {SupplierId = supplierId}).ToList();
+               
             }
         }
 
@@ -63,7 +64,23 @@ namespace Agent_App_V2
         }
 
         //coded by Kasi Emmanuel
-        public static int AddToProdSupp(int supplierId, int productId, int prodSupp)
+        //public static int AddToProdSupp(int supplierId, int productId, int prodSupp)
+        //{
+        //    int add = 0;
+
+        //    //int productSupplier;
+        //    using (SqlConnection con = new SqlConnection(Settings.connectionString2))
+        //    {
+        //        con.Open();
+
+        //        add = con.Execute(Settings.AddProdToSuppByIDQuery, new {supplierId, productId, prodSupp });
+        //        add = Convert.ToInt32(con.ExecuteScalar(Settings.LastProdSuppQuery));
+        //        return add;
+
+        //    }
+
+        //}
+        public static int AddToProdSupp(Product_Supplier prodSupp)
         {
             int add = 0;
 
@@ -72,12 +89,22 @@ namespace Agent_App_V2
             {
                 con.Open();
 
-                add = con.Execute(Settings.AddProdToSuppByIDQuery, new {supplierId, productId, prodSupp });
-                
+                con.Execute(Settings.AddProdToSuppByIDQuery, new { prodSupp.SupplierId, prodSupp.ProductId });
+                add = Convert.ToInt32(con.ExecuteScalar(Settings.LastProdSuppQuery));
                 return add;
 
             }
 
+        }
+        public static int RemoveProdFromSupp(Product_Supplier prodSupp)
+        {
+            int status;
+            using (SqlConnection con = new SqlConnection(Settings.connectionString2))
+            {
+                con.Open();
+                status = con.Execute(Settings.RemoveProdsFromSuppQuery, new {prodSupp.ProductSupplierId, prodSupp.SupplierId, prodSupp.ProductId});
+            }
+            return status;
         }
     }
 }

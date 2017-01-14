@@ -39,25 +39,27 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(45, 52);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.label1.Location = new System.Drawing.Point(44, 52);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 13);
+            this.label1.Size = new System.Drawing.Size(83, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Supplier ID";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(207, 52);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.label2.Location = new System.Drawing.Point(206, 51);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 13);
+            this.label2.Size = new System.Drawing.Size(108, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "Supplier Name";
             // 
             // txtSuppId
             // 
             this.txtSuppId.Enabled = false;
-            this.txtSuppId.Location = new System.Drawing.Point(48, 69);
+            this.txtSuppId.Location = new System.Drawing.Point(48, 74);
             this.txtSuppId.Name = "txtSuppId";
             this.txtSuppId.Size = new System.Drawing.Size(100, 20);
             this.txtSuppId.TabIndex = 2;
@@ -65,7 +67,7 @@
             // 
             // txtSuppName
             // 
-            this.txtSuppName.Location = new System.Drawing.Point(210, 68);
+            this.txtSuppName.Location = new System.Drawing.Point(210, 73);
             this.txtSuppName.Name = "txtSuppName";
             this.txtSuppName.Size = new System.Drawing.Size(182, 20);
             this.txtSuppName.TabIndex = 3;
@@ -73,7 +75,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(48, 128);
+            this.btnSave.Location = new System.Drawing.Point(52, 128);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 4;

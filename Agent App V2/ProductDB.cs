@@ -9,13 +9,13 @@ namespace Agent_App_V2
         public static int AddProduct(Product product)
         {
             int returnId = 0;
-            using (SqlConnection conn = new SqlConnection(Settings.connectionString2))
+            using (SqlConnection con = new SqlConnection(Settings.connectionString2))
             {
                 try
                 {
-                    conn.Open();
-                    conn.Execute(Settings.AddProductsQuery, new {product.ProdName});
-                    returnId = Convert.ToInt32(conn.ExecuteScalar(Settings.LastProductQuery));
+                    con.Open();
+                    con.Execute(Settings.AddProductsQuery, new {product.ProdName});
+                    returnId = Convert.ToInt32(con.ExecuteScalar(Settings.LastProductQuery));
                     //returnId = conn.Query(Settings.AddProductsQuery, product).SingleOrDefault();
 
                     //product.ProductId = returnId;
@@ -31,11 +31,11 @@ namespace Agent_App_V2
         public static bool UpdateProduct(Product product)
         {
             bool productId = false;
-            using (SqlConnection conn = new SqlConnection(Settings.connectionString2))
+            using (SqlConnection con = new SqlConnection(Settings.connectionString2))
             {
-                conn.Open();
+                con.Open();
 
-                var count = conn.Execute(Settings.UpdateProductQuery, product);
+                var count = con.Execute(Settings.UpdateProductQuery, product);
                 return count > 0;
 
                 //conn.Execute(Settings.UpdateProductQuery, new { product.ProdName });
@@ -48,10 +48,10 @@ namespace Agent_App_V2
         public static int DeleteProduct(Product product)
         {
             int status;
-            using (SqlConnection conn = new SqlConnection(Settings.connectionString2))
+            using (SqlConnection con = new SqlConnection(Settings.connectionString2))
             {
-                conn.Open();
-                status = conn.Execute(Settings.DeleteProductQuery, new {product.ProductId});
+                con.Open();
+                status = con.Execute(Settings.DeleteProductQuery, new {product.ProductId});
             }
             return status;
         }
