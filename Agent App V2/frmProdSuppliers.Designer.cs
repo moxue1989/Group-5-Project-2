@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace Agent_App_V2
 {
-    partial class frmSuppliers
+    partial class frmProdSuppliers
     {
         /// <summary>
         /// Required designer variable.
@@ -39,7 +39,7 @@ namespace Agent_App_V2
             this.dataGridNotInSupp = new System.Windows.Forms.DataGridView();
             this.btnAddProducts = new System.Windows.Forms.Button();
             this.btnEditProd = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnDeleteProd = new System.Windows.Forms.Button();
             this.btnDeleteSupp = new System.Windows.Forms.Button();
             this.btnEditSupp = new System.Windows.Forms.Button();
             this.btnAddSupp = new System.Windows.Forms.Button();
@@ -49,10 +49,13 @@ namespace Agent_App_V2
             // 
             // cbProducts
             // 
+            this.cbProducts.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbProducts.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbProducts.FormattingEnabled = true;
             this.cbProducts.Location = new System.Drawing.Point(150, 16);
             this.cbProducts.Name = "cbProducts";
             this.cbProducts.Size = new System.Drawing.Size(210, 21);
+            this.cbProducts.Sorted = true;
             this.cbProducts.TabIndex = 1;
             this.cbProducts.SelectionChangeCommitted += new System.EventHandler(this.cbProducts_SelectionChangeCommitted);
             // 
@@ -133,15 +136,15 @@ namespace Agent_App_V2
             this.btnEditProd.UseVisualStyleBackColor = true;
             this.btnEditProd.Click += new System.EventHandler(this.btnEditProd_Click);
             // 
-            // btnDelete
+            // btnDeleteProd
             // 
-            this.btnDelete.Location = new System.Drawing.Point(537, 20);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(62, 23);
-            this.btnDelete.TabIndex = 8;
-            this.btnDelete.Text = "&Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            this.btnDeleteProd.Location = new System.Drawing.Point(537, 20);
+            this.btnDeleteProd.Name = "btnDeleteProd";
+            this.btnDeleteProd.Size = new System.Drawing.Size(62, 23);
+            this.btnDeleteProd.TabIndex = 8;
+            this.btnDeleteProd.Text = "&Delete";
+            this.btnDeleteProd.UseVisualStyleBackColor = true;
+            this.btnDeleteProd.Click += new System.EventHandler(this.btnDeleteProd_Click);
             // 
             // btnDeleteSupp
             // 
@@ -151,6 +154,7 @@ namespace Agent_App_V2
             this.btnDeleteSupp.TabIndex = 11;
             this.btnDeleteSupp.Text = "&Delete";
             this.btnDeleteSupp.UseVisualStyleBackColor = true;
+            this.btnDeleteSupp.Click += new System.EventHandler(this.btnDeleteSupp_Click);
             // 
             // btnEditSupp
             // 
@@ -160,6 +164,7 @@ namespace Agent_App_V2
             this.btnEditSupp.TabIndex = 10;
             this.btnEditSupp.Text = "&Edit";
             this.btnEditSupp.UseVisualStyleBackColor = true;
+            this.btnEditSupp.Click += new System.EventHandler(this.btnEditSupp_Click);
             // 
             // btnAddSupp
             // 
@@ -169,8 +174,9 @@ namespace Agent_App_V2
             this.btnAddSupp.TabIndex = 9;
             this.btnAddSupp.Text = "&Add ";
             this.btnAddSupp.UseVisualStyleBackColor = true;
+            this.btnAddSupp.Click += new System.EventHandler(this.btnAddSupp_Click);
             // 
-            // frmSuppliers
+            // frmProdSuppliers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -178,7 +184,7 @@ namespace Agent_App_V2
             this.Controls.Add(this.btnDeleteSupp);
             this.Controls.Add(this.btnEditSupp);
             this.Controls.Add(this.btnAddSupp);
-            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnDeleteProd);
             this.Controls.Add(this.btnEditProd);
             this.Controls.Add(this.btnAddProducts);
             this.Controls.Add(this.dataGridNotInSupp);
@@ -187,7 +193,7 @@ namespace Agent_App_V2
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dataGridProdSupp);
             this.Controls.Add(this.cbProducts);
-            this.Name = "frmSuppliers";
+            this.Name = "frmProdSuppliers";
             this.Text = "frmSuppliers";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmSuppliers_FormClosed);
             this.Load += new System.EventHandler(this.frmSuppliers_Load);
@@ -206,7 +212,7 @@ namespace Agent_App_V2
         private DataGridView dataGridNotInSupp;
         private Button btnAddProducts;
         private Button btnEditProd;
-        private Button btnDelete;
+        private Button btnDeleteProd;
         private Button btnDeleteSupp;
         private Button btnEditSupp;
         private Button btnAddSupp;

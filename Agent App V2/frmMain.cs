@@ -18,7 +18,7 @@ namespace Agent_App_V2
 
         private void btnProductSuppliers_Click(object sender, EventArgs e)
         {
-            var frmSuppliers = new frmSuppliers();
+            var frmSuppliers = new frmProdSuppliers();
             frmSuppliers.ShowDialog();
         }
     }

@@ -36,6 +36,7 @@ namespace Agent_App_V2
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtProdID = new System.Windows.Forms.TextBox();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtProdName
@@ -47,7 +48,7 @@ namespace Agent_App_V2
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(106, 106);
+            this.btnSave.Location = new System.Drawing.Point(33, 106);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 1;
@@ -81,16 +82,32 @@ namespace Agent_App_V2
             this.txtProdID.Size = new System.Drawing.Size(100, 20);
             this.txtProdID.TabIndex = 2;
             // 
-            // frmAddModifyProducts
+            // btnCancel
             // 
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancel.Location = new System.Drawing.Point(167, 106);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 5;
+            this.btnCancel.Text = "&Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // FrmAddModifyProducts
+            // 
+            this.AcceptButton = this.btnSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(299, 176);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtProdID);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtProdName);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmAddModifyProducts";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAddProducts";
@@ -107,5 +124,6 @@ namespace Agent_App_V2
         private Label label2;
         private Label label1;
         private TextBox txtProdID;
+        private Button btnCancel;
     }
 }

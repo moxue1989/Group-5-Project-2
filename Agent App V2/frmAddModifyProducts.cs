@@ -88,6 +88,11 @@ namespace Agent_App_V2
                 DisplayProduct();
             }
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 
     

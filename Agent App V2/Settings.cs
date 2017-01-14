@@ -48,18 +48,32 @@ namespace Agent_App_V2
 
         public static string LastProductQuery =
             @"SELECT IDENT_CURRENT('Products')";
-      
+
         public static string AddSupplierQuery = @"INSERT INTO Supplier VALUES (@SupplierId, @SupName)";
 
-       
-        public static string supplierQuery = @"SELECT SupplierId, SupName FROM [Suppliers]";
-        
 
-        public static string productSupplierSP = @"spGetProdSuppByProdID";
+        public static string suppQuery = @"SELECT SupplierId, SupName FROM [Suppliers]";
+
+        public static string AddSuppliersQuery = @"INSERT INTO Suppliers VALUES (@SupName); SELECT CAST(SCOPE_IDENTITY() as int)";
+
+        public static string LastSuppQuery =
+            @"SELECT IDENT_CURRENT('Suppliers')";
+
+        public static string UpdateSuppliersQuery = 
+            @"UPDATE Suppliers SET SupName = @SupName " +
+            "WHERE SupplierId = @SupplierId";
+
+        public static string DeleteSuppQuery = 
+            @"DELETE FROM Suppliers WHERE SupplierId = @SupplierId";
+
+        public static string productSupplierSP = 
+            @"spGetProdSuppByProdID";
        
 
-        public static string AddProdToSuppByIDQuery = "INSERT INTO Products_Suppliers " + "(ProductSupplierId, ProductId, SupplierId) " + 
-                                               "VALUES (@ProductSupplierId, @ProductId, @SupplierId)";
+        public static string AddProdToSuppByIDQuery = 
+            @"INSERT INTO Products_Suppliers " + 
+            "(ProductSupplierId, ProductId, SupplierId) " + 
+            "VALUES (@ProductSupplierId, @ProductId, @SupplierId)";
 
 
         public static string GetNotAddedProdSuppQuery = @"SELECT * FROM Products WHERE ProductId not in " + 

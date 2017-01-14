@@ -58,7 +58,7 @@ namespace Agent_App_V2
                     con.Open();
                 }
                 con.Close();
-                return con.Query<Supplier>(Settings.supplierQuery).ToList();
+                return con.Query<Supplier>(Settings.suppQuery).ToList();
             }
         }
 

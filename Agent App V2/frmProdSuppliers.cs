@@ -4,19 +4,20 @@ using System.Windows.Forms;
 
 namespace Agent_App_V2
 {
-    public partial class frmSuppliers : Form
+    public partial class frmProdSuppliers : Form
     {
-        public frmSuppliers()
+        public frmProdSuppliers()
         {
             InitializeComponent();
         }
         //Product prod = new Product();
-        List<Product> suppList;
+        List<Product> prodSuppList;
         List<Product> productsList;
+
         private Supplier currentSupp = new Supplier();
-        //List<Product> addProdList;
-        //private List<Product> newProdList;
-        private Product currentProd = new Product() ;
+        List<Supplier> suppList;
+
+        private Product currentProd = new Product();
         
 
         
@@ -27,14 +28,14 @@ namespace Agent_App_V2
             cbProducts.DataSource = ProductsSuppliersDB.GetSuppliers();
             cbProducts.DisplayMember = "SupName";
             cbProducts.ValueMember = "SupplierId";
-            
-            Supplier obj = cbProducts.SelectedItem as Supplier;
 
-            if (obj != null)
+            currentSupp = cbProducts.SelectedItem as Supplier;
+
+            if (currentSupp != null)
             {
 
-                GetSuppliersProducts(obj.SupplierId);
-                DisplayProduct();
+                GetSuppliersProducts(currentSupp.SupplierId);
+                Display();
             }
 
             //lvProd.View = View.Details;
@@ -55,7 +56,7 @@ namespace Agent_App_V2
         {
             try
             {
-                suppList = ProductsSuppliersDB.GetProductSuppBySuppID(supplierId);
+                prodSuppList = ProductsSuppliersDB.GetProductSuppBySuppID(supplierId);
                 productsList = ProductsSuppliersDB.GetProductNotInProdSuppBySuppID(supplierId);
             }
             catch (Exception ex)
@@ -72,7 +73,7 @@ namespace Agent_App_V2
             {
                 GetProdSuppliers(obj.SupplierId);
 
-                DisplayProduct();
+                Display();
             }
         }
 
@@ -93,7 +94,7 @@ namespace Agent_App_V2
         {
             try
             {
-                suppList = ProductsSuppliersDB.GetProductSuppBySuppID(SupplierId);
+                prodSuppList = ProductsSuppliersDB.GetProductSuppBySuppID(SupplierId);
 
                 productsList = ProductsSuppliersDB.GetProductNotInProdSuppBySuppID(SupplierId);
 
@@ -137,13 +138,13 @@ namespace Agent_App_V2
                 currentProd = addProductsForm.product;
                 productsList.Add(currentProd);
 
-                RefreshProducts();
-                DisplayProduct();
+                Refresh();
+                Display();
             }
         }
-        public void DisplayProduct()
+        public void Display()
         {
-            dataGridProdSupp.DataSource = suppList;
+            dataGridProdSupp.DataSource = prodSuppList;
             
             dataGridNotInSupp.DataSource = productsList;
             DataGridViewColumn prodID = dataGridNotInSupp.Columns[0];
@@ -166,37 +167,35 @@ namespace Agent_App_V2
                 {
                     GetProdSuppliers(obj.SupplierId);
 
-                    DisplayProduct();
+                    Display();
                 }
-                //dataGridNotInSupp.DataSource = productsList;
-                //DisplayProduct();
 
             }
             else if (res == DialogResult.Retry)
             {
                 GetSuppliersProducts(currentProd.ProductId);
                 if (currentProd != null)
-                    DisplayProduct();
+                    Display();
                 else
                     editProdForm.ClearControls();
             }
         }
 
-        private void RefreshProducts()
+        private void Refresh()
         {
-            dataGridProdSupp.DataSource = suppList;
+            //cbProducts.DataSource = null;
+            dataGridProdSupp.DataSource = prodSuppList;
             dataGridNotInSupp.DataSource = null;
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
+        private void btnDeleteProd_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Are you sure you want to delete: " + currentProd.ProdName, "Delete Product", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-               
                 currentProd = (Product)dataGridNotInSupp.CurrentRow.DataBoundItem;
 
                 currentProd.Delete();
-                RefreshProducts();
+                Refresh();
                 dataGridNotInSupp.DataSource = productsList;
                 
             }
@@ -205,7 +204,70 @@ namespace Agent_App_V2
 
         private void frmSuppliers_FormClosed(object sender, FormClosedEventArgs e)
         {
-            RefreshProducts();
+            Refresh();
+        }
+
+        private void btnAddSupp_Click(object sender, EventArgs e)
+        {
+            frmAddEditSupplier addSuppfrm = new frmAddEditSupplier();
+            addSuppfrm.AddSuppliers = true;
+
+            DialogResult res = addSuppfrm.ShowDialog();
+            if (res == DialogResult.OK)
+            {
+                currentSupp = addSuppfrm.supplier;
+                suppList.Add(currentSupp);
+
+                Refresh();
+                Display();
+            }
+        }
+
+        private void btnEditSupp_Click(object sender, EventArgs e)
+        {
+            frmAddEditSupplier editSuppfrm = new frmAddEditSupplier();
+
+            Supplier currentSupp = cbProducts.SelectedItem as Supplier;
+            if (currentSupp != null)
+            {
+                editSuppfrm.supplier = currentSupp;
+                editSuppfrm.AddSuppliers = false;
+
+                
+                //cbProducts.DataSource = null;
+                DialogResult res = editSuppfrm.ShowDialog();
+                if (res == DialogResult.OK)
+                {
+                    currentSupp = editSuppfrm.supplier;
+                    cbProducts.SelectedItem = currentSupp;
+                    cbProducts.DataSource = ProductsSuppliersDB.GetSuppliers();
+                    cbProducts.DisplayMember = "SupName";
+                    cbProducts.ValueMember = "SupplierId";
+
+                    
+                    
+                    //Display();
+                }
+
+               
+            }
+            
+        }
+
+        private void btnDeleteSupp_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show(@"Are you sure you want to delete: " + currentSupp.SupName, @"Delete Supplier", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Supplier obj = cbProducts.SelectedItem as Supplier;
+                if (obj != null)
+                {
+                    obj.DeleteSupp();
+
+                    Display();
+                }
+                
+
+            }
         }
     }
 }
