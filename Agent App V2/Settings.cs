@@ -58,13 +58,13 @@ namespace Agent_App_V2
 
 
 
-        /// frmPackage Queries
-        /// Coded by Mo Xue
+        /// Package SQL Queries
         /// 
+        /// Coded by Mo Xue
         public static string GetPackagesQuery =
             @"SELECT PackageId,PkgName,PkgStartDate,PkgEndDate,PkgDesc,
                 PkgBasePrice,PkgAgencyCommission
-            FROM Packages";
+            FROM Packages ORDER BY PkgStartDate desc";
 
         public static string GetAllPSQuery =
             @"  SELECT ps.ProductSupplierId,p.ProductId,s.SupplierId,p.ProdName,s.SupName

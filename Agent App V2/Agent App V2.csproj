@@ -96,6 +96,7 @@
     <Compile Include="Settings.cs" />
     <Compile Include="Supplier.cs" />
     <Compile Include="TravelExpertsDB.cs" />
+    <Compile Include="Validator.cs" />
     <EmbeddedResource Include="frmAddEditPackage.resx">
       <DependentUpon>frmAddEditPackage.cs</DependentUpon>
     </EmbeddedResource>

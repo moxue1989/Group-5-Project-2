@@ -8,6 +8,7 @@ namespace Agent_App_V2
 {
     public class Product
     {
+        public static List<Product> AllProducts = TravelExpertsDB.GetProducts();
         public int ProductId { get; set; }
         public string ProdName { get; set; }
 

@@ -10,8 +10,15 @@ using Dapper.Contrib.Extensions;
 
 namespace Agent_App_V2
 {
+    /// <summary>
+    /// Database access class for package forms
+    /// Uses "Dapper" to map data to objects
+    /// C# workshop project
+    /// Written By: Mo Xue
+    /// </summary>
     public static class PackageDB
     {
+        // get all packages from database
         public static List<Package> GetPackages()
         {
             var packageList = new List<Package>();
@@ -23,6 +30,7 @@ namespace Agent_App_V2
             return packageList;
         }
 
+        // get all Product suppliers from database
         public static List<Product_Supplier> GetAllPS()
         {
             var psList = new List<Product_Supplier>();
@@ -34,6 +42,7 @@ namespace Agent_App_V2
             return psList;
         }
 
+        // get products suppliers for a single package
         public static List<Product_Supplier> GetAddedPS(int packageId)
         {
             var psList = new List<Product_Supplier>();
@@ -45,6 +54,7 @@ namespace Agent_App_V2
             return psList;
         }
 
+        // get available product suppliers for a single package
         public static List<Product_Supplier> GetNotAddedPS(int packageId)
         {
             var psList = new List<Product_Supplier>();
@@ -56,6 +66,7 @@ namespace Agent_App_V2
             return psList;
         }
 
+        // update package details
         public static int UpdatePackage(Package package)
         {
             using (SqlConnection conn = new SqlConnection(Settings.connectionString))
@@ -65,6 +76,7 @@ namespace Agent_App_V2
             }
         }
 
+        // add new package
         public static int AddPackage(Package package)
         {
             int packageId;
@@ -77,6 +89,7 @@ namespace Agent_App_V2
             }
         }
 
+        // delete existing package
         public static int DeletePackage(Package package)
         {
             int status;
@@ -88,6 +101,7 @@ namespace Agent_App_V2
             return status;
         }
 
+        // delete all products for a single package
         public static int RemoveAllPSForPkg(int packageId)
         {
             int status;
@@ -99,6 +113,7 @@ namespace Agent_App_V2
             return status;
         }
 
+        // add a product to a package
         public static int AddPSByID(int packageId, int psId)
         {
             int status = 2;
@@ -110,6 +125,7 @@ namespace Agent_App_V2
             return status;
         }
 
+        //// remove a single product from a package
         //public static int RemovePSByID(int packageId, int psId)
         //{
         //    int status;
