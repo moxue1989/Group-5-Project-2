@@ -5,17 +5,28 @@ using System.Windows.Forms;
 
 namespace Agent_App_V2
 {
+    /// <summary>
+    /// Form to add or edit a package
+    /// C# workshop project
+    /// Written By: Mo Xue
+    /// </summary>
     public partial class frmAddEditPackage : Form
     {
+        // initialize current package details
         public Package Package;
         public List<Product_Supplier> AddedPSList;
-        public List<Product_Supplier> NotAddedPSList;
+        public List<Product_Supplier> NotAddedPSList = PackageDB.GetAllPS();
+
+        // adding or editing
         private bool addStatus;
         public frmAddEditPackage(string action)
         {
             InitializeComponent();
+
+            // set form open mode, add or edit
             if (action == "add")
             {
+                // create new package if adding
                 Package = new Package();
                 addStatus = true;
             }
@@ -27,55 +38,95 @@ namespace Agent_App_V2
 
         private void frmAddEditPackage_Load(object sender, EventArgs e)
         {
-            NotAddedPSList = PackageDB.GetAllPS();
-            AddedPSList = new List<Product_Supplier>();
 
             if (!addStatus)
             {
-                // populate package details
-                tbPkgName.Text = Package.PkgName;
-                dtpPkgStartDate.Value = Package.PkgStartDate;
-                dtpPkgEndDate.Value = Package.PkgEndDate;
-                tbPkgDesc.Text = Package.PkgDesc;
-                tbPkgBasePrice.Text = Package.PkgBasePrice.ToString("c");
-                tbPkgAgencyCommission.Text = Package.PkgAgencyCommission.ToString("c");
-
-                AddedPSList = PackageDB.GetAddedPS(Package.PackageId);
-
-                // Filter suppliers not in AddedList
-                NotAddedPSList = NotAddedPSList.Where(allPS => !AddedPSList.Any(addedPS => addedPS.ProductSupplierId == allPS.ProductSupplierId)).ToList();
+                // load package details textboxes if editing
+                LoadPackageDetails();
+                Text = "Edit Existing Package";
+            }
+            else
+            {
+                // create new list of product suppliers if new package
+                AddedPSList = new List<Product_Supplier>();
+                Text = "Add New Package";
             }
 
-            // fill datagrids
-            dgvAddedPS.DataSource = AddedPSList;
+            // fill datagrids with the two lists on load, rename column headers and adjust widths
+            RefreshPSData();
+
             dgvAddedPS.Columns[0].HeaderText = "Product Name";
             dgvAddedPS.Columns[1].HeaderText = "Supplier Name";
+            dgvAddedPS.Columns[0].Width = 100;
+            dgvAddedPS.Columns[1].Width = 151;
 
-            dgvNotAddedPS.DataSource = NotAddedPSList;
             dgvNotAddedPS.Columns[0].HeaderText = "Product Name";
             dgvNotAddedPS.Columns[1].HeaderText = "Supplier Name";
+            dgvNotAddedPS.Columns[0].Width = 100;
+            dgvNotAddedPS.Columns[1].Width = 200;
+        }
+
+        private void LoadPackageDetails()
+        {
+            // fill textboxes and dtp with values
+            tbPkgName.Text = Package.PkgName;
+            dtpPkgStartDate.Value = Package.PkgStartDate;
+            dtpPkgEndDate.Value = Package.PkgEndDate;
+            tbPkgDesc.Text = Package.PkgDesc;
+            tbPkgBasePrice.Text = Package.PkgBasePrice.ToString("c");
+            tbPkgAgencyCommission.Text = Package.PkgAgencyCommission.ToString("c");
+
+            // update added PS for loaded package
+            AddedPSList = Package.GetAddedPS();
+
+            // Filter suppliers not in AddedList with LINQ
+            NotAddedPSList = NotAddedPSList.Where(allPS => !AddedPSList.Any(addedPS => addedPS.ProductSupplierId == allPS.ProductSupplierId)).ToList();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            var selectedItem = (Product_Supplier)dgvNotAddedPS.SelectedRows[0].DataBoundItem;
 
-            // add item to product supplier list
-            AddedPSList.Add(selectedItem);
+            if (dgvNotAddedPS.SelectedRows.Count == 0)
+            {
+                // show error message if nothing selected and return
+                MessageBox.Show("Select a product to add!", "Selection Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            var selectedItems = dgvNotAddedPS.SelectedRows;
+            // for each item in selection, move to addedPS list
+            foreach (DataGridViewRow selectedItem in selectedItems)
+            {
+                Product_Supplier PSItem = (Product_Supplier)selectedItem.DataBoundItem;
+
+                // add item to product supplier list
+                AddedPSList.Add(PSItem);
+
+                // remove item from other product suppliers list
+                NotAddedPSList = NotAddedPSList.Where(PS => PS.ProductSupplierId != PSItem.ProductSupplierId).ToList();
+            }
+            // refresh datagrids
+            RefreshPSData();
+        }
+
+        private void RefreshPSData()
+        {
+            // sort both lists
             AddedPSList = sortPSList(AddedPSList);
-
-            // remove item from other product suppliers list
-            NotAddedPSList = NotAddedPSList.Where(PS => PS.ProductSupplierId != selectedItem.ProductSupplierId).ToList();
             NotAddedPSList = sortPSList(NotAddedPSList);
 
             // refresh dgvs
             dgvAddedPS.DataSource = AddedPSList;
             dgvNotAddedPS.DataSource = NotAddedPSList;
+
+            // filter notAddedPS list based on search text
+            FilterPSList();
         }
 
+        // sort method
         private List<Product_Supplier> sortPSList(List<Product_Supplier> PSList)
         {
-            // sort product suppliers win LINQ
+            // sort product suppliers with LINQ
             return (from PS in PSList
                    orderby PS.ProductId,PS.ProductSupplierId
                    select PS).ToList();
@@ -83,26 +134,45 @@ namespace Agent_App_V2
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            var selectedItem = (Product_Supplier) dgvAddedPS.SelectedRows[0].DataBoundItem;
+            if (dgvAddedPS.SelectedRows.Count == 0)
+            {
+                // show error message if nothing selected and return
+                MessageBox.Show("Select a product to remove!", "Selection Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
 
-            // add item to other product supplier list
-            NotAddedPSList.Add(selectedItem);
-            NotAddedPSList = sortPSList(NotAddedPSList);
+            var selectedItems = dgvAddedPS.SelectedRows;
+            // foreach item selected, move to notAddedPS list
+            foreach (DataGridViewRow selectedItem in selectedItems)
+            {
+                Product_Supplier PSItem = (Product_Supplier) selectedItem.DataBoundItem;
 
-            // remove item from product supplier list
-            AddedPSList = AddedPSList.Where(PS => PS.ProductSupplierId != selectedItem.ProductSupplierId).ToList();
-            AddedPSList = sortPSList(AddedPSList);
+                // add item to other product supplier list
+                NotAddedPSList.Add(PSItem);
 
-            // refresh dgvs
-            dgvAddedPS.DataSource = AddedPSList;
-            dgvNotAddedPS.DataSource = NotAddedPSList;
+                // remove item from product supplier list
+                AddedPSList = AddedPSList.Where(PS => PS.ProductSupplierId != PSItem.ProductSupplierId).ToList();
+            }
+            // refresh datagrids
+            RefreshPSData();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            //validator here required
+            // validate package
+            if (!Validate())
+            {
+                return;
+            }
 
-            //update package info
+            // confirm saving
+            string saveBtnMessage = (addStatus) ? "Add this package?" : "Save changes to this package?";
+            if (MessageBox.Show(saveBtnMessage, "Save Package", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.Cancel)
+            {
+                return;
+            }
+
+            //update package info from textboxes
             Package.PkgName = tbPkgName.Text;
             Package.PkgStartDate = dtpPkgStartDate.Value;
             Package.PkgEndDate = dtpPkgEndDate.Value;
@@ -110,7 +180,102 @@ namespace Agent_App_V2
             Package.PkgBasePrice = Convert.ToDecimal(tbPkgBasePrice.Text.Trim('$'));
             Package.PkgAgencyCommission = Convert.ToDecimal(tbPkgAgencyCommission.Text.Trim('$'));
 
+            // return to parent form
             DialogResult = DialogResult.OK;
+        }
+
+        // Validate input fields
+        private bool Validate()
+        {
+            if (Validator.IsPresent(tbPkgName)
+                && Validator.IsWithinLength(tbPkgName, 5, 20)
+                && Validator.IsPresent(tbPkgBasePrice)
+                && Validator.IsDecimal(tbPkgBasePrice)
+                && Validator.IsWithinRange(tbPkgBasePrice,0,100000)
+                && Validator.IsPresent(tbPkgAgencyCommission)
+                && Validator.IsDecimal(tbPkgAgencyCommission)
+                && Validator.IsLower(tbPkgAgencyCommission, tbPkgBasePrice)
+                && Validator.IsWithinRange(tbPkgAgencyCommission, 0, 100000)
+                && Validator.IsValidDate(dtpPkgStartDate, dtpPkgEndDate)
+                && Validator.IsPresent(tbPkgDesc)
+                && Validator.IsWithinLength(tbPkgDesc,5,100))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        private void tbSearch_TextChanged(object sender, EventArgs e)
+        {
+            // filter data grid view on text change
+            FilterPSList();
+        }
+
+        private void FilterPSList()
+        {
+            string searchText = tbSearch.Text;
+
+            // prerequisites for search function
+            dgvNotAddedPS.CurrentCell = null;
+            CurrencyManager CM = (CurrencyManager)BindingContext[dgvNotAddedPS.DataSource];
+            CM.SuspendBinding();
+
+
+            // hide rows that have no matching data (not case sensative)
+            foreach (DataGridViewRow row in dgvNotAddedPS.Rows)
+            {
+                bool match = false;
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    if (cell.Value.ToString().ToUpper().Contains(searchText.ToUpper()))
+                    {
+                        match = true;
+                    }
+                }
+                row.Visible = match;
+            }
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            // make sure user wants to reset
+            if (MessageBox.Show("Reset to initial state?", "reset", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) != DialogResult.OK)
+            {
+                return;
+            }
+
+            // check if adding or editing
+            if (addStatus)
+            {
+                // clear textboxes
+                tbPkgName.Clear();
+                dtpPkgStartDate.ResetText();
+                dtpPkgEndDate.ResetText();
+                tbPkgDesc.Clear();
+                tbPkgBasePrice.Clear();
+                tbPkgAgencyCommission.Clear();
+            }
+            else
+            {
+                // load original package
+                LoadPackageDetails();
+            }
+            // refresh datagrids and search textbox
+            RefreshPSData();
+            tbSearch.Clear();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            // make sure user wants to exit
+            if (MessageBox.Show("Exit without saving changes?", "Cancel", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) != DialogResult.OK)
+            {
+                return;
+            }
+            DialogResult =DialogResult.Cancel;
         }
     }
 }

@@ -125,6 +125,7 @@
     <Compile Include="Supplier.cs" />
     <Compile Include="ProductsSuppliersDB.cs" />
     <Compile Include="SupplierDB.cs" />
+    <Compile Include="Validator.cs" />
     <EmbeddedResource Include="frmAddEditPackage.resx">
       <DependentUpon>frmAddEditPackage.cs</DependentUpon>
     </EmbeddedResource>
