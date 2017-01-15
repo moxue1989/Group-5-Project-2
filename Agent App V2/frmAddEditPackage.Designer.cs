@@ -1,11 +1,14 @@
-﻿namespace Agent_App_V2
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+
+namespace Agent_App_V2
 {
     partial class frmAddEditPackage
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -291,6 +294,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+
             this.ClientSize = new System.Drawing.Size(659, 315);
             this.Controls.Add(this.tbPkgDesc);
             this.Controls.Add(this.label9);

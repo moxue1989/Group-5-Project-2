@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Agent_App_V2
 {
@@ -49,7 +46,7 @@ namespace Agent_App_V2
         // removes products for this package
         public void RemoveProducts()
         {
-            PackageDB.RemoveAllPSForPkg(this.PackageId);
+            PackageDB.RemoveAllPSForPkg(PackageId);
         }
 
         // delete this package

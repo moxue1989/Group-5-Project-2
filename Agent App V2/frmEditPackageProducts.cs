@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Agent_App_V2
@@ -13,8 +7,8 @@ namespace Agent_App_V2
     public partial class frmEditPackageProducts : Form
     {
         public Package Package { get; set; }
-        private List<Product_Supplier> psAddedList = null;
-        private List<Product_Supplier> psNotAddedList = null;
+        private List<Product_Supplier> psAddedList;
+        private List<Product_Supplier> psNotAddedList;
 
         public frmEditPackageProducts(Package package)
         {

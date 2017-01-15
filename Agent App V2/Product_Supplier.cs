@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
 
 namespace Agent_App_V2
 {
@@ -23,7 +18,17 @@ namespace Agent_App_V2
         public int SupplierId { get; set; }
         public string ProdName { get; set; }
         public string SupName { get; set; }
-        
+
+        public void AddProductToSupp(int SupplierId)//method to update products
+        {
+            //ProductsSuppliersDB.AddToProdSupp(SupplierId, ProductId, ProductSupplierId);
+        }
+
+        public void RemoveProduct(int SupplierId)
+        {
+            ProductsSuppliersDB.RemoveProdFromSupp(this);
+        }
+
         // convert to listview item for display
         public string[] toListViewItem()
         {
@@ -56,7 +61,10 @@ namespace Agent_App_V2
         // add this product to a package
         public void AddToPackage(int packageId)
         {
-            PackageDB.AddPSByID(packageId, this.ProductSupplierId);
+            PackageDB.AddPSByID(packageId, ProductSupplierId);
         }
+
+        
+        
     }
 }

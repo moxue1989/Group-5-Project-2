@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
 using Dapper;
 
 namespace Agent_App_V2
@@ -17,6 +12,12 @@ namespace Agent_App_V2
         /// </summary>
         public static string connectionString =
              @"Data Source=ICTVM-FQQ06UJG2\SQLEXPRESS;Initial Catalog=TravelExperts;Integrated Security=True";
+
+        public static string connectionString2 = @"Data Source=ICTVM-M1JAMLFO8\SQLEXPRESS;Initial Catalog=TravelExperts;Integrated Security=True";
+            //"Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\TravelExperts.mdf;Integrated Security=True;Connect Timeout=30";
+        
+
+
         /// <summary>
         /// Modify this connection string to work with local database!
         /// </summary>
@@ -27,32 +28,75 @@ namespace Agent_App_V2
         /// 
         /// KASI SQL QUERIES
         /// 
-        //coded by Kasi Emmanuel
-        public static void SetIdentity<T>(SqlConnection connection, Action<T> setId)
-        {
-            dynamic identity = connection.Query("SELECT @@IDENTITY AS Id").Single();
-            T newId = (T)identity.Id;
-            setId(newId);
-        }
-        //coded by Kasi Emmanuel
+        //PRODUCTS SQL QUERIES
+       
+       
         public static string productsQuery = @"SELECT * FROM [Products]";
-        //coded by Kasi Emmanuel
-        public static string supplierQuery = @"SELECT SupplierId, SupName FROM [Suppliers]";
-        //coded by Kasi Emmanuel
-        public static string productSupplierSP = @"spGetProdSuppByProdID";
-        //coded by Kasi Emmanuel
-        public static string addProductQuery = "INSERT INTO Products_Suppliers " + "(ProductSupplierId, ProductId, SupplierId) " + "VALUES (@ProductSupplierId, @ProductId, @SupplierId)";
 
 
+        public static string AddProductsQuery = @"INSERT INTO Products VALUES (@ProdName); SELECT CAST(SCOPE_IDENTITY() as int)";
+
+        public static string UpdateProductQuery = @"UPDATE Products SET ProdName = @ProdName " + 
+            "WHERE ProductId = @ProductId";
+
+        public static string DeleteProductQuery =@"DELETE FROM Products WHERE ProductId = @ProductId";
+
+        public static string LastProductQuery =
+            @"SELECT IDENT_CURRENT('Products')";
+
+        //public static string AddSupplierQuery = @"INSERT INTO Supplier VALUES (@SupplierId, @SupName)";
 
 
+        /// 
+        /// KASI SQL QUERIES
+        /// 
+        //SUPPLIERS SQL QUERIES
 
 
+        public static string suppQuery = @"SELECT SupplierId, SupName FROM [Suppliers]";
+
+        public static string AddSuppliersQuery = @"INSERT INTO Suppliers(SupplierId, SupName) VALUES (@SupplierId, @SupName); SELECT CAST(SCOPE_IDENTITY() as int)";
+
+        public static string LastSuppQuery =
+            @"SELECT IDENT_CURRENT('Suppliers')";
+
+        public static string UpdateSuppliersQuery = 
+            @"UPDATE Suppliers SET SupName = @SupName " +
+            "WHERE SupplierId = @SupplierId";
+
+        public static string DeleteSuppQuery = 
+            @"DELETE FROM Suppliers WHERE SupplierId = @SupplierId";
 
 
+        /// 
+        /// KASI SQL QUERIES
+        /// 
+        //PRODUCT SUPPLIER SQL QUERIES
+        public static string ProductSupplierSp =
+            @"select p.ProductId, p.ProdName,s.SupplierId, s.SupName, ps.ProductSupplierId " + 
+            "from Products_Suppliers ps inner join Suppliers s " + 
+            "on ps.SupplierId = s.SupplierId inner join Products p " + 
+            "on p.ProductId = ps.ProductId " + 
+            "where s.SupplierId= @SupplierId";
+       
+
+        public static string AddProdToSuppByIDQuery = 
+            @"INSERT INTO Products_Suppliers " + 
+            "(ProductId, SupplierId) " +
+            "VALUES (@ProductId, @SupplierId); SELECT CAST(SCOPE_IDENTITY() as int)";
+
+        public static string LastProdSuppQuery =
+            @"SELECT IDENT_CURRENT('Products_Suppliers')";
 
 
+        public static string GetNotAddedProdSuppQuery = @"SELECT * FROM Products WHERE ProductId not in " + 
+                                                             "(select productId from Products_Suppliers WHERE SupplierId = @SupplierId)";
 
+        public static string RemoveProdsFromSuppQuery = @"DELETE FROM Products_Suppliers " + 
+            "WHERE " + 
+            "SupplierId = @SupplierId and ProductId = @ProductId";
+
+        
 
 
 

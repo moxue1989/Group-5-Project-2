@@ -1,11 +1,14 @@
-﻿namespace Agent_App_V2
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+
+namespace Agent_App_V2
 {
     partial class frmEditPackageProducts
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -137,14 +140,14 @@
 
         #endregion
 
-        private System.Windows.Forms.ListView lvAdded;
-        private System.Windows.Forms.ColumnHeader Product;
-        private System.Windows.Forms.ColumnHeader Supplier;
-        private System.Windows.Forms.ListView lvNotAdded;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.Button btnRemove;
-        private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Label lblPackageName;
+        private ListView lvAdded;
+        private ColumnHeader Product;
+        private ColumnHeader Supplier;
+        private ListView lvNotAdded;
+        private ColumnHeader columnHeader1;
+        private ColumnHeader columnHeader2;
+        private Button btnRemove;
+        private Button btnAdd;
+        private Label lblPackageName;
     }
 }

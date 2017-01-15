@@ -1,12 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using Dapper;
-using Dapper.Contrib.Extensions;
 
 namespace Agent_App_V2
 {
