@@ -48,8 +48,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Dapper, Version=1.50.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\Dapper.1.50.1\lib\net451\Dapper.dll</HintPath>
+    <Reference Include="Dapper, Version=1.50.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Dapper.1.50.2\lib\net451\Dapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Dapper.Contrib, Version=1.50.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -71,80 +71,80 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmAddEditPackage.cs">
+    <Compile Include="Forms\frmAddEditPackage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAddEditPackage.Designer.cs">
+    <Compile Include="Forms\frmAddEditPackage.Designer.cs">
       <DependentUpon>frmAddEditPackage.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAddEditSupplier.cs">
+    <Compile Include="Forms\frmAddEditSupplier.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAddEditSupplier.Designer.cs">
+    <Compile Include="Forms\frmAddEditSupplier.Designer.cs">
       <DependentUpon>frmAddEditSupplier.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAddModifyProducts.cs">
+    <Compile Include="Forms\frmAddModifyProducts.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAddModifyProducts.Designer.cs">
+    <Compile Include="Forms\frmAddModifyProducts.Designer.cs">
       <DependentUpon>frmAddModifyProducts.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmEditPackageProducts.cs">
+    <Compile Include="Forms\frmEditPackageProducts.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmEditPackageProducts.Designer.cs">
+    <Compile Include="Forms\frmEditPackageProducts.Designer.cs">
       <DependentUpon>frmEditPackageProducts.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMain.cs">
+    <Compile Include="Forms\frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMain.Designer.cs">
+    <Compile Include="Forms\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPackages.cs">
+    <Compile Include="Forms\frmPackages.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPackages.Designer.cs">
+    <Compile Include="Forms\frmPackages.Designer.cs">
       <DependentUpon>frmPackages.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmProdSuppliers.cs">
+    <Compile Include="Forms\frmProdSuppliers.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmProdSuppliers.Designer.cs">
+    <Compile Include="Forms\frmProdSuppliers.Designer.cs">
       <DependentUpon>frmProdSuppliers.cs</DependentUpon>
     </Compile>
-    <Compile Include="Package.cs" />
-    <Compile Include="PackageDB.cs" />
-    <Compile Include="Package_Product_Supplier.cs" />
-    <Compile Include="Product.cs" />
-    <Compile Include="ProductDB.cs" />
-    <Compile Include="Product_Supplier.cs" />
+    <Compile Include="Entity Classes\Package.cs" />
+    <Compile Include="DB Classes\PackageDB.cs" />
+    <Compile Include="Entity Classes\Package_Product_Supplier.cs" />
+    <Compile Include="Entity Classes\Product.cs" />
+    <Compile Include="DB Classes\ProductDB.cs" />
+    <Compile Include="Entity Classes\Product_Supplier.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Settings.cs" />
-    <Compile Include="Supplier.cs" />
-    <Compile Include="ProductsSuppliersDB.cs" />
-    <Compile Include="SupplierDB.cs" />
-    <Compile Include="Validator.cs" />
-    <EmbeddedResource Include="frmAddEditPackage.resx">
+    <Compile Include="Database\Settings.cs" />
+    <Compile Include="Entity Classes\Supplier.cs" />
+    <Compile Include="DB Classes\ProductsSuppliersDB.cs" />
+    <Compile Include="DB Classes\SupplierDB.cs" />
+    <Compile Include="Entity Classes\Validator.cs" />
+    <EmbeddedResource Include="Forms\frmAddEditPackage.resx">
       <DependentUpon>frmAddEditPackage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAddEditSupplier.resx">
+    <EmbeddedResource Include="Forms\frmAddEditSupplier.resx">
       <DependentUpon>frmAddEditSupplier.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAddModifyProducts.resx">
+    <EmbeddedResource Include="Forms\frmAddModifyProducts.resx">
       <DependentUpon>frmAddModifyProducts.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmEditPackageProducts.resx">
+    <EmbeddedResource Include="Forms\frmEditPackageProducts.resx">
       <DependentUpon>frmEditPackageProducts.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMain.resx">
+    <EmbeddedResource Include="Forms\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPackages.resx">
+    <EmbeddedResource Include="Forms\frmPackages.resx">
       <DependentUpon>frmPackages.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmProdSuppliers.resx">
+    <EmbeddedResource Include="Forms\frmProdSuppliers.resx">
       <DependentUpon>frmProdSuppliers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -171,15 +171,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="TravelExperts.mdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="TravelExperts_log.ldf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <DependentUpon>TravelExperts.mdf</DependentUpon>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
@@ -190,6 +181,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Animate Class\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
