@@ -17,7 +17,7 @@ namespace Agent_App_V2
             if (startDate.Value > endDate.Value)
             {
                 // display error message
-                MessageBox.Show(endDate.Tag + " must be later than " + startDate.Tag + "!", "input Error");
+                MessageBox.Show(endDate.Tag + " must be later than " + startDate.Tag + "!", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 startDate.Focus();
                 validStatus = false;
             }
@@ -35,7 +35,7 @@ namespace Agent_App_V2
             else
             {
                 // display empty error message
-                MessageBox.Show(tb.Tag + " is required!", "input Error");
+                MessageBox.Show(tb.Tag + " is required!", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 tb.Focus();
                 return false;
             }
@@ -52,7 +52,7 @@ namespace Agent_App_V2
             else
             {
                 // display decimal error message
-                MessageBox.Show(tb.Tag + " has to be decimal value!", "input Error");
+                MessageBox.Show(tb.Tag + " has to be decimal value!", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 tb.Focus();
                 return false;
             }
@@ -69,7 +69,7 @@ namespace Agent_App_V2
             else
             {
                 // display range error message
-                MessageBox.Show(tb.Tag + " must be within range: " + min + ".." + max, "input Error");
+                MessageBox.Show(tb.Tag + " must be within range: " + min + ".." + max, "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 tb.Focus();
                 return false;
             }
@@ -82,7 +82,7 @@ namespace Agent_App_V2
             decimal highValue = Convert.ToDecimal(highTb.Text.Trim('$'));
             if (lowValue >= highValue)
             {
-                MessageBox.Show(lowTb.Tag + " has to be less than " + highTb.Tag +"!", "input Error");
+                MessageBox.Show(lowTb.Tag + " has to be less than " + highTb.Tag +"!", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 lowTb.Focus();
                 return false;
             }
@@ -103,7 +103,7 @@ namespace Agent_App_V2
             else
             {
                 // display decimal error message
-                MessageBox.Show(tb.Tag + " has to be Integer value!", "input Error");
+                MessageBox.Show(tb.Tag + " has to be Integer value!", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 tb.Focus();
                 return false;
             }
@@ -118,7 +118,7 @@ namespace Agent_App_V2
             }
             else
             {
-                MessageBox.Show(tb.Tag + " must be within range: " + min + ".." + max + " number of characters", "input Error");
+                MessageBox.Show(tb.Tag + " must be within range: " + min + ".." + max + " number of characters", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 tb.Focus();
                 return false;
             }
@@ -134,7 +134,7 @@ namespace Agent_App_V2
             else
             {
                 // display empty error message
-                MessageBox.Show(tb.Tag + " is required!", "input Error");
+                MessageBox.Show(tb.Tag + " is required!", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 tb.Focus();
                 return false;
             }
@@ -149,7 +149,7 @@ namespace Agent_App_V2
             }
             else
             {
-                MessageBox.Show(tb.Tag + " must be within range: " + min + ".." + max + " number of characters", "input Error");
+                MessageBox.Show(tb.Tag + " must be within range: " + min + ".." + max + " number of characters", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 tb.Focus();
                 return false;
             }

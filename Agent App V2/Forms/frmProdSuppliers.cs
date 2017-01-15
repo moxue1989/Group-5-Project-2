@@ -184,15 +184,15 @@ namespace Agent_App_V2
             dataGridNotInSupp.DataSource = null;
         }
 
-        
-        private void btnDeleteProd_Click(object sender, EventArgs e)//delete products
+
+        private void btnDeleteProd_Click(object sender, EventArgs e) //delete products
         {
             if (MessageBox.Show(@"Are you sure you want to delete: " + newProd.ProdName, @"Delete Product",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 if (newProd != null)
                 {
-                    newProd = (Product)dataGridNotInSupp.CurrentRow.DataBoundItem;
+                    newProd = (Product) dataGridNotInSupp.CurrentRow.DataBoundItem;
 
                     newProd.Delete();
                     Supplier obj = cbProdSupp.SelectedItem as Supplier;
@@ -203,7 +203,7 @@ namespace Agent_App_V2
                         Display();
                     }
                 }
-               
+
             }
 
         }
@@ -229,7 +229,7 @@ namespace Agent_App_V2
 
         private void btnEditSupp_Click(object sender, EventArgs e)
         {
-            frmAddEditSupplier editSuppfrm = new frmAddEditSupplier();//Instantiate a new form
+            frmAddEditSupplier editSuppfrm = new frmAddEditSupplier(); //Instantiate a new form
 
             Supplier currentSupp = cbProdSupp.SelectedItem as Supplier;
             if (currentSupp != null)
@@ -262,7 +262,7 @@ namespace Agent_App_V2
                     Display();
                 }
             }
-        }//delete supplier
+        } //delete supplier
 
         private void AddProductSupplierData(Product_Supplier prodSupp) //add data from controls to object
         {
@@ -275,52 +275,71 @@ namespace Agent_App_V2
             currentProdSupp.SupplierId = currentSupp.SupplierId;
 
         }
+
         private void dataGridProdSupp_SelectionChanged(object sender, EventArgs e)
         {
-            currentProd = (Product)dataGridProdSupp.CurrentRow.DataBoundItem;//store currently selected row data to product Object
+            currentProd = (Product) dataGridProdSupp.CurrentRow.DataBoundItem;
+                //store currently selected row data to product Object
         }
 
-        private void btnAddProdToList_Click(object sender, EventArgs e)//add new products to suppliers
+        private void btnAddProdToList_Click(object sender, EventArgs e) //add new products to suppliers
         {
-            if (dataGridNotInSupp.SelectedRows.Count >= 0)
+            if (dataGridNotInSupp.SelectedRows.Count == 0)
             {
-                Product_Supplier newProdSupp = new Product_Supplier();
-                AddProductSupplierData(currentProdSupp);
-                try
+                MessageBox.Show(@"No product/s to add! " + @"Try Again", @"No Product", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                return;
+
+            }
+            Product_Supplier newProdSupp = new Product_Supplier();
+            AddProductSupplierData(currentProdSupp);
+            try
+            {
+                newProdSupp = currentProdSupp;
+                newProdSupp.ProductSupplierId = ProductsSuppliersDB.AddToProdSupp(currentProdSupp);
+
+                currentSupp = cbProdSupp.SelectedItem as Supplier;
+                if (currentSupp != null)
                 {
-                    newProdSupp = currentProdSupp;
-                    newProdSupp.ProductSupplierId = ProductsSuppliersDB.AddToProdSupp(currentProdSupp);
-
-                    currentSupp = cbProdSupp.SelectedItem as Supplier;
-                    if (currentSupp != null)
-                    {
-                        GetProdSuppliers(currentSupp.SupplierId);
-
-                        Display();
-                    }
-                    RefreshProducts();
+                    GetProdSuppliers(currentSupp.SupplierId);
 
                     Display();
                 }
-                catch (Exception ex)
-                {
+                RefreshProducts();
 
-                    throw ex;
-                }
+                Display();
             }
-            
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
         }
 
         private void RemoveProductFrSupplierData(Product_Supplier prodSupp) //add data from controls to object
         {
-         
-            currentProd = (Product)dataGridProdSupp.CurrentRow.DataBoundItem;
-            currentProdSupp.ProductId = currentProd.ProductId;// link ProductID to ProductSupplier.ProductID
+            if (dataGridProdSupp.SelectedRows.Count == 0)
+            {
+                MessageBox.Show(@"No product/s to remove! " + @"Try Again", @"No Product", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                return;
+            }
+            try
+            {
+                currentProd = (Product)dataGridProdSupp.CurrentRow.DataBoundItem;
+                currentProdSupp.ProductId = currentProd.ProductId;// link ProductID to ProductSupplier.ProductID
 
-            currentSupp = cbProdSupp.SelectedItem as Supplier;
+                currentSupp = cbProdSupp.SelectedItem as Supplier;
 
-            currentProdSupp.SupplierId = currentSupp.SupplierId;// link SupplierID to ProductSupplier.SupplierID
-            
+                currentProdSupp.SupplierId = currentSupp.SupplierId;// link SupplierID to ProductSupplier.SupplierID
+            }
+            catch (Exception ex)
+            {
+                
+                throw ex;
+            }
+           
         }
 
         private void btnRemoveProdFrList_Click(object sender, EventArgs e)

@@ -16,31 +16,35 @@ namespace Agent_App_V2
                     con.Open();
                     con.Execute(Settings.AddProductsQuery, new {product.ProdName});
                     returnId = Convert.ToInt32(con.ExecuteScalar(Settings.LastProductQuery));
-                    //returnId = conn.Query(Settings.AddProductsQuery, product).SingleOrDefault();
 
-                    //product.ProductId = returnId;
                 }
                 catch (Exception ex)
                 {
                     throw ex;
                 }
-                
+
                 return returnId;
             }
         }
+
         public static bool UpdateProduct(Product product)
         {
             bool productId = false;
             using (SqlConnection con = new SqlConnection(Settings.connectionString2))
             {
-                con.Open();
+                try
+                {
+                    con.Open();
 
-                var count = con.Execute(Settings.UpdateProductQuery, product);
-                return count > 0;
+                    var count = con.Execute(Settings.UpdateProductQuery, product);
 
-                //conn.Execute(Settings.UpdateProductQuery, new { product.ProdName });
-                //productId = Convert.ToInt32(conn.ExecuteScalar(Settings.LastProductQuery));
-                //return productId;
+                    return count > 0;
+                }
+                catch (Exception ex)
+                {
+
+                    throw ex;
+                }
             }
 
         }
@@ -50,10 +54,19 @@ namespace Agent_App_V2
             int status;
             using (SqlConnection con = new SqlConnection(Settings.connectionString2))
             {
-                con.Open();
-                status = con.Execute(Settings.DeleteProductQuery, new {product.ProductId});
+                try
+                {
+                    con.Open();
+                    status = con.Execute(Settings.DeleteProductQuery, new { product.ProductId });
+                }
+                catch (Exception ex)
+                {
+                    
+                    throw ex;
+                }
+                return status;
             }
-            return status;
+            
         }
     }
 }
