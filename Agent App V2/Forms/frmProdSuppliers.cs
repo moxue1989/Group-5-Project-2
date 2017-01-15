@@ -144,6 +144,8 @@ namespace Agent_App_V2
             DataGridViewColumn prodName = dataGridNotInSupp.Columns[1];
             prodID.Width = 60;
             prodName.Width = 175;
+            dataGridProdSupp.ClearSelection();
+            dataGridNotInSupp.ClearSelection();
         }
 
         private void btnEditProd_Click(object sender, EventArgs e)
@@ -275,29 +277,33 @@ namespace Agent_App_V2
 
         private void btnAddProdToList_Click(object sender, EventArgs e)//add new products to suppliers
         {
-            Product_Supplier newProdSupp = new Product_Supplier();
-            AddProductSupplierData(currentProdSupp);
-            try
+            if (dataGridNotInSupp.SelectedRows.Count >= 0)
             {
-                newProdSupp = currentProdSupp;
-                newProdSupp.ProductSupplierId = ProductsSuppliersDB.AddToProdSupp(currentProdSupp);
-
-                currentSupp = cbProdSupp.SelectedItem as Supplier;
-                if (currentSupp != null)
+                Product_Supplier newProdSupp = new Product_Supplier();
+                AddProductSupplierData(currentProdSupp);
+                try
                 {
-                    GetProdSuppliers(currentSupp.SupplierId);
+                    newProdSupp = currentProdSupp;
+                    newProdSupp.ProductSupplierId = ProductsSuppliersDB.AddToProdSupp(currentProdSupp);
+
+                    currentSupp = cbProdSupp.SelectedItem as Supplier;
+                    if (currentSupp != null)
+                    {
+                        GetProdSuppliers(currentSupp.SupplierId);
+
+                        Display();
+                    }
+                    RefreshProducts();
 
                     Display();
                 }
-                RefreshProducts();
+                catch (Exception ex)
+                {
 
-                Display();
+                    throw ex;
+                }
             }
-            catch (Exception ex)
-            {
-                
-                throw ex;
-            }
+            
         }
 
         private void RemoveProductFrSupplierData(Product_Supplier prodSupp) //add data from controls to object
