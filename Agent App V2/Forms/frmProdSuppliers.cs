@@ -195,8 +195,13 @@ namespace Agent_App_V2
                     newProd = (Product)dataGridNotInSupp.CurrentRow.DataBoundItem;
 
                     newProd.Delete();
-                    RefreshProducts();
-                    Display();
+                    Supplier obj = cbProdSupp.SelectedItem as Supplier;
+                    if (obj != null)
+                    {
+                        GetProdSuppliers(obj.SupplierId);
+
+                        Display();
+                    }
                 }
                
             }

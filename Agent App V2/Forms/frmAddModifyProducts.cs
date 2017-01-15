@@ -36,8 +36,8 @@ namespace Agent_App_V2
             else //Update Products
             {
                 Product newProd = new Product();
-                newProd.ProductId = product.ProductId;
-                AddProductsData(newProd);
+                newProd.ProductId = Convert.ToInt32(txtProdID.Text);
+                newProd.ProdName = txtProdName.Text;
                 try
                 {
                     if (product == newProd)

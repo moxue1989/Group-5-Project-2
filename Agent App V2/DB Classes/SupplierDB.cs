@@ -55,6 +55,7 @@ namespace Agent_App_V2
             int status;
             using (SqlConnection conn = new SqlConnection(Settings.connectionString2))
             {
+                
                 conn.Open();
                 status = conn.Execute(Settings.DeleteSuppQuery, new { supp.SupplierId });
             }
