@@ -188,7 +188,7 @@ namespace Agent_App_V2
         private bool Validate()
         {
             if (Validator.IsPresent(tbPkgName)
-                && Validator.IsWithinLength(tbPkgName, 5, 20)
+                && Validator.IsWithinLength(tbPkgName, 5, 35)
                 && Validator.IsPresent(tbPkgBasePrice)
                 && Validator.IsDecimal(tbPkgBasePrice)
                 && Validator.IsWithinRange(tbPkgBasePrice,0,100000)
