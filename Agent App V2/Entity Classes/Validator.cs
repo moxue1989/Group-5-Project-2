@@ -12,16 +12,9 @@ namespace Agent_App_V2
         public static bool IsValidDate(DateTimePicker startDate, DateTimePicker endDate)
         {
             bool validStatus = true;
-            // check if start date is in the future
-            if (startDate.Value < DateTime.Now)
-            {
-                // display error message
-                MessageBox.Show(startDate.Tag + " must be later than today!", "input Error");
-                startDate.Focus();
-                validStatus = false;
-            }
+ 
             // check if start date is later than end date
-            else if (startDate.Value > endDate.Value)
+            if (startDate.Value > endDate.Value)
             {
                 // display error message
                 MessageBox.Show(endDate.Tag + " must be later than " + startDate.Tag + "!", "input Error");
