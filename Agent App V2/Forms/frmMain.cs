@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 
 namespace Agent_App_V2
 {
@@ -63,19 +64,7 @@ namespace Agent_App_V2
             Navbar.Hide();
             loginDashboard.Show();
             this.ActiveControl = txtUserName;
-        }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-            agt.AgtFirstName = null;
-            agt.AgtPassword = 0;
-            Dashboardbody.Hide();
-            header.Hide();
-            Navbar.Hide();
-            loginDashboard.Show();
-            txtUserName.Clear();
-            txtPassword.Clear();
-            this.ActiveControl = txtUserName;
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -111,6 +100,11 @@ namespace Agent_App_V2
         private void btnMinimize_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
+        }
+
+        private void txtUserName_Enter(object sender, EventArgs e)
+        {
+            
         }
     }
 }
