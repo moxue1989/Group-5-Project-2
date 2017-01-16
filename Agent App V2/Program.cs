@@ -14,6 +14,7 @@ namespace Agent_App_V2
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frmMain());
+            //Application.Run(new frmUserLogin());
         }
     }
 }

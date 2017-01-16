@@ -91,6 +91,15 @@ namespace Agent_App_V2
             Close();
         }
 
+        private bool IsValidData()
+        {
+            return
+                Validator.IsPresent(txtSuppId) &&
+                Validator.IsInt(txtSuppId) &&
+                Validator.IsPresent(txtSuppName);
+
+        }
+
         private void frmAddEditSupplier_Load(object sender, EventArgs e)
         {
             if (AddSuppliers)

@@ -54,7 +54,7 @@ namespace Agent_App_V2
             this.cbProdSupp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbProdSupp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbProdSupp.FormattingEnabled = true;
-            this.cbProdSupp.Location = new System.Drawing.Point(390, 76);
+            this.cbProdSupp.Location = new System.Drawing.Point(390, 102);
             this.cbProdSupp.Name = "cbProdSupp";
             this.cbProdSupp.Size = new System.Drawing.Size(206, 21);
             this.cbProdSupp.Sorted = true;
@@ -141,7 +141,7 @@ namespace Agent_App_V2
             // 
             // btnDeleteSupp
             // 
-            this.btnDeleteSupp.Location = new System.Drawing.Point(26, 141);
+            this.btnDeleteSupp.Location = new System.Drawing.Point(386, 73);
             this.btnDeleteSupp.Name = "btnDeleteSupp";
             this.btnDeleteSupp.Size = new System.Drawing.Size(61, 23);
             this.btnDeleteSupp.TabIndex = 11;
@@ -151,7 +151,7 @@ namespace Agent_App_V2
             // 
             // btnEditSupp
             // 
-            this.btnEditSupp.Location = new System.Drawing.Point(150, 141);
+            this.btnEditSupp.Location = new System.Drawing.Point(453, 73);
             this.btnEditSupp.Name = "btnEditSupp";
             this.btnEditSupp.Size = new System.Drawing.Size(69, 23);
             this.btnEditSupp.TabIndex = 10;
@@ -161,7 +161,7 @@ namespace Agent_App_V2
             // 
             // btnAddSupp
             // 
-            this.btnAddSupp.Location = new System.Drawing.Point(291, 141);
+            this.btnAddSupp.Location = new System.Drawing.Point(528, 73);
             this.btnAddSupp.Name = "btnAddSupp";
             this.btnAddSupp.Size = new System.Drawing.Size(69, 23);
             this.btnAddSupp.TabIndex = 9;
@@ -173,21 +173,21 @@ namespace Agent_App_V2
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.label1.Location = new System.Drawing.Point(145, 102);
+            this.label1.Location = new System.Drawing.Point(87, 137);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 25);
+            this.label1.Size = new System.Drawing.Size(168, 25);
             this.label1.TabIndex = 12;
-            this.label1.Text = "Suppliers";
+            this.label1.Text = "Available Products";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.label2.Location = new System.Drawing.Point(719, 102);
+            this.label2.Location = new System.Drawing.Point(695, 102);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 25);
+            this.label2.Size = new System.Drawing.Size(129, 25);
             this.label2.TabIndex = 13;
-            this.label2.Text = "Products";
+            this.label2.Text = "New Products";
             // 
             // label3
             // 

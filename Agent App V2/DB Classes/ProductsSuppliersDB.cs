@@ -13,14 +13,19 @@ namespace Agent_App_V2
         //coded by Kasi Emmanuel
         public static List<Product> GetProducts()
         {
-            //var prod = new List<Product>();
-
             using (SqlConnection con = new SqlConnection(Settings.connectionString2))
             {
-                con.Open();
+                try
+                {
+                    con.Open();
 
-                return con.Query<Product>(Settings.productsQuery).ToList();
-                //return prod;
+                    return con.Query<Product>(Settings.productsQuery).ToList();
+                }
+                catch (Exception ex)
+                {
+
+                    throw ex;
+                }
             }
         }
 
@@ -30,10 +35,17 @@ namespace Agent_App_V2
             //var prod = new List<Product_Supplier>();
             using (SqlConnection con = new SqlConnection(Settings.connectionString2))
             {
-                con.Open();
+                try
+                {
+                    con.Open();
 
-                return con.Query<Product>(Settings.ProductSupplierSp, new {SupplierId = supplierId}).ToList();
-               
+                    return con.Query<Product>(Settings.ProductSupplierSp, new {SupplierId = supplierId}).ToList();
+                }
+                catch (Exception ex)
+                {
+
+                    throw ex;
+                }
             }
         }
 
@@ -43,9 +55,18 @@ namespace Agent_App_V2
 
             using (SqlConnection con = new SqlConnection(Settings.connectionString2))
             {
-                con.Open();
+                try
+                {
+                    con.Open();
 
-                return con.Query<Product>(Settings.GetNotAddedProdSuppQuery, new {supplierId}).ToList();
+                    return con.Query<Product>(Settings.GetNotAddedProdSuppQuery, new {supplierId}).ToList();
+                }
+                catch (Exception ex)
+                {
+
+                    throw ex;
+                }
+
             }
         }
 
@@ -54,32 +75,21 @@ namespace Agent_App_V2
         {
             using (SqlConnection con = new SqlConnection(Settings.connectionString2))
             {
-                if (con.State == ConnectionState.Closed)
+                try
                 {
                     con.Open();
+
+                    return con.Query<Supplier>(Settings.suppQuery).ToList();
                 }
-                con.Close();
-                return con.Query<Supplier>(Settings.suppQuery).ToList();
+                catch (Exception ex)
+                {
+
+                    throw ex;
+                }
+
             }
         }
 
-        //coded by Kasi Emmanuel
-        //public static int AddToProdSupp(int supplierId, int productId, int prodSupp)
-        //{
-        //    int add = 0;
-
-        //    //int productSupplier;
-        //    using (SqlConnection con = new SqlConnection(Settings.connectionString2))
-        //    {
-        //        con.Open();
-
-        //        add = con.Execute(Settings.AddProdToSuppByIDQuery, new {supplierId, productId, prodSupp });
-        //        add = Convert.ToInt32(con.ExecuteScalar(Settings.LastProdSuppQuery));
-        //        return add;
-
-        //    }
-
-        //}
         public static int AddToProdSupp(Product_Supplier prodSupp)
         {
             int add = 0;
@@ -87,22 +97,41 @@ namespace Agent_App_V2
             //int productSupplier;
             using (SqlConnection con = new SqlConnection(Settings.connectionString2))
             {
-                con.Open();
+                try
+                {
+                    con.Open();
 
-                con.Execute(Settings.AddProdToSuppByIDQuery, new { prodSupp.SupplierId, prodSupp.ProductId });
-                add = Convert.ToInt32(con.ExecuteScalar(Settings.LastProdSuppQuery));
+                    con.Execute(Settings.AddProdToSuppByIDQuery, new {prodSupp.SupplierId, prodSupp.ProductId});
+                    add = Convert.ToInt32(con.ExecuteScalar(Settings.LastProdSuppQuery));
+                }
+                catch (Exception ex)
+                {
+
+                    throw ex;
+                }
+
                 return add;
 
             }
 
         }
+
         public static int RemoveProdFromSupp(Product_Supplier prodSupp)
         {
             int status;
             using (SqlConnection con = new SqlConnection(Settings.connectionString2))
             {
-                con.Open();
-                status = con.Execute(Settings.RemoveProdsFromSuppQuery, new {prodSupp.ProductSupplierId, prodSupp.SupplierId, prodSupp.ProductId});
+                try
+                {
+                    con.Open();
+                    status = con.Execute(Settings.RemoveProdsFromSuppQuery, new { prodSupp.ProductSupplierId, prodSupp.SupplierId, prodSupp.ProductId });
+                }
+                catch (Exception ex)
+                {
+                    
+                    throw ex;
+                }
+                
             }
             return status;
         }
