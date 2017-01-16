@@ -116,12 +116,6 @@
     <Compile Include="Entity Classes\Product.cs" />
     <Compile Include="DB Classes\ProductDB.cs" />
     <Compile Include="Entity Classes\Product_Supplier.cs" />
-    <Compile Include="frmUserLogin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmUserLogin.Designer.cs">
-      <DependentUpon>frmUserLogin.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Database\Settings.cs" />
@@ -146,9 +140,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmProdSuppliers.resx">
       <DependentUpon>frmProdSuppliers.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmUserLogin.resx">
-      <DependentUpon>frmUserLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
