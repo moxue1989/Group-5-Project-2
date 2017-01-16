@@ -15,18 +15,22 @@ namespace Agent_App_V2
 
         public static string connectionString2 = @"Data Source=ICTVM-M1JAMLFO8\SQLEXPRESS;Initial Catalog=TravelExperts;Integrated Security=True";
             //"Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\TravelExperts.mdf;Integrated Security=True;Connect Timeout=30";
-        
+
 
 
         /// <summary>
         /// Modify this connection string to work with local database!
         /// </summary>
 
+       // Agent Login Query
 
-
+        public static string GetAgentQuery =
+            @"Select * from Agents where AgtFirstName = @AgtFirstName and AgtPassword = @AgtPassword";
 
         /// 
         /// KASI SQL QUERIES
+        /// 
+        /// 
         /// 
         //PRODUCTS SQL QUERIES
        

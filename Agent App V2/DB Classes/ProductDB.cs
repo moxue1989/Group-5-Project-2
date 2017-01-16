@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 using Dapper;
 
 namespace Agent_App_V2
@@ -57,7 +58,7 @@ namespace Agent_App_V2
                 try
                 {
                     con.Open();
-                    status = con.Execute(Settings.DeleteProductQuery, new { product.ProductId });
+                    status = con.Execute(Settings.DeleteProductQuery, new {product.ProductId});
                 }
                 catch (Exception ex)
                 {

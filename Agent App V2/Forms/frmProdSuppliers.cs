@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Runtime.Serialization;
 using System.Windows.Forms;
 
@@ -193,15 +194,22 @@ namespace Agent_App_V2
                 if (newProd != null)
                 {
                     newProd = (Product) dataGridNotInSupp.CurrentRow.DataBoundItem;
-
-                    newProd.Delete();
-                    Supplier obj = cbProdSupp.SelectedItem as Supplier;
-                    if (obj != null)
+                    try
                     {
-                        GetProdSuppliers(obj.SupplierId);
+                        newProd.Delete();
+                        Supplier obj = cbProdSupp.SelectedItem as Supplier;
+                        if (obj != null)
+                        {
+                            GetProdSuppliers(obj.SupplierId);
 
-                        Display();
+                            Display();
+                        }
                     }
+                    catch (SqlException)
+                    {
+                        MessageBox.Show(@"This product is a package. ");
+                    }
+                    
                 }
 
             }
