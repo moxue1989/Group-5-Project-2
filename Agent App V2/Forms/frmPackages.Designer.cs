@@ -276,7 +276,7 @@ namespace Agent_App_V2
             this.Controls.Add(this.btnAddPackage);
             this.Controls.Add(this.lvProducts);
             this.Name = "frmPackages";
-            this.Text = "frmPackages";
+            this.Text = "Travel Experts Packages";
             this.Load += new System.EventHandler(this.frmPackages_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -18,7 +18,7 @@ namespace Agent_App_V2
             {
                 // display error message
                 MessageBox.Show(endDate.Tag + " must be later than " + startDate.Tag + "!", "input Error");
-                startDate.Focus();
+                endDate.Focus();
                 validStatus = false;
             }
             return validStatus;
