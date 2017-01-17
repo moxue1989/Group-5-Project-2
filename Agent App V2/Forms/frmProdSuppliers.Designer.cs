@@ -58,14 +58,14 @@ namespace Agent_App_V2
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridSuppliers = new System.Windows.Forms.DataGridView();
             this.dataGridProdSupp = new System.Windows.Forms.DataGridView();
-            this.dataGridNotInSupp = new System.Windows.Forms.DataGridView();
+            this.dataGridAllProd = new System.Windows.Forms.DataGridView();
             this.datagridPackages = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridSuppliers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridProdSupp)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridNotInSupp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridAllProd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datagridPackages)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -331,23 +331,24 @@ namespace Agent_App_V2
             this.dataGridProdSupp.TabIndex = 16;
             this.dataGridProdSupp.SelectionChanged += new System.EventHandler(this.dataGridProdSupp_SelectionChanged);
             // 
-            // dataGridNotInSupp
+
+            // dataGridAllProd
             // 
-            this.dataGridNotInSupp.AllowUserToAddRows = false;
-            this.dataGridNotInSupp.AllowUserToDeleteRows = false;
-            this.dataGridNotInSupp.AllowUserToResizeRows = false;
-            this.dataGridNotInSupp.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridNotInSupp.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridNotInSupp.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dataGridAllProd.AllowUserToAddRows = false;
+            this.dataGridAllProd.AllowUserToDeleteRows = false;
+            this.dataGridAllProd.AllowUserToResizeRows = false;
+            this.dataGridAllProd.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridAllProd.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridAllProd.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle23.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridNotInSupp.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle23;
-            this.dataGridNotInSupp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridNotInSupp.ColumnHeadersVisible = false;
+            this.dataGridAllProd.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle23;
+            this.dataGridAllProd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridAllProd.ColumnHeadersVisible = false;
             dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle24.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle24.Font = new System.Drawing.Font("Segoe UI", 8.25F);
@@ -355,13 +356,13 @@ namespace Agent_App_V2
             dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridNotInSupp.DefaultCellStyle = dataGridViewCellStyle24;
-            this.dataGridNotInSupp.GridColor = System.Drawing.Color.White;
-            this.dataGridNotInSupp.Location = new System.Drawing.Point(620, 165);
-            this.dataGridNotInSupp.MultiSelect = false;
-            this.dataGridNotInSupp.Name = "dataGridNotInSupp";
-            this.dataGridNotInSupp.ReadOnly = true;
-            this.dataGridNotInSupp.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dataGridAllProd.DefaultCellStyle = dataGridViewCellStyle24;
+            this.dataGridAllProd.GridColor = System.Drawing.Color.White;
+            this.dataGridAllProd.Location = new System.Drawing.Point(620, 165);
+            this.dataGridAllProd.MultiSelect = false;
+            this.dataGridAllProd.Name = "dataGridAllProd";
+            this.dataGridAllProd.ReadOnly = true;
+            this.dataGridAllProd.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle25.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle25.Font = new System.Drawing.Font("Segoe UI", 8.25F);
@@ -369,15 +370,15 @@ namespace Agent_App_V2
             dataGridViewCellStyle25.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle25.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridNotInSupp.RowHeadersDefaultCellStyle = dataGridViewCellStyle25;
-            this.dataGridNotInSupp.RowHeadersVisible = false;
+            this.dataGridAllProd.RowHeadersDefaultCellStyle = dataGridViewCellStyle25;
+            this.dataGridAllProd.RowHeadersVisible = false;
             dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle26.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.dataGridNotInSupp.RowsDefaultCellStyle = dataGridViewCellStyle26;
-            this.dataGridNotInSupp.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridNotInSupp.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridNotInSupp.Size = new System.Drawing.Size(214, 273);
-            this.dataGridNotInSupp.TabIndex = 17;
+            this.dataGridAllProd.RowsDefaultCellStyle = dataGridViewCellStyle26;
+            this.dataGridAllProd.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dataGridAllProd.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridAllProd.Size = new System.Drawing.Size(214, 273);
+            this.dataGridAllProd.TabIndex = 17;
             // 
             // datagridPackages
             // 
@@ -449,7 +450,7 @@ namespace Agent_App_V2
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.datagridPackages);
-            this.Controls.Add(this.dataGridNotInSupp);
+            this.Controls.Add(this.dataGridAllProd);
             this.Controls.Add(this.dataGridProdSupp);
             this.Controls.Add(this.dataGridSuppliers);
             this.Controls.Add(this.label3);
@@ -468,7 +469,7 @@ namespace Agent_App_V2
             this.Load += new System.EventHandler(this.frmSuppliers_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridSuppliers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridProdSupp)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridNotInSupp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridAllProd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.datagridPackages)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
@@ -490,7 +491,7 @@ namespace Agent_App_V2
         private Label label3;
         private DataGridView dataGridSuppliers;
         private DataGridView dataGridProdSupp;
-        private DataGridView dataGridNotInSupp;
+        private DataGridView dataGridAllProd;
         private DataGridView datagridPackages;
         private Label label4;
         private PictureBox pictureBox2;

@@ -37,7 +37,7 @@ namespace Agent_App_V2
         //PRODUCTS SQL QUERIES
        
        
-        public static string productsQuery = @"SELECT * FROM [Products]";
+        public static string productsQuery = @"SELECT * FROM [Products] ORDER BY ProdName";
 
 
         public static string AddProductsQuery = @"INSERT INTO Products VALUES (@ProdName); SELECT CAST(SCOPE_IDENTITY() as int)";
@@ -59,7 +59,7 @@ namespace Agent_App_V2
         //SUPPLIERS SQL QUERIES
 
 
-        public static string suppQuery = @"SELECT SupplierId, SupName FROM [Suppliers]";
+        public static string suppQuery = @"SELECT SupplierId, SupName FROM [Suppliers] ORDER BY SupName";
 
         public static string AddSuppliersQuery = @"INSERT INTO Suppliers(SupplierId, SupName) VALUES (@SupplierId, @SupName); SELECT CAST(SCOPE_IDENTITY() as int)";
 
@@ -83,7 +83,8 @@ namespace Agent_App_V2
             "from Products_Suppliers ps inner join Suppliers s " + 
             "on ps.SupplierId = s.SupplierId inner join Products p " + 
             "on p.ProductId = ps.ProductId " + 
-            "where s.SupplierId= @SupplierId";
+            "where s.SupplierId= @SupplierId " +
+            "ORDER BY p.ProdName";
        
 
         public static string AddProdToSuppByIDQuery = 
@@ -110,7 +111,8 @@ namespace Agent_App_V2
                     (SELECT ProductSupplierId 
                     FROM Products_Suppliers 
                     WHERE ProductId = @ProductId
-                    AND SupplierId = @SupplierId))";
+                    AND SupplierId = @SupplierId))
+            ORDER BY PkgName";
 
 
 

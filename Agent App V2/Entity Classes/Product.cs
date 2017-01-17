@@ -10,6 +10,11 @@ namespace Agent_App_V2
         [DisplayName("Product Name")]
         public string ProdName { get; set; }
 
+        public void RemoveFromSupplier(int SupplierId)
+        {
+            ProductsSuppliersDB.RemoveProdFromSupp(ProductId, SupplierId);
+        }
+
         public void UpdateProd()//method to update products
         {
             ProductDB.UpdateProduct(this);
