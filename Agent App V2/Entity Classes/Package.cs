@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace Agent_App_V2
 {
@@ -11,12 +12,18 @@ namespace Agent_App_V2
     /// </summary>
     public class Package
     {
+        [Browsable(false)]
         public int PackageId { get; set; }
         public string PkgName { get; set; }
+        [Browsable(false)]
         public DateTime PkgStartDate { get; set; }
+        [Browsable(false)]
         public DateTime PkgEndDate { get; set; }
+        [Browsable(false)]
         public string PkgDesc { get; set; }
+        [Browsable(false)]
         public decimal PkgBasePrice { get; set; }
+        [Browsable(false)]
         public decimal PkgAgencyCommission { get; set; }
 
         // get list of added products

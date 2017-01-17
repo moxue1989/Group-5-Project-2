@@ -116,7 +116,7 @@ namespace Agent_App_V2
 
         }
 
-        public static int RemoveProdFromSupp(Product_Supplier prodSupp)
+        public static int RemoveProdFromSupp(int ProductId, int SupplierId)
         {
             int status;
             using (SqlConnection con = new SqlConnection(Settings.connectionString2))
@@ -124,7 +124,7 @@ namespace Agent_App_V2
                 try
                 {
                     con.Open();
-                    status = con.Execute(Settings.RemoveProdsFromSuppQuery, new { prodSupp.ProductSupplierId, prodSupp.SupplierId, prodSupp.ProductId });
+                    status = con.Execute(Settings.RemoveProdsFromSuppQuery, new { ProductId, SupplierId});
                 }
                 catch (Exception ex)
                 {

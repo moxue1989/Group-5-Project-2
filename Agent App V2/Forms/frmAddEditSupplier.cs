@@ -70,13 +70,11 @@ namespace Agent_App_V2
 
         private void AddSuppliersData(Supplier supplier)//add data from controls to object
         {
-            supplier.SupplierId = Convert.ToInt32(txtSuppId.Text);
             supplier.SupName = txtSuppName.Text;
         }
 
         public void ClearControls()//method to clear controls
         {
-            txtSuppId.Clear();
             txtSuppName.Clear();
         }
 

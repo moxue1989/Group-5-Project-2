@@ -44,12 +44,12 @@ namespace Agent_App_V2
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridSuppliers = new System.Windows.Forms.DataGridView();
             this.dataGridProdSupp = new System.Windows.Forms.DataGridView();
-            this.dataGridNotInSupp = new System.Windows.Forms.DataGridView();
+            this.dataGridAllProd = new System.Windows.Forms.DataGridView();
             this.datagridPackages = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridSuppliers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridProdSupp)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridNotInSupp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridAllProd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datagridPackages)).BeginInit();
             this.SuspendLayout();
             // 
@@ -195,20 +195,21 @@ namespace Agent_App_V2
             this.dataGridProdSupp.TabIndex = 16;
             this.dataGridProdSupp.SelectionChanged += new System.EventHandler(this.dataGridProdSupp_SelectionChanged);
             // 
-            // dataGridNotInSupp
+            // dataGridAllProd
             // 
-            this.dataGridNotInSupp.AllowUserToAddRows = false;
-            this.dataGridNotInSupp.AllowUserToDeleteRows = false;
-            this.dataGridNotInSupp.AllowUserToResizeRows = false;
-            this.dataGridNotInSupp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridNotInSupp.Location = new System.Drawing.Point(615, 165);
-            this.dataGridNotInSupp.MultiSelect = false;
-            this.dataGridNotInSupp.Name = "dataGridNotInSupp";
-            this.dataGridNotInSupp.ReadOnly = true;
-            this.dataGridNotInSupp.RowHeadersVisible = false;
-            this.dataGridNotInSupp.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridNotInSupp.Size = new System.Drawing.Size(214, 273);
-            this.dataGridNotInSupp.TabIndex = 17;
+            this.dataGridAllProd.AllowUserToAddRows = false;
+            this.dataGridAllProd.AllowUserToDeleteRows = false;
+            this.dataGridAllProd.AllowUserToResizeRows = false;
+            this.dataGridAllProd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridAllProd.Location = new System.Drawing.Point(615, 165);
+            this.dataGridAllProd.MultiSelect = false;
+            this.dataGridAllProd.Name = "dataGridAllProd";
+            this.dataGridAllProd.ReadOnly = true;
+            this.dataGridAllProd.RowHeadersVisible = false;
+            this.dataGridAllProd.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridAllProd.Size = new System.Drawing.Size(214, 273);
+            this.dataGridAllProd.TabIndex = 17;
+            this.dataGridAllProd.SelectionChanged += new System.EventHandler(this.dataGridAllProd_SelectionChanged);
             // 
             // datagridPackages
             // 
@@ -243,7 +244,7 @@ namespace Agent_App_V2
             this.ClientSize = new System.Drawing.Size(954, 484);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.datagridPackages);
-            this.Controls.Add(this.dataGridNotInSupp);
+            this.Controls.Add(this.dataGridAllProd);
             this.Controls.Add(this.dataGridProdSupp);
             this.Controls.Add(this.dataGridSuppliers);
             this.Controls.Add(this.label3);
@@ -262,7 +263,7 @@ namespace Agent_App_V2
             this.Load += new System.EventHandler(this.frmSuppliers_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridSuppliers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridProdSupp)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridNotInSupp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridAllProd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.datagridPackages)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -283,7 +284,7 @@ namespace Agent_App_V2
         private Label label3;
         private DataGridView dataGridSuppliers;
         private DataGridView dataGridProdSupp;
-        private DataGridView dataGridNotInSupp;
+        private DataGridView dataGridAllProd;
         private DataGridView datagridPackages;
         private Label label4;
     }

@@ -21,16 +21,6 @@ namespace Agent_App_V2
         [DisplayName("Supplier Name")]
         public string SupName { get; set; }
 
-        public void AddProductToSupp(int SupplierId)//method to update products
-        {
-            //ProductsSuppliersDB.AddToProdSupp(SupplierId, ProductId, ProductSupplierId);
-        }
-
-        public void RemoveProduct(int SupplierId)
-        {
-            ProductsSuppliersDB.RemoveProdFromSupp(this);
-        }
-
         // convert to listview item for display
         public string[] toListViewItem()
         {
