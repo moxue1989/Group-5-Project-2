@@ -18,7 +18,7 @@ namespace Agent_App_V2
                 try
                 {
                     conn.Open();
-                    conn.Execute(Settings.AddSuppliersQuery, new {supp.SupplierId, supp.SupName});
+                    conn.Execute(Settings.AddSuppliersQuery, new {supp.SupName});
                     returnId = Convert.ToInt32(conn.ExecuteScalar(Settings.LastSuppQuery));
                    
                 }

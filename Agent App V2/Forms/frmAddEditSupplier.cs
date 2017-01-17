@@ -70,19 +70,16 @@ namespace Agent_App_V2
 
         private void AddSuppliersData(Supplier supplier)//add data from controls to object
         {
-            supplier.SupplierId = Convert.ToInt32(txtSuppId.Text);
             supplier.SupName = txtSuppName.Text;
         }
 
         public void ClearControls()//method to clear controls
         {
-            txtSuppId.Clear();
             txtSuppName.Clear();
         }
 
         private void DisplaySupplier()//Display supplier details
         {
-            txtSuppId.Text = supplier.SupplierId.ToString();
             txtSuppName.Text = supplier.SupName;
         }
 
@@ -94,8 +91,6 @@ namespace Agent_App_V2
         private bool IsValidData()
         {
             return
-                Validator.IsPresent(txtSuppId) &&
-                Validator.IsInt(txtSuppId) &&
                 Validator.IsPresent(txtSuppName);
 
         }
@@ -105,12 +100,12 @@ namespace Agent_App_V2
             if (AddSuppliers)
             {
                 Text = @"Add Supplier";//name of dialog form to Add Supplier
-                txtSuppId.Enabled = true;
+               
             }
             else
             {
                 Text = @"Modify Supplier";//name of dialog form to Modify Supplier
-                txtSuppId.Enabled = false;
+                
                 DisplaySupplier();
             }
         }

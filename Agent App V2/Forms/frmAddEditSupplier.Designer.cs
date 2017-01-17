@@ -28,71 +28,64 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtSuppId = new System.Windows.Forms.TextBox();
             this.txtSuppName = new System.Windows.Forms.TextBox();
-            this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.EditSupplierPanel = new System.Windows.Forms.Panel();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.EditSupplierPanel.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label1.Location = new System.Drawing.Point(44, 52);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Supplier ID";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label2.Location = new System.Drawing.Point(206, 51);
+            this.label2.Location = new System.Drawing.Point(92, 63);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(108, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "Supplier Name";
             // 
-            // txtSuppId
-            // 
-            this.txtSuppId.Enabled = false;
-            this.txtSuppId.Location = new System.Drawing.Point(48, 74);
-            this.txtSuppId.Name = "txtSuppId";
-            this.txtSuppId.Size = new System.Drawing.Size(100, 20);
-            this.txtSuppId.TabIndex = 2;
-            this.txtSuppId.Tag = "Supplier ID";
-            // 
             // txtSuppName
             // 
-            this.txtSuppName.Location = new System.Drawing.Point(210, 73);
+            this.txtSuppName.Location = new System.Drawing.Point(96, 85);
             this.txtSuppName.Name = "txtSuppName";
             this.txtSuppName.Size = new System.Drawing.Size(182, 20);
             this.txtSuppName.TabIndex = 3;
             this.txtSuppName.Tag = "Suppler Name";
             // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(52, 128);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 4;
-            this.btnSave.Text = "&Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
             // btnCancel
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(239, 128);
+            this.btnCancel.Location = new System.Drawing.Point(261, 127);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 5;
             this.btnCancel.Text = "&Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // EditSupplierPanel
+            // 
+            this.EditSupplierPanel.Controls.Add(this.btnCancel);
+            this.EditSupplierPanel.Controls.Add(this.btnSave);
+            this.EditSupplierPanel.Controls.Add(this.txtSuppName);
+            this.EditSupplierPanel.Controls.Add(this.label2);
+            this.EditSupplierPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.EditSupplierPanel.Location = new System.Drawing.Point(0, 0);
+            this.EditSupplierPanel.Name = "EditSupplierPanel";
+            this.EditSupplierPanel.Size = new System.Drawing.Size(440, 196);
+            this.EditSupplierPanel.TabIndex = 6;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(52, 127);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 4;
+            this.btnSave.Text = "&Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // frmAddEditSupplier
             // 
@@ -101,30 +94,24 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(440, 196);
-            this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.txtSuppName);
-            this.Controls.Add(this.txtSuppId);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.EditSupplierPanel);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmAddEditSupplier";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAddEditSupplier";
             this.Load += new System.EventHandler(this.frmAddEditSupplier_Load);
+            this.EditSupplierPanel.ResumeLayout(false);
+            this.EditSupplierPanel.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtSuppId;
         private System.Windows.Forms.TextBox txtSuppName;
-        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Panel EditSupplierPanel;
+        private System.Windows.Forms.Button btnSave;
     }
 }

@@ -11,7 +11,8 @@ namespace Agent_App_V2
         /// Modify this connection string to work with local database!
         /// </summary>
         public static string connectionString =
-             @"Data Source=ICTVM-FQQ06UJG2\SQLEXPRESS;Initial Catalog=TravelExperts;Integrated Security=True";
+            @"Data Source=ICTVM-M1JAMLFO8\SQLEXPRESS;Initial Catalog=TravelExperts;Integrated Security=True";
+             //@"Data Source=ICTVM-FQQ06UJG2\SQLEXPRESS;Initial Catalog=TravelExperts;Integrated Security=True";
 
         public static string connectionString2 = @"Data Source=ICTVM-M1JAMLFO8\SQLEXPRESS;Initial Catalog=TravelExperts;Integrated Security=True";
             //"Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\TravelExperts.mdf;Integrated Security=True;Connect Timeout=30";
@@ -59,7 +60,7 @@ namespace Agent_App_V2
 
         public static string suppQuery = @"SELECT SupplierId, SupName FROM [Suppliers]";
 
-        public static string AddSuppliersQuery = @"INSERT INTO Suppliers(SupplierId, SupName) VALUES (@SupplierId, @SupName); SELECT CAST(SCOPE_IDENTITY() as int)";
+        public static string AddSuppliersQuery = @"INSERT INTO Suppliers Values (((SELECT MAX(SupplierId) FROM Suppliers) + 1), @SupName)";
 
         public static string LastSuppQuery =
             @"SELECT IDENT_CURRENT('Suppliers')";

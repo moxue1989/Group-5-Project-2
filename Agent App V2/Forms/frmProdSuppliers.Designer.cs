@@ -54,9 +54,9 @@ namespace Agent_App_V2
             this.cbProdSupp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbProdSupp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbProdSupp.FormattingEnabled = true;
-            this.cbProdSupp.Location = new System.Drawing.Point(390, 102);
+            this.cbProdSupp.Location = new System.Drawing.Point(375, 102);
             this.cbProdSupp.Name = "cbProdSupp";
-            this.cbProdSupp.Size = new System.Drawing.Size(206, 21);
+            this.cbProdSupp.Size = new System.Drawing.Size(221, 21);
             this.cbProdSupp.Sorted = true;
             this.cbProdSupp.TabIndex = 1;
             this.cbProdSupp.SelectionChangeCommitted += new System.EventHandler(this.cbProducts_SelectionChangeCommitted);
@@ -66,7 +66,12 @@ namespace Agent_App_V2
             this.dataGridProdSupp.AllowUserToAddRows = false;
             this.dataGridProdSupp.AllowUserToDeleteRows = false;
             this.dataGridProdSupp.AllowUserToOrderColumns = true;
+            this.dataGridProdSupp.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dataGridProdSupp.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridProdSupp.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dataGridProdSupp.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dataGridProdSupp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridProdSupp.GridColor = System.Drawing.Color.LightGray;
             this.dataGridProdSupp.Location = new System.Drawing.Point(26, 170);
             this.dataGridProdSupp.Name = "dataGridProdSupp";
             this.dataGridProdSupp.ReadOnly = true;
@@ -100,7 +105,12 @@ namespace Agent_App_V2
             this.dataGridNotInSupp.AllowUserToAddRows = false;
             this.dataGridNotInSupp.AllowUserToDeleteRows = false;
             this.dataGridNotInSupp.AllowUserToOrderColumns = true;
+            this.dataGridNotInSupp.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dataGridNotInSupp.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridNotInSupp.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dataGridNotInSupp.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dataGridNotInSupp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridNotInSupp.GridColor = System.Drawing.Color.LightGray;
             this.dataGridNotInSupp.Location = new System.Drawing.Point(615, 170);
             this.dataGridNotInSupp.Name = "dataGridNotInSupp";
             this.dataGridNotInSupp.ReadOnly = true;
@@ -111,7 +121,7 @@ namespace Agent_App_V2
             // 
             // btnAddProducts
             // 
-            this.btnAddProducts.Location = new System.Drawing.Point(837, 141);
+            this.btnAddProducts.Location = new System.Drawing.Point(813, 449);
             this.btnAddProducts.Name = "btnAddProducts";
             this.btnAddProducts.Size = new System.Drawing.Size(70, 23);
             this.btnAddProducts.TabIndex = 6;
@@ -121,7 +131,7 @@ namespace Agent_App_V2
             // 
             // btnEditProd
             // 
-            this.btnEditProd.Location = new System.Drawing.Point(724, 141);
+            this.btnEditProd.Location = new System.Drawing.Point(712, 449);
             this.btnEditProd.Name = "btnEditProd";
             this.btnEditProd.Size = new System.Drawing.Size(70, 23);
             this.btnEditProd.TabIndex = 7;
@@ -131,7 +141,7 @@ namespace Agent_App_V2
             // 
             // btnDeleteProd
             // 
-            this.btnDeleteProd.Location = new System.Drawing.Point(615, 141);
+            this.btnDeleteProd.Location = new System.Drawing.Point(633, 449);
             this.btnDeleteProd.Name = "btnDeleteProd";
             this.btnDeleteProd.Size = new System.Drawing.Size(62, 23);
             this.btnDeleteProd.TabIndex = 8;
@@ -141,7 +151,7 @@ namespace Agent_App_V2
             // 
             // btnDeleteSupp
             // 
-            this.btnDeleteSupp.Location = new System.Drawing.Point(386, 73);
+            this.btnDeleteSupp.Location = new System.Drawing.Point(375, 73);
             this.btnDeleteSupp.Name = "btnDeleteSupp";
             this.btnDeleteSupp.Size = new System.Drawing.Size(61, 23);
             this.btnDeleteSupp.TabIndex = 11;
@@ -151,7 +161,7 @@ namespace Agent_App_V2
             // 
             // btnEditSupp
             // 
-            this.btnEditSupp.Location = new System.Drawing.Point(453, 73);
+            this.btnEditSupp.Location = new System.Drawing.Point(447, 73);
             this.btnEditSupp.Name = "btnEditSupp";
             this.btnEditSupp.Size = new System.Drawing.Size(69, 23);
             this.btnEditSupp.TabIndex = 10;
@@ -161,7 +171,7 @@ namespace Agent_App_V2
             // 
             // btnAddSupp
             // 
-            this.btnAddSupp.Location = new System.Drawing.Point(528, 73);
+            this.btnAddSupp.Location = new System.Drawing.Point(527, 73);
             this.btnAddSupp.Name = "btnAddSupp";
             this.btnAddSupp.Size = new System.Drawing.Size(69, 23);
             this.btnAddSupp.TabIndex = 9;
@@ -183,7 +193,7 @@ namespace Agent_App_V2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.label2.Location = new System.Drawing.Point(695, 102);
+            this.label2.Location = new System.Drawing.Point(707, 137);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(129, 25);
             this.label2.TabIndex = 13;
@@ -193,11 +203,11 @@ namespace Agent_App_V2
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.label3.Location = new System.Drawing.Point(385, 28);
+            this.label3.Location = new System.Drawing.Point(448, 45);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(211, 25);
+            this.label3.Size = new System.Drawing.Size(95, 25);
             this.label3.TabIndex = 14;
-            this.label3.Text = "Suppliers and  Products";
+            this.label3.Text = "Suppliers ";
             // 
             // frmProdSuppliers
             // 
