@@ -227,9 +227,9 @@ namespace Agent_App_V2
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(5, 9);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(97, 13);
+            this.label4.Size = new System.Drawing.Size(43, 13);
             this.label4.TabIndex = 32;
-            this.label4.Text = "Package Name:";
+            this.label4.Text = "Name:";
             // 
             // label5
             // 
@@ -237,9 +237,9 @@ namespace Agent_App_V2
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(146, 48);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(129, 13);
+            this.label5.Size = new System.Drawing.Size(75, 13);
             this.label5.TabIndex = 33;
-            this.label5.Text = "Package Description:";
+            this.label5.Text = "Description:";
             // 
             // label6
             // 
@@ -247,9 +247,9 @@ namespace Agent_App_V2
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(5, 48);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(123, 13);
+            this.label6.Size = new System.Drawing.Size(69, 13);
             this.label6.TabIndex = 34;
-            this.label6.Text = "Package Start Date:";
+            this.label6.Text = "Start Date:";
             // 
             // label7
             // 
@@ -257,9 +257,9 @@ namespace Agent_App_V2
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(5, 87);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(118, 13);
+            this.label7.Size = new System.Drawing.Size(64, 13);
             this.label7.TabIndex = 35;
-            this.label7.Text = "Package End Date:";
+            this.label7.Text = "End Date:";
             // 
             // label8
             // 
@@ -294,7 +294,6 @@ namespace Agent_App_V2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-
             this.ClientSize = new System.Drawing.Size(659, 315);
             this.Controls.Add(this.tbPkgDesc);
             this.Controls.Add(this.label9);
