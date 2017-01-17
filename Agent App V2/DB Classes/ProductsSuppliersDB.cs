@@ -135,5 +135,25 @@ namespace Agent_App_V2
             }
             return status;
         }
+
+        internal static List<Package> GetPackagesWith(int SupplierId, int ProductId)
+        {
+            List<Package> packages = new List<Package>();
+            using (SqlConnection con = new SqlConnection(Settings.connectionString2))
+            {
+                try
+                {
+                    con.Open();
+                    packages.AddRange(con.Query<Package>(Settings.GetPackagesWithQuery, new {SupplierId, ProductId}));
+                }
+                catch (Exception ex)
+                {
+
+                    throw ex;
+                }
+
+            }
+            return packages;
+        }
     }
 }

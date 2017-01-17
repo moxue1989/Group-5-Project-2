@@ -55,13 +55,9 @@ namespace Agent_App_V2
             // fill datagrids with the two lists on load, rename column headers and adjust widths
             RefreshPSData();
 
-            dgvAddedPS.Columns[0].HeaderText = "Product Name";
-            dgvAddedPS.Columns[1].HeaderText = "Supplier Name";
             dgvAddedPS.Columns[0].Width = 100;
             dgvAddedPS.Columns[1].Width = 151;
 
-            dgvNotAddedPS.Columns[0].HeaderText = "Product Name";
-            dgvNotAddedPS.Columns[1].HeaderText = "Supplier Name";
             dgvNotAddedPS.Columns[0].Width = 100;
             dgvNotAddedPS.Columns[1].Width = 200;
         }
