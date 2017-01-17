@@ -102,7 +102,15 @@ namespace Agent_App_V2
             "WHERE " + 
             "SupplierId = @SupplierId and ProductId = @ProductId";
 
-        
+        public static string GetPackagesWithQuery =
+            @"SELECT PackageId,PkgName FROM Packages
+            WHERE PackageId in
+                (SELECT PackageId FROM Packages_Products_Suppliers
+                WHERE ProductSupplierId =
+                    (SELECT ProductSupplierId 
+                    FROM Products_Suppliers 
+                    WHERE ProductId = @ProductId
+                    AND SupplierId = @SupplierId))";
 
 
 

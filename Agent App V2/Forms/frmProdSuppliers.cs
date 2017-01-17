@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Windows.Forms;
 
@@ -8,14 +9,10 @@ namespace Agent_App_V2
 {
     public partial class frmProdSuppliers : Form
     {
-        public frmProdSuppliers()
-        {
-            InitializeComponent();
-        }
-
         //Product prod = new Product();
         List<Product> prodSuppList;
-        List<Product> productsList;
+        private List<Product> allProdList = ProductsSuppliersDB.GetProducts();
+        private List<Package> packageList;
 
         private Supplier currentSupp = new Supplier();
         List<Supplier> suppList;
@@ -25,37 +22,27 @@ namespace Agent_App_V2
 
         private Product_Supplier currentProdSupp = new Product_Supplier();
 
-
+        public frmProdSuppliers()
+        {
+            InitializeComponent();
+        }
 
         private void frmSuppliers_Load(object sender, EventArgs e)
         {
+            dataGridSuppliers.DataSource = ProductsSuppliersDB.GetSuppliers();
             FindProductSuppliers();
-
-            //lvProd.View = View.Details;
-
-            //foreach (Product p in prodSupp)
-            //{
-
-            //    ListViewItem item = new ListViewItem(p.ProductId.ToString());
-            //    item.SubItems.Add(p.ProdName);
-
-            //    //Add Items
-            //    lvProd.Items.Add(item);//Add user input in List View
-            //}
-
+            dataGridSuppliers.Columns[0].Width = 300;
+            dataGridNotInSupp.Columns[0].Width = 100;
+            dataGridProdSupp.Columns[0].Width = 100;
+            datagridPackages.Columns[0].Width = 100;
         }
 
         private void FindProductSuppliers()
         {
-            cbProdSupp.DataSource = ProductsSuppliersDB.GetSuppliers();
-            cbProdSupp.DisplayMember = "SupName";
-            cbProdSupp.ValueMember = "SupplierId";
-
-            currentSupp = cbProdSupp.SelectedItem as Supplier;
+            currentSupp = (Supplier) dataGridSuppliers.CurrentRow.DataBoundItem;
 
             if (currentSupp != null)
             {
-
                 GetSuppliersProducts(currentSupp.SupplierId);
                 Display();
             }
@@ -66,7 +53,7 @@ namespace Agent_App_V2
             try
             {
                 prodSuppList = ProductsSuppliersDB.GetProductSuppBySuppID(supplierId);
-                productsList = ProductsSuppliersDB.GetProductNotInProdSuppBySuppID(supplierId);
+                allProdList = ProductsSuppliersDB.GetProducts();
             }
             catch (Exception ex)
             {
@@ -74,45 +61,9 @@ namespace Agent_App_V2
             }
         }
 
-        private void cbProducts_SelectionChangeCommitted(object sender, EventArgs e)
+        private void dataGridSuppliers_SelectionChanged(object sender, EventArgs e)
         {
-
-            Supplier obj = cbProdSupp.SelectedItem as Supplier;
-            if (obj != null)
-            {
-                GetProdSuppliers(obj.SupplierId);
-
-                Display();
-            }
-        }
-
-
-        private void AddProdToSuppliers(int SupplierId)
-        {
-            try
-            {
-                //addProdList = ProductsSuppliersDB.AddToProdSupp(SupplierId);
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, ex.GetType().ToString());
-            }
-        }
-
-        private void GetProdSuppliers(int SupplierId)
-        {
-            try
-            {
-                prodSuppList = ProductsSuppliersDB.GetProductSuppBySuppID(SupplierId);
-
-                productsList = ProductsSuppliersDB.GetProductNotInProdSuppBySuppID(SupplierId);
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, ex.GetType().ToString());
-            }
+            FindProductSuppliers();
         }
 
         private void dataGridNotInSupp_SelectionChanged(object sender, EventArgs e)
@@ -129,9 +80,8 @@ namespace Agent_App_V2
             if (res == DialogResult.OK)
             {
                 newProd = addProductsForm.product;
-                productsList.Add(newProd);
+                allProdList.Add(newProd);
 
-                RefreshProducts();
                 Display();
             }
         }
@@ -139,14 +89,7 @@ namespace Agent_App_V2
         private void Display()
         {
             dataGridProdSupp.DataSource = prodSuppList;
-
-            dataGridNotInSupp.DataSource = productsList;
-            DataGridViewColumn prodID = dataGridNotInSupp.Columns[0];
-            DataGridViewColumn prodName = dataGridNotInSupp.Columns[1];
-            prodID.Width = 60;
-            prodName.Width = 175;
-            dataGridProdSupp.ClearSelection();
-            dataGridNotInSupp.ClearSelection();
+            dataGridNotInSupp.DataSource = allProdList;
         }
 
         private void btnEditProd_Click(object sender, EventArgs e)
@@ -159,10 +102,10 @@ namespace Agent_App_V2
             if (res == DialogResult.OK)
             {
                 newProd = editProdForm.product;
-                Supplier obj = cbProdSupp.SelectedItem as Supplier;
+                Supplier obj = dataGridSuppliers.CurrentRow.DataBoundItem as Supplier;
                 if (obj != null)
                 {
-                    GetProdSuppliers(obj.SupplierId);
+                    GetSuppliersProducts(obj.SupplierId);
 
                     Display();
                 }
@@ -178,13 +121,6 @@ namespace Agent_App_V2
             }
         }
 
-        private void RefreshProducts()
-        {
-            dataGridProdSupp.DataSource = null;
-
-            dataGridNotInSupp.DataSource = null;
-        }
-
 
         private void btnDeleteProd_Click(object sender, EventArgs e) //delete products
         {
@@ -197,10 +133,10 @@ namespace Agent_App_V2
                     try
                     {
                         newProd.Delete();
-                        Supplier obj = cbProdSupp.SelectedItem as Supplier;
+                        Supplier obj = dataGridSuppliers.CurrentRow.DataBoundItem as Supplier;
                         if (obj != null)
                         {
-                            GetProdSuppliers(obj.SupplierId);
+                            GetSuppliersProducts(obj.SupplierId);
 
                             Display();
                         }
@@ -216,10 +152,10 @@ namespace Agent_App_V2
 
         }
 
-        private void frmSuppliers_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            RefreshProducts();
-        }
+        //private void frmSuppliers_FormClosed(object sender, FormClosedEventArgs e)
+        //{
+        //    RefreshProducts();
+        //}
 
         private void btnAddSupp_Click(object sender, EventArgs e)
         {
@@ -239,7 +175,9 @@ namespace Agent_App_V2
         {
             frmAddEditSupplier editSuppfrm = new frmAddEditSupplier(); //Instantiate a new form
 
-            Supplier currentSupp = cbProdSupp.SelectedItem as Supplier;
+            //Supplier currentSupp = cbProdSupp.SelectedItem as Supplier;
+            Supplier currentSupp = (Supplier)dataGridSuppliers.CurrentRow.DataBoundItem;
+
             if (currentSupp != null)
             {
                 editSuppfrm.supplier = currentSupp; // selected supplier is now the next form's supplier
@@ -255,7 +193,7 @@ namespace Agent_App_V2
 
         private void btnDeleteSupp_Click(object sender, EventArgs e)
         {
-            Supplier obj = cbProdSupp.SelectedItem as Supplier;
+            Supplier obj = dataGridSuppliers.CurrentRow.DataBoundItem as Supplier;
             if (obj != null)
             {
                 currentSupp = obj;
@@ -264,7 +202,6 @@ namespace Agent_App_V2
                         @"Delete Supplier", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     currentSupp.DeleteSupp(); // delete current supplier
-                    RefreshProducts();
 
                     FindProductSuppliers(); // find Suppliers
                     Display();
@@ -272,22 +209,12 @@ namespace Agent_App_V2
             }
         } //delete supplier
 
-        private void AddProductSupplierData(Product_Supplier prodSupp) //add data from controls to object
-        {
-            newProd = (Product) dataGridNotInSupp.CurrentRow.DataBoundItem;
-
-            currentProdSupp.ProductId = newProd.ProductId;
-
-            currentSupp = cbProdSupp.SelectedItem as Supplier;
-
-            currentProdSupp.SupplierId = currentSupp.SupplierId;
-
-        }
-
         private void dataGridProdSupp_SelectionChanged(object sender, EventArgs e)
         {
             currentProd = (Product) dataGridProdSupp.CurrentRow.DataBoundItem;
-                //store currently selected row data to product Object
+            packageList = ProductsSuppliersDB.GetPackagesWith(currentSupp.SupplierId, currentProd.ProductId);
+            datagridPackages.DataSource = packageList;
+            //store currently selected row data to product Object
         }
 
         private void btnAddProdToList_Click(object sender, EventArgs e) //add new products to suppliers
@@ -299,21 +226,35 @@ namespace Agent_App_V2
                 return;
 
             }
+
+            int newProdId = ((Product) dataGridNotInSupp.CurrentRow.DataBoundItem).ProductId;
+
+            var products = from ps in prodSuppList
+                where ps.ProductId == newProdId
+                select ps;
+
+            if (products.Count() != 0)
+            {
+                MessageBox.Show("Already added!");
+                return;
+            }
+
             Product_Supplier newProdSupp = new Product_Supplier();
-            AddProductSupplierData(currentProdSupp);
+
             try
             {
-                newProdSupp = currentProdSupp;
-                newProdSupp.ProductSupplierId = ProductsSuppliersDB.AddToProdSupp(currentProdSupp);
+                newProdSupp.ProductId = newProdId;
+                newProdSupp.SupplierId = currentSupp.SupplierId;
 
-                currentSupp = cbProdSupp.SelectedItem as Supplier;
+                newProdSupp.ProductSupplierId = ProductsSuppliersDB.AddToProdSupp(newProdSupp);
+
+                currentSupp = dataGridSuppliers.CurrentRow.DataBoundItem as Supplier;
                 if (currentSupp != null)
                 {
-                    GetProdSuppliers(currentSupp.SupplierId);
+                    GetSuppliersProducts(currentSupp.SupplierId);
 
                     Display();
                 }
-                RefreshProducts();
 
                 Display();
             }
@@ -338,7 +279,7 @@ namespace Agent_App_V2
                 currentProd = (Product)dataGridProdSupp.CurrentRow.DataBoundItem;
                 currentProdSupp.ProductId = currentProd.ProductId;// link ProductID to ProductSupplier.ProductID
 
-                currentSupp = cbProdSupp.SelectedItem as Supplier;
+                currentSupp = dataGridSuppliers.CurrentRow.DataBoundItem as Supplier;
 
                 currentProdSupp.SupplierId = currentSupp.SupplierId;// link SupplierID to ProductSupplier.SupplierID
             }
@@ -359,21 +300,13 @@ namespace Agent_App_V2
 
                 currentProdSupp.RemoveProduct(currentProdSupp.SupplierId);//delete selected product from supplier
 
-                currentSupp = cbProdSupp.SelectedItem as Supplier;
+                currentSupp = dataGridSuppliers.CurrentRow.DataBoundItem as Supplier;
                 if (currentSupp != null)
                 {
-                    GetProdSuppliers(currentSupp.SupplierId);
-
-                    Display();
+                    GetSuppliersProducts(currentSupp.SupplierId);
                 }
-                RefreshProducts();
                 Display();
             }
-            
-            
-
         }
-
-        
     }
 }

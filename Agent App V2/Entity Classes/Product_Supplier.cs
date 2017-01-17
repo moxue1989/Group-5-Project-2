@@ -16,7 +16,9 @@ namespace Agent_App_V2
         public int ProductId { get; set; }
         [Browsable(false)]
         public int SupplierId { get; set; }
+        [DisplayName("Product Name")]
         public string ProdName { get; set; }
+        [DisplayName("Supplier Name")]
         public string SupName { get; set; }
 
         public void AddProductToSupp(int SupplierId)//method to update products
