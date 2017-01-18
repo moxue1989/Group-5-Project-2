@@ -19,10 +19,11 @@ namespace Agent_App_V2
             //Add Products 
             if (AddProducts)
             {
-                product= new Product();
-                AddProductsData(product);
+                Product newProd= new Product();
+                AddProductsData(newProd);
             try
-                {
+            {
+                product = newProd;
                 product.ProductId = ProductDB.AddProduct(product);
                 DialogResult = DialogResult.OK;
                 }
@@ -36,7 +37,6 @@ namespace Agent_App_V2
             else //Update Products
             {
                 Product newProd = new Product();
-                newProd.ProductId = Convert.ToInt32(txtProdID.Text);
                 newProd.ProdName = txtProdName.Text;
                 try
                 {
@@ -60,7 +60,6 @@ namespace Agent_App_V2
 
         private void DisplayProduct()//Display product details
         {
-            txtProdID.Text = product.ProductId.ToString();
             txtProdName.Text = product.ProdName;
         }
 
@@ -72,19 +71,19 @@ namespace Agent_App_V2
 
         public void ClearControls()//method to clear controls
         {
-            txtProdID.Clear();
             txtProdName.Clear();
         }
 
         private void frmAddProducts_Load(object sender, EventArgs e)
         {
+            this.ActiveControl = txtProdName;
             if (AddProducts)
             {
-                Text = @"Add Product";//name dialog form to Add Product
+                lblForm.Text = @"Add Product - Travel Experts Inc.";//name dialog form to Add Product
             }
             else
             {
-                Text = @"Modify Product";//name dialog form to Modify Product
+                lblForm.Text = @"Modify Product - Travel Experts Inc.";//name dialog form to Modify Product
                 DisplayProduct();
             }
         }
@@ -92,6 +91,16 @@ namespace Agent_App_V2
         private void btnCancel_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnMinimize_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
         }
     }
 

@@ -45,18 +45,17 @@ namespace Agent_App_V2
             else //Update Suppliers
             {
                 Supplier newSupp = new Supplier();
-                newSupp.SupplierId = supplier.SupplierId;
-                supplier.SupName = txtSuppName.Text;
+                newSupp.SupName = txtSuppName.Text;
               
                 try
                 {
                     if (supplier == newSupp)
                     {
-                        MessageBox.Show(@"Another user has modifed or deleted this supplier.", @"Database Input Error", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                        MessageBox.Show(@"Another user has modifed or deleted this Supplier.", @"Database Input Error", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
                     }
                     else
                     {
-                        newSupp = supplier;
+                        supplier = newSupp;
                         supplier.UpdateSupp();
                         DialogResult = DialogResult.OK;
                     }
@@ -97,17 +96,23 @@ namespace Agent_App_V2
 
         private void frmAddEditSupplier_Load(object sender, EventArgs e)
         {
+            this.ActiveControl = txtSuppName;
             if (AddSuppliers)
             {
-                Text = @"Add Supplier";//name of dialog form to Add Supplier
+                lblForm.Text = @"Add Supplier - Travel Experts Inc.";//name of dialog form to Add Supplier
                
             }
             else
             {
-                Text = @"Modify Supplier";//name of dialog form to Modify Supplier
+                lblForm.Text = @"Modify Supplier - Travel Experts Inc.";//name of dialog form to Modify Supplier
                 
                 DisplaySupplier();
             }
+        }
+
+        private void EditSupplierPanel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
