@@ -20,11 +20,10 @@ namespace Agent_App_V2
             if (AddProducts)
             {
                 Product newProd= new Product();
-                AddProductsData(newProd);
-            try
-            {
-                product = newProd;
-                product.ProductId = ProductDB.AddProduct(product);
+                newProd.ProdName = txtProdName.Text;
+                try
+                {
+                ProductDB.AddProduct(newProd);
                 DialogResult = DialogResult.OK;
                 }
 
@@ -34,40 +33,27 @@ namespace Agent_App_V2
                     MessageBox.Show(ex.Message, ex.GetType().ToString());
                 }
             }
+
             else //Update Products
             {
-                Product newProd = new Product();
-                newProd.ProdName = txtProdName.Text;
+                product.ProdName = txtProdName.Text;
                 try
                 {
-                    if (product == newProd)
-                    {
-                        MessageBox.Show(@"Another user has modifed or deleted this product.", @"Database Input Error", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
-                    }
-                    else
-                    {
-                    product = newProd;
                     product.UpdateProd();
                     DialogResult = DialogResult.OK;
-                    }
-            }
+                }
                 catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, ex.GetType().ToString());
+                {
+                    MessageBox.Show(ex.Message, ex.GetType().ToString());
+                }
             }
         }
-    }
 
         private void DisplayProduct()//Display product details
         {
             txtProdName.Text = product.ProdName;
         }
 
-        private void AddProductsData(Product prod)//add data from controls to object
-        {
-            
-            product.ProdName = txtProdName.Text;
-        }
 
         public void ClearControls()//method to clear controls
         {

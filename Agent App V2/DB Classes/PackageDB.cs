@@ -111,7 +111,7 @@ namespace Agent_App_V2
         // add a product to a package
         public static int AddPSByID(int packageId, int psId)
         {
-            int status = 2;
+            int status;
             using (SqlConnection conn = new SqlConnection(Settings.connectionString))
             {
                 conn.Open();
@@ -120,16 +120,14 @@ namespace Agent_App_V2
             return status;
         }
 
-        //// remove a single product from a package
-        //public static int RemovePSByID(int packageId, int psId)
-        //{
-        //    int status;
-        //    using (SqlConnection conn = new SqlConnection(Settings.connectionString))
-        //    {
-        //        conn.Open();
-        //        status = conn.Execute(Settings.RemovePSByIDQuery, new {packageId, psId});
-        //    }
-        //    return status;
-        //}
+        // Remove a product supplier from all packages
+        public static void removePSFromAllPkg(Product_Supplier ps)
+        {
+            using (SqlConnection conn = new SqlConnection(Settings.connectionString))
+            {
+                conn.Open();
+                conn.Execute(Settings.removePSFromAllPkgQuery, new { ps.ProductId, ps.SupplierId });
+            }
+        }
     }
 }
