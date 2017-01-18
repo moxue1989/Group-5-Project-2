@@ -80,7 +80,7 @@ namespace Agent_App_V2
             tbPkgDesc.Clear();
             tbPkgBasePrice.Clear();
             tbPkgAgencyCommission.Clear();
-            lvProducts1.Items.Clear();
+            lvProducts.Items.Clear();
         }
         private void frmPackages_Load(object sender, EventArgs e)
         {
@@ -110,11 +110,11 @@ namespace Agent_App_V2
             tbPkgAgencyCommission.Text = currentPackage.PkgAgencyCommission.ToString("c");
 
             // show current product_supplier list
-            lvProducts1.Items.Clear();
+            lvProducts.Items.Clear();
             foreach (var ps in currentPSList)
             {
                 ListViewItem item = new ListViewItem(ps.toListViewItem());
-                lvProducts1.Items.Add(item);
+                lvProducts.Items.Add(item);
             }
 
             // enable edit and delete button
@@ -184,6 +184,16 @@ namespace Agent_App_V2
             Reload();
         }
 
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Close();   
+        }
+
+        private void btnMinimize_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+
         private void btnLogout_Click(object sender, EventArgs e)
         {
             frmMain guiDashBoard = new frmMain(); //Instantiate a new form
@@ -193,12 +203,7 @@ namespace Agent_App_V2
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            this.Close();
-        }
-
-        private void btnMinimize_Click(object sender, EventArgs e)
-        {
-            WindowState = FormWindowState.Minimized;
+            Close();
         }
     }
 }
