@@ -196,6 +196,12 @@
     <None Include="images\exit.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="images\signout.png" />
+    <None Include="images\line2.png" />
+    <None Include="images\line.png" />
+    <None Include="images\back2.png" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Database\TravelExperts.mdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -203,10 +209,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>TravelExperts.mdf</DependentUpon>
     </Content>
-    <None Include="images\signout.png" />
-    <None Include="images\line2.png" />
-    <None Include="images\line.png" />
-    <None Include="images\back2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

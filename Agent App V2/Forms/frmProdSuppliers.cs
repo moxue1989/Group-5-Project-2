@@ -12,7 +12,7 @@ namespace Agent_App_V2
         //Product prod = new Product();
         private List<Product> prodSuppList;
         private List<Product> allProdList;
-        private List<Package> packageList;
+        private List<Package> packageList = new List<Package>();
 
         private Supplier currentSupp;
         List<Supplier> suppList;
@@ -29,6 +29,7 @@ namespace Agent_App_V2
         private void frmSuppliers_Load(object sender, EventArgs e)
         {
             dataGridSuppliers.DataSource = ProductsSuppliersDB.GetSuppliers();
+            datagridPackages.DataSource = packageList;
             FindProductSuppliers();
             dataGridSuppliers.Columns[0].Width = 300;
             dataGridAllProd.Columns[0].Width = 200;
@@ -253,15 +254,38 @@ namespace Agent_App_V2
 
         private void btnRemoveProdFrList_Click(object sender, EventArgs e)
         {
-            if (currentProd != null)
+            if (dataGridProdSupp.CurrentRow != null)
             {
-                currentProd.RemoveFromSupplier(currentSupp.SupplierId); //delete selected product from supplier
+                if (packageList.Count != 0)
+                {
+                    string confirmString =
+                        @"This product is currently part of one or more packages! Are you sure you want to remove this product? (This action will also remove the product from all packages!)";
 
+                    if (MessageBox.Show(confirmString, "Delete Product", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) ==
+                        DialogResult.Yes)
+                    {
+                        Product_Supplier PS = new Product_Supplier();
+                        PS.ProductId = currentProd.ProductId;
+                        PS.SupplierId = currentSupp.SupplierId;
+                        PS.RemoveFromAllPkg();
+
+                        currentProd.RemoveFromSupplier(currentSupp.SupplierId); //delete selected product from supplier
+                    }
+                }
+                else
+                {
+                    string confirmString = "Are you sure you want to remove this product?";
+                    if (MessageBox.Show(confirmString, "Delete Product", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) ==
+                        DialogResult.Yes)
+                    {
+                        currentProd.RemoveFromSupplier(currentSupp.SupplierId); //delete selected product from supplier
+                    }
+                }
                 Display();
             }
             else
             {
-                MessageBox.Show("Test");
+                MessageBox.Show("No Product Selected!");
             }
         }
 

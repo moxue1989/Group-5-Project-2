@@ -17,15 +17,12 @@ namespace Agent_App_V2
         {
             var packageForm = new frmPackages();
             packageForm.ShowDialog();
-            Close();
         }
 
         private void btnProductSuppliers_Click(object sender, EventArgs e)
         {
-           
             var frmSuppliers = new frmProdSuppliers();
             frmSuppliers.ShowDialog();
-            
         }
 
         private bool IsLoginValid()

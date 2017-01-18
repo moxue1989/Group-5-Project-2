@@ -191,5 +191,10 @@ namespace Agent_App_V2
            @"SELECT [SupplierId],[SupName]
             FROM [Suppliers]";
 
+        public static string removePSFromAllPkgQuery =
+            @"DELETE FROM Packages_Products_Suppliers 
+            WHERE ProductSupplierId =
+                (SELECT ProductSupplierId FROM Products_Suppliers
+                WHERE ProductId = @ProductId AND SupplierId = @SupplierId)";
     }
 }
