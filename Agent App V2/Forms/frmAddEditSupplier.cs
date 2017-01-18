@@ -27,12 +27,10 @@ namespace Agent_App_V2
             if (AddSuppliers)
             {
                 Supplier newSupp = new Supplier();
-                
-                AddSuppliersData(newSupp);
+                newSupp.SupName = txtSuppName.Text;
                 try
                 {
-                    supplier = newSupp;
-                    supplier.SupplierId = SupplierDB.AddSupplier(newSupp);
+                    SupplierDB.AddSupplier(newSupp);
                     DialogResult = DialogResult.OK;
                 }
 
@@ -44,32 +42,18 @@ namespace Agent_App_V2
             }
             else //Update Suppliers
             {
-                Supplier newSupp = new Supplier();
-                newSupp.SupName = txtSuppName.Text;
-              
+                supplier.SupName = txtSuppName.Text;
+
                 try
                 {
-                    if (supplier == newSupp)
-                    {
-                        MessageBox.Show(@"Another user has modifed or deleted this Supplier.", @"Database Input Error", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
-                    }
-                    else
-                    {
-                        supplier = newSupp;
-                        supplier.UpdateSupp();
-                        DialogResult = DialogResult.OK;
-                    }
+                    supplier.UpdateSupp();
+                    DialogResult = DialogResult.OK;
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message, ex.GetType().ToString());
                 }
             }
-        }
-
-        private void AddSuppliersData(Supplier supplier)//add data from controls to object
-        {
-            supplier.SupName = txtSuppName.Text;
         }
 
         public void ClearControls()//method to clear controls
