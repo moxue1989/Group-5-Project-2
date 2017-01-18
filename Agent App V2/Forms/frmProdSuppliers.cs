@@ -111,6 +111,7 @@ namespace Agent_App_V2
                 currentProd = editProdForm.product;
                 allProdList = ProductsSuppliersDB.GetProducts();
                 dataGridAllProd.DataSource = allProdList;
+                Display();
             }
             else
             {
