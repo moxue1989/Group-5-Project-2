@@ -61,8 +61,7 @@ namespace Agent_App_V2
 
         public static string suppQuery = @"SELECT SupplierId, SupName FROM [Suppliers] ORDER BY SupName";
 
-        public static string AddSuppliersQuery = @"INSERT INTO Suppliers(SupplierId, SupName) VALUES (@SupplierId, @SupName); SELECT CAST(SCOPE_IDENTITY() as int)";
-
+        public static string AddSuppliersQuery = @"INSERT INTO Suppliers Values(((SELECT MAX(SupplierId) FROM Suppliers) + 1),  @SupName) ";
         public static string LastSuppQuery =
             @"SELECT IDENT_CURRENT('Suppliers')";
 

@@ -38,43 +38,56 @@ namespace Agent_App_V2
             this.Dashboardbody = new System.Windows.Forms.Panel();
             this.btnProductSuppliers = new System.Windows.Forms.Button();
             this.header = new System.Windows.Forms.Panel();
-            this.btnLogout = new System.Windows.Forms.Button();
             this.Navbar = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.txtUsername = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.loginDashboard = new System.Windows.Forms.Panel();
+            this.lblPW = new System.Windows.Forms.Label();
+            this.lblUsername = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btnLogin = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.btnMinimizeLogin = new System.Windows.Forms.Button();
+            this.btnExitLogin = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
-            this.loginDashboard = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtUserName = new System.Windows.Forms.TextBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnLogin = new System.Windows.Forms.Button();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.btnLogout = new System.Windows.Forms.Button();
+            this.lblFooter = new System.Windows.Forms.Label();
             this.Dashboardbody.SuspendLayout();
             this.header.SuspendLayout();
             this.Navbar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel10.SuspendLayout();
             this.loginDashboard.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // btnPackages
             // 
             this.btnPackages.AutoEllipsis = true;
             this.btnPackages.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(23)))), ((int)(((byte)(46)))));
+            this.btnPackages.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPackages.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
             this.btnPackages.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
             this.btnPackages.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(100)))), ((int)(((byte)(181)))));
             this.btnPackages.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPackages.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.btnPackages.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(202)))), ((int)(((byte)(233)))));
-            this.btnPackages.Location = new System.Drawing.Point(69, 70);
+            this.btnPackages.Location = new System.Drawing.Point(54, 60);
             this.btnPackages.Name = "btnPackages";
             this.btnPackages.Size = new System.Drawing.Size(126, 97);
             this.btnPackages.TabIndex = 0;
@@ -99,22 +112,23 @@ namespace Agent_App_V2
             this.Dashboardbody.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(33)))), ((int)(((byte)(66)))));
             this.Dashboardbody.Controls.Add(this.btnProductSuppliers);
             this.Dashboardbody.Controls.Add(this.btnPackages);
-            this.Dashboardbody.Location = new System.Drawing.Point(33, 105);
+            this.Dashboardbody.Location = new System.Drawing.Point(149, 123);
             this.Dashboardbody.Name = "Dashboardbody";
-            this.Dashboardbody.Size = new System.Drawing.Size(484, 226);
+            this.Dashboardbody.Size = new System.Drawing.Size(450, 200);
             this.Dashboardbody.TabIndex = 4;
             // 
             // btnProductSuppliers
             // 
             this.btnProductSuppliers.AutoEllipsis = true;
             this.btnProductSuppliers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(23)))), ((int)(((byte)(46)))));
+            this.btnProductSuppliers.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnProductSuppliers.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
             this.btnProductSuppliers.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
             this.btnProductSuppliers.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(100)))), ((int)(((byte)(181)))));
             this.btnProductSuppliers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProductSuppliers.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.btnProductSuppliers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(202)))), ((int)(((byte)(233)))));
-            this.btnProductSuppliers.Location = new System.Drawing.Point(288, 70);
+            this.btnProductSuppliers.Location = new System.Drawing.Point(268, 58);
             this.btnProductSuppliers.Name = "btnProductSuppliers";
             this.btnProductSuppliers.Size = new System.Drawing.Size(126, 97);
             this.btnProductSuppliers.TabIndex = 1;
@@ -132,31 +146,8 @@ namespace Agent_App_V2
             this.header.Dock = System.Windows.Forms.DockStyle.Top;
             this.header.Location = new System.Drawing.Point(0, 27);
             this.header.Name = "header";
-            this.header.Size = new System.Drawing.Size(550, 45);
+            this.header.Size = new System.Drawing.Size(750, 45);
             this.header.TabIndex = 5;
-            // 
-            // btnLogout
-            // 
-            this.btnLogout.BackColor = System.Drawing.Color.Transparent;
-            this.btnLogout.BackgroundImage = global::Agent_App_V2.Properties.Resources.exit;
-            this.btnLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLogout.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnLogout.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
-            this.btnLogout.FlatAppearance.BorderSize = 0;
-            this.btnLogout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(100)))), ((int)(((byte)(181)))));
-            this.btnLogout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(100)))), ((int)(((byte)(181)))));
-            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogout.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnLogout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(23)))), ((int)(((byte)(46)))));
-            this.btnLogout.Location = new System.Drawing.Point(493, 8);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(10);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(38, 33);
-            this.btnLogout.TabIndex = 16;
-            this.toolTip1.SetToolTip(this.btnLogout, "Logout");
-            this.btnLogout.UseVisualStyleBackColor = false;
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // Navbar
             // 
@@ -167,18 +158,8 @@ namespace Agent_App_V2
             this.Navbar.Dock = System.Windows.Forms.DockStyle.Top;
             this.Navbar.Location = new System.Drawing.Point(0, 0);
             this.Navbar.Name = "Navbar";
-            this.Navbar.Size = new System.Drawing.Size(550, 27);
+            this.Navbar.Size = new System.Drawing.Size(750, 27);
             this.Navbar.TabIndex = 9;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Agent_App_V2.Properties.Resources.logo1;
-            this.pictureBox2.Location = new System.Drawing.Point(8, 2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(31, 24);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 18;
-            this.pictureBox2.TabStop = false;
             // 
             // label1
             // 
@@ -195,10 +176,251 @@ namespace Agent_App_V2
             // 
             this.panel10.Controls.Add(this.btnMinimize);
             this.panel10.Controls.Add(this.btnExit);
-            this.panel10.Location = new System.Drawing.Point(412, 0);
+            this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel10.Location = new System.Drawing.Point(0, 0);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(138, 27);
+            this.panel10.Size = new System.Drawing.Size(750, 27);
             this.panel10.TabIndex = 8;
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.AutomaticDelay = 10;
+            this.toolTip1.AutoPopDelay = 1000;
+            this.toolTip1.InitialDelay = 10;
+            this.toolTip1.ReshowDelay = 2;
+            // 
+            // txtUsername
+            // 
+            this.txtUsername.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtUsername.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtUsername.ForeColor = System.Drawing.Color.Gray;
+            this.txtUsername.Location = new System.Drawing.Point(51, 147);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(15);
+            this.txtUsername.MaxLength = 10;
+            this.txtUsername.MinimumSize = new System.Drawing.Size(0, 20);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(186, 22);
+            this.txtUsername.TabIndex = 1;
+            this.txtUsername.Tag = "Username";
+            this.txtUsername.Text = "Username";
+            this.txtUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.toolTip1.SetToolTip(this.txtUsername, "Enter your first name");
+            this.txtUsername.Click += new System.EventHandler(this.txtUsername_Click);
+            this.txtUsername.Leave += new System.EventHandler(this.txtUsername_Leave);
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtPassword.ForeColor = System.Drawing.Color.Gray;
+            this.txtPassword.Location = new System.Drawing.Point(51, 212);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(15);
+            this.txtPassword.MaxLength = 3;
+            this.txtPassword.MinimumSize = new System.Drawing.Size(0, 20);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.Size = new System.Drawing.Size(186, 22);
+            this.txtPassword.TabIndex = 2;
+            this.txtPassword.Tag = "Password";
+            this.txtPassword.Text = "Password";
+            this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.toolTip1.SetToolTip(this.txtPassword, "Enter your password");
+            this.txtPassword.Click += new System.EventHandler(this.txtPassword_Click);
+            this.txtPassword.Leave += new System.EventHandler(this.txtPassword_Leave);
+            // 
+            // loginDashboard
+            // 
+            this.loginDashboard.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.loginDashboard.Controls.Add(this.lblPW);
+            this.loginDashboard.Controls.Add(this.lblUsername);
+            this.loginDashboard.Controls.Add(this.pictureBox7);
+            this.loginDashboard.Controls.Add(this.pictureBox8);
+            this.loginDashboard.Controls.Add(this.pictureBox9);
+            this.loginDashboard.Controls.Add(this.pictureBox10);
+            this.loginDashboard.Controls.Add(this.pictureBox11);
+            this.loginDashboard.Controls.Add(this.txtUsername);
+            this.loginDashboard.Controls.Add(this.panel3);
+            this.loginDashboard.Controls.Add(this.btnLogin);
+            this.loginDashboard.Controls.Add(this.txtPassword);
+            this.loginDashboard.Controls.Add(this.label2);
+            this.loginDashboard.Location = new System.Drawing.Point(244, 35);
+            this.loginDashboard.Name = "loginDashboard";
+            this.loginDashboard.Size = new System.Drawing.Size(277, 335);
+            this.loginDashboard.TabIndex = 10;
+            // 
+            // lblPW
+            // 
+            this.lblPW.AutoSize = true;
+            this.lblPW.BackColor = System.Drawing.Color.Transparent;
+            this.lblPW.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.lblPW.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.lblPW.Location = new System.Drawing.Point(107, 193);
+            this.lblPW.Name = "lblPW";
+            this.lblPW.Size = new System.Drawing.Size(67, 19);
+            this.lblPW.TabIndex = 20;
+            this.lblPW.Text = "Password";
+            this.lblPW.Visible = false;
+            // 
+            // lblUsername
+            // 
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.BackColor = System.Drawing.Color.Transparent;
+            this.lblUsername.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.lblUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.lblUsername.Location = new System.Drawing.Point(107, 129);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(71, 19);
+            this.lblUsername.TabIndex = 19;
+            this.lblUsername.Text = "Username";
+            this.lblUsername.Visible = false;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(63)))), ((int)(((byte)(159)))));
+            this.panel3.Controls.Add(this.btnMinimizeLogin);
+            this.panel3.Controls.Add(this.btnExitLogin);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(277, 23);
+            this.panel3.TabIndex = 11;
+            // 
+            // btnLogin
+            // 
+            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(63)))), ((int)(((byte)(159)))));
+            this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogin.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnLogin.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
+            this.btnLogin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(100)))), ((int)(((byte)(181)))));
+            this.btnLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(100)))), ((int)(((byte)(181)))));
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(202)))), ((int)(((byte)(233)))));
+            this.btnLogin.Location = new System.Drawing.Point(51, 256);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(10);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(192, 34);
+            this.btnLogin.TabIndex = 3;
+            this.btnLogin.Text = "&Login";
+            this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 16F);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.label2.Location = new System.Drawing.Point(79, 78);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(130, 30);
+            this.label2.TabIndex = 21;
+            this.label2.Text = "Agent Login";
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox7.BackgroundImage")));
+            this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox7.Location = new System.Drawing.Point(53, 236);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(190, 3);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 18;
+            this.pictureBox7.TabStop = false;
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox8.BackgroundImage")));
+            this.pictureBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox8.Location = new System.Drawing.Point(53, 172);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(190, 3);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox8.TabIndex = 18;
+            this.pictureBox8.TabStop = false;
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
+            this.pictureBox9.Location = new System.Drawing.Point(24, 212);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(27, 25);
+            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox9.TabIndex = 17;
+            this.pictureBox9.TabStop = false;
+            // 
+            // pictureBox10
+            // 
+            this.pictureBox10.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
+            this.pictureBox10.Location = new System.Drawing.Point(24, 147);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(27, 25);
+            this.pictureBox10.TabIndex = 16;
+            this.pictureBox10.TabStop = false;
+            // 
+            // pictureBox11
+            // 
+            this.pictureBox11.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
+            this.pictureBox11.Location = new System.Drawing.Point(111, 29);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(63, 53);
+            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox11.TabIndex = 15;
+            this.pictureBox11.TabStop = false;
+            // 
+            // btnMinimizeLogin
+            // 
+            this.btnMinimizeLogin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMinimizeLogin.BackColor = System.Drawing.Color.Transparent;
+            this.btnMinimizeLogin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMinimizeLogin.FlatAppearance.BorderSize = 0;
+            this.btnMinimizeLogin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnMinimizeLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(33)))), ((int)(((byte)(66)))));
+            this.btnMinimizeLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimizeLogin.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizeLogin.Image")));
+            this.btnMinimizeLogin.Location = new System.Drawing.Point(211, -2);
+            this.btnMinimizeLogin.Name = "btnMinimizeLogin";
+            this.btnMinimizeLogin.Size = new System.Drawing.Size(32, 25);
+            this.btnMinimizeLogin.TabIndex = 4;
+            this.btnMinimizeLogin.UseVisualStyleBackColor = false;
+            this.btnMinimizeLogin.Click += new System.EventHandler(this.btnMinimize_Click);
+            // 
+            // btnExitLogin
+            // 
+            this.btnExitLogin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExitLogin.BackColor = System.Drawing.Color.Transparent;
+            this.btnExitLogin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExitLogin.FlatAppearance.BorderSize = 0;
+            this.btnExitLogin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnExitLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(33)))), ((int)(((byte)(66)))));
+            this.btnExitLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExitLogin.Image = ((System.Drawing.Image)(resources.GetObject("btnExitLogin.Image")));
+            this.btnExitLogin.Location = new System.Drawing.Point(245, -2);
+            this.btnExitLogin.Name = "btnExitLogin";
+            this.btnExitLogin.Size = new System.Drawing.Size(32, 25);
+            this.btnExitLogin.TabIndex = 3;
+            this.btnExitLogin.UseVisualStyleBackColor = false;
+            this.btnExitLogin.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(8, 2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(31, 24);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 18;
+            this.pictureBox2.TabStop = false;
             // 
             // btnMinimize
             // 
@@ -207,10 +429,10 @@ namespace Agent_App_V2
             this.btnMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimize.FlatAppearance.BorderSize = 0;
             this.btnMinimize.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnMinimize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnMinimize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(33)))), ((int)(((byte)(66)))));
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimize.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimize.Image")));
-            this.btnMinimize.Location = new System.Drawing.Point(68, 1);
+            this.btnMinimize.Location = new System.Drawing.Point(680, 1);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(32, 25);
             this.btnMinimize.TabIndex = 2;
@@ -224,152 +446,56 @@ namespace Agent_App_V2
             this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExit.FlatAppearance.BorderSize = 0;
             this.btnExit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(33)))), ((int)(((byte)(66)))));
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
-            this.btnExit.Location = new System.Drawing.Point(102, 1);
+            this.btnExit.Location = new System.Drawing.Point(714, 1);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(32, 25);
             this.btnExit.TabIndex = 0;
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // loginDashboard
+            // btnLogout
             // 
-            this.loginDashboard.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.loginDashboard.Controls.Add(this.pictureBox1);
-            this.loginDashboard.Controls.Add(this.label3);
-            this.loginDashboard.Controls.Add(this.label4);
-            this.loginDashboard.Controls.Add(this.txtUserName);
-            this.loginDashboard.Controls.Add(this.panel2);
-            this.loginDashboard.Controls.Add(this.label2);
-            this.loginDashboard.Controls.Add(this.btnLogin);
-            this.loginDashboard.Controls.Add(this.txtPassword);
-            this.loginDashboard.Location = new System.Drawing.Point(142, 33);
-            this.loginDashboard.Name = "loginDashboard";
-            this.loginDashboard.Size = new System.Drawing.Size(270, 300);
-            this.loginDashboard.TabIndex = 5;
+            this.btnLogout.BackColor = System.Drawing.Color.Transparent;
+            this.btnLogout.BackgroundImage = global::Agent_App_V2.Properties.Resources.signout2;
+            this.btnLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogout.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
+            this.btnLogout.FlatAppearance.BorderSize = 0;
+            this.btnLogout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnLogout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnLogout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(23)))), ((int)(((byte)(46)))));
+            this.btnLogout.Location = new System.Drawing.Point(688, 7);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(10);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(27, 30);
+            this.btnLogout.TabIndex = 18;
+            this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
-            // pictureBox1
+            // lblFooter
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(187, 33);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(60, 52);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 15;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
-            this.label3.Location = new System.Drawing.Point(94, 101);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(71, 19);
-            this.label3.TabIndex = 14;
-            this.label3.Text = "Username";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
-            this.label4.Location = new System.Drawing.Point(94, 154);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(67, 19);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "Password";
-            // 
-            // txtUserName
-            // 
-            this.txtUserName.BackColor = System.Drawing.SystemColors.Window;
-            this.txtUserName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtUserName.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.txtUserName.Location = new System.Drawing.Point(38, 123);
-            this.txtUserName.Margin = new System.Windows.Forms.Padding(15);
-            this.txtUserName.MaxLength = 10;
-            this.txtUserName.MinimumSize = new System.Drawing.Size(0, 20);
-            this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(194, 25);
-            this.txtUserName.TabIndex = 1;
-            this.txtUserName.Tag = "Username";
-            this.txtUserName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.toolTip1.SetToolTip(this.txtUserName, "Enter your first name");
-            this.txtUserName.Enter += new System.EventHandler(this.txtUserName_Enter);
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(63)))), ((int)(((byte)(159)))));
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(270, 19);
-            this.panel2.TabIndex = 11;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
-            this.label2.Location = new System.Drawing.Point(26, 42);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(144, 19);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Login to your account";
-            // 
-            // btnLogin
-            // 
-            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(63)))), ((int)(((byte)(159)))));
-            this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLogin.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnLogin.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
-            this.btnLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(100)))), ((int)(((byte)(181)))));
-            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.btnLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(202)))), ((int)(((byte)(233)))));
-            this.btnLogin.Location = new System.Drawing.Point(38, 209);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(10);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(194, 34);
-            this.btnLogin.TabIndex = 3;
-            this.btnLogin.Text = "&Login";
-            this.btnLogin.UseVisualStyleBackColor = false;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.BackColor = System.Drawing.SystemColors.Window;
-            this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.txtPassword.Location = new System.Drawing.Point(38, 176);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(15);
-            this.txtPassword.MaxLength = 3;
-            this.txtPassword.MinimumSize = new System.Drawing.Size(0, 20);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(194, 25);
-            this.txtPassword.TabIndex = 2;
-            this.txtPassword.Tag = "Password";
-            this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.toolTip1.SetToolTip(this.txtPassword, "Enter your password");
-            this.txtPassword.UseSystemPasswordChar = true;
-            // 
-            // toolTip1
-            // 
-            this.toolTip1.AutomaticDelay = 10;
-            this.toolTip1.AutoPopDelay = 1000;
-            this.toolTip1.InitialDelay = 10;
-            this.toolTip1.ReshowDelay = 2;
+            this.lblFooter.AutoSize = true;
+            this.lblFooter.BackColor = System.Drawing.Color.Transparent;
+            this.lblFooter.Font = new System.Drawing.Font("Segoe UI", 6F);
+            this.lblFooter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(202)))), ((int)(((byte)(233)))));
+            this.lblFooter.Location = new System.Drawing.Point(322, 376);
+            this.lblFooter.Name = "lblFooter";
+            this.lblFooter.Size = new System.Drawing.Size(141, 11);
+            this.lblFooter.TabIndex = 18;
+            this.lblFooter.Text = "Developed By:  Mo  |  Kasi  |  Jermayne";
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(23)))), ((int)(((byte)(46)))));
-            this.ClientSize = new System.Drawing.Size(550, 374);
+            this.ClientSize = new System.Drawing.Size(750, 400);
+            this.Controls.Add(this.lblFooter);
             this.Controls.Add(this.loginDashboard);
             this.Controls.Add(this.header);
             this.Controls.Add(this.Navbar);
@@ -386,12 +512,18 @@ namespace Agent_App_V2
             this.header.PerformLayout();
             this.Navbar.ResumeLayout(false);
             this.Navbar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel10.ResumeLayout(false);
             this.loginDashboard.ResumeLayout(false);
             this.loginDashboard.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -402,23 +534,30 @@ namespace Agent_App_V2
         private Panel Dashboardbody;
         private Panel header;
         private Panel Navbar;
-        private Panel loginDashboard;
-        private Button btnLogin;
-        private TextBox txtUserName;
-        private TextBox txtPassword;
-        private Label label2;
-        private Panel panel2;
         private Button btnProductSuppliers;
         private Button btnMinimize;
         private Button btnExit;
         private Panel panel10;
-        private Label label4;
-        private Label label3;
-        private PictureBox pictureBox1;
-        private Button btnLogout;
         private Label label1;
         private PictureBox pictureBox2;
         private ToolTip toolTip1;
+        private Panel loginDashboard;
+        private Label lblPW;
+        private Label lblUsername;
+        private PictureBox pictureBox7;
+        private PictureBox pictureBox8;
+        private PictureBox pictureBox9;
+        private PictureBox pictureBox10;
+        private PictureBox pictureBox11;
+        private TextBox txtUsername;
+        private Panel panel3;
+        private Button btnMinimizeLogin;
+        private Button btnExitLogin;
+        private Button btnLogin;
+        private TextBox txtPassword;
+        private Label label2;
+        private Button btnLogout;
+        private Label lblFooter;
     }
 }
 

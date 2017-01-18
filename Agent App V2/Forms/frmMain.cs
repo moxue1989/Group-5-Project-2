@@ -17,18 +17,21 @@ namespace Agent_App_V2
         {
             var packageForm = new frmPackages();
             packageForm.ShowDialog();
+            Close();
         }
 
         private void btnProductSuppliers_Click(object sender, EventArgs e)
         {
+           
             var frmSuppliers = new frmProdSuppliers();
             frmSuppliers.ShowDialog();
+            
         }
 
         private bool IsLoginValid()
         {
             return
-                Validator.IsPresent(txtUserName) &&
+                Validator.IsPresent(txtUsername) &&
                 Validator.IsPresent(txtPassword) &&
                 Validator.IsInt(txtPassword);
         }
@@ -38,7 +41,7 @@ namespace Agent_App_V2
         {
             if (IsLoginValid())
             {
-                agt.AgtFirstName = txtUserName.Text;
+                agt.AgtFirstName = txtUsername.Text;
                 agt.AgtPassword = Convert.ToInt32(txtPassword.Text);
 
                 if (LoginDB.GetAgent(agt).AgtFirstName != null)
@@ -59,11 +62,23 @@ namespace Agent_App_V2
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            Dashboardbody.Hide();
-            header.Hide();
-            Navbar.Hide();
-            loginDashboard.Show();
-            this.ActiveControl = txtUserName;
+            if (agt.AgtFirstName != null)
+            {
+                Dashboardbody.Show();
+                header.Show();
+                Navbar.Show();
+                loginDashboard.Hide();
+                lblLoginMsg.Text = @"Welcome back " + agt.AgtFirstName;
+            }
+            else
+            {
+                Dashboardbody.Hide();
+                header.Hide();
+                Navbar.Hide();
+                loginDashboard.Show();
+                this.ActiveControl = label2;
+            }
+            
 
         }
 
@@ -75,9 +90,7 @@ namespace Agent_App_V2
             header.Hide();
             Navbar.Hide();
             loginDashboard.Show();
-            txtUserName.Clear();
-            txtPassword.Clear();
-            this.ActiveControl = txtUserName;
+            this.ActiveControl = label2;
         }
 
         private void btnMaximize_Click(object sender, EventArgs e)
@@ -102,9 +115,43 @@ namespace Agent_App_V2
             WindowState = FormWindowState.Minimized;
         }
 
-        private void txtUserName_Enter(object sender, EventArgs e)
+        private void txtUsername_Click(object sender, EventArgs e)
         {
-            
+            if (txtUsername.Text == @"Username")
+            {
+                lblUsername.Visible = true;
+                txtUsername.Text = "";
+
+            }
         }
+        private void txtUsername_Leave(object sender, EventArgs e)
+        {
+            if (txtUsername.Text == @"")
+            {
+                lblUsername.Visible = false;
+                txtUsername.Text = @"Username";
+
+            }
+        }
+
+        private void txtPassword_Click(object sender, EventArgs e)
+        {
+            if (txtPassword.Text == @"Password")
+            {
+                lblPW.Visible = true;
+                txtPassword.Text = "";
+                
+            }
+        }
+        private void txtPassword_Leave(object sender, EventArgs e)
+        {
+            if (txtPassword.Text == @"")
+            {
+                lblPW.Visible = false;
+                txtPassword.Text = @"Password";
+                
+            }
+        }
+        
     }
 }

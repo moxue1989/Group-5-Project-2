@@ -103,11 +103,13 @@ namespace Agent_App_V2
             FrmAddModifyProducts editProdForm = new FrmAddModifyProducts();
             editProdForm.AddProducts = false;
             editProdForm.product = currentAllProd;
-
+            
             DialogResult res = editProdForm.ShowDialog();
             if (res == DialogResult.OK)
             {
-                Display();
+                currentProd = editProdForm.product;
+                allProdList = ProductsSuppliersDB.GetProducts();
+                dataGridAllProd.DataSource = allProdList;
             }
             else
             {
@@ -193,7 +195,7 @@ namespace Agent_App_V2
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Cannot delete this supplier, it is currently supplying products!","Delete",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    MessageBox.Show(@"Cannot delete this supplier, it is currently supplying products!",@"Delete",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 }
                 
             }
@@ -217,7 +219,8 @@ namespace Agent_App_V2
 
             if (products.Count() != 0)
             {
-                MessageBox.Show("Already added!");
+                MessageBox.Show(@"This Product is already added!", @"Duplicate", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
                 return;
             }
 
@@ -260,6 +263,28 @@ namespace Agent_App_V2
             {
                 MessageBox.Show("Test");
             }
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Close();//closes application
+        }
+
+        private void btnMinimize_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;//minimize application window
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            frmMain guiDashBoard = new frmMain(); //Instantiate a new form
+            guiDashBoard.ShowDialog();
+            Close();
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
