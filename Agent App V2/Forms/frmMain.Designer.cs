@@ -185,7 +185,7 @@ namespace Agent_App_V2
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(8, 2);
+            this.pictureBox2.Location = new System.Drawing.Point(3, 2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(31, 24);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -197,7 +197,7 @@ namespace Agent_App_V2
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(202)))), ((int)(((byte)(233)))));
-            this.label1.Location = new System.Drawing.Point(61, 3);
+            this.label1.Location = new System.Drawing.Point(56, 3);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(223, 21);
             this.label1.TabIndex = 17;
@@ -223,7 +223,7 @@ namespace Agent_App_V2
             this.btnMinimize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(33)))), ((int)(((byte)(66)))));
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimize.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimize.Image")));
-            this.btnMinimize.Location = new System.Drawing.Point(680, 1);
+            this.btnMinimize.Location = new System.Drawing.Point(679, 1);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(32, 25);
             this.btnMinimize.TabIndex = 2;
@@ -260,7 +260,7 @@ namespace Agent_App_V2
             this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUsername.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txtUsername.ForeColor = System.Drawing.Color.Gray;
-            this.txtUsername.Location = new System.Drawing.Point(51, 147);
+            this.txtUsername.Location = new System.Drawing.Point(44, 147);
             this.txtUsername.Margin = new System.Windows.Forms.Padding(15);
             this.txtUsername.MaxLength = 20;
             this.txtUsername.MinimumSize = new System.Drawing.Size(0, 20);
@@ -280,7 +280,7 @@ namespace Agent_App_V2
             this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txtPassword.ForeColor = System.Drawing.Color.Gray;
-            this.txtPassword.Location = new System.Drawing.Point(51, 212);
+            this.txtPassword.Location = new System.Drawing.Point(44, 212);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(15);
             this.txtPassword.MaxLength = 20;
             this.txtPassword.MinimumSize = new System.Drawing.Size(0, 20);
@@ -321,7 +321,7 @@ namespace Agent_App_V2
             this.lblPW.BackColor = System.Drawing.Color.Transparent;
             this.lblPW.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.lblPW.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.lblPW.Location = new System.Drawing.Point(107, 186);
+            this.lblPW.Location = new System.Drawing.Point(100, 186);
             this.lblPW.Name = "lblPW";
             this.lblPW.Size = new System.Drawing.Size(67, 19);
             this.lblPW.TabIndex = 20;
@@ -334,7 +334,7 @@ namespace Agent_App_V2
             this.lblUsername.BackColor = System.Drawing.Color.Transparent;
             this.lblUsername.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.lblUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.lblUsername.Location = new System.Drawing.Point(107, 122);
+            this.lblUsername.Location = new System.Drawing.Point(100, 122);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(71, 19);
             this.lblUsername.TabIndex = 19;
@@ -346,7 +346,7 @@ namespace Agent_App_V2
             this.pictureBox7.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox7.BackgroundImage")));
             this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox7.Location = new System.Drawing.Point(53, 236);
+            this.pictureBox7.Location = new System.Drawing.Point(46, 236);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(190, 3);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -358,7 +358,7 @@ namespace Agent_App_V2
             this.pictureBox8.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox8.BackgroundImage")));
             this.pictureBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox8.Location = new System.Drawing.Point(53, 172);
+            this.pictureBox8.Location = new System.Drawing.Point(46, 172);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(190, 3);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -370,7 +370,7 @@ namespace Agent_App_V2
             this.pictureBox9.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
-            this.pictureBox9.Location = new System.Drawing.Point(24, 212);
+            this.pictureBox9.Location = new System.Drawing.Point(44, 213);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(27, 25);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -382,7 +382,7 @@ namespace Agent_App_V2
             this.pictureBox10.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
-            this.pictureBox10.Location = new System.Drawing.Point(24, 147);
+            this.pictureBox10.Location = new System.Drawing.Point(44, 148);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(27, 25);
             this.pictureBox10.TabIndex = 16;
@@ -392,7 +392,7 @@ namespace Agent_App_V2
             // 
             this.pictureBox11.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
-            this.pictureBox11.Location = new System.Drawing.Point(111, 29);
+            this.pictureBox11.Location = new System.Drawing.Point(107, 29);
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.Size = new System.Drawing.Size(63, 53);
             this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -455,7 +455,7 @@ namespace Agent_App_V2
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.btnLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(202)))), ((int)(((byte)(233)))));
-            this.btnLogin.Location = new System.Drawing.Point(51, 256);
+            this.btnLogin.Location = new System.Drawing.Point(44, 256);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(10);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(192, 34);
@@ -471,7 +471,7 @@ namespace Agent_App_V2
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 16F);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.label2.Location = new System.Drawing.Point(79, 78);
+            this.label2.Location = new System.Drawing.Point(75, 78);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(130, 30);
             this.label2.TabIndex = 21;

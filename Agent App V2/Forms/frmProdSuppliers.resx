@@ -118,6 +118,28 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnAddProdToList.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACxMAAAsTAQCanBgAAADySURBVFhHxdBNCsIwEIbhehDx
+        B7yBeAC14v1PoOLOrUV3dQa6KMPbNpmkcfFs3ga+oVXbtn+FsSSMJWFM1TTNgjrBmELGr+ItavpuYfTq
+        xr/iIZb0xsLoYca39IZgjOUdVxhj9MbvseMKY6jUcYUxhBnf0JsQGKfkGlcYx+QcVxiH9MZvOcYVRmLG
+        1/TGA6Mlg4duXH97tnGF0ZLRvfiIp9jRGy+MRIYvcxyBccgcR2AcI8N1ziMwTsl5BMYQuY7AGEqGz6lH
+        YIyRegTGWClHYPSQ4ZPnCIxe5ogVvbEwpuiOeIkjfbcwloSxJIwlYSynrX4ucB4jJNumfAAAAABJRU5E
+        rkJggg==
+</value>
+  </data>
+  <data name="btnRemoveProdFrList.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACxMAAAsTAQCanBgAAADzSURBVFhHxdBLCsJAEEVRXYj4
+        AXcgLkCNuP8VqDhzatBZWwVxUtwk/am0gzO5aXhFZiGEv8JYE8aaMFpt2x7EUxzpewmMlgwvxUO8vY/A
+        SGR4O8URGPuYI070JhXGId5HYBzjeQTGGOaIht7EwBjL4wiMKUqPwJjKHHGmN30w5sg9AmMuc8SO3lgY
+        c8noStzER+zpjYUxRzd+7cYv9IZgTCWD65xxhTFFN/777UnjCmOs0nGFMYbHuMI4RgY3HuMK4xDPcYWx
+        Tzd+9xpXGMkU4wqjJYOLKcYVRktGG/HyHlcYiYzPqZfCWBPGmjDWhLGeMPsCIAYeI75q6BkAAAAASUVO
+        RK5CYII=
+</value>
+  </data>
   <data name="btnLogout.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -43,23 +44,25 @@ namespace Agent_App_V2
             {
                 // load package details textboxes if editing
                 LoadPackageDetails();
-                Text = "Edit Existing Package";
+                lblPackage.Text = @"Edit Package - Travel Experts Inc.";
             }
             else
             {
                 // create new list of product suppliers if new package
                 AddedPSList = new List<Product_Supplier>();
-                Text = "Add New Package";
+                lblPackage.Text = @"Add Package - Travel Experts Inc.";
             }
 
             // fill datagrids with the two lists on load, rename column headers and adjust widths
             RefreshPSData();
 
-            dgvAddedPS.Columns[0].Width = 100;
+            dgvAddedPS.Columns[0].Width = 60;
             dgvAddedPS.Columns[1].Width = 151;
+            
 
-            dgvNotAddedPS.Columns[0].Width = 100;
+            dgvNotAddedPS.Columns[0].Width = 120;
             dgvNotAddedPS.Columns[1].Width = 200;
+            
         }
 
         private void LoadPackageDetails()
@@ -272,6 +275,26 @@ namespace Agent_App_V2
                 return;
             }
             DialogResult =DialogResult.Cancel;
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Close();//closes application
+        }
+
+        private void btnMinimize_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;//minimize application window
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Abort;
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Cancel;
         }
     }
 }
