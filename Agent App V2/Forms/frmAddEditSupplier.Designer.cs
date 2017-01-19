@@ -197,9 +197,11 @@
             // 
             // frmAddEditSupplier
             // 
+            this.AcceptButton = this.btnSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(408, 197);
             this.Controls.Add(this.pictureBox8);
             this.Controls.Add(this.btnCancel);

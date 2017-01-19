@@ -14,24 +14,41 @@ namespace Agent_App_V2
             InitializeComponent();
         }
 
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            if (agt.AgtFirstName != null)
+            {
+                Login();
+            }
+            else
+            {
+                Logout();
+            }
+        }
+
         private void btnPackages_Click(object sender, EventArgs e)
         {
             var packageForm = new frmPackages();
-            packageForm.ShowDialog();
+            if (packageForm.ShowDialog() == DialogResult.Abort)
+            {
+                Logout();
+            }
         }
 
         private void btnProductSuppliers_Click(object sender, EventArgs e)
         {
             var frmSuppliers = new frmProdSuppliers();
-            frmSuppliers.ShowDialog();
+            if (frmSuppliers.ShowDialog() == DialogResult.Abort)
+            {
+                Logout();
+            }
         }
 
         private bool IsLoginValid()
         {
             return
                 Validator.IsPresent(txtUsername) &&
-                Validator.IsPresent(txtPassword) &&
-                Validator.IsInt(txtPassword);
+                Validator.IsPresent(txtPassword);
         }
 
 
@@ -44,12 +61,7 @@ namespace Agent_App_V2
 
                 if (LoginDB.GetAgent(agt).AgtFirstName != null)
                 {
-                    Dashboardbody.Show();
-                    header.Show();
-                    Navbar.Show();
-                    loginDashboard.Hide();
-                    lblLoginMsg.Text = @"Welcome back " + agt.AgtFirstName;
-
+                    Login();
                 }
                 else
                 {
@@ -58,38 +70,38 @@ namespace Agent_App_V2
             }
         }
 
-        private void frmMain_Load(object sender, EventArgs e)
+        private void Login()
         {
-            if (agt.AgtFirstName != null)
-            {
-                Dashboardbody.Show();
-                header.Show();
-                Navbar.Show();
-                loginDashboard.Hide();
-                lblLoginMsg.Text = @"Welcome back " + agt.AgtFirstName;
-            }
-            else
-            {
-                Dashboardbody.Hide();
-                header.Hide();
-                Navbar.Hide();
-                loginDashboard.Show();
-                this.ActiveControl = label2;
-                
-            }
-            
-
+            Dashboardbody.Show();
+            header.Show();
+            Navbar.Show();
+            loginDashboard.Hide();
+            lblLoginMsg.Text = @"Welcome back " + agt.AgtFirstName;
+            AcceptButton = null;
         }
 
-        private void btnLogout_Click(object sender, EventArgs e)
+        private void Logout()
         {
+           
             agt.AgtFirstName = null;
             agt.AgtPassword = 0;
             Dashboardbody.Hide();
             header.Hide();
             Navbar.Hide();
             loginDashboard.Show();
+            txtUsername.Text = @"Username";
+            txtUsername.ForeColor = Color.Gray;
+            txtPassword.Text = @"Password";
+            txtPassword.ForeColor = Color.Gray;
+            lblPW.Visible = false;
+            lblUsername.Visible = false;
             this.ActiveControl = label2;
+            AcceptButton = btnLogin;
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+           Logout();
         }
 
         private void btnMaximize_Click(object sender, EventArgs e)
@@ -114,7 +126,7 @@ namespace Agent_App_V2
             WindowState = FormWindowState.Minimized;
         }
 
-        private void txtUsername_Click(object sender, EventArgs e)
+        private void txtUsername_Enter(object sender, EventArgs e)
         {
             if (txtUsername.Text == @"Username")
             {
@@ -124,6 +136,7 @@ namespace Agent_App_V2
 
             }
         }
+
         private void txtUsername_Leave(object sender, EventArgs e)
         {
             if (txtUsername.Text == @"")
@@ -133,8 +146,8 @@ namespace Agent_App_V2
 
             }
         }
-
-        private void txtPassword_Click(object sender, EventArgs e)
+        
+        private void txtPassword_Enter(object sender, EventArgs e)
         {
             if (txtPassword.Text == @"Password")
             {
@@ -144,6 +157,7 @@ namespace Agent_App_V2
 
             }
         }
+
         private void txtPassword_Leave(object sender, EventArgs e)
         {
             if (txtPassword.Text == @"")
@@ -153,6 +167,5 @@ namespace Agent_App_V2
                 
             }
         }
-        
     }
 }

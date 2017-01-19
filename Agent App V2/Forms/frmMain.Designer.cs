@@ -262,7 +262,7 @@ namespace Agent_App_V2
             this.txtUsername.ForeColor = System.Drawing.Color.Gray;
             this.txtUsername.Location = new System.Drawing.Point(51, 147);
             this.txtUsername.Margin = new System.Windows.Forms.Padding(15);
-            this.txtUsername.MaxLength = 10;
+            this.txtUsername.MaxLength = 20;
             this.txtUsername.MinimumSize = new System.Drawing.Size(0, 20);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(186, 22);
@@ -271,7 +271,7 @@ namespace Agent_App_V2
             this.txtUsername.Text = "Username";
             this.txtUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.toolTip1.SetToolTip(this.txtUsername, "Enter your first name");
-            this.txtUsername.Click += new System.EventHandler(this.txtUsername_Click);
+            this.txtUsername.Enter += new System.EventHandler(this.txtUsername_Enter);
             this.txtUsername.Leave += new System.EventHandler(this.txtUsername_Leave);
             // 
             // txtPassword
@@ -282,7 +282,7 @@ namespace Agent_App_V2
             this.txtPassword.ForeColor = System.Drawing.Color.Gray;
             this.txtPassword.Location = new System.Drawing.Point(51, 212);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(15);
-            this.txtPassword.MaxLength = 3;
+            this.txtPassword.MaxLength = 20;
             this.txtPassword.MinimumSize = new System.Drawing.Size(0, 20);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
@@ -292,7 +292,7 @@ namespace Agent_App_V2
             this.txtPassword.Text = "Password";
             this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.toolTip1.SetToolTip(this.txtPassword, "Enter your password");
-            this.txtPassword.Click += new System.EventHandler(this.txtPassword_Click);
+            this.txtPassword.Enter += new System.EventHandler(this.txtPassword_Enter);
             this.txtPassword.Leave += new System.EventHandler(this.txtPassword_Leave);
             // 
             // loginDashboard
@@ -491,6 +491,7 @@ namespace Agent_App_V2
             // 
             // frmMain
             // 
+            this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(23)))), ((int)(((byte)(46)))));

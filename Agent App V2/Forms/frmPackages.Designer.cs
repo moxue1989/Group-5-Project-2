@@ -54,11 +54,11 @@ namespace Agent_App_V2
             this.pnlPackages = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.header = new System.Windows.Forms.Panel();
@@ -346,17 +346,6 @@ namespace Agent_App_V2
             this.panel10.Size = new System.Drawing.Size(858, 27);
             this.panel10.TabIndex = 56;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(202)))), ((int)(((byte)(233)))));
-            this.label2.Location = new System.Drawing.Point(61, 3);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(300, 21);
-            this.label2.TabIndex = 57;
-            this.label2.Text = "Product and Suppliers - Travel Experts Inc.";
-            // 
             // btnMinimize
             // 
             this.btnMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -412,6 +401,17 @@ namespace Agent_App_V2
             this.label10.TabIndex = 21;
             this.label10.Text = "Packages - Travel Experts Inc.";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(202)))), ((int)(((byte)(233)))));
+            this.label2.Location = new System.Drawing.Point(61, 3);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(300, 21);
+            this.label2.TabIndex = 57;
+            this.label2.Text = "Product and Suppliers - Travel Experts Inc.";
+            // 
             // btnLogout
             // 
             this.btnLogout.BackColor = System.Drawing.Color.Transparent;
@@ -439,6 +439,7 @@ namespace Agent_App_V2
             this.btnBack.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBack.BackgroundImage")));
             this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBack.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnBack.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
             this.btnBack.FlatAppearance.BorderSize = 0;
             this.btnBack.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
@@ -482,6 +483,7 @@ namespace Agent_App_V2
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(23)))), ((int)(((byte)(46)))));
+            this.CancelButton = this.btnBack;
             this.ClientSize = new System.Drawing.Size(858, 464);
             this.Controls.Add(this.header);
             this.Controls.Add(this.panel10);

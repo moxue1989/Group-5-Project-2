@@ -302,14 +302,15 @@ namespace Agent_App_V2
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            frmMain guiDashBoard = new frmMain(); //Instantiate a new form
-            guiDashBoard.ShowDialog();
-            Close();
+            DialogResult = DialogResult.Abort;
+            //frmMain guiDashBoard = new frmMain(); //Instantiate a new form
+            //guiDashBoard.ShowDialog();
+            //Close();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult = DialogResult.Cancel;
         }
     }
 }
