@@ -13,5 +13,21 @@ namespace ASP_Workshop
         {
 
         }
+
+        protected void btnLogin_Click(object sender, EventArgs e)
+        {
+            string username = txtUsername.Text;
+            string password = txtPassword.Text;
+            Customer cust = TravelExpertsDB.GetCustomer(username, password);
+            if (cust.CustFirstName != null)
+            {
+                Session["Customer"] = cust;
+                Response.Redirect("CustomerLanding.aspx");
+            }
+            else
+            {
+                lblLoginError.Text = "Wrong Username or Password!";
+            }
+        }
     }
 }
