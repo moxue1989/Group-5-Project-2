@@ -39,7 +39,7 @@ namespace Agent_App_V2
                 int startX = pnlPackages.Location.X;
                 int startY = pnlPackages.Location.Y;
                 Button button = new Button();
-                button.Location = new Point(5 + startX, 30*count + startY -10);
+                button.Location = new Point(45 + startX, 30*count + startY -100);
                 button.Size = new Size(200, 25);
                 button.TabIndex = count;
                 button.Cursor = Cursors.Hand;
@@ -51,14 +51,27 @@ namespace Agent_App_V2
                 // set color of expired, current, and available packages
                 if (package.PkgEndDate < DateTime.Today)
                 {
-                    button.ForeColor = Color.Red;
-                } else if (package.PkgStartDate < DateTime.Today)
+                    button.FlatStyle = FlatStyle.Flat;
+                    button.FlatAppearance.BorderColor = Color.FromArgb(244, 67, 54);
+                    button.FlatAppearance.MouseDownBackColor = Color.FromArgb(244, 67, 54);
+                    button.BackColor = Color.FromArgb(211, 47, 47);
+                    button.ForeColor = Color.WhiteSmoke;
+                }
+                else if (package.PkgStartDate < DateTime.Today)
                 {
-                    button.ForeColor = Color.Orange;
+                    button.FlatStyle = FlatStyle.Flat;
+                    button.FlatAppearance.MouseDownBackColor = Color.FromArgb(255, 87, 34);
+                    button.FlatAppearance.BorderColor = Color.FromArgb(255, 87, 34);
+                    button.ForeColor = Color.WhiteSmoke;
+                    button.BackColor = Color.FromArgb(230, 74, 25);
                 }
                 else
                 {
-                    button.ForeColor = Color.Green;
+                    button.FlatStyle = FlatStyle.Flat;
+                    button.FlatAppearance.MouseDownBackColor = Color.ForestGreen;
+                    button.FlatAppearance.BorderColor = Color.ForestGreen;
+                    button.ForeColor = Color.WhiteSmoke;
+                    button.BackColor = Color.FromArgb(76, 175, 80);
                 }
 
                 pnlPackages.Controls.Add(button);

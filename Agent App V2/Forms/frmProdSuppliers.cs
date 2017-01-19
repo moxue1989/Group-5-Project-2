@@ -275,8 +275,8 @@ namespace Agent_App_V2
                 }
                 else
                 {
-                    string confirmString = "Are you sure you want to remove this product?";
-                    if (MessageBox.Show(confirmString, "Delete Product", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) ==
+                    string confirmString = "Are you sure you want to remove this " + currentProd + " Product?";
+                    if (MessageBox.Show(confirmString, @"Delete Product", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) ==
                         DialogResult.Yes)
                     {
                         currentProd.RemoveFromSupplier(currentSupp.SupplierId); //delete selected product from supplier
@@ -286,7 +286,7 @@ namespace Agent_App_V2
             }
             else
             {
-                MessageBox.Show("No Product Selected!");
+                MessageBox.Show(@"No Product Selected!", @"No Product Record", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -303,9 +303,7 @@ namespace Agent_App_V2
         private void btnLogout_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Abort;
-            //frmMain guiDashBoard = new frmMain(); //Instantiate a new form
-            //guiDashBoard.ShowDialog();
-            //Close();
+         
         }
 
         private void btnBack_Click(object sender, EventArgs e)

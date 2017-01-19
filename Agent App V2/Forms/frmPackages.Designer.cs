@@ -70,6 +70,8 @@ namespace Agent_App_V2
             // 
             // lvProducts
             // 
+            this.lvProducts.AllowColumnReorder = true;
+            this.lvProducts.AutoArrange = false;
             this.lvProducts.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lvProducts.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lvProducts.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -78,7 +80,7 @@ namespace Agent_App_V2
             this.lvProducts.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.lvProducts.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.lvProducts.FullRowSelect = true;
-            this.lvProducts.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
+            this.lvProducts.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.lvProducts.HideSelection = false;
             this.lvProducts.Location = new System.Drawing.Point(404, 285);
             this.lvProducts.Margin = new System.Windows.Forms.Padding(10);
@@ -92,12 +94,14 @@ namespace Agent_App_V2
             // columnHeader1
             // 
             this.columnHeader1.Text = "Product";
-            this.columnHeader1.Width = 138;
+            this.columnHeader1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader1.Width = 141;
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "Supplier";
-            this.columnHeader2.Width = 180;
+            this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader2.Width = 251;
             // 
             // btnAddPackage
             // 
@@ -156,6 +160,7 @@ namespace Agent_App_V2
             // 
             this.tbPkgDesc.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tbPkgDesc.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbPkgDesc.Enabled = false;
             this.tbPkgDesc.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.tbPkgDesc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.tbPkgDesc.Location = new System.Drawing.Point(563, 169);
@@ -248,6 +253,7 @@ namespace Agent_App_V2
             // 
             this.tbPkgAgencyCommission.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tbPkgAgencyCommission.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbPkgAgencyCommission.Enabled = false;
             this.tbPkgAgencyCommission.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.tbPkgAgencyCommission.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.tbPkgAgencyCommission.Location = new System.Drawing.Point(681, 116);
@@ -262,6 +268,7 @@ namespace Agent_App_V2
             // 
             this.tbPkgBasePrice.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tbPkgBasePrice.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbPkgBasePrice.Enabled = false;
             this.tbPkgBasePrice.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.tbPkgBasePrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.tbPkgBasePrice.Location = new System.Drawing.Point(564, 116);
@@ -276,6 +283,7 @@ namespace Agent_App_V2
             // 
             this.tbPkgName.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tbPkgName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbPkgName.Enabled = false;
             this.tbPkgName.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.tbPkgName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.tbPkgName.Location = new System.Drawing.Point(403, 116);
@@ -290,6 +298,7 @@ namespace Agent_App_V2
             // 
             this.tbPkgStartDate.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tbPkgStartDate.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbPkgStartDate.Enabled = false;
             this.tbPkgStartDate.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.tbPkgStartDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.tbPkgStartDate.Location = new System.Drawing.Point(402, 169);
@@ -304,6 +313,7 @@ namespace Agent_App_V2
             // 
             this.tbPkgEndDate.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tbPkgEndDate.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbPkgEndDate.Enabled = false;
             this.tbPkgEndDate.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.tbPkgEndDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.tbPkgEndDate.Location = new System.Drawing.Point(403, 220);
@@ -316,10 +326,10 @@ namespace Agent_App_V2
             // 
             // pnlPackages
             // 
-            this.pnlPackages.AutoScroll = true;
-            this.pnlPackages.Location = new System.Drawing.Point(47, 122);
+            this.pnlPackages.AutoSize = true;
+            this.pnlPackages.Location = new System.Drawing.Point(30, 116);
             this.pnlPackages.Name = "pnlPackages";
-            this.pnlPackages.Size = new System.Drawing.Size(250, 288);
+            this.pnlPackages.Size = new System.Drawing.Size(331, 324);
             this.pnlPackages.TabIndex = 54;
             // 
             // label1
@@ -327,7 +337,7 @@ namespace Agent_App_V2
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label1.Location = new System.Drawing.Point(44, 106);
+            this.label1.Location = new System.Drawing.Point(117, 88);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(176, 25);
             this.label1.TabIndex = 55;
@@ -485,10 +495,10 @@ namespace Agent_App_V2
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(23)))), ((int)(((byte)(46)))));
             this.CancelButton = this.btnBack;
             this.ClientSize = new System.Drawing.Size(858, 464);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.header);
             this.Controls.Add(this.panel10);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.pnlPackages);
             this.Controls.Add(this.tbPkgEndDate);
             this.Controls.Add(this.tbPkgStartDate);
@@ -509,7 +519,10 @@ namespace Agent_App_V2
             this.Controls.Add(this.lvProducts);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmPackages";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Travel Experts Packages";
             this.Load += new System.EventHandler(this.frmPackages_Load);
             this.panel10.ResumeLayout(false);
