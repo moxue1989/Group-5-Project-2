@@ -21,31 +21,45 @@ namespace Agent_App_V2
             {
                 Product newProd= new Product();
                 newProd.ProdName = txtProdName.Text;
-                try
-                {
-                ProductDB.AddProduct(newProd);
-                DialogResult = DialogResult.OK;
-                }
+                if (Validator.IsPresent(txtProdName))
+                    {
+                    try
+                    {
+                        ProductDB.AddProduct(newProd);
+                        DialogResult = DialogResult.OK;
+                    }
 
-            catch (Exception ex)
+                    catch (Exception ex)
 
-                {
-                    MessageBox.Show(ex.Message, ex.GetType().ToString());
+                    {
+                        MessageBox.Show(ex.Message, ex.GetType().ToString());
+                    }
                 }
+                //else
+                //{
+                //    MessageBox.Show("Product Name must have value");
+                //}
             }
 
             else //Update Products
             {
                 product.ProdName = txtProdName.Text;
-                try
+                if (Validator.IsPresent(txtProdName))
                 {
-                    product.UpdateProd();
-                    DialogResult = DialogResult.OK;
+                    try
+                    {
+                        product.UpdateProd();
+                        DialogResult = DialogResult.OK;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, ex.GetType().ToString());
+                    }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, ex.GetType().ToString());
-                }
+                //else
+                //{
+                //    MessageBox.Show("Product Name must have value");
+                //}
             }
         }
 

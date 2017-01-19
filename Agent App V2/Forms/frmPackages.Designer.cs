@@ -286,7 +286,7 @@ namespace Agent_App_V2
             this.tbPkgName.Enabled = false;
             this.tbPkgName.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.tbPkgName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.tbPkgName.Location = new System.Drawing.Point(411, 116);
+            this.tbPkgName.Location = new System.Drawing.Point(410, 116);
             this.tbPkgName.Margin = new System.Windows.Forms.Padding(10);
             this.tbPkgName.Name = "tbPkgName";
             this.tbPkgName.ReadOnly = true;

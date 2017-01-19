@@ -105,6 +105,7 @@
             this.btnMinimize.Size = new System.Drawing.Size(32, 25);
             this.btnMinimize.TabIndex = 2;
             this.btnMinimize.UseVisualStyleBackColor = false;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
             // btnExit
             // 
@@ -121,6 +122,7 @@
             this.btnExit.Size = new System.Drawing.Size(32, 25);
             this.btnExit.TabIndex = 0;
             this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnCancel
             // 
@@ -184,8 +186,9 @@
             this.txtSuppName.Name = "txtSuppName";
             this.txtSuppName.Size = new System.Drawing.Size(228, 24);
             this.txtSuppName.TabIndex = 20;
-            this.txtSuppName.Tag = "Product Name";
+            this.txtSuppName.Tag = "Supplier Name";
             this.txtSuppName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtSuppName.TextChanged += new System.EventHandler(this.txtSuppName_TextChanged);
             // 
             // panel1
             // 

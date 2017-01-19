@@ -24,35 +24,51 @@ namespace Agent_App_V2
         private void btnSave_Click(object sender, EventArgs e)
         {
             //Add Suppliers 
+
             if (AddSuppliers)
             {
                 Supplier newSupp = new Supplier();
                 newSupp.SupName = txtSuppName.Text;
-                try
-                {
-                    SupplierDB.AddSupplier(newSupp);
-                    DialogResult = DialogResult.OK;
-                }
+                // if (newSupp.SupName == null)
+                if (Validator.IsPresent(txtSuppName))
+                 {
+                    try
+                    {
+                        SupplierDB.AddSupplier(newSupp);
+                        DialogResult = DialogResult.OK;
+                    }
 
-                catch (Exception ex)
+                    catch (Exception ex)
 
-                {
-                MessageBox.Show(ex.Message, ex.GetType().ToString());
+                    {
+                        MessageBox.Show(ex.Message, ex.GetType().ToString());
+                    }
                 }
+                //else
+                //{
+                //    MessageBox.Show("Supplier Name must have value");
+                //}
             }
             else //Update Suppliers
             {
-                supplier.SupName = txtSuppName.Text;
+                if (Validator.IsPresent(txtSuppName))
+                {
+                    supplier.SupName = txtSuppName.Text;
 
-                try
-                {
-                    supplier.UpdateSupp();
-                    DialogResult = DialogResult.OK;
+                    try
+                    {
+                        supplier.UpdateSupp();
+                        DialogResult = DialogResult.OK;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, ex.GetType().ToString());
+                    }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, ex.GetType().ToString());
-                }
+                //else
+                //{
+                //    MessageBox.Show("Supplier Name must have value");
+                //}
             }
         }
 
@@ -97,6 +113,21 @@ namespace Agent_App_V2
         private void EditSupplierPanel_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void txtSuppName_TextChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnMinimize_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
         }
     }
 }
