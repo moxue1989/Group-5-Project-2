@@ -65,13 +65,13 @@ namespace Agent_App_V2
             this.datagridPackages = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
             this.header = new System.Windows.Forms.Panel();
-            this.lblLoginMsg = new System.Windows.Forms.Label();
-            this.Navbar = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.panel10 = new System.Windows.Forms.Panel();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
+            this.lblLoginMsg = new System.Windows.Forms.Label();
+            this.Navbar = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.panel10 = new System.Windows.Forms.Panel();
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridSuppliers)).BeginInit();
@@ -80,8 +80,8 @@ namespace Agent_App_V2
             ((System.ComponentModel.ISupportInitialize)(this.datagridPackages)).BeginInit();
             this.header.SuspendLayout();
             this.Navbar.SuspendLayout();
-            this.panel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel10.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnAddProdToList
@@ -122,7 +122,8 @@ namespace Agent_App_V2
             // 
             this.btnAddProducts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(63)))), ((int)(((byte)(159)))));
             this.btnAddProducts.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddProducts.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
+            this.btnAddProducts.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(31)))), ((int)(((byte)(191)))));
+            this.btnAddProducts.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(31)))), ((int)(((byte)(191)))));
             this.btnAddProducts.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
             this.btnAddProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddProducts.Font = new System.Drawing.Font("Segoe UI", 8.25F);
@@ -139,7 +140,8 @@ namespace Agent_App_V2
             // 
             this.btnEditProd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(63)))), ((int)(((byte)(159)))));
             this.btnEditProd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEditProd.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
+            this.btnEditProd.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(31)))), ((int)(((byte)(191)))));
+            this.btnEditProd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(31)))), ((int)(((byte)(191)))));
             this.btnEditProd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
             this.btnEditProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditProd.Font = new System.Drawing.Font("Segoe UI", 8.25F);
@@ -156,8 +158,8 @@ namespace Agent_App_V2
             // 
             this.btnDeleteProd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(63)))), ((int)(((byte)(159)))));
             this.btnDeleteProd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDeleteProd.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
-            this.btnDeleteProd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
+            this.btnDeleteProd.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(31)))), ((int)(((byte)(191)))));
+            this.btnDeleteProd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(31)))), ((int)(((byte)(191)))));
             this.btnDeleteProd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
             this.btnDeleteProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteProd.Font = new System.Drawing.Font("Segoe UI", 8.25F);
@@ -174,7 +176,8 @@ namespace Agent_App_V2
             // 
             this.btnDeleteSupp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(63)))), ((int)(((byte)(159)))));
             this.btnDeleteSupp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDeleteSupp.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
+            this.btnDeleteSupp.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(31)))), ((int)(((byte)(191)))));
+            this.btnDeleteSupp.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(31)))), ((int)(((byte)(191)))));
             this.btnDeleteSupp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
             this.btnDeleteSupp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteSupp.Font = new System.Drawing.Font("Segoe UI", 8.25F);
@@ -191,7 +194,8 @@ namespace Agent_App_V2
             // 
             this.btnEditSupp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(63)))), ((int)(((byte)(159)))));
             this.btnEditSupp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEditSupp.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
+            this.btnEditSupp.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(31)))), ((int)(((byte)(191)))));
+            this.btnEditSupp.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(31)))), ((int)(((byte)(191)))));
             this.btnEditSupp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
             this.btnEditSupp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditSupp.Font = new System.Drawing.Font("Segoe UI", 8.25F);
@@ -208,7 +212,8 @@ namespace Agent_App_V2
             // 
             this.btnAddSupp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(63)))), ((int)(((byte)(159)))));
             this.btnAddSupp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddSupp.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
+            this.btnAddSupp.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(31)))), ((int)(((byte)(191)))));
+            this.btnAddSupp.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(31)))), ((int)(((byte)(191)))));
             this.btnAddSupp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
             this.btnAddSupp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddSupp.Font = new System.Drawing.Font("Segoe UI", 8.25F);
@@ -482,49 +487,6 @@ namespace Agent_App_V2
             this.header.Size = new System.Drawing.Size(878, 45);
             this.header.TabIndex = 20;
             // 
-            // lblLoginMsg
-            // 
-            this.lblLoginMsg.AutoSize = true;
-            this.lblLoginMsg.Font = new System.Drawing.Font("Segoe UI", 16F);
-            this.lblLoginMsg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(23)))), ((int)(((byte)(46)))));
-            this.lblLoginMsg.Location = new System.Drawing.Point(63, 8);
-            this.lblLoginMsg.Name = "lblLoginMsg";
-            this.lblLoginMsg.Size = new System.Drawing.Size(0, 30);
-            this.lblLoginMsg.TabIndex = 2;
-            // 
-            // Navbar
-            // 
-            this.Navbar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(23)))), ((int)(((byte)(46)))));
-            this.Navbar.Controls.Add(this.pictureBox2);
-            this.Navbar.Controls.Add(this.label5);
-            this.Navbar.Controls.Add(this.panel10);
-            this.Navbar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Navbar.Location = new System.Drawing.Point(0, 0);
-            this.Navbar.Name = "Navbar";
-            this.Navbar.Size = new System.Drawing.Size(878, 27);
-            this.Navbar.TabIndex = 21;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(202)))), ((int)(((byte)(233)))));
-            this.label5.Location = new System.Drawing.Point(61, 3);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(300, 21);
-            this.label5.TabIndex = 17;
-            this.label5.Text = "Product and Suppliers - Travel Experts Inc.";
-            // 
-            // panel10
-            // 
-            this.panel10.Controls.Add(this.btnMinimize);
-            this.panel10.Controls.Add(this.btnExit);
-            this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel10.Location = new System.Drawing.Point(0, 0);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(878, 27);
-            this.panel10.TabIndex = 8;
-            // 
             // btnLogout
             // 
             this.btnLogout.BackColor = System.Drawing.Color.Transparent;
@@ -567,6 +529,28 @@ namespace Agent_App_V2
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
+            // lblLoginMsg
+            // 
+            this.lblLoginMsg.AutoSize = true;
+            this.lblLoginMsg.Font = new System.Drawing.Font("Segoe UI", 16F);
+            this.lblLoginMsg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(23)))), ((int)(((byte)(46)))));
+            this.lblLoginMsg.Location = new System.Drawing.Point(63, 8);
+            this.lblLoginMsg.Name = "lblLoginMsg";
+            this.lblLoginMsg.Size = new System.Drawing.Size(0, 30);
+            this.lblLoginMsg.TabIndex = 2;
+            // 
+            // Navbar
+            // 
+            this.Navbar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(23)))), ((int)(((byte)(46)))));
+            this.Navbar.Controls.Add(this.pictureBox2);
+            this.Navbar.Controls.Add(this.label5);
+            this.Navbar.Controls.Add(this.panel10);
+            this.Navbar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Navbar.Location = new System.Drawing.Point(0, 0);
+            this.Navbar.Name = "Navbar";
+            this.Navbar.Size = new System.Drawing.Size(878, 27);
+            this.Navbar.TabIndex = 21;
+            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Agent_App_V2.Properties.Resources.logo1;
@@ -576,6 +560,27 @@ namespace Agent_App_V2
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 18;
             this.pictureBox2.TabStop = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(202)))), ((int)(((byte)(233)))));
+            this.label5.Location = new System.Drawing.Point(61, 3);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(300, 21);
+            this.label5.TabIndex = 17;
+            this.label5.Text = "Product and Suppliers - Travel Experts Inc.";
+            // 
+            // panel10
+            // 
+            this.panel10.Controls.Add(this.btnMinimize);
+            this.panel10.Controls.Add(this.btnExit);
+            this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel10.Location = new System.Drawing.Point(0, 0);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(878, 27);
+            this.panel10.TabIndex = 8;
             // 
             // btnMinimize
             // 
@@ -650,8 +655,8 @@ namespace Agent_App_V2
             this.header.PerformLayout();
             this.Navbar.ResumeLayout(false);
             this.Navbar.PerformLayout();
-            this.panel10.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel10.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

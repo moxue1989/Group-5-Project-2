@@ -183,5 +183,27 @@ namespace Agent_App_V2
             }
             Reload();
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Close();   
+        }
+
+        private void btnMinimize_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            frmMain guiDashBoard = new frmMain(); //Instantiate a new form
+            guiDashBoard.ShowDialog();
+            Close();
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

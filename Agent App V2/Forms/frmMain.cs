@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 
@@ -74,6 +75,7 @@ namespace Agent_App_V2
                 Navbar.Hide();
                 loginDashboard.Show();
                 this.ActiveControl = label2;
+                
             }
             
 
@@ -118,6 +120,7 @@ namespace Agent_App_V2
             {
                 lblUsername.Visible = true;
                 txtUsername.Text = "";
+                txtUsername.ForeColor = Color.FromArgb(33, 33, 33);
 
             }
         }
@@ -137,7 +140,8 @@ namespace Agent_App_V2
             {
                 lblPW.Visible = true;
                 txtPassword.Text = "";
-                
+                txtPassword.ForeColor = Color.FromArgb(33, 33, 33);
+
             }
         }
         private void txtPassword_Leave(object sender, EventArgs e)
