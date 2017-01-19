@@ -15,7 +15,7 @@ namespace Agent_App_V2
     {
         // initialize current package details
         public Package Package;
-        public List<Product_Supplier> AddedPSList;
+        public List<Product_Supplier> AddedPSList = new List<Product_Supplier>();
         public List<Product_Supplier> NotAddedPSList = PackageDB.GetAllPS();
 
         // adding or editing
@@ -56,13 +56,15 @@ namespace Agent_App_V2
             // fill datagrids with the two lists on load, rename column headers and adjust widths
             RefreshPSData();
 
-            dgvAddedPS.Columns[0].Width = 60;
-            dgvAddedPS.Columns[1].Width = 151;
-            
+            dgvAddedPS.Columns[0].Width = 120;
+            dgvAddedPS.Columns[1].Width = 285;
+            dgvAddedPS.ColumnHeadersDefaultCellStyle.Font = new
+            Font("Segoe UI", 10);
 
             dgvNotAddedPS.Columns[0].Width = 120;
-            dgvNotAddedPS.Columns[1].Width = 200;
-            
+            dgvNotAddedPS.Columns[1].Width = 285;
+            dgvNotAddedPS.ColumnHeadersDefaultCellStyle.Font = new
+            Font("Segoe UI", 10);
         }
 
         private void LoadPackageDetails()

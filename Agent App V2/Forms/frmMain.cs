@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 
@@ -7,7 +8,7 @@ namespace Agent_App_V2
 {
     public partial class frmMain : Form
     {
-        Agent agt = new Agent();
+        private Agent agt;
 
         public frmMain()
         {
@@ -16,14 +17,7 @@ namespace Agent_App_V2
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            if (agt.AgtFirstName != null)
-            {
-                Login();
-            }
-            else
-            {
-                Logout();
-            }
+            Logout();
         }
 
         private void btnPackages_Click(object sender, EventArgs e)
@@ -56,10 +50,12 @@ namespace Agent_App_V2
         {
             if (IsLoginValid())
             {
+                agt = new Agent();
                 agt.AgtFirstName = txtUsername.Text;
                 agt.AgtPassword = Convert.ToInt32(txtPassword.Text);
 
-                if (LoginDB.GetAgent(agt).AgtFirstName != null)
+                agt = LoginDB.GetAgent(agt);
+                if (agt.AgtFirstName != null)
                 {
                     Login();
                 }
@@ -76,15 +72,14 @@ namespace Agent_App_V2
             header.Show();
             Navbar.Show();
             loginDashboard.Hide();
-            lblLoginMsg.Text = @"Welcome back " + agt.AgtFirstName;
+            string agentWelcome = agt.AgtPosition + " " + agt.AgtFirstName + " " + agt.AgtLastName;
+            lblLoginMsg.Text = @"Welcome back " + agentWelcome;
             AcceptButton = null;
         }
 
         private void Logout()
         {
-           
-            agt.AgtFirstName = null;
-            agt.AgtPassword = 0;
+            agt = null;
             Dashboardbody.Hide();
             header.Hide();
             Navbar.Hide();
