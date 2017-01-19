@@ -1,0 +1,22 @@
+﻿.content {
+    background-color: #3F51B5;
+    min-width: 200px;
+    min-height: 500px;
+}
+#blank {
+    min-height: 150px;
+}
+.img-fluid {
+    position: center;
+}
+.card-block {
+    padding: 50px;
+    min-height: 350px;
+}
+.loginCard {
+    padding: 50px;
+}
+
+body {
+    background-color: whitesmoke;
+}

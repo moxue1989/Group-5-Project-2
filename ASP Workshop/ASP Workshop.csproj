@@ -103,6 +103,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\mdb.min.css" />
+    <Content Include="Content\styles.css" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -110,6 +113,7 @@
     <Content Include="Site.Master" />
     <Content Include="Default.aspx" />
     <Content Include="CustomerLanding.aspx" />
+    <Content Include="WebImages\Login Manager.png" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
