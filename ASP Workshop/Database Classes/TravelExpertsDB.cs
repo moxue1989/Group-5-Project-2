@@ -54,7 +54,6 @@ namespace ASP_Workshop
             {
                 conn.Open();
                 conn.Insert(cust);
-                //conn.Execute(Settings.RegisterCustomerQuery, new {cust.CustFirstName, cust.CustLastName,cust.Address,cust.CustCity,cust.CustProv,cust.CustPostal,cust.CustCountry,cust.CustHomePhone,cust.CustBusPhone,cust.CustEmail,cust.AgentId});
                 return new Customer();
             }
         }

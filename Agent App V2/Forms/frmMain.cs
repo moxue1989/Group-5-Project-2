@@ -52,7 +52,7 @@ namespace Agent_App_V2
             {
                 agt = new Agent();
                 agt.AgtFirstName = txtUsername.Text;
-                agt.AgtPassword = Convert.ToInt32(txtPassword.Text);
+                agt.AgtPassword = txtPassword.Text;
 
                 agt = LoginDB.GetAgent(agt);
                 if (agt.AgtFirstName != null)
