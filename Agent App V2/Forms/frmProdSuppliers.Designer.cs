@@ -31,6 +31,7 @@ namespace Agent_App_V2
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProdSuppliers));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -47,7 +48,6 @@ namespace Agent_App_V2
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProdSuppliers));
             this.btnAddProdToList = new System.Windows.Forms.Button();
             this.btnRemoveProdFrList = new System.Windows.Forms.Button();
             this.btnAddProducts = new System.Windows.Forms.Button();
@@ -86,35 +86,39 @@ namespace Agent_App_V2
             // 
             // btnAddProdToList
             // 
-            this.btnAddProdToList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            this.btnAddProdToList.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddProdToList.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAddProdToList.BackgroundImage")));
             this.btnAddProdToList.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAddProdToList.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddProdToList.FlatAppearance.BorderColor = System.Drawing.Color.ForestGreen;
+            this.btnAddProdToList.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
+            this.btnAddProdToList.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnAddProdToList.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
             this.btnAddProdToList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddProdToList.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnAddProdToList.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.btnAddProdToList.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnAddProdToList.Location = new System.Drawing.Point(566, 187);
+            this.btnAddProdToList.Location = new System.Drawing.Point(566, 176);
             this.btnAddProdToList.Name = "btnAddProdToList";
-            this.btnAddProdToList.Size = new System.Drawing.Size(26, 31);
+            this.btnAddProdToList.Size = new System.Drawing.Size(30, 37);
             this.btnAddProdToList.TabIndex = 3;
-            this.btnAddProdToList.Text = "<";
             this.btnAddProdToList.UseVisualStyleBackColor = false;
             this.btnAddProdToList.Click += new System.EventHandler(this.btnAddProdToList_Click);
             // 
             // btnRemoveProdFrList
             // 
-            this.btnRemoveProdFrList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            this.btnRemoveProdFrList.BackColor = System.Drawing.Color.Transparent;
+            this.btnRemoveProdFrList.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRemoveProdFrList.BackgroundImage")));
             this.btnRemoveProdFrList.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnRemoveProdFrList.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRemoveProdFrList.FlatAppearance.BorderColor = System.Drawing.Color.ForestGreen;
+            this.btnRemoveProdFrList.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
+            this.btnRemoveProdFrList.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnRemoveProdFrList.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
             this.btnRemoveProdFrList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemoveProdFrList.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnRemoveProdFrList.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.btnRemoveProdFrList.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnRemoveProdFrList.Location = new System.Drawing.Point(566, 250);
+            this.btnRemoveProdFrList.Location = new System.Drawing.Point(566, 251);
             this.btnRemoveProdFrList.Name = "btnRemoveProdFrList";
-            this.btnRemoveProdFrList.Size = new System.Drawing.Size(26, 31);
+            this.btnRemoveProdFrList.Size = new System.Drawing.Size(30, 37);
             this.btnRemoveProdFrList.TabIndex = 4;
-            this.btnRemoveProdFrList.Text = ">";
             this.btnRemoveProdFrList.UseVisualStyleBackColor = false;
             this.btnRemoveProdFrList.Click += new System.EventHandler(this.btnRemoveProdFrList_Click);
             // 
@@ -128,7 +132,7 @@ namespace Agent_App_V2
             this.btnAddProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddProducts.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.btnAddProducts.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnAddProducts.Location = new System.Drawing.Point(620, 134);
+            this.btnAddProducts.Location = new System.Drawing.Point(620, 130);
             this.btnAddProducts.Name = "btnAddProducts";
             this.btnAddProducts.Size = new System.Drawing.Size(70, 23);
             this.btnAddProducts.TabIndex = 6;
@@ -146,7 +150,7 @@ namespace Agent_App_V2
             this.btnEditProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditProd.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.btnEditProd.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnEditProd.Location = new System.Drawing.Point(696, 135);
+            this.btnEditProd.Location = new System.Drawing.Point(696, 131);
             this.btnEditProd.Name = "btnEditProd";
             this.btnEditProd.Size = new System.Drawing.Size(70, 23);
             this.btnEditProd.TabIndex = 7;
@@ -164,7 +168,7 @@ namespace Agent_App_V2
             this.btnDeleteProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteProd.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.btnDeleteProd.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnDeleteProd.Location = new System.Drawing.Point(772, 134);
+            this.btnDeleteProd.Location = new System.Drawing.Point(772, 130);
             this.btnDeleteProd.Name = "btnDeleteProd";
             this.btnDeleteProd.Size = new System.Drawing.Size(62, 23);
             this.btnDeleteProd.TabIndex = 8;
@@ -182,7 +186,7 @@ namespace Agent_App_V2
             this.btnDeleteSupp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteSupp.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.btnDeleteSupp.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnDeleteSupp.Location = new System.Drawing.Point(41, 134);
+            this.btnDeleteSupp.Location = new System.Drawing.Point(41, 130);
             this.btnDeleteSupp.Name = "btnDeleteSupp";
             this.btnDeleteSupp.Size = new System.Drawing.Size(61, 23);
             this.btnDeleteSupp.TabIndex = 11;
@@ -200,7 +204,7 @@ namespace Agent_App_V2
             this.btnEditSupp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditSupp.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.btnEditSupp.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnEditSupp.Location = new System.Drawing.Point(107, 134);
+            this.btnEditSupp.Location = new System.Drawing.Point(107, 130);
             this.btnEditSupp.Name = "btnEditSupp";
             this.btnEditSupp.Size = new System.Drawing.Size(69, 23);
             this.btnEditSupp.TabIndex = 10;
@@ -218,7 +222,7 @@ namespace Agent_App_V2
             this.btnAddSupp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddSupp.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.btnAddSupp.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnAddSupp.Location = new System.Drawing.Point(182, 134);
+            this.btnAddSupp.Location = new System.Drawing.Point(182, 130);
             this.btnAddSupp.Name = "btnAddSupp";
             this.btnAddSupp.Size = new System.Drawing.Size(69, 23);
             this.btnAddSupp.TabIndex = 9;
@@ -242,7 +246,7 @@ namespace Agent_App_V2
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.label2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label2.Location = new System.Drawing.Point(676, 101);
+            this.label2.Location = new System.Drawing.Point(676, 97);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(113, 25);
             this.label2.TabIndex = 13;
@@ -253,7 +257,7 @@ namespace Agent_App_V2
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.label3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label3.Location = new System.Drawing.Point(88, 101);
+            this.label3.Location = new System.Drawing.Point(88, 97);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(117, 25);
             this.label3.TabIndex = 14;
