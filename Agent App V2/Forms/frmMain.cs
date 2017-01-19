@@ -48,20 +48,23 @@ namespace Agent_App_V2
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (IsLoginValid())
+            if (Validator.IsPresent(txtPassword) && Validator.IsPresent(txtUsername))
             {
-                agt = new Agent();
-                agt.AgtFirstName = txtUsername.Text;
-                agt.AgtPassword = Convert.ToInt32(txtPassword.Text);
+                if (IsLoginValid())
+                {
+                    agt = new Agent();
+                    agt.AgtFirstName = txtUsername.Text;
+                    agt.AgtPassword = (txtPassword.Text);
 
-                agt = LoginDB.GetAgent(agt);
-                if (agt.AgtFirstName != null)
-                {
-                    Login();
-                }
-                else
-                {
-                    MessageBox.Show(@"Invalid Username or password");
+                    agt = LoginDB.GetAgent(agt);
+                    if (agt.AgtFirstName != null)
+                    {
+                        Login();
+                    }
+                    else
+                    {
+                        MessageBox.Show(@"Invalid Username or password");
+                    }
                 }
             }
         }
