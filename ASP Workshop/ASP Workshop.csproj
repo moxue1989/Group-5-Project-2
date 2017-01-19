@@ -110,6 +110,7 @@
     <Content Include="Site.Master" />
     <Content Include="Default.aspx" />
     <Content Include="CustomerLanding.aspx" />
+    <Content Include="Customer.aspx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -123,6 +124,7 @@
   <ItemGroup>
     <Compile Include="Database Classes\Settings.cs" />
     <Compile Include="Database Classes\TravelExpertsDB.cs" />
+    <Compile Include="Entity Classes\Agent.cs" />
     <Compile Include="Entity Classes\Booking.cs" />
     <Compile Include="Entity Classes\BookingDetail.cs" />
     <Compile Include="Entity Classes\Customer.cs" />
@@ -147,6 +149,13 @@
     </Compile>
     <Compile Include="CustomerLanding.aspx.designer.cs">
       <DependentUpon>CustomerLanding.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer.aspx.cs">
+      <DependentUpon>Customer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer.aspx.designer.cs">
+      <DependentUpon>Customer.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />

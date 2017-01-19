@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using System.Web.Configuration;
 using Dapper;
+using Dapper.Contrib.Extensions;
 
 namespace ASP_Workshop
 {
@@ -44,6 +46,28 @@ namespace ASP_Workshop
                 details.AddRange(conn.Query<BookingDetail>(Settings.GetBookingDetailsQuery, new { bookingId }));
             }
             return details;
+        }
+
+        public static Customer RegisterCustomer(Customer cust)
+        {
+            using (SqlConnection conn = new SqlConnection(Settings.connectionString))
+            {
+                conn.Open();
+                conn.Insert(cust);
+                //conn.Execute(Settings.RegisterCustomerQuery, new {cust.CustFirstName, cust.CustLastName,cust.Address,cust.CustCity,cust.CustProv,cust.CustPostal,cust.CustCountry,cust.CustHomePhone,cust.CustBusPhone,cust.CustEmail,cust.AgentId});
+                return new Customer();
+            }
+        }
+
+        public static List<Agent> GetAgents()
+        {
+            List<Agent> agents = new List<Agent>();
+            using (SqlConnection conn = new SqlConnection(Settings.connectionString))
+            {
+                conn.Open();
+                agents.AddRange(conn.Query<Agent>(Settings.GetAgentsQuery));
+            }
+            return agents;
         }
     }
 }
