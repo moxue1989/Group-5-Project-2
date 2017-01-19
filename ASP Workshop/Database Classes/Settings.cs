@@ -27,5 +27,8 @@ namespace ASP_Workshop
             FROM BookingDetails B, Fees F
             WHERE B.FeeId = F.FeeId
             AND BookingId = @BookingId";
+
+        public static string GetAgentsQuery =
+            @"SELECT AgentId, AgtFirstName, AgtLastName, AgtPosition FROM Agents";
     }
 }
