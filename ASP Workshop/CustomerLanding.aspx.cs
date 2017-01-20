@@ -16,19 +16,12 @@ namespace ASP_Workshop
         {
             if (Session["Customer"] != null)
             {
-                if (!IsPostBack)
-                {
-                    var customer = (Customer) Session["Customer"];
-                    lblWelcome.Text = "Welcome Back " + customer.CustFirstName + " " + customer.CustLastName;
-                    bookings = TravelExpertsDB.GetBookings(customer.CustomerId);
-                    Session["Bookings"] = bookings;
-                    gvBookings.DataSource = bookings;
-                    gvBookings.DataBind();
-                    ddlBookings.DataSource = bookings;
-                    ddlBookings.DataTextField = "BookingId";
-                    ddlBookings.DataValueField = "BookingId";
-                    ddlBookings.DataBind();
-                }
+                var customer = (Customer) Session["Customer"];
+                Session["CustomerId"] = customer.CustomerId;
+
+                lblWelcome.Text = "Welcome Back " + customer.CustFirstName + " " + customer.CustLastName;
+                bookings = TravelExpertsDB.GetBookings(customer.CustomerId);
+                Session["Bookings"] = bookings;
             }
             else
             {
@@ -36,13 +29,25 @@ namespace ASP_Workshop
             }
         }
 
-        protected void ddlBookings_SelectedIndexChanged(object sender, EventArgs e)
+        protected void gvBookings_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int index = ddlBookings.SelectedIndex;
-            Booking booking = ((List<Booking>)Session["Bookings"])[index];
+            int index = gvBookings.SelectedIndex;
+            Booking booking = bookings[index];
             details = TravelExpertsDB.GetBookingDetails(booking.BookingId);
-            gvDetails.DataSource = details;
-            gvDetails.DataBind();
+
+            decimal bookingTotal = 0;
+            foreach (var detail in details)
+            {
+                bookingTotal += detail.GetTotal();
+            }
+            txtBookingTotal.Text = bookingTotal.ToString("c");
+
+            decimal totalCost = 0;
+            foreach (var book in bookings)
+            {
+                totalCost += book.GetTotal();
+            }
+            txtTotalCost.Text = totalCost.ToString("c");
         }
     }
 }

@@ -8,7 +8,7 @@
     <title></title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    
+
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <link href="Content/mdb.min.css" rel="stylesheet" />
     <link href="Content/styles.css" rel="stylesheet" />
@@ -17,13 +17,13 @@
 </head>
 <body>
     <div class="container">
-        
+
         <form id="form1" class="form-inline  " runat="server">
             <%--Start Navbar--%>
 
-                <nav class="navbar navbar-default navbar-fixed-top">
-                    <div class="container-fluid">
-                        <%--Navbar header--%>
+            <nav class="navbar navbar-default navbar-fixed-top">
+                <div class="container-fluid">
+                    <%--Navbar header--%>
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                             <span class="sr-only">Toggle navigation</span>
@@ -32,56 +32,52 @@
                             <span class="icon-bar"></span>
                         </button>
                         <a class="navbar-brand" href="#">Travel Experts</a>
+                        
                     </div>
 
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
-                        <li class="active"><a href="Default.aspx">Home <span class="sr-only">(current)</span></a></li>
-                        <%--<li><a href="CustomerLanding.aspx">Your Account</a></li>--%>
-                        <li class="dropdown" id="MyAccount">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Your Account <span class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu">
-                            <li><a href="CustomerLanding.aspx">Your Account</a></li>
-                            <li class="divider"></li>
-                            <li><a href="CustomerLanding.aspx">Your Purchases</a></li>
-                            <li class="divider"></li>
-                            <li class="divider"></li>
-                            <li><a href="Default.aspx">Log Out</a></li>
-                            </ul>
-                        </li>
+                            <li class="active"><a href="Default.aspx">Home <span class="sr-only">(current)</span></a></li>
+                            <%--<li><a href="CustomerLanding.aspx">Your Account</a></li>--%>
+                            <li id="CustomerMenu" class="dropdown" runat="server">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Account<span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="Customer.aspx">Your Account</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="CustomerLanding.aspx">Your Bookings</a></li>
+                                    <li class="divider"></li>
+                                </ul>
+                            </li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
-                        <li><a href="Default.aspx"><asp:Label ID="linkLogout" runat="server" Text="LogOut" Visible="False"></asp:Label></a></li>
+                            <li id="LogoutOption" runat="server"><asp:Button CssClass="" ID="btnLogout" runat="server" OnClick="Log_Out" Text="Logout" /></li>
                         </ul>
                     </div>
-                    </div>
-                </nav>
+                </div>
+            </nav>
 
             <%--End NavBar--%>
 
             <div class="site-header"></div>
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
-
-         
-
         </form>
     </div>
 
     <!--Footer-->
-        <footer class="navbar-fixed-bottom center-on-small-only">
+    <footer class="navbar-fixed-bottom center-on-small-only">
 
         <!--Copyright-->
         <div class="text-center">
-           © 2017 Copyright: <a href="Default.aspx"> Travel Experts Inc. </a>
+            © 2017 Copyright: <a href="Default.aspx">Travel Experts Inc. </a>
         </div>
         <!--/.Copyright-->
 
     </footer>
     <!--/.Footer-->
-    
+
     <!-- SCRIPTS -->
-  
+
     <script src="Scripts/jquery-2.2.3.min.js"></script>
     <script src="Scripts/tether.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>

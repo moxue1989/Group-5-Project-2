@@ -11,8 +11,22 @@ namespace ASP_Workshop
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //linkLogout.Visible = false;
+            if (Session["Customer"] != null)
+            {
+                CustomerMenu.Visible = true;
+                LogoutOption.Visible = true;
+            }
+            else
+            {
+                CustomerMenu.Visible = false;
+                LogoutOption.Visible = false;
+            }
         }
 
+        protected void Log_Out(object sender, EventArgs e)
+        {
+            Session.Clear();
+            Response.Redirect("Default.aspx");
+        }
     }
 }
