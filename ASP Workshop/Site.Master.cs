@@ -23,5 +23,10 @@ namespace ASP_Workshop
             }
         }
 
+        protected void Log_Out(object sender, EventArgs e)
+        {
+            Session.Clear();
+            Response.Redirect("Default.aspx");
+        }
     }
 }
