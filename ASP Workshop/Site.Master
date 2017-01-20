@@ -1,5 +1,6 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="ASP_Workshop.Site" %>
 
+<%--Front End Layout and Design by Kasi Emmanuel--%>
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -10,56 +11,90 @@
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <link href="Content/mdb.min.css" rel="stylesheet" />
     <link href="Content/styles.css" rel="stylesheet" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
-<div class="container">
-    <form id="form1" class="form-inline" runat="server">
-        <div class="row">
-            <div class="navbar navbar-default navbar-fixed-top">
-                <div class="container">
-                    <nav class="nav navbar-header">
-                        <a href="../" class="navbar-brand">Travel Experts</a>
-                        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                    </nav>
-                    <nav class="navbar-collapse collapse" id="navbar-main">
-                        <ul class="nav navbar-nav">
-                            <li>
-                                <a href="#">Home</a>
-                            </li>
-                            <li>
-                                <a href="#">My Account</a>
-                            </li>
-                            <li>
-                                <a href="#">Booking Details</a>
-                            </li>
-                        </ul>
-
-                        <ul class="nav navbar-nav navbar-right">
-                            <li id="linkLogin" runat="server"><a href="#" target="_blank">Login</a></li>
-                            <li id="linkLogout" runat="server"><a href="#" target="_blank">Logout</a></li>
-                            <li id="linkRegister" runat="server"><a href="#" target="_blank">Register</a></li>
-                        </ul>
-
-                    </nav>
-                </div>
-            </div>
-        </div>
-        <header class="page-header">
-            
-        </header>
+    <div class="container">
         
-        <asp:ContentPlaceHolder ID="MainContent" runat="server">
-        </asp:ContentPlaceHolder>
-         
-    </form>
-</div>
+        <form id="form1" class="form-inline  " runat="server">
+            <%--Start Navbar--%>
+            <header>
+
+                <!--Navbar-->
+                <nav class="navbar navbar-dark teal navbar-fixed-top">
+
+                    <!-- Collapse button-->
+                    <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#collapseEx">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <div class="container">
+
+                        <!--Collapse content-->
+                        <div class="collapse navbar-toggleable-xs" id="collapseEx">
+                            <!--Navbar Brand-->
+                            <a href="Default.aspx" class="navbar-brand">Travel Experts</a>
+                            <!--Links-->
+                            <ul class="nav navbar-nav">
+                                <li class="nav-item active">
+                                
+                                    <a class="nav-link" href="Default.aspx">Home <span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="Default.aspx">Your Account</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="Customer.aspx">Booking Details</a>
+                                </li>
+                                
+                            </ul>
+                             <ul class="nav navbar-nav navbar-right">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="Default.aspx">Logout</a>
+                                </li>
+                                 <li class="nav-item">
+                                     <a class="nav-link" href="Customer.aspx">Register</a>
+                                 </li>
+                             </ul>
+                        </div>
+                        <!--/.Collapse content-->
+
+                    </div>
+
+                </nav>
+                <!--/.Navbar-->
+
+            </header>
+            <%--End NavBar--%>
+            <div class="page-header"></div>
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+          <%--<asp:Label ID="linkLogout" runat="server" Text="Logout"></asp:Label>--%>
+        </form>
+    </div>
+  <!--Footer-->
+    <footer class="page-footer center-on-small-only">
+
+        <!--Copyright-->
+        <div class="footer-copyright">
+                © 2017 Copyright: <a href="Default.aspx"> Travel Experts Inc. </a>
+
+        </div>
+        <!--/.Copyright-->
+
+    </footer>
+    <!--/.Footer-->
+    
+    <!-- SCRIPTS -->
+    
+    
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="Scripts/jquery-2.2.3.min.js"></script>
+    <script src="Scripts/tether.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="Scripts/mdb.min.js"></script>
+
 </body>
 </html>
