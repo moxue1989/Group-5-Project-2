@@ -12,27 +12,27 @@
         <div class="row">
             <div class="col-sm-6">
                 <h6>First Name:</h6>
-                <asp:TextBox CssClass="form-control" ID="txtFirstName" runat="server" />
+                <asp:TextBox CssClass="form-control" ID="txtFirstName" runat="server" ></asp:TextBox>
                 <h6>Last Name:</h6>
-                <asp:TextBox CssClass="form-control" ID="txtLastName" runat="server" />
+                <asp:TextBox CssClass="form-control" ID="txtLastName" runat="server" ></asp:TextBox>
                 <h6>Home Phone:</h6>
-                <asp:TextBox CssClass="form-control" ID="txtHomePhone" runat="server" />
+                <asp:TextBox CssClass="form-control" ID="txtHomePhone" runat="server" ></asp:TextBox>
                 <h6>Business Phone:</h6>
-                <asp:TextBox CssClass="form-control" ID="txtBusPhone" runat="server" />
+                <asp:TextBox CssClass="form-control" ID="txtBusPhone" runat="server" ></asp:TextBox>
                 <h6>Email:</h6>
-                <asp:TextBox CssClass="form-control" ID="txtEmail" runat="server" />
+                <asp:TextBox CssClass="form-control" ID="txtEmail" runat="server" ></asp:TextBox>
             </div>
             <div class="col-sm-6">
                 <h6>Address:</h6>
-                <asp:TextBox CssClass="form-control" ID="txtAddress" runat="server" />
+                <asp:TextBox CssClass="form-control" ID="txtAddress" runat="server" ></asp:TextBox>
                 <h6>City:</h6>
-                <asp:TextBox CssClass="form-control" ID="txtCity" runat="server" />
+                <asp:TextBox CssClass="form-control" ID="txtCity" runat="server" ></asp:TextBox>
                 <h6>Province:</h6>
-                <asp:TextBox CssClass="form-control" ID="txtProv" runat="server" />
+                <asp:TextBox CssClass="form-control" ID="txtProv" runat="server" ></asp:TextBox>
                 <h6>Postal:</h6>
-                <asp:TextBox CssClass="form-control" ID="txtPostal" runat="server" />
+                <asp:TextBox CssClass="form-control" ID="txtPostal" runat="server" ></asp:TextBox>
                 <h6>Country:</h6>
-                <asp:TextBox CssClass="form-control" ID="txtCountry" runat="server" />
+                <asp:TextBox CssClass="form-control" ID="txtCountry" runat="server" ></asp:TextBox>
             </div>
         </div>
         <div class="row">
@@ -52,9 +52,9 @@
             </div>
             <div class="col-sm-6">
                 <h6>Password:</h6>
-                <asp:TextBox type="password" class="form-control" ID="txtPassword" runat="server" />
+                <asp:TextBox type="password" class="form-control" ID="txtPassword" runat="server" ></asp:TextBox>
                 <h6>Confirm Password:</h6>
-                <asp:TextBox type="password" class="form-control" ID="txtConfirmPassword" runat="server" />
+                <asp:TextBox type="password" class="form-control" ID="txtConfirmPassword" runat="server" ></asp:TextBox>
             </div>
         </div>
         <div class="row">

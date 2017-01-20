@@ -10,6 +10,9 @@ namespace ASP_Workshop
         public static string connectionString =
             @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\TravelExperts.mdf;Integrated Security=True;Connect Timeout=30";
 
+        //public static string connectionString =
+        //    @"Data Source=ICTVM-FQQ06UJG2\SQLEXPRESS;Initial Catalog=TravelExperts;Integrated Security=True";
+
         public static string GetCustomerQuery =
             @"SELECT * FROM Customers
             WHERE UserName = @UserName
