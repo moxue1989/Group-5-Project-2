@@ -103,21 +103,16 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap.css" />
+    <Content Include="App_Data\TravelExperts.mdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Data\TravelExperts_log.ldf">
+      <DependentUpon>TravelExperts.mdf</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\mdb.css" />
     <Content Include="Content\mdb.min.css" />
-    <Content Include="Content\style.css" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\jquery-2.2.3.js" />
-    <Content Include="Scripts\jquery-2.2.3.min.js" />
-    <Content Include="Scripts\jquery-3.1.1.js" />
-    <Content Include="Scripts\jquery-3.1.1.min.js" />
-    <Content Include="Scripts\mdb.js" />
-    <Content Include="Scripts\mdb.min.js" />
-    <Content Include="Scripts\tether.js" />
-    <Content Include="Scripts\tether.min.js" />
+    <Content Include="Content\styles.css" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
