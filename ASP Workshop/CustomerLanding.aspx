@@ -8,7 +8,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-3">
-                <asp:GridView CssClass="table table-hover table-striped" ID="gvBookings" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" DataKeyNames="BookingId">
+                <asp:GridView CssClass="table table-hover table-striped" ID="gvBookings" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" DataKeyNames="BookingId" OnSelectedIndexChanged="gvBookings_SelectedIndexChanged">
                     <Columns>
                         <asp:CommandField ShowSelectButton="True" />
                         <asp:BoundField DataField="BookingDate" DataFormatString="{0:d}" HeaderText="Booking Date" SortExpression="BookingDate" />
@@ -38,6 +38,14 @@
                         <asp:ControlParameter ControlID="gvBookings" Name="bookingId" PropertyName="SelectedValue" Type="Int32" />
                     </SelectParameters>
                 </asp:ObjectDataSource>
+
+                <asp:Label ID="Label1" runat="server" Text="Booking Total:"></asp:Label>
+                <asp:TextBox CssClass="form-control-success" ID="txtBookingTotal" runat="server"></asp:TextBox>
+                
+                <br/>
+
+                <asp:Label ID="Label2" runat="server" Text="Customer Total:"></asp:Label>
+                <asp:TextBox CssClass="form-control-danger" ID="txtTotalCost" runat="server"></asp:TextBox>
             </div>
         </div>
     </div>

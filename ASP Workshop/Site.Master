@@ -8,7 +8,7 @@
     <title></title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    
+
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <link href="Content/mdb.min.css" rel="stylesheet" />
     <link href="Content/styles.css" rel="stylesheet" />
@@ -17,13 +17,13 @@
 </head>
 <body>
     <div class="container">
-        
+
         <form id="form1" class="form-inline  " runat="server">
             <%--Start Navbar--%>
 
-                <nav class="navbar navbar-default navbar-fixed-top">
-                    <div class="container-fluid">
-                        <%--Navbar header--%>
+            <nav class="navbar navbar-default navbar-fixed-top">
+                <div class="container-fluid">
+                    <%--Navbar header--%>
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                             <span class="sr-only">Toggle navigation</span>
@@ -36,26 +36,24 @@
 
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
-                        <li class="active"><a href="Default.aspx">Home <span class="sr-only">(current)</span></a></li>
-                        <%--<li><a href="CustomerLanding.aspx">Your Account</a></li>--%>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Your Account <span class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu">
-                            <li><a href="CustomerLanding.aspx">Your Account</a></li>
-                            <li class="divider"></li>
-                            <li><a href="CustomerLanding.aspx">Your Purchases</a></li>
-                            <li class="divider"></li>
-                            <li class="divider"></li>
-                            <li><a href="Default.aspx">Log Out</a></li>
-                            </ul>
-                        </li>
+                            <li class="active"><a href="Default.aspx">Home <span class="sr-only">(current)</span></a></li>
+                            <%--<li><a href="CustomerLanding.aspx">Your Account</a></li>--%>
+                            <li id="CustomerMenu" class="dropdown" runat="server">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Your Account <span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="CustomerLanding.aspx">Your Account</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="CustomerLanding.aspx">Your Purchases</a></li>
+                                    <li class="divider"></li>
+                                </ul>
+                            </li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
-                        <li><a href="Default.aspx">Log Out</a></li>
+                            <li id="LogoutOption" runat="server"><a href="Default.aspx">Log Out</a></li>
                         </ul>
                     </div>
-                    </div>
-                </nav>
+                </div>
+            </nav>
 
             <%--End NavBar--%>
 
@@ -63,25 +61,24 @@
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
 
-          <%--<asp:Label ID="linkLogout" runat="server" Text="Logout"></asp:Label>--%>
-
+            <%--<asp:Label ID="linkLogout" runat="server" Text="Logout"></asp:Label>--%>
         </form>
     </div>
 
     <!--Footer-->
-        <footer class="navbar-fixed-bottom center-on-small-only">
+    <footer class="navbar-fixed-bottom center-on-small-only">
 
         <!--Copyright-->
         <div class="text-center">
-           © 2017 Copyright: <a href="Default.aspx"> Travel Experts Inc. </a>
+            © 2017 Copyright: <a href="Default.aspx">Travel Experts Inc. </a>
         </div>
         <!--/.Copyright-->
 
     </footer>
     <!--/.Footer-->
-    
+
     <!-- SCRIPTS -->
-    
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="Scripts/jquery-2.2.3.min.js"></script>
     <script src="Scripts/tether.min.js"></script>

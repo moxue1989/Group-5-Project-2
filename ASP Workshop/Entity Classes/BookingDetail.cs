@@ -19,7 +19,7 @@ namespace ASP_Workshop
 
         public decimal GetTotal()
         {
-            return BasePrice + FeeAmt;
+            return BasePrice + AgencyCommission + FeeAmt;
         }
     }
 }
