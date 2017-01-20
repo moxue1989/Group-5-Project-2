@@ -1,3 +1,4 @@
+
 ﻿.navbar {
     color: red
 }
@@ -7,14 +8,17 @@
 }
 .header {
     padding: 30px;
+
 }
 #btnRegister {
     font-size: 5em;
 }
 .password {
+
     padding-bottom: 1px;
 }
 .error {
+
     bottom: 20px;
     max-width: 565px;
 }
