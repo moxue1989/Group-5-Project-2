@@ -69,10 +69,10 @@
     </div>
 
     <!--Footer-->
-        <footer class="page-footer center-on-small-only">
+        <footer class="navbar-fixed-bottom center-on-small-only">
 
         <!--Copyright-->
-        <div class="footer-copyright">
+        <div class="text-center">
            © 2017 Copyright: <a href="Default.aspx"> Travel Experts Inc. </a>
         </div>
         <!--/.Copyright-->

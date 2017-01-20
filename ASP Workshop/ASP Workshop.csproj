@@ -132,6 +132,7 @@
     <Content Include="Site.Master" />
     <Content Include="Default.aspx" />
     <Content Include="CustomerLanding.aspx" />
+    <Content Include="WebImages\Beach Therapy.jpg" />
     <Content Include="WebImages\Login Manager.png" />
     <Content Include="Customer.aspx" />
     <None Include="Web.Debug.config">
