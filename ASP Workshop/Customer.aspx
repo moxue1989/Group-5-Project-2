@@ -4,7 +4,11 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-    <div class="container">
+    <div class="container form-group-lg">
+        <div id="messageAlert" class="alert alert-dismissible alert-danger" runat="server" Visible="False">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            <asp:Label ID="lblMessage" runat="server"></asp:Label>
+        </div>
         <div class="row">
             <div class="col-sm-6">
                 <h6>First Name:</h6>
@@ -33,15 +37,15 @@
         </div>
         <div class="row">
             <div class="col-sm-8">
-                <h6>Agent:</h6>
+                <h6 id="lblAgent" runat="server">Agent:</h6>
                 <asp:DropDownList CssClass="form-control" ID="ddlAgents" runat="server"></asp:DropDownList>
             </div>
             <div class="col-sm-4">
                 
             </div>
         </div>
-    <div class="page-header">Login Information:</div>
-        <div class="row" id="newCustomerPassword">
+    <div id="LoginInfo" class="page-header" runat="server">Login Information:</div>
+        <div class="row" id="newCustomerPassword" runat="server">
             <div class="col-sm-6">
                 <h6>UserName:</h6>
                 <asp:TextBox CssClass="form-control" ID="txtUserName" runat="server" />
@@ -54,11 +58,17 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-2"></div>
+            <div class="col-sm-4">
+                
+                <asp:Button ID="btnUpdate" runat="server" OnClick="btnUpdate_Click" Text="Update Info" />
+                
+            </div>
+            <div class="col-sm-8">
+                
+            </div>
             <div class="col-sm-4">
                 <asp:Button CssClass="btn btn-primary btn-lg" ID="btnRegister" runat="server" Text="Register" OnClick="btnRegister_Click" />
             </div>
-            <div class="col-sm-4"></div>
         </div>
     </div>
 </asp:Content>

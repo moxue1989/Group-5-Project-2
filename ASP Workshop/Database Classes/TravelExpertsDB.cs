@@ -50,13 +50,16 @@ namespace ASP_Workshop
 
         public static Customer RegisterCustomer(Customer cust)
         {
+            Customer newCust = new Customer();
             using (SqlConnection conn = new SqlConnection(Settings.connectionString))
             {
                 conn.Open();
-                conn.Insert(cust);
-                //conn.Execute(Settings.RegisterCustomerQuery, new {cust.CustFirstName, cust.CustLastName,cust.Address,cust.CustCity,cust.CustProv,cust.CustPostal,cust.CustCountry,cust.CustHomePhone,cust.CustBusPhone,cust.CustEmail,cust.AgentId});
-                return new Customer();
+                if (conn.Insert(cust) == 1)
+                {
+                    newCust = conn.QuerySingle<Customer>(Settings.GetAddedCustomerQuery);
+                }
             }
+            return newCust;
         }
 
         public static List<Agent> GetAgents()
@@ -68,6 +71,15 @@ namespace ASP_Workshop
                 agents.AddRange(conn.Query<Agent>(Settings.GetAgentsQuery));
             }
             return agents;
+        }
+
+        public static bool UpdateCustomer(Customer cust)
+        {
+            using (SqlConnection conn = new SqlConnection(Settings.connectionString))
+            {
+                conn.Open();
+                return conn.Update(cust);
+            }
         }
     }
 }

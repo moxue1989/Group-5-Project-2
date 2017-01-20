@@ -11,6 +11,6 @@ namespace Agent_App_V2
         public string AgtFirstName { get; set; }
         public string AgtLastName { get; set; }
         public string AgtPosition { get; set; }
-        public int AgtPassword { get; set; }
+        public string AgtPassword { get; set; }
     }
 }

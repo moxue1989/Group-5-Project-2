@@ -7,8 +7,8 @@ namespace ASP_Workshop
 {
     public static class Settings
     {
-        public static string connectionString = @"Data Source=ICTVM-M1JAMLFO8\SQLEXPRESS;Initial Catalog=TravelExperts;Integrated Security=True";
-            //@"Data Source=ICTVM-FQQ06UJG2\SQLEXPRESS;Initial Catalog=TravelExperts;Integrated Security=True";
+        public static string connectionString =
+            @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\TravelExperts.mdf;Integrated Security=True;Connect Timeout=30";
 
         public static string GetCustomerQuery =
             @"SELECT * FROM Customers
@@ -30,5 +30,8 @@ namespace ASP_Workshop
 
         public static string GetAgentsQuery =
             @"SELECT AgentId, AgtFirstName, AgtLastName, AgtPosition FROM Agents";
+
+        public static string GetAddedCustomerQuery =
+            @"select IDENT_CURRENT('Products')";
     }
 }
