@@ -49,6 +49,15 @@ namespace ASP_Workshop {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl LogoutOption;
         
         /// <summary>
+        /// btnLogout control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnLogout;
+        
+        /// <summary>
         /// MainContent control.
         /// </summary>
         /// <remarks>
