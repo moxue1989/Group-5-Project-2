@@ -1,5 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="ASP_Workshop.WebForm1" %>
 
+<%--All front end codign done by Kasi Emmanuel--%>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -21,7 +23,7 @@
 
                 <div class="md-form password">
                     <i class="fa fa-envelope prefix"></i>
-                    <asp:TextBox CssClass="form-control has-error" ID="txtPassword"  runat="server" MaxLength="15" Font-Names="Roboto"></asp:TextBox>
+                    <asp:TextBox CssClass="form-control has-error" ID="txtPassword" TextMode="Password"  runat="server" MaxLength="15" Font-Names="Roboto"></asp:TextBox>
                     <label data-error="wrong" data-success="right">Password</label>
                     
                 </div>
@@ -31,7 +33,7 @@
                 </div>
 
                 <div class="md-form has-error text-center" id="error ">
-                    <asp:Label CssClass="control-label " for="txtUsername txtPassword" Height="30px" ID="lblLoginError" runat="server"></asp:Label>
+                    <asp:Label CssClass="control-label " Font-Names="Roboto" for="txtUsername txtPassword" Height="30px" ID="lblLoginError" runat="server"></asp:Label>
                 </div>     
             <!--Login Form Body-->
                    <!--Start Footer-->
