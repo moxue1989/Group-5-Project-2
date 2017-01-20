@@ -1,31 +1,29 @@
-
-﻿.navbar {
-    color: red
-}
+﻿
 .site-header {
   
-    padding: 44.5px;
+    padding: 34.5px;
 }
 .header {
     padding: 30px;
-
 }
 #btnRegister {
     font-size: 5em;
 }
 .password {
-
     padding-bottom: 1px;
 }
 .error {
-
     bottom: 20px;
     max-width: 565px;
 }
 .content {
-    background-color: teal;
-    width: 400px;
-    height: 435px;
+
+    background-position: center;
+    background-origin: content-box;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('../WebImages/Beach Therapy.jpg');
+     height: 518px;
 }
 #blank {
     min-height: 100px;
