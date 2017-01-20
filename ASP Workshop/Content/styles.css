@@ -1,19 +1,20 @@
-﻿.page-header {
+﻿.navbar {
+    color: red
+}
+.site-header {
   
-    padding: 51px;
+    padding: 44.5px;
 }
 .header {
-    padding: 20px;
+    padding: 30px;
 }
 #btnRegister {
     font-size: 5em;
 }
 .password {
-    /*padding: 5px;*/
     padding-bottom: 1px;
 }
 .error {
-    /*max-height: 200px;*/
     bottom: 20px;
     max-width: 565px;
 }
@@ -28,10 +29,6 @@
 .img-fluid {
     position: center;
 }
-/*.card-block {
-    padding: 50px;
-    height: 100px;
-}*/
 .loginCard {
     padding: 0px;
 }
