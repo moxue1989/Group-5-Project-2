@@ -30,5 +30,8 @@ namespace ASP_Workshop
 
         public static string GetAgentsQuery =
             @"SELECT AgentId, AgtFirstName, AgtLastName, AgtPosition FROM Agents";
+
+        public static string GetAddedCustomerQuery =
+            @"select IDENT_CURRENT('Products')";
     }
 }
