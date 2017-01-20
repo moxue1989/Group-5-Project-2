@@ -67,10 +67,13 @@
 
             </header>
             <%--End NavBar--%>
+
             <div class="page-header"></div>
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
+
           <%--<asp:Label ID="linkLogout" runat="server" Text="Logout"></asp:Label>--%>
+
         </form>
     </div>
   <!--Footer-->
