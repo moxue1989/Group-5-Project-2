@@ -16,18 +16,19 @@ namespace ASP_Workshop
         {
             if (Session["Customer"] != null)
             {
+                var customer = (Customer)Session["Customer"];
+                Session["CustomerId"] = customer.CustomerId;
                 if (!IsPostBack)
                 {
-                    var customer = (Customer) Session["Customer"];
+                    
                     lblWelcome.Text = "Welcome Back " + customer.CustFirstName + " " + customer.CustLastName;
                     bookings = TravelExpertsDB.GetBookings(customer.CustomerId);
                     Session["Bookings"] = bookings;
-                    gvBookings.DataSource = bookings;
-                    gvBookings.DataBind();
-                    ddlBookings.DataSource = bookings;
-                    ddlBookings.DataTextField = "BookingId";
-                    ddlBookings.DataValueField = "BookingId";
-                    ddlBookings.DataBind();
+
+                    //ddlBookings.DataSource = bookings;
+                    //ddlBookings.DataTextField = "BookingId";
+                    //ddlBookings.DataValueField = "BookingId";
+                    //ddlBookings.DataBind();
                 }
             }
             else
@@ -38,11 +39,11 @@ namespace ASP_Workshop
 
         protected void ddlBookings_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int index = ddlBookings.SelectedIndex;
-            Booking booking = ((List<Booking>)Session["Bookings"])[index];
-            details = TravelExpertsDB.GetBookingDetails(booking.BookingId);
-            gvDetails.DataSource = details;
-            gvDetails.DataBind();
+            //int index = ddlBookings.SelectedIndex;
+            //Booking booking = ((List<Booking>)Session["Bookings"])[index];
+            //details = TravelExpertsDB.GetBookingDetails(booking.BookingId);
+            //gvDetails.DataSource = details;
+            //gvDetails.DataBind();
         }
     }
 }
