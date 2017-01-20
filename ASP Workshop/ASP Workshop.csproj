@@ -110,7 +110,9 @@
       <DependentUpon>TravelExperts.mdf</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\mdb.css" />
     <Content Include="Content\mdb.min.css" />
     <Content Include="Content\styles.css" />
     <Content Include="packages.config" />
