@@ -3,36 +3,49 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <aside class="col-sm-4 content">
-        
-    </aside>
+  
 
-    <main class="col-sm-6 col-sm-offset-1 card text-center">
-        <div class="row" id="blank"></div>
-        <div class=" card-block loginCard">
-            
-        <div class="md-form">
-            <i class="fa fa-envelope prefix"></i>
-            <asp:TextBox CssClass="text-center form-control" ID="txtUsername" runat="server" MaxLength="20"></asp:TextBox>
-            <label>Username</label>
-        </div>
+    <main class="card col-sm-6 offset-sm-1">
+      <div class="modal-header" id="blank"><h5 class="text-sm-left">Login to your Account</h5></div>
+        <!--Header-->
         
-
-        <div class="md-form">
-            <i class="fa fa-envelope prefix"></i>
-            <asp:TextBox CssClass="text-center form-control" ID="txtPassword" runat="server" MaxLength="15"></asp:TextBox>
-            <label>Password</label>
-        </div>
-        
-    
-        <asp:Label ID="lblLoginError" runat="server"></asp:Label>
+        <div class=" card-block loginCard text-center">
    
-        <asp:Button CssClass="btn btn-primary btn-round" ID="btnLogin" Width="150px" runat="server" OnClick="btnLogin_Click" Text="Login" />
-   </div>
+            <div class="md-form">
+                <i class="fa fa-envelope prefix"></i>
+                <asp:TextBox CssClass="form-control text-center" ID="txtUsername" runat="server" MaxLength="20" Font-Names="Roboto"></asp:TextBox>
+                <label>Username</label>
+            </div>
+        
+
+            <div class="md-form">
+                <i class="fa fa-envelope prefix"></i>
+                <asp:TextBox CssClass="form-control" ID="txtPassword" runat="server" MaxLength="15" Font-Names="Roboto"></asp:TextBox>
+                <label>Password</label>
+            </div>
+          
+            <div class="md-form">
+                <asp:Label ID="lblLoginError" runat="server"></asp:Label>
+                <div class="text-xs-center">
+                    <asp:Button CssClass="btn btn-primary btn-sm" ID="btnLogin"  runat="server" OnClick="btnLogin_Click" Text="Login" />
+                </div>
+            </div>
+               <!--Footer-->
+            <div class="modal-footer">
+                <div class="options">
+                    <p>Not a member? <a href="Customer.aspx">Sign Up</a>     |       
+                   Forgot <a href="#">Password?</a></p>
+                </div>
+            </div> 
+            
+         
+      </div>
     
 
     </main>    
    
-    
+      <aside class="col-sm-4 content">
+        
+    </aside>
 
 </asp:Content>

@@ -7,8 +7,8 @@ namespace ASP_Workshop
 {
     public static class Settings
     {
-        public static string connectionString =
-            @"Data Source=ICTVM-FQQ06UJG2\SQLEXPRESS;Initial Catalog=TravelExperts;Integrated Security=True";
+        public static string connectionString = @"Data Source=ICTVM-M1JAMLFO8\SQLEXPRESS;Initial Catalog=TravelExperts;Integrated Security=True";
+            //@"Data Source=ICTVM-FQQ06UJG2\SQLEXPRESS;Initial Catalog=TravelExperts;Integrated Security=True";
 
         public static string GetCustomerQuery =
             @"SELECT * FROM Customers

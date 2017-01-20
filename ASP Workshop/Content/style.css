@@ -1,0 +1,25 @@
+.page-header {
+    padding: 43.5px;
+}
+.content {
+    background-color: #5f9ea0;
+    min-width: 200px;
+    min-height: 450px;
+}
+.img-fluid {
+    position: center;
+}
+.card-block {
+    min-height: 60px;
+}
+#blank {
+    padding: 22px;
+    color: teal
+}
+
+body {
+    background-color: whitesmoke;
+}
+.modal-footer {
+    padding: 4px;
+}
