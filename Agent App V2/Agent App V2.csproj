@@ -205,10 +205,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Database\TravelExperts.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Database\TravelExperts_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>TravelExperts.mdf</DependentUpon>
     </Content>
   </ItemGroup>

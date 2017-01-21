@@ -123,7 +123,7 @@ namespace Agent_App_V2
         public static string GetPackagesQuery =
             @"SELECT PackageId,PkgName,PkgStartDate,PkgEndDate,PkgDesc,
                 PkgBasePrice,PkgAgencyCommission
-            FROM Packages ORDER BY PkgEndDate desc";
+            FROM Packages ORDER BY PkgStartDate desc";
 
         public static string GetAllPSQuery =
             @"  SELECT ps.ProductSupplierId,p.ProductId,s.SupplierId,p.ProdName,s.SupName
