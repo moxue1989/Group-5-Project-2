@@ -269,17 +269,6 @@ namespace Agent_App_V2
             tbSearch.Clear();
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            // make sure user wants to exit
-            if (
-                MessageBox.Show("Exit without saving changes?", "Cancel Edit", MessageBoxButtons.OKCancel,
-                    MessageBoxIcon.Question) == DialogResult.OK)
-            {
-                DialogResult = DialogResult.Cancel;
-            }
-        }
-
         private void btnExit_Click(object sender, EventArgs e)
         {
             Close();//closes application
@@ -298,6 +287,21 @@ namespace Agent_App_V2
         private void btnBack_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
+        }
+
+        private void frmAddEditPackage_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            // make sure user wants to exit
+            if (
+                MessageBox.Show("Exit without saving changes?", "Cancel Edit", MessageBoxButtons.OKCancel,
+                    MessageBoxIcon.Question) == DialogResult.OK)
+            {
+                e.Cancel = false;
+            }
+            else
+            {
+                e.Cancel = true;
+            }
         }
     }
 }

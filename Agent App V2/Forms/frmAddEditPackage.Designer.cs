@@ -574,6 +574,7 @@ namespace Agent_App_V2
             // 
             this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(63)))), ((int)(((byte)(159)))));
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(31)))), ((int)(((byte)(191)))));
             this.btnCancel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(31)))), ((int)(((byte)(191)))));
             this.btnCancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
@@ -586,7 +587,6 @@ namespace Agent_App_V2
             this.btnCancel.TabIndex = 61;
             this.btnCancel.Text = "CANCEL";
             this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // frmAddEditPackage
             // 
@@ -594,6 +594,7 @@ namespace Agent_App_V2
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(23)))), ((int)(((byte)(46)))));
+            this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(1015, 503);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.label1);
@@ -626,6 +627,7 @@ namespace Agent_App_V2
             this.MinimizeBox = false;
             this.Name = "frmAddEditPackage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmAddEditPackage_FormClosing);
             this.Load += new System.EventHandler(this.frmAddEditPackage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAddedPS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNotAddedPS)).EndInit();
