@@ -22,6 +22,13 @@ namespace ASP_Workshop
                 lblWelcome.Text = "Welcome Back " + customer.CustFirstName + " " + customer.CustLastName;
                 bookings = TravelExpertsDB.GetBookings(customer.CustomerId);
                 Session["Bookings"] = bookings;
+
+                decimal totalCost = 0;
+                foreach (var book in bookings)
+                {
+                    totalCost += book.GetTotal();
+                }
+                txtTotalCost.Text = totalCost.ToString("c");
             }
             else
             {
@@ -41,13 +48,6 @@ namespace ASP_Workshop
                 bookingTotal += detail.GetTotal();
             }
             txtBookingTotal.Text = bookingTotal.ToString("c");
-
-            decimal totalCost = 0;
-            foreach (var book in bookings)
-            {
-                totalCost += book.GetTotal();
-            }
-            txtTotalCost.Text = totalCost.ToString("c");
         }
     }
 }
