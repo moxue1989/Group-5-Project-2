@@ -121,6 +121,17 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnLogout.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACxMAAAsTAQCanBgAAAEESURBVFhH7ZVNCsIwFISD1/Bv
+        JR7B6jlExFMIXkI8gbhw7cIDiWtxrxeIM5YXSmMNqQm1kIFPQqnzPtqEKq11o+Q/Sm3AOSAZcKYowD9x
+        EYo5cOZvBepmCaQjCSSBRgR6gINJlxeQMZjmSzuhBcrh8Dt4ghkvlBNbYAukkxLWk4gt0AEHIL2WRGwB
+        hhJ7IN2UMN8JX4Eh4E73ZQUuQPqNhK8Ay+SeX3mArHUCfSDn3IcFuALpfw8H3q+gTrgJj0C6zXAmtsDX
+        4UxsgR2QTms4E1tgBG7g43AmtMAAyNnnh4mhxCRf2gktUDym3P3OJIEkUCUQgvYJrMEpIJVnvxgj0Bxa
+        vQAn+o1vrh0YKgAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEsAAABLCAYAAAA4TnrqAAAABGdBTUEAALGOfPtRkwAAACBjSFJNAACH
