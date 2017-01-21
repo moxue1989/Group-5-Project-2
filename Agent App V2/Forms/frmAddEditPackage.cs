@@ -272,11 +272,12 @@ namespace Agent_App_V2
         private void btnCancel_Click(object sender, EventArgs e)
         {
             // make sure user wants to exit
-            if (MessageBox.Show("Exit without saving changes?", "Cancel", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) != DialogResult.OK)
+            if (
+                MessageBox.Show("Exit without saving changes?", "Cancel Edit", MessageBoxButtons.OKCancel,
+                    MessageBoxIcon.Question) == DialogResult.OK)
             {
-                return;
+                DialogResult = DialogResult.Cancel;
             }
-            DialogResult =DialogResult.Cancel;
         }
 
         private void btnExit_Click(object sender, EventArgs e)

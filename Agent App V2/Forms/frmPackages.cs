@@ -193,8 +193,11 @@ namespace Agent_App_V2
 
                 // delete package
                 currentPackage.Delete();
+
+                // reload if deleted
+                Reload();
             }
-            Reload();
+            
         }
 
         private void btnExit_Click(object sender, EventArgs e)
