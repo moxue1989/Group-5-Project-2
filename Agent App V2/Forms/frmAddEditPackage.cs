@@ -56,12 +56,12 @@ namespace Agent_App_V2
             // fill datagrids with the two lists on load, rename column headers and adjust widths
             RefreshPSData();
 
-            dgvAddedPS.Columns[0].Width = 150;
+            dgvAddedPS.Columns[0].Width = 120;
             dgvAddedPS.Columns[1].Width = 285;
             dgvAddedPS.ColumnHeadersDefaultCellStyle.Font = new
             Font("Segoe UI", 10);
 
-            dgvNotAddedPS.Columns[0].Width = 150;
+            dgvNotAddedPS.Columns[0].Width = 120;
             dgvNotAddedPS.Columns[1].Width = 285;
             dgvNotAddedPS.ColumnHeadersDefaultCellStyle.Font = new
             Font("Segoe UI", 10);
@@ -269,6 +269,16 @@ namespace Agent_App_V2
             tbSearch.Clear();
         }
 
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            // make sure user wants to exit
+            if (MessageBox.Show("Exit without saving changes?", "Cancel", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) != DialogResult.OK)
+            {
+                return;
+            }
+            DialogResult =DialogResult.Cancel;
+        }
+
         private void btnExit_Click(object sender, EventArgs e)
         {
             Close();//closes application
@@ -287,21 +297,6 @@ namespace Agent_App_V2
         private void btnBack_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
-        }
-
-        private void frmAddEditPackage_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            // make sure user wants to exit
-            if (
-                MessageBox.Show("Exit without saving changes?", "Cancel Edit", MessageBoxButtons.OKCancel,
-                    MessageBoxIcon.Question) == DialogResult.OK)
-            {
-                e.Cancel = false;
-            }
-            else
-            {
-                e.Cancel = true;
-            }
         }
     }
 }

@@ -60,10 +60,10 @@ namespace Agent_App_V2
                 else if (package.PkgStartDate < DateTime.Today)
                 {
                     button.FlatStyle = FlatStyle.Flat;
-                    button.FlatAppearance.MouseDownBackColor = Color.FromArgb(255, 187, 34);
-                    button.FlatAppearance.BorderColor = Color.FromArgb(255, 187, 34);
+                    button.FlatAppearance.MouseDownBackColor = Color.FromArgb(255, 87, 34);
+                    button.FlatAppearance.BorderColor = Color.FromArgb(255, 87, 34);
                     button.ForeColor = Color.WhiteSmoke;
-                    button.BackColor = Color.FromArgb(230, 174, 25);
+                    button.BackColor = Color.FromArgb(230, 74, 25);
                 }
                 else
                 {
@@ -193,11 +193,8 @@ namespace Agent_App_V2
 
                 // delete package
                 currentPackage.Delete();
-
-                // reload if deleted
-                Reload();
             }
-            
+            Reload();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
