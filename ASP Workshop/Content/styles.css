@@ -66,11 +66,17 @@ a.btnLogout:hover {
 }
 html {
   position: relative;
-  min-height: 90%;
+  min-height: 100%;
 }
+
 body {
     background-color: whitesmoke;
     margin-bottom: 70px;
+    color: darkslategrey;
+}
+.welcome {
+    text-decoration: none;
+    line-break: normal;
 }
 footer {
   position: absolute;

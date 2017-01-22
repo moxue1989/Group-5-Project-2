@@ -3,22 +3,22 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
    
-        <div class="col-sm-4 col-sm-offset-2  text-xs-center">
+        <div class="col-xs-12 col-md-6  text-xs-center">
             <div class="divider-new">
                 <label class="h2-responsive">Account Details</label>
             </div>
             <div class="jumbotron">
                 <p >Update contact information and address</p> 
-                <asp:Button CssClass="btn btn-primary waves-effect waves-light" ID="AccountDetails" runat="server" Text="Change Account Details" OnClick="AccountDetails_Click" />
+                <asp:Button CssClass="btn btn-primary btn-sm waves-effect waves-light" ID="AccountDetails" runat="server" Text="Change Account Details" OnClick="AccountDetails_Click" />
             </div>
         </div>
-        <div class="col-sm-4   text-xs-center">
+        <div class="col-xs-12 col-md-6  text-xs-center">
             <div class="divider-new">
                 <label class="h2-responsive">Purchases</label>
             </div>
             <div class="jumbotron">
-                <p >View Details on Past Bookings and Puchases</p> 
-                <asp:Button CssClass="btn btn-primary waves-effect waves-light" ID="BookingDetails" runat="server" Text="View BookingDetails" OnClick="BookingDetails_Click"  />
+                <p >View Past Bookings Details and Puchases</p> 
+                <asp:Button CssClass="btn btn-primary btn-sm waves-effect waves-light" ID="BookingDetails" runat="server" Text="View BookingDetails" OnClick="BookingDetails_Click"  />
             </div>
         </div>
 

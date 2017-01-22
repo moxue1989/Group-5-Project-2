@@ -7,13 +7,13 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
   
 
-    <main class="card col-xs-12 col-sm-6 col-md-6">
+    <main class="card col-xs-12 col-sm-10 col-md-6">
         <!--Start Header-->
       <div class="header" id="blank"><h5 class="modal-title text-xs-left">Login to your Account</h5></div>
         <!--End Header-->
 
             <!--Login Form Body-->
-            <div class="card-block loginCard text-sm-center text-lg-center">
+            <div class="card-block loginCard text-sm-center ">
                 
                 <div class="md-form">
                     <i class="fa fa-envelope prefix"></i>
@@ -49,7 +49,7 @@
     </main>    
 
    <!--Login Form Image-->
-      <aside class="col-xs-12 col-sm-6 col-md-5  content">
+      <aside class="col-xs-12 col-sm-6 col-md-6  content">
       </aside>
     <!--End Login Form Image-->
 </asp:Content>
