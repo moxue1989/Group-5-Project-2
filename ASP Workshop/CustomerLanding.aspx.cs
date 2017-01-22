@@ -13,5 +13,33 @@ namespace ASP_Workshop
         {
 
         }
+
+        //Written by Kasi Emmanuel
+        //Redirect to Customer page
+        protected void AccountDetails_Click(object sender, EventArgs e)
+        {
+            if (Session["Customer"] != null)
+            {
+                Response.Redirect("Customer.aspx");
+            }
+            else
+            {
+                Response.Redirect("Default.aspx");
+            }
+        }
+
+        //Written by Kasi Emmanuel
+        //Redirect to Bookings Details page
+        protected void BookingDetails_Click(object sender, EventArgs e)
+        {
+            if (Session["Customer"] != null)
+            {
+                Response.Redirect("Purchases.aspx");
+            }
+            else
+            {
+                Response.Redirect("Default.aspx");
+            }
+        }
     }
 }

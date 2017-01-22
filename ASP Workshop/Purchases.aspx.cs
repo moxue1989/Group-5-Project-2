@@ -19,7 +19,7 @@ namespace ASP_Workshop
                 var customer = (Customer) Session["Customer"];
                 Session["CustomerId"] = customer.CustomerId;
 
-                lblWelcome.Text = "Welcome Back " + customer.CustFirstName + " " + customer.CustLastName;
+                //lblWelcome.Text = "Welcome Back " + customer.CustFirstName + " " + customer.CustLastName;
                 bookings = TravelExpertsDB.GetBookings(customer.CustomerId);
                 Session["Bookings"] = bookings;
 

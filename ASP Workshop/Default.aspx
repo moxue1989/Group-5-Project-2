@@ -9,7 +9,7 @@
 
     <main class="card col-xs-12 col-sm-6 col-md-6">
         <!--Start Header-->
-      <div class="header" id="blank"><p class="text-xs-left">Login to your Account</p></div>
+      <div class="header" id="blank"><h5 class="modal-title text-xs-left">Login to your Account</h5></div>
         <!--End Header-->
 
             <!--Login Form Body-->

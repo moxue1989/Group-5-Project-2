@@ -3,6 +3,33 @@
   
     padding: 34.5px;
 }
+#title, .modal-title  {
+    color: darkslategray;
+}
+.divider {
+     background-color: whitesmoke;
+}
+/*footer {
+    height: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}*/
+.btnLogout {
+   color: #000000; 
+   text-decoration: none; 
+
+}
+a.btnLogout:hover {
+     text-decoration: none;
+}
+.dropdown-menu {
+    background-color: teal;
+    color: teal
+}
+.navbar, .navbar-nav {
+    background-color: teal
+}
 .header {
     padding: 30px;
 }
@@ -34,7 +61,22 @@
 .loginCard {
     padding: 0px;
 }
-
+.h2-responsive {
+    color: teal
+}
+html {
+  position: relative;
+  min-height: 90%;
+}
 body {
     background-color: whitesmoke;
+    margin-bottom: 70px;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 20px;
+  background-color: #f5f5f5;
 }
