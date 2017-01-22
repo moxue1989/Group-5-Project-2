@@ -50,8 +50,8 @@
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
                             <li>
-                                
-                                <asp:LinkButton ID="lblWelcome" runat="server"></asp:LinkButton>
+                                <%--<asp:Label ID="lblWelcome"  CssClass="welcome" runat="server" Text="Label"></asp:Label>--%>
+                                <asp:LinkButton ID="lblWelcome" runat="server" CssClass="welcome" Enabled="False"></asp:LinkButton>
                                 
                               <%-- <asp:Label ID="lblWelcome" runat="server" ></asp:Label>--%>
                             </li>

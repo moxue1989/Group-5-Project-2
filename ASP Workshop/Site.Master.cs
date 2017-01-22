@@ -15,9 +15,13 @@ namespace ASP_Workshop
             if (Session["Customer"] != null)
             {
 
+                var customer = (Customer)Session["Customer"];
+                Session["CustomerId"] = customer.CustomerId;
+
+               
                 CustomerMenu.Visible = true;
                 LogoutOption.Visible = true;
-                lblWelcome.Text = "Welcome Back ";
+                lblWelcome.Text = "Welcome Back " + customer.CustFirstName + " " + customer.CustLastName;
             }
             else
             {

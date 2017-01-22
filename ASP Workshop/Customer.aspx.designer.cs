@@ -29,6 +29,25 @@ namespace ASP_Workshop {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblMessage;
+        
+        /// <summary>
+        /// newCust control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label newCust;
+        
+        /// <summary>
+        /// AccountDetails control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label AccountDetails;
+        
         /// <summary>
         /// txtFirstName control.
         /// </summary>
@@ -129,15 +148,6 @@ namespace ASP_Workshop {
         protected global::System.Web.UI.WebControls.DropDownList ddlAgents;
         
         /// <summary>
-        /// lblAgent control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblAgent;
-        
-        /// <summary>
         /// LoginInfo control.
         /// </summary>
         /// <remarks>
@@ -154,15 +164,6 @@ namespace ASP_Workshop {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl newCustomerPassword;
-        
-        /// <summary>
-        /// txtUserName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtUserName;
         
         /// <summary>
         /// txtPassword control.

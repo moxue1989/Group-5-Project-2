@@ -4,7 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-    <div class="col-sm-10 offset-sm-1 form-group-md">
+    <div class="col-sm-10 col-sm-offset-1 ">
         <div id="messageAlert" class="alert alert-dismissible alert-danger" runat="server" Visible="False">
        
             <button type="button" class="close" data-dismiss="alert">×</button>
@@ -12,9 +12,10 @@
         </div>
         <div class="row">
                  <!--Header-->
-        <div class="header text-xs-center">
-            <h2><i class="fa fa-lock"></i> Customer Registration:</h2>
-            <hr class="mt-2 mb-2"/>
+        <div class="header text-xs-center"  >
+            <asp:Label ID="newCust" CssClass="h2-responsive" runat="server" Text="Customer Registration:"></asp:Label>
+           <asp:Label ID="AccountDetails" CssClass="h2-responsive" runat="server" Text="Change Account Details:"></asp:Label>
+           <hr class="mt-2 mb-2"/>
         </div>
             <div class="col-sm-6">
                 
@@ -79,29 +80,31 @@
                 <div class="md-form">
                     <i class="fa fa-lock prefix"></i>
                     <asp:DropDownList CssClass="form-control" ID="ddlAgents" runat="server"></asp:DropDownList>
-                    <h6 id="lblAgent" runat="server">Agent:</h6>
+                    <%--<h6 id="lblAgent" runat="server">Agent:</h6>--%>
                 </div>
             </div>
             <div class="col-sm-4">
                 
             </div>
         </div>
-    <div id="LoginInfo" class="page-header" runat="server">Login Information:</div>
+    <div id="LoginInfo" runat="server"></div>
         <div class="row" id="newCustomerPassword" runat="server">
-            <div class="col-sm-6">
+           <%-- <div class="col-sm-6">
                 <div class="md-form">
                     <i class="fa fa-lock prefix"></i>
                     <asp:TextBox CssClass="form-control" ID="txtUserName" runat="server" />
                     <label for="form4">UserName:</label>
                 </div>
                 
-            </div>
+            </div>--%>
             <div class="col-sm-6">
                 <div class="md-form">
                     <i class="fa fa-lock prefix"></i>
                     <asp:TextBox  CssClass="form-control" ID="txtPassword" runat="server" />
                     <label for="form4">Password:</label>
                 </div>
+            </div>
+            <div class="col-sm-6">
                 <div class="md-form">
                     <i class="fa fa-lock prefix"></i>
                     <asp:TextBox CssClass="form-control" ID="txtConfirmPassword" runat="server" />
@@ -109,17 +112,14 @@
                 </div>
             </div>
         </div>
-        <div class="row">
+        <div class="container ">
             <div class="col-sm-4">
                 
-                <asp:Button CssClass="btn btn-primary btn-md rounded" Font-Size="12" ID="btnUpdate" Width="50px" runat="server" OnClick="btnUpdate_Click" Text="Update Info" />
+                <asp:Button CssClass="btn btn-primary" Font-Size="12" ID="btnUpdate" Width="100px" runat="server" OnClick="btnUpdate_Click" Text="Update Info" />
                 
             </div>
-            <div class="col-sm-8">
-                
-            </div>
-            <div class="col-sm-4">
-                <asp:Button CssClass="btn btn-primary btn-md rounded" ID="btnRegister" Width="100px"  runat="server" Text="Register" OnClick="btnRegister_Click" />
+            <div class="col-sm-4 ">
+                <asp:Button CssClass="btn btn-primary" ID="btnRegister" Width="100px"  runat="server" Text="Register" OnClick="btnRegister_Click" />
             </div>
         </div>
     </div>

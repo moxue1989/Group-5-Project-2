@@ -30,7 +30,8 @@ namespace ASP_Workshop
                     txtHomePhone.Text = cust.CustHomePhone;
                     txtBusPhone.Text = cust.CustBusPhone;
 
-                    lblAgent.Visible = false;
+                    newCust.Visible = false;
+                    //lblAgent.Visible = false;
                     ddlAgents.Visible = false;
                     btnRegister.Visible = false;
                     LoginInfo.Visible = false;
@@ -46,6 +47,7 @@ namespace ASP_Workshop
                 ddlAgents.DataValueField = "AgentId";
                 ddlAgents.DataBind();
                 btnUpdate.Visible = false;
+                AccountDetails.Visible = false;
             }
         }
 
@@ -76,7 +78,7 @@ namespace ASP_Workshop
             newCust.CustEmail = txtEmail.Text;
             if (addStatus)
             {
-                newCust.UserName = txtUserName.Text;
+                //newCust.UserName = txtUserName.Text;
                 newCust.Password = txtPassword.Text;
                 newCust.AgentId = Convert.ToInt32(ddlAgents.SelectedValue);
             }
