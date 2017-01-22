@@ -50,6 +50,7 @@ namespace Agent_App_V2
             this.btnSave = new System.Windows.Forms.Button();
             this.tbSearch = new System.Windows.Forms.TextBox();
             this.btnReset = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -67,8 +68,10 @@ namespace Agent_App_V2
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.header = new System.Windows.Forms.Panel();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.lblLoginMsg = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnLogout = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -78,8 +81,6 @@ namespace Agent_App_V2
             this.panel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.header.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tbPkgAgencyCommission
@@ -88,9 +89,9 @@ namespace Agent_App_V2
             this.tbPkgAgencyCommission.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbPkgAgencyCommission.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.tbPkgAgencyCommission.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.tbPkgAgencyCommission.Location = new System.Drawing.Point(420, 114);
+            this.tbPkgAgencyCommission.Location = new System.Drawing.Point(353, 114);
             this.tbPkgAgencyCommission.Name = "tbPkgAgencyCommission";
-            this.tbPkgAgencyCommission.Size = new System.Drawing.Size(124, 22);
+            this.tbPkgAgencyCommission.Size = new System.Drawing.Size(114, 22);
             this.tbPkgAgencyCommission.TabIndex = 17;
             this.tbPkgAgencyCommission.Tag = "Commission";
             this.tbPkgAgencyCommission.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -101,9 +102,9 @@ namespace Agent_App_V2
             this.tbPkgBasePrice.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbPkgBasePrice.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.tbPkgBasePrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.tbPkgBasePrice.Location = new System.Drawing.Point(273, 114);
+            this.tbPkgBasePrice.Location = new System.Drawing.Point(240, 114);
             this.tbPkgBasePrice.Name = "tbPkgBasePrice";
-            this.tbPkgBasePrice.Size = new System.Drawing.Size(122, 22);
+            this.tbPkgBasePrice.Size = new System.Drawing.Size(97, 22);
             this.tbPkgBasePrice.TabIndex = 16;
             this.tbPkgBasePrice.Tag = "Base Price";
             this.tbPkgBasePrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -117,7 +118,7 @@ namespace Agent_App_V2
             this.tbPkgName.Location = new System.Drawing.Point(62, 114);
             this.tbPkgName.MaxLength = 20;
             this.tbPkgName.Name = "tbPkgName";
-            this.tbPkgName.Size = new System.Drawing.Size(183, 22);
+            this.tbPkgName.Size = new System.Drawing.Size(155, 22);
             this.tbPkgName.TabIndex = 12;
             this.tbPkgName.Tag = "Package Name";
             this.tbPkgName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -130,7 +131,7 @@ namespace Agent_App_V2
             this.dtpPkgStartDate.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.dtpPkgStartDate.Location = new System.Drawing.Point(62, 172);
             this.dtpPkgStartDate.Name = "dtpPkgStartDate";
-            this.dtpPkgStartDate.Size = new System.Drawing.Size(183, 22);
+            this.dtpPkgStartDate.Size = new System.Drawing.Size(155, 22);
             this.dtpPkgStartDate.TabIndex = 18;
             this.dtpPkgStartDate.Tag = "Start Date";
             // 
@@ -142,7 +143,7 @@ namespace Agent_App_V2
             this.dtpPkgEndDate.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.dtpPkgEndDate.Location = new System.Drawing.Point(62, 230);
             this.dtpPkgEndDate.Name = "dtpPkgEndDate";
-            this.dtpPkgEndDate.Size = new System.Drawing.Size(183, 22);
+            this.dtpPkgEndDate.Size = new System.Drawing.Size(155, 22);
             this.dtpPkgEndDate.TabIndex = 19;
             this.dtpPkgEndDate.Tag = "End Date";
             // 
@@ -191,7 +192,7 @@ namespace Agent_App_V2
             this.dgvAddedPS.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvAddedPS.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvAddedPS.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAddedPS.Size = new System.Drawing.Size(482, 96);
+            this.dgvAddedPS.Size = new System.Drawing.Size(405, 96);
             this.dgvAddedPS.TabIndex = 20;
             // 
             // dgvNotAddedPS
@@ -204,7 +205,7 @@ namespace Agent_App_V2
             this.dgvNotAddedPS.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvNotAddedPS.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -221,12 +222,12 @@ namespace Agent_App_V2
             dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvNotAddedPS.DefaultCellStyle = dataGridViewCellStyle14;
             this.dgvNotAddedPS.GridColor = System.Drawing.Color.White;
-            this.dgvNotAddedPS.Location = new System.Drawing.Point(651, 114);
+            this.dgvNotAddedPS.Location = new System.Drawing.Point(548, 114);
             this.dgvNotAddedPS.Name = "dgvNotAddedPS";
             this.dgvNotAddedPS.ReadOnly = true;
             this.dgvNotAddedPS.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             dataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
@@ -249,11 +250,11 @@ namespace Agent_App_V2
             this.btnSave.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(31)))), ((int)(((byte)(191)))));
             this.btnSave.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.btnSave.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnSave.Location = new System.Drawing.Point(62, 413);
+            this.btnSave.Location = new System.Drawing.Point(62, 433);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(115, 28);
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 25;
             this.btnSave.Text = "SAVE";
             this.btnSave.UseVisualStyleBackColor = false;
@@ -265,7 +266,7 @@ namespace Agent_App_V2
             this.tbSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbSearch.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.tbSearch.ForeColor = System.Drawing.Color.DimGray;
-            this.tbSearch.Location = new System.Drawing.Point(654, 413);
+            this.tbSearch.Location = new System.Drawing.Point(548, 432);
             this.tbSearch.Name = "tbSearch";
             this.tbSearch.Size = new System.Drawing.Size(402, 22);
             this.tbSearch.TabIndex = 26;
@@ -280,11 +281,11 @@ namespace Agent_App_V2
             this.btnReset.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(31)))), ((int)(((byte)(191)))));
             this.btnReset.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
             this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReset.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnReset.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.btnReset.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnReset.Location = new System.Drawing.Point(252, 413);
+            this.btnReset.Location = new System.Drawing.Point(230, 433);
             this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(115, 28);
+            this.btnReset.Size = new System.Drawing.Size(75, 23);
             this.btnReset.TabIndex = 28;
             this.btnReset.Text = "RESET";
             this.btnReset.UseVisualStyleBackColor = false;
@@ -295,7 +296,7 @@ namespace Agent_App_V2
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.label2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label2.Location = new System.Drawing.Point(646, 86);
+            this.label2.Location = new System.Drawing.Point(543, 86);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(172, 25);
             this.label2.TabIndex = 30;
@@ -306,7 +307,7 @@ namespace Agent_App_V2
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.label3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label3.Location = new System.Drawing.Point(235, 274);
+            this.label3.Location = new System.Drawing.Point(187, 274);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(150, 25);
             this.label3.TabIndex = 31;
@@ -328,7 +329,7 @@ namespace Agent_App_V2
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.label5.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label5.Location = new System.Drawing.Point(268, 143);
+            this.label5.Location = new System.Drawing.Point(235, 172);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(112, 25);
             this.label5.TabIndex = 33;
@@ -361,7 +362,7 @@ namespace Agent_App_V2
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.label8.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label8.Location = new System.Drawing.Point(415, 88);
+            this.label8.Location = new System.Drawing.Point(348, 88);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(119, 25);
             this.label8.TabIndex = 36;
@@ -372,7 +373,7 @@ namespace Agent_App_V2
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.label9.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label9.Location = new System.Drawing.Point(268, 88);
+            this.label9.Location = new System.Drawing.Point(235, 88);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(102, 25);
             this.label9.TabIndex = 37;
@@ -384,9 +385,9 @@ namespace Agent_App_V2
             this.tbPkgDesc.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbPkgDesc.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.tbPkgDesc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.tbPkgDesc.Location = new System.Drawing.Point(273, 172);
+            this.tbPkgDesc.Location = new System.Drawing.Point(240, 200);
             this.tbPkgDesc.Name = "tbPkgDesc";
-            this.tbPkgDesc.Size = new System.Drawing.Size(271, 80);
+            this.tbPkgDesc.Size = new System.Drawing.Size(227, 52);
             this.tbPkgDesc.TabIndex = 38;
             this.tbPkgDesc.Tag = "Package Description";
             this.tbPkgDesc.Text = "";
@@ -403,7 +404,7 @@ namespace Agent_App_V2
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.btnAdd.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnAdd.Location = new System.Drawing.Point(582, 307);
+            this.btnAdd.Location = new System.Drawing.Point(489, 307);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(30, 37);
             this.btnAdd.TabIndex = 39;
@@ -422,7 +423,7 @@ namespace Agent_App_V2
             this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemove.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.btnRemove.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnRemove.Location = new System.Drawing.Point(582, 357);
+            this.btnRemove.Location = new System.Drawing.Point(489, 357);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(30, 37);
             this.btnRemove.TabIndex = 40;
@@ -438,7 +439,7 @@ namespace Agent_App_V2
             this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel10.Location = new System.Drawing.Point(0, 0);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(1116, 27);
+            this.panel10.Size = new System.Drawing.Size(1015, 27);
             this.panel10.TabIndex = 43;
             // 
             // pictureBox2
@@ -472,7 +473,7 @@ namespace Agent_App_V2
             this.btnMinimize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(33)))), ((int)(((byte)(66)))));
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimize.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimize.Image")));
-            this.btnMinimize.Location = new System.Drawing.Point(1043, 1);
+            this.btnMinimize.Location = new System.Drawing.Point(942, 1);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(32, 25);
             this.btnMinimize.TabIndex = 2;
@@ -484,13 +485,12 @@ namespace Agent_App_V2
             this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnExit.BackColor = System.Drawing.Color.Transparent;
             this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnExit.FlatAppearance.BorderSize = 0;
             this.btnExit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(33)))), ((int)(((byte)(66)))));
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
-            this.btnExit.Location = new System.Drawing.Point(1080, 1);
+            this.btnExit.Location = new System.Drawing.Point(979, 1);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(32, 25);
             this.btnExit.TabIndex = 0;
@@ -500,14 +500,35 @@ namespace Agent_App_V2
             // header
             // 
             this.header.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.header.Controls.Add(this.btnLogout);
             this.header.Controls.Add(this.btnBack);
             this.header.Controls.Add(this.lblLoginMsg);
-            this.header.Controls.Add(this.panel2);
             this.header.Dock = System.Windows.Forms.DockStyle.Top;
             this.header.Location = new System.Drawing.Point(0, 27);
             this.header.Name = "header";
-            this.header.Size = new System.Drawing.Size(1116, 45);
+            this.header.Size = new System.Drawing.Size(1015, 45);
             this.header.TabIndex = 59;
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.BackColor = System.Drawing.Color.Transparent;
+            this.btnLogout.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLogout.BackgroundImage")));
+            this.btnLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogout.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
+            this.btnLogout.FlatAppearance.BorderSize = 0;
+            this.btnLogout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnLogout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnLogout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(23)))), ((int)(((byte)(46)))));
+            this.btnLogout.Location = new System.Drawing.Point(926, 7);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(10);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(27, 30);
+            this.btnLogout.TabIndex = 17;
+            this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnBack
             // 
@@ -541,45 +562,18 @@ namespace Agent_App_V2
             this.lblLoginMsg.Size = new System.Drawing.Size(0, 30);
             this.lblLoginMsg.TabIndex = 2;
             // 
-            // panel2
+            // label1
             // 
-            this.panel2.Controls.Add(this.btnLogout);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(1025, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(91, 45);
-            this.panel2.TabIndex = 21;
-            // 
-            // btnLogout
-            // 
-            this.btnLogout.BackColor = System.Drawing.Color.Transparent;
-            this.btnLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLogout.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
-            this.btnLogout.FlatAppearance.BorderSize = 0;
-            this.btnLogout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnLogout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogout.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnLogout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(23)))), ((int)(((byte)(46)))));
-            this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
-            this.btnLogout.Location = new System.Drawing.Point(17, 6);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(10);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(27, 30);
-            this.btnLogout.TabIndex = 18;
-            this.btnLogout.UseVisualStyleBackColor = false;
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(626, 411);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(30, 25);
-            this.pictureBox1.TabIndex = 61;
-            this.pictureBox1.TabStop = false;
-            // 
+
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label1.Location = new System.Drawing.Point(543, 404);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(181, 25);
+            this.label1.TabIndex = 60;
+            this.label1.Text = "Search for products:";
+            //
             // btnCancel
             // 
             this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(63)))), ((int)(((byte)(159)))));
@@ -604,7 +598,8 @@ namespace Agent_App_V2
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(23)))), ((int)(((byte)(46)))));
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(1116, 503);
+            this.ClientSize = new System.Drawing.Size(1015, 503);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.header);
             this.Controls.Add(this.panel10);
@@ -619,6 +614,7 @@ namespace Agent_App_V2
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.tbSearch);
             this.Controls.Add(this.btnSave);
@@ -629,14 +625,12 @@ namespace Agent_App_V2
             this.Controls.Add(this.tbPkgAgencyCommission);
             this.Controls.Add(this.tbPkgBasePrice);
             this.Controls.Add(this.tbPkgName);
-            this.Controls.Add(this.pictureBox1);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmAddEditPackage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmAddEditPackage_FormClosing);
             this.Load += new System.EventHandler(this.frmAddEditPackage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAddedPS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNotAddedPS)).EndInit();
@@ -645,8 +639,6 @@ namespace Agent_App_V2
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.header.ResumeLayout(false);
             this.header.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -664,6 +656,7 @@ namespace Agent_App_V2
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.TextBox tbSearch;
         private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -681,11 +674,14 @@ namespace Agent_App_V2
         private PictureBox pictureBox2;
         private Label lblPackage;
         private Panel header;
+        private Button btnLogout;
         private Button btnBack;
         private Label lblLoginMsg;
+        private Label label1;
         private Panel panel2;
         private Button btnLogout;
         private PictureBox pictureBox1;
         private Button btnCancel;
+
     }
 }

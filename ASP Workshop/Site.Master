@@ -8,7 +8,6 @@
     <title></title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <link href="Content/mdb.min.css" rel="stylesheet" />
     <link href="Content/styles.css" rel="stylesheet" />
@@ -21,7 +20,7 @@
         <form id="form1" class="form-inline  " runat="server">
             <%--Start Navbar--%>
 
-            <nav class="navbar navbar-default navbar-fixed-top">
+            <nav class="navbar navbar-default  navbar-fixed-top">
                 <div class="container-fluid">
                     <%--Navbar header--%>
                     <div class="navbar-header">
@@ -36,21 +35,30 @@
                     </div>
 
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <ul class="nav navbar-nav">
+                        <ul class="nav navbar-nav ">
                             <li class="active"><a href="Default.aspx">Home <span class="sr-only">(current)</span></a></li>
-                            <%--<li><a href="CustomerLanding.aspx">Your Account</a></li>--%>
+                            <%--<li><a href="Purchases.aspx">Your Account</a></li>--%>
                             <li id="CustomerMenu" class="dropdown" runat="server">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Account<span class="caret"></span></a>
+                                <a href="CustomerLanding.aspx" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Account<span class="caret"></span></a>
                                 <ul class="dropdown-menu" role="menu">
                                     <li><a href="Customer.aspx">Your Account</a></li>
                                     <li class="divider"></li>
-                                    <li><a href="CustomerLanding.aspx">Your Bookings</a></li>
+                                    <li><a href="Purchases.aspx">Your Purchases</a></li>
                                     <li class="divider"></li>
                                 </ul>
                             </li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
-                            <li id="LogoutOption" runat="server"><asp:Button CssClass="" ID="btnLogout" runat="server" OnClick="Log_Out" Text="Logout" /></li>
+                            <li>
+                                
+                                <asp:LinkButton ID="lblWelcome" runat="server"></asp:LinkButton>
+                                
+                              <%-- <asp:Label ID="lblWelcome" runat="server" ></asp:Label>--%>
+                            </li>
+                            <li id="LogoutOption" runat="server">
+                                <asp:LinkButton ID="LogOut" OnClick="Log_Out"  runat="server">Logout</asp:LinkButton>
+
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -62,19 +70,21 @@
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
         </form>
+
     </div>
+         <!--Footer-->
+        <footer class=" center-on-small-only">
+        
+            <!--Copyright-->
+            <div class="container text-center">
+                © 2017 Copyright: <a href="Default.aspx">Travel Experts Inc. </a>
+            </div>
+            <!--/.Copyright-->
 
-    <!--Footer-->
-    <footer class="navbar-fixed-bottom center-on-small-only">
-
-        <!--Copyright-->
-        <div class="text-center">
-            © 2017 Copyright: <a href="Default.aspx">Travel Experts Inc. </a>
-        </div>
-        <!--/.Copyright-->
-
-    </footer>
+        </footer>
     <!--/.Footer-->
+
+   
 
     <!-- SCRIPTS -->
 

@@ -1,52 +1,39 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CustomerLanding.aspx.cs" Inherits="ASP_Workshop.WebForm2" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CustomerLanding.aspx.cs" Inherits="ASP_Workshop.WebForm4" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <asp:Label ID="lblWelcome" runat="server"></asp:Label>
-
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-3">
-                <asp:GridView CssClass="table table-hover table-striped" ID="gvBookings" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" DataKeyNames="BookingId" OnSelectedIndexChanged="gvBookings_SelectedIndexChanged">
-                    <Columns>
-                        <asp:CommandField ShowSelectButton="True" />
-                        <asp:BoundField DataField="BookingDate" DataFormatString="{0:d}" HeaderText="Booking Date" SortExpression="BookingDate" />
-                        <asp:BoundField DataField="BookingNo" HeaderText="Booking Number" SortExpression="BookingNo" />
-                    </Columns>
-                </asp:GridView>
-                <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="GetBookings" TypeName="ASP_Workshop.TravelExpertsDB">
-                    <SelectParameters>
-                        <asp:SessionParameter Name="CustomerId" SessionField="CustomerId" Type="Int32" />
-                    </SelectParameters>
-                </asp:ObjectDataSource>
+   
+        <div class="col-sm-4 col-sm-offset-2  text-xs-center">
+            <div class="divider-new">
+                <label class="h2-responsive">Account Details</label>
             </div>
-            <div class="col-sm-9">
-                <asp:GridView CssClass="table table-hover table-striped" ID="gvDetails" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource2">
-                    <Columns>
-                        <asp:BoundField DataField="TripStart" DataFormatString="{0:d}" HeaderText="Trip Start Date" SortExpression="TripStart" />
-                        <asp:BoundField DataField="TripEnd" DataFormatString="{0:d}" HeaderText="Trip End Date" SortExpression="TripEnd" />
-                        <asp:BoundField DataField="Description" HeaderText="Description" SortExpression="Description" />
-                        <asp:BoundField DataField="Destination" HeaderText="Destination" SortExpression="Destination" />
-                        <asp:BoundField DataField="BasePrice" HeaderText="Base Price" SortExpression="BasePrice" />
-                        <asp:BoundField DataField="AgencyCommission" HeaderText="Commission" SortExpression="AgencyCommission" />
-                        <asp:BoundField DataField="FeeAmt" HeaderText="Fee" SortExpression="FeeAmt" />
-                    </Columns>
-                </asp:GridView>
-                <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="GetBookingDetails" TypeName="ASP_Workshop.TravelExpertsDB">
-                    <SelectParameters>
-                        <asp:ControlParameter ControlID="gvBookings" Name="bookingId" PropertyName="SelectedValue" Type="Int32" />
-                    </SelectParameters>
-                </asp:ObjectDataSource>
-
-                <asp:Label ID="Label1" runat="server" Text="Booking Total:"></asp:Label>
-                <asp:TextBox CssClass="form-control-success" ID="txtBookingTotal" runat="server"></asp:TextBox>
-                
-                <br/>
-
-                <asp:Label ID="Label2" runat="server" Text="Customer Total:"></asp:Label>
-                <asp:TextBox CssClass="form-control-danger" ID="txtTotalCost" runat="server"></asp:TextBox>
+            <div class="jumbotron">
+                <p >Update contact information and address</p> 
+                <asp:Button CssClass="btn btn-primary waves-effect waves-light" ID="AccountDetails" runat="server" Text="Change Account Details" OnClick="AccountDetails_Click" />
             </div>
         </div>
-    </div>
+        <div class="col-sm-4   text-xs-center">
+            <div class="divider-new">
+                <label class="h2-responsive">Purchases</label>
+            </div>
+            <div class="jumbotron">
+                <p >View Details on Past Bookings and Puchases</p> 
+                <asp:Button CssClass="btn btn-primary waves-effect waves-light" ID="BookingDetails" runat="server" Text="View BookingDetails" OnClick="BookingDetails_Click"  />
+            </div>
+        </div>
+
+    <%-- <div class="card">
+            <div class="card-block">
+                <div class="md-textarea col-sm-8 col-sm-offset-3">
+                    <div class="col-sm-4">
+                        <h4 class="card-header">Purchases</h4>
+                        <p class="card-subtitle">View Details on Past Bookings and Puchases</p> 
+                    </div>
+                    <div class="col-sm-4">
+                        <button class="btn btn-success">View Booking Details</button> 
+                    </div>
+                </div>
+            </div>
+        
+       </div> <br/>--%>
 </asp:Content>

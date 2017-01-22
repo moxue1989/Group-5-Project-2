@@ -131,6 +131,7 @@
     <Content Include="Scripts\tether.min.js" />
     <Content Include="Site.Master" />
     <Content Include="Default.aspx" />
+    <Content Include="Purchases.aspx" />
     <Content Include="CustomerLanding.aspx" />
     <Content Include="WebImages\Beach Therapy.jpg" />
     <Content Include="WebImages\Login Manager.png" />
@@ -167,12 +168,12 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="CustomerLanding.aspx.cs">
-      <DependentUpon>CustomerLanding.aspx</DependentUpon>
+    <Compile Include="Purchases.aspx.cs">
+      <DependentUpon>Purchases.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="CustomerLanding.aspx.designer.cs">
-      <DependentUpon>CustomerLanding.aspx</DependentUpon>
+    <Compile Include="Purchases.aspx.designer.cs">
+      <DependentUpon>Purchases.aspx</DependentUpon>
     </Compile>
     <Compile Include="Customer.aspx.cs">
       <DependentUpon>Customer.aspx</DependentUpon>
@@ -180,6 +181,13 @@
     </Compile>
     <Compile Include="Customer.aspx.designer.cs">
       <DependentUpon>Customer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerLanding.aspx.cs">
+      <DependentUpon>CustomerLanding.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerLanding.aspx.designer.cs">
+      <DependentUpon>CustomerLanding.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />

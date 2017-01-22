@@ -9,12 +9,15 @@ namespace ASP_Workshop
 {
     public partial class Site : System.Web.UI.MasterPage
     {
+     
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["Customer"] != null)
             {
+
                 CustomerMenu.Visible = true;
                 LogoutOption.Visible = true;
+                lblWelcome.Text = "Welcome Back ";
             }
             else
             {
