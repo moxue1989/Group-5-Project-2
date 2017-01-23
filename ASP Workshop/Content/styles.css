@@ -3,18 +3,17 @@
   
     padding: 34.5px;
 }
+#lblWelcome {
+    cursor: default;
+}
 #title, .modal-title  {
     color: darkslategray;
 }
 .divider {
      background-color: whitesmoke;
 }
-/*footer {
-    height: 10px;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-}*/
+
+
 .btnLogout {
    color: #000000; 
    text-decoration: none; 
@@ -28,13 +27,24 @@ a.btnLogout:hover {
     color: teal
 }
 .navbar, .navbar-nav {
-    background-color: teal
+    background-color: teal;
 }
 .header {
     padding: 30px;
 }
+.navbar-toggle collapsed {
+    border: 1px solid white;
+}
 #btnRegister {
     font-size: 5em;
+}
+/*tr:hover {
+    background-color: #f5f5f5;
+    color: darkslategray;
+}*/
+.table {
+    background-color: white;
+    color: darkslategray;
 }
 .password {
     padding-bottom: 1px;
@@ -43,6 +53,9 @@ a.btnLogout:hover {
     bottom: 20px;
     max-width: 565px;
 }
+/*.table-hover {
+    background-color: white;
+}*/
 .content {
 
     background-position: center;

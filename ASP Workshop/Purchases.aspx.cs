@@ -28,8 +28,9 @@ namespace ASP_Workshop
                 {
                     totalCost += book.GetTotal();
                 }
-                txtTotalCost.Text = totalCost.ToString("c");
+                
                 CreateBookings();
+                lblTotalCost.Text = totalCost.ToString("c");
             }
             else
             {
@@ -45,11 +46,13 @@ namespace ASP_Workshop
                 var divRowBk = new System.Web.UI.HtmlControls.HtmlGenericControl("DIV");
                 divRowBk.Attributes.Add("class", "row");
 
-                var divColBk = new System.Web.UI.HtmlControls.HtmlGenericControl("DIV");
-                divColBk.Attributes.Add("class", "col-sm-8");
-
                 var divColTotal = new System.Web.UI.HtmlControls.HtmlGenericControl("DIV");
-                divColTotal.Attributes.Add("class", "col-sm-4");
+                divColTotal.Attributes.Add("class", "col-sm-12");
+
+                var divColBk = new System.Web.UI.HtmlControls.HtmlGenericControl("DIV");
+                divColBk.Attributes.Add("class", "col-sm-8 col-sm-offset-2");
+
+               
 
 
 
@@ -58,21 +61,22 @@ namespace ASP_Workshop
                 divRowDt.Attributes.Add("class", "row");
                 
                 var divColDt = new System.Web.UI.HtmlControls.HtmlGenericControl("DIV");
-                divColDt.Attributes.Add("class", "col-sm-12");
+                divColDt.Attributes.Add("class", "col-sm-8 col-sm-offset-2");
 
                 Table tableBk = new Table();
-                TableRow rowBkHead = new TableRow();
-                TableCell[] cellsBkHead = new TableCell[4];
-                cellsBkHead[0] = new TableCell();
-                cellsBkHead[1] = new TableCell();
-                cellsBkHead[2] = new TableCell();
-                cellsBkHead[3] = new TableCell();
+                TableHeaderRow rowBkHead = new TableHeaderRow();
+                TableHeaderCell[] cellsBkHead = new TableHeaderCell[4];
+                cellsBkHead[0] = new TableHeaderCell();
+                cellsBkHead[1] = new TableHeaderCell();
+                cellsBkHead[2] = new TableHeaderCell();
+                cellsBkHead[3] = new TableHeaderCell();
                 cellsBkHead[0].Text = "Order Date";
                 cellsBkHead[1].Text = "Booking Number";
                 cellsBkHead[2].Text = "Traveller Count";
                 cellsBkHead[3].Text = "Trip Type";
                 rowBkHead.Cells.AddRange(cellsBkHead);
                 tableBk.Rows.Add(rowBkHead);
+                rowBkHead.Attributes.Add("style", "background-color: teal; color: whitesmoke;");
 
                 TableRow rowBkData = new TableRow();
                 TableCell[] cellsBkData = new TableCell[4];
@@ -87,21 +91,20 @@ namespace ASP_Workshop
                 rowBkData.Cells.AddRange(cellsBkData);
                 tableBk.Rows.Add(rowBkData);
 
-                tableBk.CssClass = "table table-hover table-striped";
+                tableBk.CssClass = "table table-responsive";
 
                 
                 // details table
                 details = TravelExpertsDB.GetBookingDetails(booking.BookingId);
                 Table tableDt = new Table();
+                TableHeaderRow rowDtHead = new TableHeaderRow();
+                TableHeaderCell[] cellsDtHead = new TableHeaderCell[5];
 
-                TableRow rowDtHead = new TableRow();
-                TableCell[] cellsDtHead = new TableCell[5];
-
-                cellsDtHead[0] = new TableCell();
-                cellsDtHead[1] = new TableCell();
-                cellsDtHead[2] = new TableCell();
-                cellsDtHead[3] = new TableCell();
-                cellsDtHead[4] = new TableCell();
+                cellsDtHead[0] = new TableHeaderCell();
+                cellsDtHead[1] = new TableHeaderCell();
+                cellsDtHead[2] = new TableHeaderCell();
+                cellsDtHead[3] = new TableHeaderCell();
+                cellsDtHead[4] = new TableHeaderCell();
                 cellsDtHead[0].Text = "Itinerary Number";
                 cellsDtHead[1].Text = "Trip Start";
                 cellsDtHead[2].Text = "Trip End";
@@ -110,6 +113,7 @@ namespace ASP_Workshop
 
                 rowDtHead.Cells.AddRange(cellsDtHead);
                 tableDt.Rows.Add(rowDtHead);
+                rowDtHead.Attributes.Add("style", "background-color: darkslategray; color: whitesmoke;");
 
                 foreach (var detail in details)
                 {
@@ -131,14 +135,12 @@ namespace ASP_Workshop
                     tableDt.Rows.Add(rowDtData);
                 }
 
-                tableDt.CssClass = "table table-hover table-striped";
-
                 Label lbBkTotalHead = new Label();
                 lbBkTotalHead.Text = "Booking Total";
-                lbBkTotalHead.Width = 150;
-
+                lbBkTotalHead.Width = 120;
+                lbBkTotalHead.Attributes.Add("class", "col-xs-5  col-xs-offset-6  col-md-4 col-md-offset-7");
                 Label lbBkTotal = new Label();
-                lbBkTotal.Width = 150;
+                lbBkTotal.Width = 90;
                 lbBkTotal.Text = booking.GetTotal().ToString("c");
 
 
@@ -147,8 +149,13 @@ namespace ASP_Workshop
                 divColTotal.Controls.Add(lbBkTotalHead);
                 divColTotal.Controls.Add(lbBkTotal);
 
-                divRowBk.Controls.Add(divColBk);
                 divRowBk.Controls.Add(divColTotal);
+
+                tableDt.CssClass = "table table-responsive";
+
+                
+
+                divRowBk.Controls.Add(divColBk);
 
                 divColDt.Controls.Add(tableDt);
                 divRowDt.Controls.Add(divColDt);
@@ -159,50 +166,13 @@ namespace ASP_Workshop
                 var breakTag = new System.Web.UI.HtmlControls.HtmlGenericControl("BR");
                 Container.Controls.Add(breakTag);
                 Container.Controls.Add(breakTag);
-
-                //pnlBookings.Controls.Add(tableBk);
-                //pnlBookings.Controls.Add(tableDt);
-                //pnlBookings.Controls.Add(lbBkTotalHead);
-                //pnlBookings.Controls.Add(lbBkTotal);
-
-
-
-                //GridView gvBookings2 = new GridView();
-                //List<Booking> bookingData = new List<Booking>();
-                //bookingData.Add(bookings[i]);
-                //gvBookings2.AutoGenerateColumns = false;
-
-                //BoundField boundfield = new BoundField();
-                //boundfield.DataField = dt.Columns[i].ColumnName.ToString();
-                //boundfield.HeaderText = dt.Columns[i].ColumnName.ToString();
-                //gvEmployee.Columns.Add(boundfield);
-
-                //gvBookings2.DataSource = bookingData;
-                //gvBookings2.DataBind();
-                //gvBookings2.CssClass = "table table-hover table-striped";
-                //pnlBookings.Controls.Add(gvBookings2);
-
-                //details = TravelExpertsDB.GetBookingDetails(bookings[i].BookingId);
-                //GridView gvDetails = new GridView();
-                //gvDetails.DataSource = details;
-                //gvDetails.DataBind();
-                //gvDetails.CssClass = "table table-hover table-striped";
-                //pnlBookings.Controls.Add(gvDetails);
+                
             }
         }
 
         protected void gvBookings_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //int index = gvBookings.SelectedIndex;
-            //Booking booking = bookings[index];
-            //details = TravelExpertsDB.GetBookingDetails(booking.BookingId);
-
-            //decimal bookingTotal = 0;
-            //foreach (var detail in details)
-            //{
-            //    bookingTotal += detail.GetTotal();
-            //}
-            //txtBookingTotal.Text = bookingTotal.ToString("c");
+  
         }
     }
 }

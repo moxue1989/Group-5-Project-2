@@ -21,7 +21,7 @@ namespace ASP_Workshop
                
                 CustomerMenu.Visible = true;
                 LogoutOption.Visible = true;
-                lblWelcome.Text = "Welcome Back " + customer.CustFirstName + " " + customer.CustLastName;
+                lblWelcome.Text = "Hello " + customer.CustFirstName + " " + customer.CustLastName;
                 
             }
             else
