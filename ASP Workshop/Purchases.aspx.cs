@@ -41,6 +41,25 @@ namespace ASP_Workshop
         {
             foreach(var booking in bookings)
             {
+                // bookings row
+                var divRowBk = new System.Web.UI.HtmlControls.HtmlGenericControl("DIV");
+                divRowBk.Attributes.Add("class", "row");
+
+                var divColBk = new System.Web.UI.HtmlControls.HtmlGenericControl("DIV");
+                divColBk.Attributes.Add("class", "col-sm-8");
+
+                var divColTotal = new System.Web.UI.HtmlControls.HtmlGenericControl("DIV");
+                divColTotal.Attributes.Add("class", "col-sm-4");
+
+
+
+                // details row
+                var divRowDt = new System.Web.UI.HtmlControls.HtmlGenericControl("DIV");
+                divRowDt.Attributes.Add("class", "row");
+                
+                var divColDt = new System.Web.UI.HtmlControls.HtmlGenericControl("DIV");
+                divColDt.Attributes.Add("class", "col-sm-12");
+
                 Table tableBk = new Table();
                 TableRow rowBkHead = new TableRow();
                 TableCell[] cellsBkHead = new TableCell[4];
@@ -69,7 +88,7 @@ namespace ASP_Workshop
                 tableBk.Rows.Add(rowBkData);
 
                 tableBk.CssClass = "table table-hover table-striped";
-                pnlBookings.Controls.Add(tableBk);
+
                 
                 // details table
                 details = TravelExpertsDB.GetBookingDetails(booking.BookingId);
@@ -113,7 +132,6 @@ namespace ASP_Workshop
                 }
 
                 tableDt.CssClass = "table table-hover table-striped";
-                pnlBookings.Controls.Add(tableDt);
 
                 Label lbBkTotalHead = new Label();
                 lbBkTotalHead.Text = "Booking Total";
@@ -123,8 +141,30 @@ namespace ASP_Workshop
                 lbBkTotal.Width = 150;
                 lbBkTotal.Text = booking.GetTotal().ToString("c");
 
-                pnlBookings.Controls.Add(lbBkTotalHead);
-                pnlBookings.Controls.Add(lbBkTotal);
+
+                divColBk.Controls.Add(tableBk);
+
+                divColTotal.Controls.Add(lbBkTotalHead);
+                divColTotal.Controls.Add(lbBkTotal);
+
+                divRowBk.Controls.Add(divColBk);
+                divRowBk.Controls.Add(divColTotal);
+
+                divColDt.Controls.Add(tableDt);
+                divRowDt.Controls.Add(divColDt);
+
+                Container.Controls.Add(divRowBk);
+                Container.Controls.Add(divRowDt);
+
+                var breakTag = new System.Web.UI.HtmlControls.HtmlGenericControl("BR");
+                Container.Controls.Add(breakTag);
+                Container.Controls.Add(breakTag);
+
+                //pnlBookings.Controls.Add(tableBk);
+                //pnlBookings.Controls.Add(tableDt);
+                //pnlBookings.Controls.Add(lbBkTotalHead);
+                //pnlBookings.Controls.Add(lbBkTotal);
+
 
 
                 //GridView gvBookings2 = new GridView();
