@@ -3,16 +3,23 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    
+
 
     <div class="container">
         <div class="row">
-            <div class="col-sm-8 col-sm-offset-1 divider-new">
+            <div class="col-sm-12 col-sm-offset-1 divider-new">
                 <label class="h2-responsive">Purchase Details</label>
             </div>
-            <div class="col-sm-4 col-md-4">
-                
-                <div class="table-responsive">
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12 col-sm-offset-1 divider-new">
+                <asp:Panel CssClass="form-horizontal" ID="pnlBookings" runat="server">
+                </asp:Panel>
+            </div>
+        </div>
+
+        <%--<div class="table-responsive">
                    <asp:GridView CssClass="table table-hover table-striped" ID="gvBookings" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" DataKeyNames="BookingId" OnSelectedIndexChanged="gvBookings_SelectedIndexChanged" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal">
                     <Columns>
                         <asp:CommandField ShowSelectButton="True" />
@@ -29,18 +36,15 @@
                     <SortedDescendingCellStyle BackColor="#E5E5E5" />
                     <SortedDescendingHeaderStyle BackColor="#275353" />
                 </asp:GridView> 
-                </div>
-                
-                <asp:Panel ID="pnlBookings" runat="server">
-                </asp:Panel>
-                
-                <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="GetBookings" TypeName="ASP_Workshop.TravelExpertsDB">
+                </div>--%>
+
+        <%--                <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="GetBookings" TypeName="ASP_Workshop.TravelExpertsDB">
                     <SelectParameters>
                         <asp:SessionParameter Name="CustomerId" SessionField="CustomerId" Type="Int32" />
                     </SelectParameters>
-                </asp:ObjectDataSource>
-            </div>
-            <div class="col-sm-8 col-md-8">
+                </asp:ObjectDataSource>--%>
+
+        <%-- <div class="col-sm-8 col-md-8">
                 <div class="table-responsive">
                      <asp:GridView CssClass="table table-hover table-striped" ID="gvDetails" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource2" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" GridLines="Horizontal">
                     <Columns>
@@ -62,22 +66,21 @@
                     <SortedDescendingCellStyle BackColor="#E5E5E5" />
                     <SortedDescendingHeaderStyle BackColor="#275353" />
                 </asp:GridView>
-                </div>
-               
+                </div>--%>
+        <%--               
                 <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" SelectMethod="GetBookingDetails" TypeName="ASP_Workshop.TravelExpertsDB">
                     <SelectParameters>
                         <asp:ControlParameter ControlID="gvBookings" Name="bookingId" PropertyName="SelectedValue" Type="Int32" />
                     </SelectParameters>
-                </asp:ObjectDataSource>
+                </asp:ObjectDataSource>--%>
 
-                <asp:Label ID="Label1" runat="server" Text="Booking Total:"></asp:Label>
-                <asp:TextBox CssClass="form-control-success" ID="txtBookingTotal" runat="server"></asp:TextBox>
-                
-                <br/>
+        <asp:Label ID="Label1" runat="server" Text="Booking Total:"></asp:Label>
+        <asp:TextBox CssClass="form-control-success" ID="txtBookingTotal" runat="server"></asp:TextBox>
 
-                <asp:Label ID="Label2" runat="server" Text="Customer Total:"></asp:Label>
-                <asp:TextBox CssClass="form-control-danger" ID="txtTotalCost" runat="server"></asp:TextBox>
-            </div>
-        </div>
+        <br />
+
+        <asp:Label ID="Label2" runat="server" Text="Customer Total:"></asp:Label>
+        <asp:TextBox CssClass="form-control-danger" ID="txtTotalCost" runat="server"></asp:TextBox>
     </div>
+
 </asp:Content>
