@@ -55,7 +55,7 @@ namespace Agent_App_V2
             this.txtProdName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtProdName.Font = new System.Drawing.Font("Segoe UI", 13F);
             this.txtProdName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.txtProdName.Location = new System.Drawing.Point(87, 97);
+            this.txtProdName.Location = new System.Drawing.Point(89, 97);
             this.txtProdName.Margin = new System.Windows.Forms.Padding(10);
             this.txtProdName.Name = "txtProdName";
             this.txtProdName.Size = new System.Drawing.Size(228, 24);
@@ -74,7 +74,7 @@ namespace Agent_App_V2
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(87, 146);
+            this.btnSave.Location = new System.Drawing.Point(87, 143);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(95, 23);
             this.btnSave.TabIndex = 1;
@@ -104,7 +104,7 @@ namespace Agent_App_V2
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(228, 146);
+            this.btnCancel.Location = new System.Drawing.Point(228, 143);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(95, 23);
             this.btnCancel.TabIndex = 5;
@@ -122,7 +122,7 @@ namespace Agent_App_V2
             this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel10.Location = new System.Drawing.Point(0, 0);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(408, 27);
+            this.panel10.Size = new System.Drawing.Size(400, 27);
             this.panel10.TabIndex = 9;
             // 
             // pictureBox2
@@ -155,7 +155,7 @@ namespace Agent_App_V2
             this.btnMinimize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(33)))), ((int)(((byte)(66)))));
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimize.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimize.Image")));
-            this.btnMinimize.Location = new System.Drawing.Point(338, 1);
+            this.btnMinimize.Location = new System.Drawing.Point(330, 1);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(32, 25);
             this.btnMinimize.TabIndex = 2;
@@ -172,7 +172,7 @@ namespace Agent_App_V2
             this.btnExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(33)))), ((int)(((byte)(66)))));
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
-            this.btnExit.Location = new System.Drawing.Point(372, 1);
+            this.btnExit.Location = new System.Drawing.Point(364, 1);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(32, 25);
             this.btnExit.TabIndex = 0;
@@ -206,7 +206,7 @@ namespace Agent_App_V2
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(408, 197);
+            this.ClientSize = new System.Drawing.Size(400, 200);
             this.Controls.Add(this.pictureBox8);
             this.Controls.Add(this.panel10);
             this.Controls.Add(this.btnCancel);
