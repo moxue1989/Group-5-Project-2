@@ -106,6 +106,7 @@
             this.btnMinimize.Size = new System.Drawing.Size(32, 25);
             this.btnMinimize.TabIndex = 2;
             this.btnMinimize.UseVisualStyleBackColor = false;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
             // btnExit
             // 
@@ -122,6 +123,7 @@
             this.btnExit.Size = new System.Drawing.Size(32, 25);
             this.btnExit.TabIndex = 0;
             this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnCancel
             // 
@@ -182,10 +184,11 @@
             this.txtSuppName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.txtSuppName.Location = new System.Drawing.Point(89, 97);
             this.txtSuppName.Margin = new System.Windows.Forms.Padding(10);
+            this.txtSuppName.MaxLength = 25;
             this.txtSuppName.Name = "txtSuppName";
             this.txtSuppName.Size = new System.Drawing.Size(228, 24);
             this.txtSuppName.TabIndex = 20;
-            this.txtSuppName.Tag = "Product Name";
+            this.txtSuppName.Tag = "Supplier Name";
             this.txtSuppName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // panel1

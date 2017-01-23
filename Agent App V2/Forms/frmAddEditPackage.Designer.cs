@@ -70,20 +70,20 @@ namespace Agent_App_V2
             this.header = new System.Windows.Forms.Panel();
             this.btnBack = new System.Windows.Forms.Button();
             this.lblLoginMsg = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnLogout = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAddedPS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNotAddedPS)).BeginInit();
             this.panel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.header.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tbPkgAgencyCommission
@@ -93,6 +93,7 @@ namespace Agent_App_V2
             this.tbPkgAgencyCommission.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.tbPkgAgencyCommission.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.tbPkgAgencyCommission.Location = new System.Drawing.Point(353, 114);
+            this.tbPkgAgencyCommission.MaxLength = 6;
             this.tbPkgAgencyCommission.Name = "tbPkgAgencyCommission";
             this.tbPkgAgencyCommission.Size = new System.Drawing.Size(114, 22);
             this.tbPkgAgencyCommission.TabIndex = 17;
@@ -106,6 +107,7 @@ namespace Agent_App_V2
             this.tbPkgBasePrice.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.tbPkgBasePrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.tbPkgBasePrice.Location = new System.Drawing.Point(240, 114);
+            this.tbPkgBasePrice.MaxLength = 6;
             this.tbPkgBasePrice.Name = "tbPkgBasePrice";
             this.tbPkgBasePrice.Size = new System.Drawing.Size(97, 22);
             this.tbPkgBasePrice.TabIndex = 16;
@@ -268,8 +270,9 @@ namespace Agent_App_V2
             this.tbSearch.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tbSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbSearch.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.tbSearch.ForeColor = System.Drawing.Color.DimGray;
+            this.tbSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.tbSearch.Location = new System.Drawing.Point(578, 432);
+            this.tbSearch.MaxLength = 20;
             this.tbSearch.Name = "tbSearch";
             this.tbSearch.Size = new System.Drawing.Size(375, 22);
             this.tbSearch.TabIndex = 26;
@@ -407,6 +410,7 @@ namespace Agent_App_V2
             this.tbPkgDesc.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.tbPkgDesc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.tbPkgDesc.Location = new System.Drawing.Point(240, 200);
+            this.tbPkgDesc.MaxLength = 50;
             this.tbPkgDesc.Name = "tbPkgDesc";
             this.tbPkgDesc.Size = new System.Drawing.Size(227, 52);
             this.tbPkgDesc.TabIndex = 38;
@@ -562,6 +566,36 @@ namespace Agent_App_V2
             this.lblLoginMsg.Size = new System.Drawing.Size(0, 30);
             this.lblLoginMsg.TabIndex = 2;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnLogout);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(921, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(94, 45);
+            this.panel1.TabIndex = 19;
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.BackColor = System.Drawing.Color.Transparent;
+            this.btnLogout.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLogout.BackgroundImage")));
+            this.btnLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogout.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
+            this.btnLogout.FlatAppearance.BorderSize = 0;
+            this.btnLogout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnLogout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnLogout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(23)))), ((int)(((byte)(46)))));
+            this.btnLogout.Location = new System.Drawing.Point(28, 8);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(10);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(27, 30);
+            this.btnLogout.TabIndex = 17;
+            this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -597,36 +631,6 @@ namespace Agent_App_V2
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 61;
             this.pictureBox3.TabStop = false;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.btnLogout);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(921, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(94, 45);
-            this.panel1.TabIndex = 19;
-            // 
-            // btnLogout
-            // 
-            this.btnLogout.BackColor = System.Drawing.Color.Transparent;
-            this.btnLogout.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLogout.BackgroundImage")));
-            this.btnLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLogout.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
-            this.btnLogout.FlatAppearance.BorderSize = 0;
-            this.btnLogout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnLogout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogout.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnLogout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(23)))), ((int)(((byte)(46)))));
-            this.btnLogout.Location = new System.Drawing.Point(28, 8);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(10);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(27, 30);
-            this.btnLogout.TabIndex = 17;
-            this.btnLogout.UseVisualStyleBackColor = false;
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // frmAddEditPackage
             // 
@@ -677,9 +681,9 @@ namespace Agent_App_V2
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.header.ResumeLayout(false);
             this.header.PerformLayout();
+            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
