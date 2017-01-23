@@ -9,7 +9,7 @@
             </div>
             <div class="jumbotron">
                 <p >Update contact information and address</p> 
-                <asp:Button CssClass="btn btn-primary btn-sm waves-effect waves-light" ID="AccountDetails" runat="server" Text="Change Account Details" OnClick="AccountDetails_Click" />
+                <asp:Button CssClass="btn btn-primary btn-sm waves-effect waves-light" ID="AccountDetails" runat="server" Text="Change Account Details" OnClick="AccountDetails_Click" Font-Names="roboto" Font-Size="14pt" />
             </div>
         </div>
         <div class="col-xs-12 col-md-6  text-xs-center">
@@ -18,7 +18,7 @@
             </div>
             <div class="jumbotron">
                 <p >View Past Bookings Details and Puchases</p> 
-                <asp:Button CssClass="btn btn-primary btn-sm waves-effect waves-light" ID="BookingDetails" runat="server" Text="View BookingDetails" OnClick="BookingDetails_Click"  />
+                <asp:Button CssClass="btn btn-primary btn-sm waves-effect waves-light" ID="BookingDetails" Font-Size="14pt" runat="server" Text="View Booking Details" OnClick="BookingDetails_Click" Font-Names="roboto"  />
             </div>
         </div>
 
