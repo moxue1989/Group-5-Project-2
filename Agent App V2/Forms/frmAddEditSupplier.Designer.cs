@@ -50,7 +50,7 @@
             this.pictureBox8.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox8.BackgroundImage")));
             this.pictureBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox8.Location = new System.Drawing.Point(87, 117);
+            this.pictureBox8.Location = new System.Drawing.Point(87, 124);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(236, 3);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -68,7 +68,7 @@
             this.panel10.Controls.Add(this.btnExit);
             this.panel10.Location = new System.Drawing.Point(0, 0);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(408, 27);
+            this.panel10.Size = new System.Drawing.Size(400, 27);
             this.panel10.TabIndex = 24;
             // 
             // pictureBox2
@@ -101,11 +101,12 @@
             this.btnMinimize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(33)))), ((int)(((byte)(66)))));
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimize.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimize.Image")));
-            this.btnMinimize.Location = new System.Drawing.Point(338, 1);
+            this.btnMinimize.Location = new System.Drawing.Point(330, 1);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(32, 25);
             this.btnMinimize.TabIndex = 2;
             this.btnMinimize.UseVisualStyleBackColor = false;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
             // btnExit
             // 
@@ -117,11 +118,12 @@
             this.btnExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(33)))), ((int)(((byte)(66)))));
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
-            this.btnExit.Location = new System.Drawing.Point(372, 1);
+            this.btnExit.Location = new System.Drawing.Point(364, 1);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(32, 25);
             this.btnExit.TabIndex = 0;
             this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnCancel
             // 
@@ -134,7 +136,7 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(228, 139);
+            this.btnCancel.Location = new System.Drawing.Point(228, 143);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(95, 23);
             this.btnCancel.TabIndex = 23;
@@ -147,7 +149,7 @@
             this.lblProdName.AutoSize = true;
             this.lblProdName.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.lblProdName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.lblProdName.Location = new System.Drawing.Point(130, 55);
+            this.lblProdName.Location = new System.Drawing.Point(130, 63);
             this.lblProdName.Name = "lblProdName";
             this.lblProdName.Size = new System.Drawing.Size(137, 25);
             this.lblProdName.TabIndex = 22;
@@ -164,7 +166,7 @@
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(87, 139);
+            this.btnSave.Location = new System.Drawing.Point(87, 143);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(95, 23);
             this.btnSave.TabIndex = 21;
@@ -180,12 +182,13 @@
             this.txtSuppName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtSuppName.Font = new System.Drawing.Font("Segoe UI", 13F);
             this.txtSuppName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.txtSuppName.Location = new System.Drawing.Point(87, 90);
+            this.txtSuppName.Location = new System.Drawing.Point(89, 97);
             this.txtSuppName.Margin = new System.Windows.Forms.Padding(10);
+            this.txtSuppName.MaxLength = 25;
             this.txtSuppName.Name = "txtSuppName";
             this.txtSuppName.Size = new System.Drawing.Size(228, 24);
             this.txtSuppName.TabIndex = 20;
-            this.txtSuppName.Tag = "Product Name";
+            this.txtSuppName.Tag = "Supplier Name";
             this.txtSuppName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // panel1
@@ -195,7 +198,7 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
             this.panel1.Location = new System.Drawing.Point(0, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(408, 26);
+            this.panel1.Size = new System.Drawing.Size(400, 26);
             this.panel1.TabIndex = 25;
             // 
             // frmAddEditSupplier
@@ -205,7 +208,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(408, 197);
+            this.ClientSize = new System.Drawing.Size(400, 200);
             this.Controls.Add(this.pictureBox8);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.panel10);

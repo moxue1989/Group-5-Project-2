@@ -61,7 +61,7 @@ namespace Agent_App_V2
                 }
                 else
                 {
-                    MessageBox.Show(@"Invalid Username or password");
+                    MessageBox.Show(@"Invalid Username or password.", @"Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

@@ -59,13 +59,15 @@ namespace Agent_App_V2
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblPackage = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnLogout = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.header = new System.Windows.Forms.Panel();
             this.lblLoginMsg = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.panel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.header.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lvProducts
@@ -110,11 +112,11 @@ namespace Agent_App_V2
             this.btnAddPackage.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(31)))), ((int)(((byte)(191)))));
             this.btnAddPackage.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
             this.btnAddPackage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddPackage.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.btnAddPackage.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnAddPackage.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnAddPackage.Location = new System.Drawing.Point(411, 417);
             this.btnAddPackage.Name = "btnAddPackage";
-            this.btnAddPackage.Size = new System.Drawing.Size(71, 23);
+            this.btnAddPackage.Size = new System.Drawing.Size(100, 25);
             this.btnAddPackage.TabIndex = 10;
             this.btnAddPackage.Text = "ADD";
             this.btnAddPackage.UseVisualStyleBackColor = false;
@@ -128,11 +130,11 @@ namespace Agent_App_V2
             this.btnEditPackage.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(31)))), ((int)(((byte)(191)))));
             this.btnEditPackage.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
             this.btnEditPackage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditPackage.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.btnEditPackage.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnEditPackage.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnEditPackage.Location = new System.Drawing.Point(593, 417);
+            this.btnEditPackage.Location = new System.Drawing.Point(579, 417);
             this.btnEditPackage.Name = "btnEditPackage";
-            this.btnEditPackage.Size = new System.Drawing.Size(71, 23);
+            this.btnEditPackage.Size = new System.Drawing.Size(100, 25);
             this.btnEditPackage.TabIndex = 11;
             this.btnEditPackage.Text = "EDIT";
             this.btnEditPackage.UseVisualStyleBackColor = false;
@@ -146,11 +148,11 @@ namespace Agent_App_V2
             this.btnDeletePackage.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(31)))), ((int)(((byte)(191)))));
             this.btnDeletePackage.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
             this.btnDeletePackage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeletePackage.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.btnDeletePackage.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnDeletePackage.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnDeletePackage.Location = new System.Drawing.Point(767, 417);
+            this.btnDeletePackage.Location = new System.Drawing.Point(738, 417);
             this.btnDeletePackage.Name = "btnDeletePackage";
-            this.btnDeletePackage.Size = new System.Drawing.Size(71, 23);
+            this.btnDeletePackage.Size = new System.Drawing.Size(100, 25);
             this.btnDeletePackage.TabIndex = 12;
             this.btnDeletePackage.Text = "DELETE";
             this.btnDeletePackage.UseVisualStyleBackColor = false;
@@ -243,7 +245,7 @@ namespace Agent_App_V2
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.label3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label3.Location = new System.Drawing.Point(406, 250);
+            this.label3.Location = new System.Drawing.Point(406, 257);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(150, 25);
             this.label3.TabIndex = 44;
@@ -366,7 +368,7 @@ namespace Agent_App_V2
             this.btnMinimize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(33)))), ((int)(((byte)(66)))));
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimize.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimize.Image")));
-            this.btnMinimize.Location = new System.Drawing.Point(818, 1);
+            this.btnMinimize.Location = new System.Drawing.Point(815, 1);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(32, 25);
             this.btnMinimize.TabIndex = 20;
@@ -383,7 +385,7 @@ namespace Agent_App_V2
             this.btnExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(33)))), ((int)(((byte)(66)))));
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
-            this.btnExit.Location = new System.Drawing.Point(855, 1);
+            this.btnExit.Location = new System.Drawing.Point(850, 1);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(32, 25);
             this.btnExit.TabIndex = 19;
@@ -422,27 +424,6 @@ namespace Agent_App_V2
             this.label2.TabIndex = 57;
             this.label2.Text = "Product and Suppliers - Travel Experts Inc.";
             // 
-            // btnLogout
-            // 
-            this.btnLogout.BackColor = System.Drawing.Color.Transparent;
-            this.btnLogout.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLogout.BackgroundImage")));
-            this.btnLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLogout.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
-            this.btnLogout.FlatAppearance.BorderSize = 0;
-            this.btnLogout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnLogout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogout.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnLogout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(23)))), ((int)(((byte)(46)))));
-            this.btnLogout.Location = new System.Drawing.Point(826, 8);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(10);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(27, 30);
-            this.btnLogout.TabIndex = 17;
-            this.btnLogout.UseVisualStyleBackColor = false;
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
-            // 
             // btnBack
             // 
             this.btnBack.BackColor = System.Drawing.Color.Transparent;
@@ -468,9 +449,9 @@ namespace Agent_App_V2
             // header
             // 
             this.header.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.header.Controls.Add(this.btnLogout);
             this.header.Controls.Add(this.btnBack);
             this.header.Controls.Add(this.lblLoginMsg);
+            this.header.Controls.Add(this.panel1);
             this.header.Dock = System.Windows.Forms.DockStyle.Top;
             this.header.Location = new System.Drawing.Point(0, 27);
             this.header.Name = "header";
@@ -486,6 +467,36 @@ namespace Agent_App_V2
             this.lblLoginMsg.Name = "lblLoginMsg";
             this.lblLoginMsg.Size = new System.Drawing.Size(0, 30);
             this.lblLoginMsg.TabIndex = 2;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnLogout);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(789, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(94, 45);
+            this.panel1.TabIndex = 19;
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.BackColor = System.Drawing.Color.Transparent;
+            this.btnLogout.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLogout.BackgroundImage")));
+            this.btnLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogout.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
+            this.btnLogout.FlatAppearance.BorderSize = 0;
+            this.btnLogout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnLogout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnLogout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(23)))), ((int)(((byte)(46)))));
+            this.btnLogout.Location = new System.Drawing.Point(28, 8);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(10);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(27, 30);
+            this.btnLogout.TabIndex = 17;
+            this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // frmPackages
             // 
@@ -530,6 +541,7 @@ namespace Agent_App_V2
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.header.ResumeLayout(false);
             this.header.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -564,9 +576,10 @@ namespace Agent_App_V2
         private Button btnExit;
         private PictureBox pictureBox2;
         private Label lblPackage;
-        private Button btnLogout;
         private Button btnBack;
         private Panel header;
         private Label lblLoginMsg;
+        private Panel panel1;
+        private Button btnLogout;
     }
 }

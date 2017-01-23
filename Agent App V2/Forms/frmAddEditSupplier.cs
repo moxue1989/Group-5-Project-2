@@ -26,33 +26,42 @@ namespace Agent_App_V2
             //Add Suppliers 
             if (AddSuppliers)
             {
-                Supplier newSupp = new Supplier();
-                newSupp.SupName = txtSuppName.Text;
-                try
+                if (IsValidData())
                 {
-                    SupplierDB.AddSupplier(newSupp);
-                    DialogResult = DialogResult.OK;
+                    Supplier newSupp = new Supplier();
+                    newSupp.SupName = txtSuppName.Text;
+                    try
+                    {
+                        SupplierDB.AddSupplier(newSupp);
+                        DialogResult = DialogResult.OK;
+                    }
+
+                    catch (Exception ex)
+
+                    {
+                        MessageBox.Show(ex.Message, ex.GetType().ToString());
+                    }
                 }
 
-                catch (Exception ex)
-
-                {
-                MessageBox.Show(ex.Message, ex.GetType().ToString());
-                }
+                
             }
             else //Update Suppliers
             {
-                supplier.SupName = txtSuppName.Text;
+                if (IsValidData())
+                {
+                    supplier.SupName = txtSuppName.Text;
 
-                try
-                {
-                    supplier.UpdateSupp();
-                    DialogResult = DialogResult.OK;
+                    try
+                    {
+                        supplier.UpdateSupp();
+                        DialogResult = DialogResult.OK;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, ex.GetType().ToString());
+                    }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, ex.GetType().ToString());
-                }
+                
             }
         }
 
@@ -94,9 +103,14 @@ namespace Agent_App_V2
             }
         }
 
-        private void EditSupplierPanel_Paint(object sender, PaintEventArgs e)
+        private void btnExit_Click(object sender, EventArgs e)
         {
+            Close();
+        }
 
+        private void btnMinimize_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;//minimize application window
         }
     }
 }

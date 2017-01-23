@@ -19,33 +19,41 @@ namespace Agent_App_V2
             //Add Products 
             if (AddProducts)
             {
-                Product newProd= new Product();
-                newProd.ProdName = txtProdName.Text;
-                try
+                if (IsValid())
                 {
-                ProductDB.AddProduct(newProd);
-                DialogResult = DialogResult.OK;
-                }
+                    Product newProd = new Product();
+                    newProd.ProdName = txtProdName.Text;
+                    try
+                    {
+                        ProductDB.AddProduct(newProd);
+                        DialogResult = DialogResult.OK;
+                    }
 
-            catch (Exception ex)
+                    catch (Exception ex)
 
-                {
-                    MessageBox.Show(ex.Message, ex.GetType().ToString());
+                    {
+                        MessageBox.Show(ex.Message, ex.GetType().ToString());
+                    }
                 }
+                
             }
 
             else //Update Products
             {
-                product.ProdName = txtProdName.Text;
-                try
+                if (IsValid())
                 {
-                    product.UpdateProd();
-                    DialogResult = DialogResult.OK;
+                    product.ProdName = txtProdName.Text;
+                    try
+                    {
+                        product.UpdateProd();
+                        DialogResult = DialogResult.OK;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, ex.GetType().ToString());
+                    }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, ex.GetType().ToString());
-                }
+                
             }
         }
 
@@ -72,6 +80,12 @@ namespace Agent_App_V2
                 lblForm.Text = @"Modify Product - Travel Experts Inc.";//name dialog form to Modify Product
                 DisplayProduct();
             }
+        }
+
+        private bool IsValid()
+        {
+            return
+                Validator.IsPresent(txtProdName);
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
