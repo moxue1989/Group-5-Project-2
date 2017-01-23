@@ -11,7 +11,13 @@ namespace ASP_Workshop
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["Customer"] != null)
+            {
+            }
+            else
+            {
+                Response.Redirect("Default.aspx");
+            }
         }
 
         //Written by Kasi Emmanuel
