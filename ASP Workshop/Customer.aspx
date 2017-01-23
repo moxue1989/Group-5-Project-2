@@ -3,27 +3,39 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-
+    <%--alert alert-dismissible alert-danger--%>
     <div class="col-sm-10 col-sm-offset-1 ">
         <div id="messageAlert" class="alert alert-dismissible alert-danger" runat="server" visible="False">
-            <%--<button type="button" class="close" data-dismiss="alert">×</button>--%>
+            <button type="button" class="close" data-dismiss="alert">×</button>
             <asp:Label ID="lblMessage" runat="server"></asp:Label>
-            <asp:RequiredFieldValidator CssClass="alert alert-dismissible alert-danger" ID="FNReqV" runat="server" Display="Dynamic" ErrorMessage="First Name is required!" ControlToValidate="txtFirstName" EnableClientScript="False"></asp:RequiredFieldValidator>
-            <asp:RequiredFieldValidator CssClass="alert alert-dismissible alert-danger" ID="LNReqV" runat="server" Display="Dynamic" ErrorMessage="Last Name is required!" ControlToValidate="txtLastName" EnableClientScript="False"></asp:RequiredFieldValidator>
-            <asp:RequiredFieldValidator CssClass="alert alert-dismissible alert-danger" ID="HPReqV" runat="server" Display="Dynamic" ErrorMessage="Home Phone is required!" ControlToValidate="txtHomePhone" EnableClientScript="False"></asp:RequiredFieldValidator>
-            <asp:RegularExpressionValidator CssClass="alert alert-dismissible alert-danger" ID="HPFormatV" runat="server" ControlToValidate="txtHomePhone" Display="Dynamic" ErrorMessage="Home Phone has wrong format. (EX: 999-999-9999)" ValidationExpression="([2-9]\d{2})-?([2-9]\d{2})-?(\d{4})" EnableClientScript="False"></asp:RegularExpressionValidator>
-            <asp:RequiredFieldValidator CssClass="alert alert-dismissible alert-danger" ID="EmailReqV" runat="server" Display="Dynamic" ErrorMessage="Email is required!" ControlToValidate="txtEmail" EnableClientScript="False"></asp:RequiredFieldValidator>
-            <asp:RegularExpressionValidator CssClass="alert alert-dismissible alert-danger" ID="EmailFormatV" runat="server" ControlToValidate="txtEmail" Display="Dynamic" ErrorMessage="Email has wrong format. (EX: example@email.com)" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" EnableClientScript="False"></asp:RegularExpressionValidator>
-            <asp:RegularExpressionValidator CssClass="alert alert-dismissible alert-danger" ID="BPFormatV" runat="server" ControlToValidate="txtBusPhone" Display="Dynamic" ErrorMessage="Business Phone has wrong format. (EX: 999-999-9999)" ValidationExpression="([2-9]\d{2})-?([2-9]\d{2})-?(\d{4})" EnableClientScript="False"></asp:RegularExpressionValidator>
-            <asp:RequiredFieldValidator CssClass="alert alert-dismissible alert-danger" ID="AddReqV" runat="server" Display="Dynamic" ErrorMessage="Address is Required!" ControlToValidate="txtAddress" EnableClientScript="False"></asp:RequiredFieldValidator>
-            <asp:RequiredFieldValidator CssClass="alert alert-dismissible alert-danger" ID="CityReqV" runat="server" Display="Dynamic" ErrorMessage="City is Required!" ControlToValidate="txtCity" EnableClientScript="False"></asp:RequiredFieldValidator>
-            <asp:RequiredFieldValidator CssClass="alert alert-dismissible alert-danger" ID="ProvReqV" runat="server" Display="Dynamic" ErrorMessage="Province is Required!" ControlToValidate="txtProv" EnableClientScript="False"></asp:RequiredFieldValidator>
-            <asp:RequiredFieldValidator CssClass="alert alert-dismissible alert-danger" ID="PostalReqV" runat="server" Display="Dynamic" ErrorMessage="Postal Code is Required!" ControlToValidate="txtPostal" EnableClientScript="False"></asp:RequiredFieldValidator>
+        </div>
+        <div class="row">
+       <%--  <div class="md-form has-error text-center" id="error ">
+            <asp:Label CssClass="alert-danger has-error" Font-Names="Roboto" for="txtFirstName txtLastName txtHomePhone txtEmail txtBusPhone txtAddress txtCity txtProv txtPostal txtUserName txtPassword txtConfirmPassword txtConfirmPassword" Height="" ID="RegErrors" runat="server" ForeColor="Red"></asp:Label>
+         </div> --%>
+            <asp:RequiredFieldValidator CssClass="control-label" ID="FNReqV" runat="server" Display="Dynamic" ErrorMessage="First Name is required!" ControlToValidate="txtFirstName" EnableClientScript="False"></asp:RequiredFieldValidator>
+            <asp:RequiredFieldValidator CssClass="control-label" ID="LNReqV" runat="server" Display="Dynamic" ErrorMessage="Last Name is required!" ControlToValidate="txtLastName" EnableClientScript="False"></asp:RequiredFieldValidator>
+            <asp:RequiredFieldValidator CssClass="control-label" ID="HPReqV" runat="server" Display="Dynamic" ErrorMessage="Home Phone is required!" ControlToValidate="txtHomePhone" EnableClientScript="False"></asp:RequiredFieldValidator>
+            <asp:RegularExpressionValidator CssClass="control-label" ID="HPFormatV" runat="server" ControlToValidate="txtHomePhone" Display="Dynamic" ErrorMessage="Home Phone has wrong format. (EX: 999-999-9999)" ValidationExpression="([2-9]\d{2})-?([2-9]\d{2})-?(\d{4})" EnableClientScript="False"></asp:RegularExpressionValidator>
+            <asp:RequiredFieldValidator CssClass="control-label" ID="EmailReqV" runat="server" Display="Dynamic" ErrorMessage="Email is required!" ControlToValidate="txtEmail" EnableClientScript="False"></asp:RequiredFieldValidator>
+            <asp:RegularExpressionValidator CssClass="control-label" ID="EmailFormatV" runat="server" ControlToValidate="txtEmail" Display="Dynamic" ErrorMessage="Email has wrong format. (EX: example@email.com)" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" EnableClientScript="False"></asp:RegularExpressionValidator>
+
+            <asp:RegularExpressionValidator CssClass="control-label" ID="BPFormatV" runat="server" ControlToValidate="txtBusPhone" Display="Dynamic" ErrorMessage="Business Phone has wrong format. (EX: 999-999-9999)" ValidationExpression="([2-9]\d{2})-?([2-9]\d{2})-?(\d{4})" EnableClientScript="False"></asp:RegularExpressionValidator>
+
+            <asp:RequiredFieldValidator CssClass="control-label" ID="AddReqV" runat="server" Display="Dynamic" ErrorMessage="Address is Required!" ControlToValidate="txtAddress" EnableClientScript="False"></asp:RequiredFieldValidator>
+
+            <asp:RequiredFieldValidator CssClass="control-label" ID="CityReqV" runat="server" Display="Dynamic" ErrorMessage="City is Required!" ControlToValidate="txtCity" EnableClientScript="False"></asp:RequiredFieldValidator>
+
+            <asp:RequiredFieldValidator CssClass="control-label" ID="ProvReqV" runat="server" Display="Dynamic" ErrorMessage="Province is Required!" ControlToValidate="txtProv" EnableClientScript="False"></asp:RequiredFieldValidator>
+
+            <asp:RequiredFieldValidator CssClass="control-label" ID="PostalReqV" runat="server" Display="Dynamic" ErrorMessage="Postal Code is Required!" ControlToValidate="txtPostal" EnableClientScript="False"></asp:RequiredFieldValidator>
+
             <asp:RegularExpressionValidator ID="PostalFormatV" runat="server" ControlToValidate="txtPostal" Display="Dynamic" ErrorMessage="Postal Code has wrong format. (EX: Z9Z 9Z9)" ValidationExpression="^[A-Z]\d[A-Z] \d[A-Z]\d$" EnableClientScript="False"></asp:RegularExpressionValidator>
-            <asp:RequiredFieldValidator CssClass="alert alert-dismissible alert-danger" ID="UNReqV" runat="server" Display="Dynamic" ErrorMessage="User Name is required!" ControlToValidate="txtUserName" Enabled="False" EnableClientScript="False"></asp:RequiredFieldValidator>
-            <asp:RequiredFieldValidator CssClass="alert alert-dismissible alert-danger" ID="PWReqV" runat="server" Display="Dynamic" ErrorMessage="Password is required!" ControlToValidate="txtPassword" Enabled="False" EnableClientScript="False"></asp:RequiredFieldValidator>
-            <asp:RequiredFieldValidator CssClass="alert alert-dismissible alert-danger" ID="CPWReqV" runat="server" Display="Dynamic" ErrorMessage="Confirm Password is required!" ControlToValidate="txtConfirmPassword" Enabled="False" EnableClientScript="False"></asp:RequiredFieldValidator>
-            <asp:CompareValidator CssClass="alert alert-dismissible alert-danger" ID="CPWCompareV" runat="server" ControlToCompare="txtPassword" ControlToValidate="txtConfirmPassword" Enabled="False" ErrorMessage="Passwords must be the same!" EnableClientScript="False"></asp:CompareValidator>
+
+            <asp:RequiredFieldValidator CssClass="control-label" ID="UNReqV" runat="server" Display="Dynamic" ErrorMessage="User Name is required!" ControlToValidate="txtUserName" Enabled="False" EnableClientScript="False"></asp:RequiredFieldValidator>
+            <asp:RequiredFieldValidator CssClass="control-label" ID="PWReqV" runat="server" Display="Dynamic" ErrorMessage="Password is required!" ControlToValidate="txtPassword" Enabled="False" EnableClientScript="False"></asp:RequiredFieldValidator>
+            <asp:RequiredFieldValidator CssClass="control-label" ID="CPWReqV" runat="server" Display="Dynamic" ErrorMessage="Confirm Password is required!" ControlToValidate="txtConfirmPassword" Enabled="False" EnableClientScript="False"></asp:RequiredFieldValidator>
+            <asp:CompareValidator CssClass="control-label" ID="CPWCompareV" runat="server" ControlToCompare="txtPassword" ControlToValidate="txtConfirmPassword" Enabled="False" ErrorMessage="Passwords must be the same!" EnableClientScript="False"></asp:CompareValidator>
         </div>
         <div class="row">
             <!--Header-->
@@ -144,5 +156,7 @@
                 <asp:Button CssClass="btn btn-primary" ID="btnRegister" Width="100px" runat="server" Text="Register" OnClick="btnRegister_Click" />
             </div>
         </div>
+
     </div>
+
 </asp:Content>

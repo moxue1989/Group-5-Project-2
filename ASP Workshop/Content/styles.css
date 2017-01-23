@@ -13,7 +13,10 @@
      background-color: whitesmoke;
 }
 
-
+.control-label {
+    color: red;
+    padding-right : 20px;
+}
 .btnLogout {
    color: #000000; 
    text-decoration: none; 
