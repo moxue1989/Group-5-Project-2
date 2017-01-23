@@ -42,8 +42,6 @@ namespace Agent_App_V2
                         MessageBox.Show(ex.Message, ex.GetType().ToString());
                     }
                 }
-
-                
             }
             else //Update Suppliers
             {
@@ -82,9 +80,7 @@ namespace Agent_App_V2
 
         private bool IsValidData()
         {
-            return
-                Validator.IsPresent(txtSuppName);
-
+            return Validator.IsPresent(txtSuppName);
         }
 
         private void frmAddEditSupplier_Load(object sender, EventArgs e)

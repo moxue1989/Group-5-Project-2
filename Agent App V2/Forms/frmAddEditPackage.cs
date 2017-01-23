@@ -20,6 +20,7 @@ namespace Agent_App_V2
 
         // adding or editing
         private bool addStatus;
+        private bool saveStatus = false;
         public frmAddEditPackage(string action)
         {
             InitializeComponent();
@@ -173,6 +174,7 @@ namespace Agent_App_V2
                 return;
             }
 
+            saveStatus = true;
             //update package info from textboxes
             Package.PkgName = tbPkgName.Text;
             Package.PkgStartDate = dtpPkgStartDate.Value;
@@ -269,11 +271,6 @@ namespace Agent_App_V2
             tbSearch.Clear();
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnExit_Click(object sender, EventArgs e)
         {
             Close();//closes application
@@ -296,12 +293,16 @@ namespace Agent_App_V2
 
         private void frmAddEditPackage_FormClosing(object sender, FormClosingEventArgs e)
         {
-            // make sure user wants to exit
-            if (MessageBox.Show("Exit without saving changes?", "Cancel", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) != DialogResult.OK)
+            if (!saveStatus)
             {
-                e.Cancel = true;
+                // make sure user wants to exit
+                if (
+                    MessageBox.Show("Exit without saving changes?", "Cancel", MessageBoxButtons.OKCancel,
+                        MessageBoxIcon.Question) != DialogResult.OK)
+                {
+                    e.Cancel = true;
+                }
             }
-            
         }
     }
 }

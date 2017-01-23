@@ -29,10 +29,33 @@ namespace ASP_Workshop
                     totalCost += book.GetTotal();
                 }
                 txtTotalCost.Text = totalCost.ToString("c");
+                CreateBookings();
             }
             else
             {
                 Response.Redirect("Default.aspx");
+            }
+        }
+
+        private void CreateBookings()
+        {
+            for(int i = 0; i < bookings.Count; i++)
+            {
+                GridView gvBookings2 = new GridView();
+                List<Booking> bookingData = new List<Booking>();
+                bookingData.Add(bookings[i]);
+
+                gvBookings2.DataSource = bookingData;
+                gvBookings2.DataBind();
+                gvBookings2.CssClass = "table table-hover table-striped";
+                pnlBookings.Controls.Add(gvBookings2);
+
+                details = TravelExpertsDB.GetBookingDetails(bookings[i].BookingId);
+                GridView gvDetails = new GridView();
+                gvDetails.DataSource = details;
+                gvDetails.DataBind();
+                gvDetails.CssClass = "table table-hover table-striped";
+                pnlBookings.Controls.Add(gvDetails);
             }
         }
 

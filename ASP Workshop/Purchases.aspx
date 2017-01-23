@@ -31,6 +31,9 @@
                 </asp:GridView> 
                 </div>
                 
+                <asp:Panel ID="pnlBookings" runat="server">
+                </asp:Panel>
+                
                 <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="GetBookings" TypeName="ASP_Workshop.TravelExpertsDB">
                     <SelectParameters>
                         <asp:SessionParameter Name="CustomerId" SessionField="CustomerId" Type="Int32" />
