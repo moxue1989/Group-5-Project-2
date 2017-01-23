@@ -15,7 +15,7 @@ namespace ASP_Workshop
         {
             if (IsPostBack)
             {
-                messageAlert.Visible = true;
+                messageAlert.Visible = false;
             }
             if (Session["Customer"] != null)
             {
@@ -65,6 +65,7 @@ namespace ASP_Workshop
         {
             if (Page.IsValid)
             {
+                messageAlert.Visible = true;
                 Customer newCust = CreateCustomer();
                 newCust = TravelExpertsDB.RegisterCustomer(newCust);
 
@@ -77,6 +78,7 @@ namespace ASP_Workshop
             else
             {
                 lblMessage.Text = "";
+                messageAlert.Visible = false;
             }
         }
 
@@ -106,6 +108,7 @@ namespace ASP_Workshop
             Customer newCust = CreateCustomer();
             if (Page.IsValid)
             {
+                messageAlert.Visible = true;
                 if (TravelExpertsDB.UpdateCustomer(newCust))
                 {
                     Session["Customer"] = newCust;
@@ -118,6 +121,7 @@ namespace ASP_Workshop
             }
             else
             {
+                messageAlert.Visible = false;
                 lblMessage.Text = "";
             }
         }
