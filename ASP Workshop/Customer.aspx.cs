@@ -18,7 +18,7 @@ namespace ASP_Workshop
                 if (!IsPostBack)
                 {
                     addStatus = false;
-                    Customer cust = (Customer) Session["Customer"];
+                    Customer cust = (Customer)Session["Customer"];
                     txtFirstName.Text = cust.CustFirstName;
                     txtLastName.Text = cust.CustLastName;
                     txtAddress.Text = cust.CustAddress;
@@ -48,24 +48,39 @@ namespace ASP_Workshop
                 ddlAgents.DataBind();
                 btnUpdate.Visible = false;
                 AccountDetails.Visible = false;
+
+
+                //UNReqV.Enabled = true;
+                //UNRangeV.Enabled = true;
+
+                //PWReqV.Enabled = true;
+                //PWRangeV.Enabled = true;
+
+                //CPWReqV.Enabled = true;
+                //CPWRangeV.Enabled = true;
+                //CPWCompareV.Enabled = true;
             }
         }
 
         protected void btnRegister_Click(object sender, EventArgs e)
         {
-            Customer newCust = CreateCustomer();
-            newCust = TravelExpertsDB.RegisterCustomer(newCust);
-
-            if (newCust.CustFirstName != null)
+            messageAlert.Visible = true;
+            if (Page.IsValid)
             {
-                Session["Customer"] = newCust;
-                Response.Redirect("CustomerLanding.aspx");
+                Customer newCust = CreateCustomer();
+                newCust = TravelExpertsDB.RegisterCustomer(newCust);
+
+                if (newCust.CustFirstName != null)
+                {
+                    Session["Customer"] = newCust;
+                    Response.Redirect("CustomerLanding.aspx");
+                }
             }
         }
 
         private Customer CreateCustomer()
         {
-            Customer newCust = (Customer) Session["Customer"];
+            Customer newCust = (Customer)Session["Customer"];
             newCust.CustFirstName = txtFirstName.Text;
             newCust.CustLastName = txtLastName.Text;
             newCust.CustAddress = txtAddress.Text;
@@ -78,7 +93,6 @@ namespace ASP_Workshop
             newCust.CustEmail = txtEmail.Text;
             if (addStatus)
             {
-                //newCust.UserName = txtUserName.Text;
                 newCust.Password = txtPassword.Text;
                 newCust.AgentId = Convert.ToInt32(ddlAgents.SelectedValue);
             }
@@ -87,16 +101,22 @@ namespace ASP_Workshop
 
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
-            Customer newCust = CreateCustomer();
+            Page.Validate();
+
             messageAlert.Visible = true;
-            if (TravelExpertsDB.UpdateCustomer(newCust))
+            if (Page.IsValid)
             {
-                Session["Customer"] = newCust;
-                lblMessage.Text = "Update Successful!";
-            }
-            else
-            {
-                lblMessage.Text = "Update failed!";
+                Customer newCust = CreateCustomer();
+                messageAlert.Visible = true;
+                if (TravelExpertsDB.UpdateCustomer(newCust))
+                {
+                    Session["Customer"] = newCust;
+                    lblMessage.Text = "Update Successful!";
+                }
+                else
+                {
+                    lblMessage.Text = "Update failed!";
+                }
             }
         }
     }

@@ -31,6 +31,15 @@ namespace ASP_Workshop {
         protected global::System.Web.UI.WebControls.Label lblMessage;
         
         /// <summary>
+        /// FNReqV control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator FNReqV;
+        
+        /// <summary>
         /// newCust control.
         /// </summary>
         /// <remarks>
@@ -76,15 +85,6 @@ namespace ASP_Workshop {
         protected global::System.Web.UI.WebControls.TextBox txtHomePhone;
         
         /// <summary>
-        /// txtBusPhone control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBusPhone;
-        
-        /// <summary>
         /// txtEmail control.
         /// </summary>
         /// <remarks>
@@ -92,6 +92,15 @@ namespace ASP_Workshop {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtEmail;
+        
+        /// <summary>
+        /// txtBusPhone control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtBusPhone;
         
         /// <summary>
         /// txtAddress control.
@@ -164,6 +173,15 @@ namespace ASP_Workshop {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl newCustomerPassword;
+        
+        /// <summary>
+        /// txtUserName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtUserName;
         
         /// <summary>
         /// txtPassword control.
