@@ -13,6 +13,10 @@ namespace ASP_Workshop
         private bool addStatus;
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (IsPostBack)
+            {
+                messageAlert.Visible = true;
+            }
             if (Session["Customer"] != null)
             {
                 if (!IsPostBack)
@@ -50,21 +54,15 @@ namespace ASP_Workshop
                 AccountDetails.Visible = false;
 
 
-                //UNReqV.Enabled = true;
-                //UNRangeV.Enabled = true;
-
-                //PWReqV.Enabled = true;
-                //PWRangeV.Enabled = true;
-
-                //CPWReqV.Enabled = true;
-                //CPWRangeV.Enabled = true;
-                //CPWCompareV.Enabled = true;
+                UNReqV.Enabled = true;
+                PWReqV.Enabled = true;
+                CPWReqV.Enabled = true;
+                CPWCompareV.Enabled = true;
             }
         }
 
         protected void btnRegister_Click(object sender, EventArgs e)
         {
-            messageAlert.Visible = true;
             if (Page.IsValid)
             {
                 Customer newCust = CreateCustomer();
@@ -75,6 +73,10 @@ namespace ASP_Workshop
                     Session["Customer"] = newCust;
                     Response.Redirect("CustomerLanding.aspx");
                 }
+            }
+            else
+            {
+                lblMessage.Text = "";
             }
         }
 
@@ -101,13 +103,9 @@ namespace ASP_Workshop
 
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
-            Page.Validate();
-
-            messageAlert.Visible = true;
+            Customer newCust = CreateCustomer();
             if (Page.IsValid)
             {
-                Customer newCust = CreateCustomer();
-                messageAlert.Visible = true;
                 if (TravelExpertsDB.UpdateCustomer(newCust))
                 {
                     Session["Customer"] = newCust;
@@ -117,6 +115,10 @@ namespace ASP_Workshop
                 {
                     lblMessage.Text = "Update failed!";
                 }
+            }
+            else
+            {
+                lblMessage.Text = "";
             }
         }
     }
