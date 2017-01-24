@@ -7,6 +7,12 @@ using System.Web.UI.WebControls;
 
 namespace ASP_Workshop
 {
+    /// <summary>
+    /// Customer Landing Page
+    /// Links to see account info and bookings
+    /// Group 5 ASP.NET
+    /// Kasi Emmanuel
+    /// </summary>
     public partial class WebForm4 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)

@@ -5,6 +5,12 @@ using System.Web;
 
 namespace ASP_Workshop
 {
+    /// <summary>
+    /// BookingDetail class
+    /// Properties relevant for calculation
+    /// Group 5 ASP.NET
+    /// Mo Xue
+    /// </summary>
     public class BookingDetail
     {
         public int BookingDetailId { get; set; }
@@ -17,6 +23,7 @@ namespace ASP_Workshop
         public decimal AgencyCommission { get; set; }
         public decimal FeeAmt { get; set; }
 
+        // return total amount of this booking
         public decimal GetTotal()
         {
             return BasePrice + AgencyCommission + FeeAmt;

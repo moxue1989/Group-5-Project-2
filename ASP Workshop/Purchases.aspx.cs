@@ -8,6 +8,12 @@ using System.Web.UI.WebControls;
 
 namespace ASP_Workshop
 {
+    /// <summary>
+    /// Bookings page
+    /// Shows bookings and details and cost breakdown
+    /// Group 5 ASP.NET
+    /// Mo Xue, Kasi Emmanuel
+    /// </summary>
     public partial class WebForm2 : System.Web.UI.Page
     {
         List<Booking> bookings = new List<Booking>();

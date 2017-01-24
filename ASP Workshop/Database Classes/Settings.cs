@@ -5,13 +5,19 @@ using System.Web;
 
 namespace ASP_Workshop
 {
+    /// <summary>
+    /// Database access variables
+    /// Connection string and Queries
+    /// Group 5 ASP.NET
+    /// Mo Xue
+    /// </summary>
     public static class Settings
     {
-        public static string connectionString =
-            @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\TravelExperts.mdf;Integrated Security=True;Connect Timeout=30";
-
         //public static string connectionString =
-        //    @"Data Source=ICTVM-FQQ06UJG2\SQLEXPRESS;Initial Catalog=TravelExperts;Integrated Security=True";
+        //    @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\TravelExperts.mdf;Integrated Security=True;Connect Timeout=30";
+
+        public static string connectionString =
+            @"Data Source=ICTVM-FQQ06UJG2\SQLEXPRESS;Initial Catalog=TravelExperts;Integrated Security=True";
 
         public static string GetCustomerQuery =
             @"SELECT * FROM Customers
@@ -35,6 +41,7 @@ namespace ASP_Workshop
             @"SELECT AgentId, AgtFirstName, AgtLastName, AgtPosition FROM Agents";
 
         public static string GetAddedCustomerQuery =
-            @"select IDENT_CURRENT('Products')";
+            @" SELECT * FROM Customers
+            WHERE CustomerId = @CustomerId";
     }
 }

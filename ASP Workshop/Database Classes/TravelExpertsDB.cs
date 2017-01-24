@@ -9,8 +9,15 @@ using Dapper.Contrib.Extensions;
 
 namespace ASP_Workshop
 {
+    /// <summary>
+    /// Database access class
+    /// Methods use Dapper for mapping to objects
+    /// Group 5 ASP.NET
+    /// Mo Xue
+    /// </summary>
     public static class TravelExpertsDB
     {
+        // retrives a customer with username and password, returns an customer with null properties if not found
         public static Customer GetCustomer(string UserName, string Password)
         {
             Customer cust = new Customer();
@@ -26,6 +33,7 @@ namespace ASP_Workshop
             return cust;
         }
 
+        // retrieves bookings for a particular customer id
         public static List<Booking> GetBookings(int CustomerId)
         {
             List<Booking> bookings = new List<Booking>();
@@ -37,6 +45,7 @@ namespace ASP_Workshop
             return bookings;
         }
 
+        // retrieves details for a specific booking
         public static List<BookingDetail> GetBookingDetails(int bookingId)
         {
             List<BookingDetail> details = new List<BookingDetail>();
@@ -48,20 +57,23 @@ namespace ASP_Workshop
             return details;
         }
 
+        // add new customer to customers table and returns the added customer 
         public static Customer RegisterCustomer(Customer cust)
         {
             Customer newCust = new Customer();
             using (SqlConnection conn = new SqlConnection(Settings.connectionString))
             {
                 conn.Open();
-                if (conn.Insert(cust) == 1)
+                long customerId = conn.Insert(cust);
+                if (customerId != 0)
                 {
-                    newCust = conn.QuerySingle<Customer>(Settings.GetAddedCustomerQuery);
+                    newCust = conn.QuerySingle<Customer>(Settings.GetAddedCustomerQuery, new { customerId});
                 }
             }
             return newCust;
         }
 
+        // gets the list of agents for selection
         public static List<Agent> GetAgents()
         {
             List<Agent> agents = new List<Agent>();
@@ -73,6 +85,7 @@ namespace ASP_Workshop
             return agents;
         }
 
+        // updates customer information using Dapper extension method
         public static bool UpdateCustomer(Customer cust)
         {
             using (SqlConnection conn = new SqlConnection(Settings.connectionString))

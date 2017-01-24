@@ -7,6 +7,12 @@ using System.Web.UI.WebControls;
 
 namespace ASP_Workshop
 {
+    /// <summary>
+    /// Login page
+    /// Has links to sign up for new customers
+    /// Group 5 ASP.NET
+    /// Kasi Emmanuel
+    /// </summary>
     public partial class WebForm1 : System.Web.UI.Page
     {
         private string username;
