@@ -14,17 +14,18 @@
             <asp:RequiredFieldValidator CssClass="control-label" ID="FNReqV" runat="server" Display="Dynamic" ErrorMessage="First Name is required!" ControlToValidate="txtFirstName" EnableClientScript="False"></asp:RequiredFieldValidator>
             <asp:RequiredFieldValidator CssClass="control-label" ID="LNReqV" runat="server" Display="Dynamic" ErrorMessage="Last Name is required!" ControlToValidate="txtLastName" EnableClientScript="False"></asp:RequiredFieldValidator>
             <asp:RequiredFieldValidator CssClass="control-label" ID="HPReqV" runat="server" Display="Dynamic" ErrorMessage="Home Phone is required!" ControlToValidate="txtHomePhone" EnableClientScript="False"></asp:RequiredFieldValidator>
-            <asp:RegularExpressionValidator CssClass="control-label" ID="HPFormatV" runat="server" ControlToValidate="txtHomePhone" Display="Dynamic" ErrorMessage="Home Phone has wrong format. (EX: 999-999-9999)" ValidationExpression="([2-9]\d{2})-?([2-9]\d{2})-?(\d{4})" EnableClientScript="False"></asp:RegularExpressionValidator>
+            <asp:RegularExpressionValidator CssClass="control-label" ID="HPFormatV" runat="server" ControlToValidate="txtHomePhone" Display="Dynamic" ErrorMessage="Home Phone has wrong format. (EX: 1112229999)" ValidationExpression="([2-9]\d{2})-?([2-9]\d{2})-?(\d{4})" EnableClientScript="False"></asp:RegularExpressionValidator>
             <asp:RequiredFieldValidator CssClass="control-label" ID="EmailReqV" runat="server" Display="Dynamic" ErrorMessage="Email is required!" ControlToValidate="txtEmail" EnableClientScript="False"></asp:RequiredFieldValidator>
             <asp:RegularExpressionValidator CssClass="control-label" ID="EmailFormatV" runat="server" ControlToValidate="txtEmail" Display="Dynamic" ErrorMessage="Email has wrong format. (EX: example@email.com)" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" EnableClientScript="False"></asp:RegularExpressionValidator>
 
-            <asp:RegularExpressionValidator CssClass="control-label" ID="BPFormatV" runat="server" ControlToValidate="txtBusPhone" Display="Dynamic" ErrorMessage="Business Phone has wrong format. (EX: 999-999-9999)" ValidationExpression="([2-9]\d{2})-?([2-9]\d{2})-?(\d{4})" EnableClientScript="False"></asp:RegularExpressionValidator>
+            <asp:RegularExpressionValidator CssClass="control-label" ID="BPFormatV" runat="server" ControlToValidate="txtBusPhone" Display="Dynamic" ErrorMessage="Business Phone has wrong format. (EX: 1112229999)" ValidationExpression="([2-9]\d{2})-?([2-9]\d{2})-?(\d{4})" EnableClientScript="False"></asp:RegularExpressionValidator>
 
             <asp:RequiredFieldValidator CssClass="control-label" ID="AddReqV" runat="server" Display="Dynamic" ErrorMessage="Address is Required!" ControlToValidate="txtAddress" EnableClientScript="False"></asp:RequiredFieldValidator>
 
             <asp:RequiredFieldValidator CssClass="control-label" ID="CityReqV" runat="server" Display="Dynamic" ErrorMessage="City is Required!" ControlToValidate="txtCity" EnableClientScript="False"></asp:RequiredFieldValidator>
 
             <asp:RequiredFieldValidator CssClass="control-label" ID="ProvReqV" runat="server" Display="Dynamic" ErrorMessage="Province is Required!" ControlToValidate="txtProv" EnableClientScript="False"></asp:RequiredFieldValidator>
+            <asp:RegularExpressionValidator CssClass="control-label" ID="ProvFormatV" runat="server" ControlToValidate="txtProv" Display="Dynamic" ErrorMessage="Province has wrong format. (EX: XX)" ValidationExpression="^[A-Z][A-Z]$" EnableClientScript="False"></asp:RegularExpressionValidator>
 
             <asp:RequiredFieldValidator CssClass="control-label" ID="PostalReqV" runat="server" Display="Dynamic" ErrorMessage="Postal Code is Required!" ControlToValidate="txtPostal" EnableClientScript="False"></asp:RequiredFieldValidator>
 
@@ -59,7 +60,7 @@
                 <div class="md-form">
                     <i class="fa fa-lock prefix"></i>
                     <asp:TextBox CssClass="form-control" ID="txtHomePhone" runat="server" />
-                    <label for="form4">Home Phone(XXX-XXX-XXXX):</label>
+                    <label for="form4">Home Phone(XXXYYYXXXX):</label>
 
                 </div>
 
@@ -73,7 +74,7 @@
                 <div class="md-form">
                     <i class="fa fa-lock prefix"></i>
                     <asp:TextBox CssClass="form-control" ID="txtBusPhone" runat="server" />
-                    <label for="form4">Business Phone(XXX-XXX-XXXX):</label>
+                    <label for="form4">Business Phone(XXXYYYXXXX):</label>
                 </div>
 
             </div>

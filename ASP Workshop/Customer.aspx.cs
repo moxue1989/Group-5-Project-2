@@ -34,7 +34,6 @@ namespace ASP_Workshop
                     addStatus = false;
                     Customer cust = (Customer)Session["Customer"];
                     txtFirstName.Text = cust.CustFirstName;
-
                     txtLastName.Text = cust.CustLastName;
                     txtAddress.Text = cust.CustAddress;
                     txtCity.Text = cust.CustCity;
@@ -43,7 +42,6 @@ namespace ASP_Workshop
                     txtCountry.Text = cust.CustCountry;
 
                     txtEmail.Text = cust.CustEmail;
-
                     txtHomePhone.Text = cust.CustHomePhone;
                     txtBusPhone.Text = cust.CustBusPhone;
 
