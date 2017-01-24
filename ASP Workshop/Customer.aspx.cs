@@ -42,7 +42,6 @@ namespace ASP_Workshop
                     txtPostal.Text = cust.CustPostal;
                     txtCountry.Text = cust.CustCountry;
 
-                    txtEmail.Text = txtEmail.Text.Trim();
                     txtEmail.Text = cust.CustEmail;
 
                     txtHomePhone.Text = cust.CustHomePhone;
