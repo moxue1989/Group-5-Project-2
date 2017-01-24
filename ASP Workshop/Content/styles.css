@@ -25,11 +25,14 @@
 h4{
     color: #757575; 
 }
+#BookingDetails {
+    position:center
+}
 a.btnLogout:hover {
      text-decoration: none;
 }
 .dropdown-menu {
-    background-color: #e6e6fa;
+    background-color: teal;
     color: teal
 }
 #agent {
