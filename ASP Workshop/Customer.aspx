@@ -10,7 +10,7 @@
             <asp:Label ID="lblMessage" runat="server"></asp:Label>
         </div>
         <div class="row">
-     
+
             <asp:RequiredFieldValidator CssClass="control-label" ID="FNReqV" runat="server" Display="Dynamic" ErrorMessage="First Name is required!" ControlToValidate="txtFirstName" EnableClientScript="False"></asp:RequiredFieldValidator>
             <asp:RequiredFieldValidator CssClass="control-label" ID="LNReqV" runat="server" Display="Dynamic" ErrorMessage="Last Name is required!" ControlToValidate="txtLastName" EnableClientScript="False"></asp:RequiredFieldValidator>
             <asp:RequiredFieldValidator CssClass="control-label" ID="HPReqV" runat="server" Display="Dynamic" ErrorMessage="Home Phone is required!" ControlToValidate="txtHomePhone" EnableClientScript="False"></asp:RequiredFieldValidator>
@@ -75,7 +75,7 @@
                     <asp:TextBox CssClass="form-control" ID="txtBusPhone" runat="server" />
                     <label for="form4">Business Phone(XXX-XXX-XXXX):</label>
                 </div>
-                
+
             </div>
             <div class="col-sm-6">
                 <div class="md-form">
@@ -108,21 +108,20 @@
                     <label for="form4">Country:</label>
                 </div>
             </div>
-             
-        <div class="col-sm-5 col-sm-offset-1" id="agent">
-         
+
+            <div class="col-sm-5 col-sm-offset-1" id="agent">
+
                 <h4 id="lblAgent" class="text-left" runat="server">Agent:</h4>
                 <i class="fa fa-lock prefix"></i>
-                    
+
                 <asp:DropDownList CssClass="col-sm-12 dropdown dropdown-menu-right" ID="ddlAgents" runat="server"></asp:DropDownList>
-        
+
+            </div>
         </div>
-        </div>
-       
-        <div class="">
-             <div id="LoginInfo" runat="server"></div>
-        <div class="row" id="newCustomerPassword" runat="server">
-           
+
+
+        <div id="LoginInfo" runat="server">
+            <div class="row" id="newCustomerPassword" runat="server">
                 <div class="col-sm-6">
                     <div class="md-form">
                         <i class="fa fa-lock prefix"></i>
@@ -130,38 +129,32 @@
                         <label for="form4">UserName:</label>
                     </div>
                 </div>
-     
-            
-        </div>
-        <div class="row">
-            <div class="col-sm-6">
-                <div class="md-form">
-                    <i class="fa fa-lock prefix"></i>
-                    <asp:TextBox CssClass="form-control" ID="txtPassword" runat="server" />
-                    <label for="form4">Password:</label>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="md-form">
+                        <i class="fa fa-lock prefix"></i>
+                        <asp:TextBox CssClass="form-control" ID="txtPassword" runat="server" />
+                        <label for="form4">Password:</label>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="md-form">
+                        <i class="fa fa-lock prefix"></i>
+                        <asp:TextBox CssClass="form-control" ID="txtConfirmPassword" runat="server" />
+                        <label for="form4">Confirm Password:</label>
+                    </div>
                 </div>
             </div>
-            <div class="col-sm-6">
-                <div class="md-form">
-                    <i class="fa fa-lock prefix"></i>
-                    <asp:TextBox CssClass="form-control" ID="txtConfirmPassword" runat="server" />
-                    <label for="form4">Confirm Password:</label>
-                </div>
-            </div>
         </div>
+    </div>
+    <div class="container ">
+        <div class="col-sm-4">
         </div>
-       
-        <div class="container ">
-            <div class="col-sm-4">
-
-                <asp:Button CssClass="btn btn-primary" Font-Size="12" ID="btnUpdate" Width="100px" runat="server" OnClick="btnUpdate_Click" Text="Update Info" />
-
-            </div>
-            <div class="col-sm-4 ">
-                <asp:Button CssClass="btn btn-primary" ID="btnRegister" Width="100px" runat="server" Text="Register" OnClick="btnRegister_Click" />
-            </div>
+        <div class="col-sm-4 col-sm-offset-1">
+            <asp:Button CssClass="btn btn-primary" Font-Size="12" ID="btnUpdate" Width="100px" runat="server" OnClick="btnUpdate_Click" Text="Update Info" />
+            <asp:Button CssClass="btn btn-primary" ID="btnRegister" Width="100px" runat="server" Text="Register" OnClick="btnRegister_Click" />
         </div>
-
     </div>
 
 </asp:Content>
