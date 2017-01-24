@@ -33,19 +33,14 @@ namespace ASP_Workshop
                     // populate text fields with current customer information
                     addStatus = false;
                     Customer cust = (Customer)Session["Customer"];
-                    txtFirstName.Text = txtFirstName.Text.Trim();
                     txtFirstName.Text = cust.CustFirstName;
-
                     txtLastName.Text = cust.CustLastName;
                     txtAddress.Text = cust.CustAddress;
                     txtCity.Text = cust.CustCity;
                     txtProv.Text = cust.CustProv;
                     txtPostal.Text = cust.CustPostal;
                     txtCountry.Text = cust.CustCountry;
-
-                    txtEmail.Text = txtEmail.Text.Trim();
                     txtEmail.Text = cust.CustEmail;
-
                     txtHomePhone.Text = cust.CustHomePhone;
                     txtBusPhone.Text = cust.CustBusPhone;
 
