@@ -57,7 +57,7 @@ namespace Agent_App_V2
             this.txtProdName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.txtProdName.Location = new System.Drawing.Point(89, 101);
             this.txtProdName.Margin = new System.Windows.Forms.Padding(10);
-            this.txtProdName.MaxLength = 25;
+            this.txtProdName.MaxLength = 50;
             this.txtProdName.Name = "txtProdName";
             this.txtProdName.Size = new System.Drawing.Size(228, 22);
             this.txtProdName.TabIndex = 0;

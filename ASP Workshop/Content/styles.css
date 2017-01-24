@@ -12,7 +12,9 @@
 .divider {
      background-color: whitesmoke;
 }
-
+.text {
+    padding: 15px;
+}
 .control-label {
     color: red;
     padding-right : 20px;

@@ -185,7 +185,7 @@
             this.txtSuppName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.txtSuppName.Location = new System.Drawing.Point(89, 101);
             this.txtSuppName.Margin = new System.Windows.Forms.Padding(10);
-            this.txtSuppName.MaxLength = 25;
+            this.txtSuppName.MaxLength = 50;
             this.txtSuppName.Name = "txtSuppName";
             this.txtSuppName.Size = new System.Drawing.Size(228, 22);
             this.txtSuppName.TabIndex = 20;

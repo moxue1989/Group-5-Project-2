@@ -40,6 +40,7 @@ namespace ASP_Workshop
                     txtProv.Text = cust.CustProv;
                     txtPostal.Text = cust.CustPostal;
                     txtCountry.Text = cust.CustCountry;
+
                     txtEmail.Text = cust.CustEmail;
                     txtHomePhone.Text = cust.CustHomePhone;
                     txtBusPhone.Text = cust.CustBusPhone;

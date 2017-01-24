@@ -150,11 +150,10 @@
         </div>
     </div>
     <div class="container ">
-        <div class="col-sm-4">
-        </div>
-        <div class="col-sm-4 col-sm-offset-1">
-            <asp:Button CssClass="btn btn-primary" Font-Size="12" ID="btnUpdate" Width="100px" runat="server" OnClick="btnUpdate_Click" Text="Update Info" />
-            <asp:Button CssClass="btn btn-primary" ID="btnRegister" Width="100px" runat="server" Text="Register" OnClick="btnRegister_Click" />
+  
+        <div class="col-sm-4 col-sm-offset-5">
+            <asp:Button CssClass="btn btn-primary" ID="btnUpdate" Width="100"  runat="server" OnClick="btnUpdate_Click" Text="Update Info" />
+            <asp:Button CssClass="btn btn-primary" ID="btnRegister" Width="100" runat="server" Text="Register" OnClick="btnRegister_Click" />
         </div>
     </div>
 
