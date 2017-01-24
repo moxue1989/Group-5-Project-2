@@ -39,7 +39,7 @@ namespace Agent_App_V2
                 int startX = pnlPackages.Location.X;
                 int startY = pnlPackages.Location.Y;
                 Button button = new Button();
-                button.Location = new Point(45 + startX, 30*count + startY -100);
+                button.Location = new Point(45 + startX, 30*count + startY -140);
                 button.Size = new Size(200, 25);
                 button.TabIndex = count;
                 button.Cursor = Cursors.Hand;

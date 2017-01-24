@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.Threading;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 
@@ -12,11 +13,21 @@ namespace Agent_App_V2
 
         public frmMain()
         {
+            Thread t = new Thread(new ThreadStart(StartSplashScreen));
+            t.Start();
+            Thread.Sleep(5000);
             InitializeComponent();
+            t.Abort();
+        }
+
+        public void StartSplashScreen()
+        {
+            Application.Run(new SplashScreen());
         }
 
         private void frmMain_Load(object sender, EventArgs e)
         {
+            
             Logout();
         }
 

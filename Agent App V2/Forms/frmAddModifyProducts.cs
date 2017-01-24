@@ -6,7 +6,7 @@ namespace Agent_App_V2
     public partial class FrmAddModifyProducts : Form
     {
         public bool AddProducts; //Modify of edit Products
-
+        private bool saveStatus = false;
         public Product product = new Product();// object of product data
 
         public FrmAddModifyProducts()
@@ -23,6 +23,7 @@ namespace Agent_App_V2
                 {
                     Product newProd = new Product();
                     newProd.ProdName = txtProdName.Text;
+                    saveStatus = true;
                     try
                     {
                         ProductDB.AddProduct(newProd);
@@ -43,6 +44,7 @@ namespace Agent_App_V2
                 if (IsValid())
                 {
                     product.ProdName = txtProdName.Text;
+                    saveStatus = true;
                     try
                     {
                         product.UpdateProd();
@@ -101,6 +103,21 @@ namespace Agent_App_V2
         private void btnMinimize_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
+        }
+
+        private void FrmAddModifyProducts_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+            if (!saveStatus)
+            {
+                // make sure user wants to exit
+                if (
+                    MessageBox.Show("Exit without saving changes?", "Cancel", MessageBoxButtons.OKCancel,
+                        MessageBoxIcon.Exclamation) != DialogResult.OK)
+                {
+                    e.Cancel = true;
+                }
+            }
         }
     }
 

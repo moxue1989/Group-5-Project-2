@@ -10,9 +10,7 @@
             <asp:Label ID="lblMessage" runat="server"></asp:Label>
         </div>
         <div class="row">
-       <%--  <div class="md-form has-error text-center" id="error ">
-            <asp:Label CssClass="alert-danger has-error" Font-Names="Roboto" for="txtFirstName txtLastName txtHomePhone txtEmail txtBusPhone txtAddress txtCity txtProv txtPostal txtUserName txtPassword txtConfirmPassword txtConfirmPassword" Height="" ID="RegErrors" runat="server" ForeColor="Red"></asp:Label>
-         </div> --%>
+     
             <asp:RequiredFieldValidator CssClass="control-label" ID="FNReqV" runat="server" Display="Dynamic" ErrorMessage="First Name is required!" ControlToValidate="txtFirstName" EnableClientScript="False"></asp:RequiredFieldValidator>
             <asp:RequiredFieldValidator CssClass="control-label" ID="LNReqV" runat="server" Display="Dynamic" ErrorMessage="Last Name is required!" ControlToValidate="txtLastName" EnableClientScript="False"></asp:RequiredFieldValidator>
             <asp:RequiredFieldValidator CssClass="control-label" ID="HPReqV" runat="server" Display="Dynamic" ErrorMessage="Home Phone is required!" ControlToValidate="txtHomePhone" EnableClientScript="False"></asp:RequiredFieldValidator>
@@ -61,23 +59,23 @@
                 <div class="md-form">
                     <i class="fa fa-lock prefix"></i>
                     <asp:TextBox CssClass="form-control" ID="txtHomePhone" runat="server" />
-                    <label for="form4">Home Phone:</label>
+                    <label for="form4">Home Phone(XXX-XXX-XXXX):</label>
 
                 </div>
 
                 <div class="md-form">
                     <i class="fa fa-lock prefix"></i>
                     <asp:TextBox CssClass="form-control" ID="txtEmail" runat="server" />
-                    <label for="form4">Email:</label>
+                    <label for="form4">Email(eg. abc@live.com):</label>
 
                 </div>
 
                 <div class="md-form">
                     <i class="fa fa-lock prefix"></i>
                     <asp:TextBox CssClass="form-control" ID="txtBusPhone" runat="server" />
-                    <label for="form4">Business Phone:</label>
-
+                    <label for="form4">Business Phone(XXX-XXX-XXXX):</label>
                 </div>
+                
             </div>
             <div class="col-sm-6">
                 <div class="md-form">
@@ -101,7 +99,7 @@
                 <div class="md-form">
                     <i class="fa fa-lock prefix"></i>
                     <asp:TextBox CssClass="form-control" ID="txtPostal" runat="server" />
-                    <label for="form4">Postal Code:</label>
+                    <label for="form4">Postal Code(XXX XXX):</label>
 
                 </div>
                 <div class="md-form">
@@ -110,27 +108,32 @@
                     <label for="form4">Country:</label>
                 </div>
             </div>
+             
+        <div class="col-sm-5 col-sm-offset-1" id="agent">
+         
+                <h4 id="lblAgent" class="text-left" runat="server">Agent:</h4>
+                <i class="fa fa-lock prefix"></i>
+                    
+                <asp:DropDownList CssClass="col-sm-12 dropdown dropdown-menu-right" ID="ddlAgents" runat="server"></asp:DropDownList>
+        
+        </div>
+        </div>
+       
+        <div class="">
+             <div id="LoginInfo" runat="server"></div>
+        <div class="row" id="newCustomerPassword" runat="server">
+           
+                <div class="col-sm-6">
+                    <div class="md-form">
+                        <i class="fa fa-lock prefix"></i>
+                        <asp:TextBox CssClass="form-control" ID="txtUserName" runat="server" />
+                        <label for="form4">UserName:</label>
+                    </div>
+                </div>
+     
+            
         </div>
         <div class="row">
-            <div class="col-sm-8">
-                <div class="md-form">
-                    <i class="fa fa-lock prefix"></i>
-                    <asp:DropDownList CssClass="form-control" ID="ddlAgents" runat="server"></asp:DropDownList>
-                    <%--<h6 id="lblAgent" runat="server">Agent:</h6>--%>
-                </div>
-            </div>
-            <div class="col-sm-4">
-            </div>
-        </div>
-        <div id="LoginInfo" runat="server"></div>
-        <div class="row" id="newCustomerPassword" runat="server">
-            <div class="col-sm-6">
-                <div class="md-form">
-                    <i class="fa fa-lock prefix"></i>
-                    <asp:TextBox CssClass="form-control" ID="txtUserName" runat="server" />
-                    <label for="form4">UserName:</label>
-                </div>
-            </div>
             <div class="col-sm-6">
                 <div class="md-form">
                     <i class="fa fa-lock prefix"></i>
@@ -146,6 +149,8 @@
                 </div>
             </div>
         </div>
+        </div>
+       
         <div class="container ">
             <div class="col-sm-4">
 

@@ -15,7 +15,7 @@ namespace Agent_App_V2
         public bool AddSuppliers; //Modify of edit Suppliers
 
         public Supplier supplier = new Supplier();// object of supplier data
-
+        private bool saveStatus = false;
         public frmAddEditSupplier()
         {
             InitializeComponent();
@@ -30,6 +30,7 @@ namespace Agent_App_V2
                 {
                     Supplier newSupp = new Supplier();
                     newSupp.SupName = txtSuppName.Text;
+                    saveStatus = true;
                     try
                     {
                         SupplierDB.AddSupplier(newSupp);
@@ -48,7 +49,7 @@ namespace Agent_App_V2
                 if (IsValidData())
                 {
                     supplier.SupName = txtSuppName.Text;
-
+                    saveStatus = true;
                     try
                     {
                         supplier.UpdateSupp();
@@ -107,6 +108,20 @@ namespace Agent_App_V2
         private void btnMinimize_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;//minimize application window
+        }
+
+        private void frmAddEditSupplier_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!saveStatus)
+            {
+                // make sure user wants to exit
+                if (
+                    MessageBox.Show("Exit without saving changes?", "Cancel", MessageBoxButtons.OKCancel,
+                        MessageBoxIcon.Exclamation) != DialogResult.OK)
+                {
+                    e.Cancel = true;
+                }
+            }
         }
     }
 }

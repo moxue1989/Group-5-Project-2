@@ -38,10 +38,13 @@ namespace Agent_App_V2
             this.Dashboardbody = new System.Windows.Forms.Panel();
             this.btnProductSuppliers = new System.Windows.Forms.Button();
             this.header = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.Navbar = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
@@ -61,10 +64,9 @@ namespace Agent_App_V2
             this.btnLogin = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.lblFooter = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnLogout = new System.Windows.Forms.Button();
             this.Dashboardbody.SuspendLayout();
             this.header.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.Navbar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel10.SuspendLayout();
@@ -75,7 +77,6 @@ namespace Agent_App_V2
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             this.panel3.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnPackages
@@ -89,9 +90,9 @@ namespace Agent_App_V2
             this.btnPackages.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPackages.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.btnPackages.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(202)))), ((int)(((byte)(233)))));
-            this.btnPackages.Location = new System.Drawing.Point(54, 60);
+            this.btnPackages.Location = new System.Drawing.Point(78, 92);
             this.btnPackages.Name = "btnPackages";
-            this.btnPackages.Size = new System.Drawing.Size(126, 97);
+            this.btnPackages.Size = new System.Drawing.Size(155, 138);
             this.btnPackages.TabIndex = 0;
             this.btnPackages.Text = "Packages";
             this.toolTip1.SetToolTip(this.btnPackages, "View | Add | Edit Packages");
@@ -111,12 +112,12 @@ namespace Agent_App_V2
             // 
             // Dashboardbody
             // 
-            this.Dashboardbody.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(33)))), ((int)(((byte)(66)))));
+            this.Dashboardbody.BackColor = System.Drawing.Color.Transparent;
             this.Dashboardbody.Controls.Add(this.btnProductSuppliers);
             this.Dashboardbody.Controls.Add(this.btnPackages);
-            this.Dashboardbody.Location = new System.Drawing.Point(149, 123);
+            this.Dashboardbody.Location = new System.Drawing.Point(155, 123);
             this.Dashboardbody.Name = "Dashboardbody";
-            this.Dashboardbody.Size = new System.Drawing.Size(450, 200);
+            this.Dashboardbody.Size = new System.Drawing.Size(542, 317);
             this.Dashboardbody.TabIndex = 4;
             // 
             // btnProductSuppliers
@@ -130,9 +131,9 @@ namespace Agent_App_V2
             this.btnProductSuppliers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProductSuppliers.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.btnProductSuppliers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(202)))), ((int)(((byte)(233)))));
-            this.btnProductSuppliers.Location = new System.Drawing.Point(268, 58);
+            this.btnProductSuppliers.Location = new System.Drawing.Point(308, 90);
             this.btnProductSuppliers.Name = "btnProductSuppliers";
-            this.btnProductSuppliers.Size = new System.Drawing.Size(126, 97);
+            this.btnProductSuppliers.Size = new System.Drawing.Size(155, 138);
             this.btnProductSuppliers.TabIndex = 1;
             this.btnProductSuppliers.Text = "Product and Suppliers";
             this.toolTip1.SetToolTip(this.btnProductSuppliers, "View | Add | Edit Products and Suppliers");
@@ -148,8 +149,38 @@ namespace Agent_App_V2
             this.header.Dock = System.Windows.Forms.DockStyle.Top;
             this.header.Location = new System.Drawing.Point(0, 27);
             this.header.Name = "header";
-            this.header.Size = new System.Drawing.Size(750, 45);
+            this.header.Size = new System.Drawing.Size(850, 45);
             this.header.TabIndex = 5;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnLogout);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(756, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(94, 45);
+            this.panel1.TabIndex = 19;
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.BackColor = System.Drawing.Color.Transparent;
+            this.btnLogout.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLogout.BackgroundImage")));
+            this.btnLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogout.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
+            this.btnLogout.FlatAppearance.BorderSize = 0;
+            this.btnLogout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnLogout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnLogout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(23)))), ((int)(((byte)(46)))));
+            this.btnLogout.Location = new System.Drawing.Point(28, 8);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(10);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(27, 30);
+            this.btnLogout.TabIndex = 17;
+            this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // Navbar
             // 
@@ -160,7 +191,7 @@ namespace Agent_App_V2
             this.Navbar.Dock = System.Windows.Forms.DockStyle.Top;
             this.Navbar.Location = new System.Drawing.Point(0, 0);
             this.Navbar.Name = "Navbar";
-            this.Navbar.Size = new System.Drawing.Size(750, 27);
+            this.Navbar.Size = new System.Drawing.Size(850, 27);
             this.Navbar.TabIndex = 9;
             // 
             // pictureBox2
@@ -186,13 +217,21 @@ namespace Agent_App_V2
             // 
             // panel10
             // 
+            this.panel10.Controls.Add(this.panel2);
             this.panel10.Controls.Add(this.btnMinimize);
             this.panel10.Controls.Add(this.btnExit);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel10.Location = new System.Drawing.Point(0, 0);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(750, 27);
+            this.panel10.Size = new System.Drawing.Size(850, 27);
             this.panel10.TabIndex = 8;
+            // 
+            // panel2
+            // 
+            this.panel2.Location = new System.Drawing.Point(331, 26);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(173, 45);
+            this.panel2.TabIndex = 0;
             // 
             // btnMinimize
             // 
@@ -204,7 +243,7 @@ namespace Agent_App_V2
             this.btnMinimize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(33)))), ((int)(((byte)(66)))));
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimize.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimize.Image")));
-            this.btnMinimize.Location = new System.Drawing.Point(679, 1);
+            this.btnMinimize.Location = new System.Drawing.Point(779, 1);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(32, 25);
             this.btnMinimize.TabIndex = 2;
@@ -221,7 +260,7 @@ namespace Agent_App_V2
             this.btnExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(33)))), ((int)(((byte)(66)))));
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
-            this.btnExit.Location = new System.Drawing.Point(714, 1);
+            this.btnExit.Location = new System.Drawing.Point(814, 1);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(32, 25);
             this.btnExit.TabIndex = 0;
@@ -291,7 +330,7 @@ namespace Agent_App_V2
             this.loginDashboard.Controls.Add(this.btnLogin);
             this.loginDashboard.Controls.Add(this.txtPassword);
             this.loginDashboard.Controls.Add(this.label2);
-            this.loginDashboard.Location = new System.Drawing.Point(244, 35);
+            this.loginDashboard.Location = new System.Drawing.Point(293, 102);
             this.loginDashboard.Name = "loginDashboard";
             this.loginDashboard.Size = new System.Drawing.Size(277, 335);
             this.loginDashboard.TabIndex = 10;
@@ -464,41 +503,11 @@ namespace Agent_App_V2
             this.lblFooter.BackColor = System.Drawing.Color.Transparent;
             this.lblFooter.Font = new System.Drawing.Font("Segoe UI", 6F);
             this.lblFooter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(202)))), ((int)(((byte)(233)))));
-            this.lblFooter.Location = new System.Drawing.Point(322, 376);
+            this.lblFooter.Location = new System.Drawing.Point(361, 464);
             this.lblFooter.Name = "lblFooter";
             this.lblFooter.Size = new System.Drawing.Size(141, 11);
             this.lblFooter.TabIndex = 18;
             this.lblFooter.Text = "Developed By:  Mo  |  Kasi  |  Jermayne";
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.btnLogout);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(656, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(94, 45);
-            this.panel1.TabIndex = 19;
-            // 
-            // btnLogout
-            // 
-            this.btnLogout.BackColor = System.Drawing.Color.Transparent;
-            this.btnLogout.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLogout.BackgroundImage")));
-            this.btnLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLogout.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
-            this.btnLogout.FlatAppearance.BorderSize = 0;
-            this.btnLogout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnLogout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogout.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnLogout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(23)))), ((int)(((byte)(46)))));
-            this.btnLogout.Location = new System.Drawing.Point(28, 8);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(10);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(27, 30);
-            this.btnLogout.TabIndex = 17;
-            this.btnLogout.UseVisualStyleBackColor = false;
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // frmMain
             // 
@@ -508,11 +517,11 @@ namespace Agent_App_V2
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(23)))), ((int)(((byte)(46)))));
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(750, 400);
+            this.ClientSize = new System.Drawing.Size(850, 500);
             this.Controls.Add(this.lblFooter);
-            this.Controls.Add(this.loginDashboard);
             this.Controls.Add(this.header);
             this.Controls.Add(this.Navbar);
+            this.Controls.Add(this.loginDashboard);
             this.Controls.Add(this.Dashboardbody);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
@@ -524,6 +533,7 @@ namespace Agent_App_V2
             this.Dashboardbody.ResumeLayout(false);
             this.header.ResumeLayout(false);
             this.header.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.Navbar.ResumeLayout(false);
             this.Navbar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -536,7 +546,6 @@ namespace Agent_App_V2
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             this.panel3.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -574,6 +583,7 @@ namespace Agent_App_V2
         private Label lblFooter;
         private Panel panel1;
         private Button btnLogout;
+        private Panel panel2;
     }
 }
 
