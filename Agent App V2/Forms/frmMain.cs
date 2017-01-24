@@ -27,6 +27,7 @@ namespace Agent_App_V2
 
         private void frmMain_Load(object sender, EventArgs e)
         {
+            
             Logout();
         }
 

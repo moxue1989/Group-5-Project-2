@@ -23,19 +23,24 @@ namespace ASP_Workshop
                 {
                     addStatus = false;
                     Customer cust = (Customer)Session["Customer"];
+                    txtFirstName.Text = txtFirstName.Text.Trim();
                     txtFirstName.Text = cust.CustFirstName;
+
                     txtLastName.Text = cust.CustLastName;
                     txtAddress.Text = cust.CustAddress;
                     txtCity.Text = cust.CustCity;
                     txtProv.Text = cust.CustProv;
                     txtPostal.Text = cust.CustPostal;
                     txtCountry.Text = cust.CustCountry;
+
+                    txtEmail.Text = txtEmail.Text.Trim();
                     txtEmail.Text = cust.CustEmail;
+
                     txtHomePhone.Text = cust.CustHomePhone;
                     txtBusPhone.Text = cust.CustBusPhone;
 
                     newCust.Visible = false;
-                    //lblAgent.Visible = false;
+                    lblAgent.Visible = false;
                     ddlAgents.Visible = false;
                     btnRegister.Visible = false;
                     LoginInfo.Visible = false;

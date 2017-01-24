@@ -28,6 +28,7 @@ namespace Agent_App_V2
 
         private void frmSuppliers_Load(object sender, EventArgs e)
         {
+            
             dataGridSuppliers.DataSource = ProductsSuppliersDB.GetSuppliers();
             datagridPackages.DataSource = packageList;
             FindProductSuppliers();
@@ -35,6 +36,7 @@ namespace Agent_App_V2
             dataGridAllProd.Columns[0].Width = 200;
             dataGridProdSupp.Columns[0].Width = 200;
             datagridPackages.Columns[0].Width = 100;
+            
         }
 
         private void FindProductSuppliers()
