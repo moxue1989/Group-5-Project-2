@@ -219,9 +219,12 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtSuppName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmAddEditSupplier";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAddEditSupplier";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmAddEditSupplier_FormClosing);

@@ -217,9 +217,12 @@ namespace Agent_App_V2
             this.Controls.Add(this.txtProdName);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmAddModifyProducts";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAddProducts";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmAddModifyProducts_FormClosing);

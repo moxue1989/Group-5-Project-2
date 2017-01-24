@@ -524,6 +524,7 @@ namespace Agent_App_V2
             this.Controls.Add(this.loginDashboard);
             this.Controls.Add(this.Dashboardbody);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmMain";

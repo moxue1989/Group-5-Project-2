@@ -339,7 +339,7 @@ namespace Agent_App_V2
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label1.Location = new System.Drawing.Point(107, 127);
+            this.label1.Location = new System.Drawing.Point(96, 127);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(176, 25);
             this.label1.TabIndex = 55;
@@ -394,7 +394,7 @@ namespace Agent_App_V2
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::Agent_App_V2.Properties.Resources.logo1;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(5, 2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(31, 24);
@@ -530,6 +530,7 @@ namespace Agent_App_V2
             this.Controls.Add(this.lvProducts);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmPackages";

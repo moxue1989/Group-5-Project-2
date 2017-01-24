@@ -573,7 +573,7 @@ namespace Agent_App_V2
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::Agent_App_V2.Properties.Resources.logo1;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(8, 2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(31, 24);
@@ -663,6 +663,7 @@ namespace Agent_App_V2
             this.Controls.Add(this.btnRemoveProdFrList);
             this.Controls.Add(this.btnAddProdToList);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmProdSuppliers";

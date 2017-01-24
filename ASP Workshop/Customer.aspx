@@ -60,7 +60,7 @@
                 <div class="md-form">
                     <i class="fa fa-lock prefix"></i>
                     <asp:TextBox CssClass="form-control" ID="txtHomePhone" runat="server" />
-                    <label for="form4">Home Phone(XXXYYYXXXX):</label>
+                    <label for="form4">Home Phone(4031112222):</label>
 
                 </div>
 
@@ -74,7 +74,7 @@
                 <div class="md-form">
                     <i class="fa fa-lock prefix"></i>
                     <asp:TextBox CssClass="form-control" ID="txtBusPhone" runat="server" />
-                    <label for="form4">Business Phone(XXXYYYXXXX):</label>
+                    <label for="form4">Business Phone(4031112223):</label>
                 </div>
 
             </div>
@@ -94,7 +94,7 @@
                 <div class="md-form">
                     <i class="fa fa-lock prefix"></i>
                     <asp:TextBox CssClass="form-control" ID="txtProv" runat="server" />
-                    <label for="form4">Province:</label>
+                    <label for="form4">Province(XX):</label>
 
                 </div>
                 <div class="md-form">
@@ -135,14 +135,14 @@
                 <div class="col-sm-6">
                     <div class="md-form">
                         <i class="fa fa-lock prefix"></i>
-                        <asp:TextBox CssClass="form-control" ID="txtPassword" runat="server" />
+                        <asp:TextBox CssClass="form-control" ID="txtPassword" TextMode="Password" runat="server" />
                         <label for="form4">Password:</label>
                     </div>
                 </div>
                 <div class="col-sm-6">
                     <div class="md-form">
                         <i class="fa fa-lock prefix"></i>
-                        <asp:TextBox CssClass="form-control" ID="txtConfirmPassword" runat="server" />
+                        <asp:TextBox CssClass="form-control" ID="txtConfirmPassword" TextMode="Password" runat="server" />
                         <label for="form4">Confirm Password:</label>
                     </div>
                 </div>
