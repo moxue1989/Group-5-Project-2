@@ -93,7 +93,7 @@ namespace Agent_App_V2
             this.tbPkgAgencyCommission.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.tbPkgAgencyCommission.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.tbPkgAgencyCommission.Location = new System.Drawing.Point(370, 148);
-            this.tbPkgAgencyCommission.MaxLength = 6;
+            this.tbPkgAgencyCommission.MaxLength = 20;
             this.tbPkgAgencyCommission.Name = "tbPkgAgencyCommission";
             this.tbPkgAgencyCommission.Size = new System.Drawing.Size(97, 22);
             this.tbPkgAgencyCommission.TabIndex = 17;
@@ -107,7 +107,7 @@ namespace Agent_App_V2
             this.tbPkgBasePrice.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.tbPkgBasePrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.tbPkgBasePrice.Location = new System.Drawing.Point(253, 148);
-            this.tbPkgBasePrice.MaxLength = 6;
+            this.tbPkgBasePrice.MaxLength = 20;
             this.tbPkgBasePrice.Name = "tbPkgBasePrice";
             this.tbPkgBasePrice.Size = new System.Drawing.Size(97, 22);
             this.tbPkgBasePrice.TabIndex = 16;
@@ -410,7 +410,7 @@ namespace Agent_App_V2
             this.tbPkgDesc.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.tbPkgDesc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.tbPkgDesc.Location = new System.Drawing.Point(253, 211);
-            this.tbPkgDesc.MaxLength = 50;
+            this.tbPkgDesc.MaxLength = 300;
             this.tbPkgDesc.Name = "tbPkgDesc";
             this.tbPkgDesc.Size = new System.Drawing.Size(214, 85);
             this.tbPkgDesc.TabIndex = 38;
