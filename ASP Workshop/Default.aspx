@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="ASP_Workshop.WebForm1" %>
 
-<%--All front end codign done by Kasi Emmanuel--%>
+<%--All Front End Layout and Code done by Kasi Emmanuel--%>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -8,11 +8,12 @@
   
 
     <main class="card col-xs-12 col-sm-10 col-md-6">
+        
         <!--Start Header-->
       <div class="header" id="blank"><h5 class="modal-title text-xs-left">Login to your Account</h5></div>
         <!--End Header-->
 
-            <!--Login Form Body-->
+            <!--Start Login Form Body-->
             <div class="card-block loginCard text-sm-center ">
                 
                 <div class="md-form">
@@ -35,7 +36,8 @@
                 <div class="md-form has-error text-center" id="error ">
                     <asp:Label CssClass="control-label " Font-Names="Roboto" for="txtUsername txtPassword" Height="30px" ID="lblLoginError" runat="server"></asp:Label>
                 </div>     
-            <!--Login Form Body-->
+
+            <!--End Login Form Body-->
                    <!--Start Footer-->
                 <div class="col-sm-12 modal-footer">
                     <div class="options">

@@ -11,7 +11,7 @@ namespace ASP_Workshop
     /// Login page
     /// Has links to sign up for new customers
     /// Group 5 ASP.NET
-    /// Kasi Emmanuel
+    /// Mo Xue
     /// </summary>
     public partial class WebForm1 : System.Web.UI.Page
     {
@@ -29,12 +29,12 @@ namespace ASP_Workshop
             Customer cust = TravelExpertsDB.GetCustomer(username, password);
             if (cust.CustFirstName != null)
             {
-                Session["Customer"] = cust;
-                Response.Redirect("CustomerLanding.aspx");
+                Session["Customer"] = cust; //store Customer in a Session variable
+                Response.Redirect("CustomerLanding.aspx");// push user to Customer Landing page once inputs fields are valid
             }
             else
             {
-                lblLoginError.Text = "Wrong Username or Password!";
+                lblLoginError.Text = "Wrong Username or Password!";//display error message to user
             }
         }
     }

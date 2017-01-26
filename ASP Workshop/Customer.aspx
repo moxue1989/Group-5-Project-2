@@ -1,16 +1,22 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Customer.aspx.cs" Inherits="ASP_Workshop.WebForm3" %>
 
+<%--Dhwani Desai inserted the validations | 
+    Kasi Emmanuel coded all the Front End--%> 
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <%--alert alert-dismissible alert-danger--%>
+
+
     <div class="col-sm-10 col-sm-offset-1 ">
+        <%--Display confirmation message to Customer--%>
         <div id="messageAlert" class="alert alert-dismissible alert-danger" runat="server" visible="False">
             <button type="button" class="close" data-dismiss="alert">×</button>
             <asp:Label ID="lblMessage" runat="server"></asp:Label>
         </div>
-        <div class="row">
 
+        <%--Display all the input fields errors--%> 
+        <div class="row">
             <asp:RequiredFieldValidator CssClass="control-label" ID="FNReqV" runat="server" Display="Dynamic" ErrorMessage="First Name is required!" ControlToValidate="txtFirstName" EnableClientScript="False"></asp:RequiredFieldValidator>
             <asp:RequiredFieldValidator CssClass="control-label" ID="LNReqV" runat="server" Display="Dynamic" ErrorMessage="Last Name is required!" ControlToValidate="txtLastName" EnableClientScript="False"></asp:RequiredFieldValidator>
             <asp:RequiredFieldValidator CssClass="control-label" ID="HPReqV" runat="server" Display="Dynamic" ErrorMessage="Home Phone is required!" ControlToValidate="txtHomePhone" EnableClientScript="False"></asp:RequiredFieldValidator>
@@ -36,13 +42,18 @@
             <asp:RequiredFieldValidator CssClass="control-label" ID="CPWReqV" runat="server" Display="Dynamic" ErrorMessage="Confirm Password is required!" ControlToValidate="txtConfirmPassword" Enabled="False" EnableClientScript="False"></asp:RequiredFieldValidator>
             <asp:CompareValidator CssClass="control-label" ID="CPWCompareV" runat="server" ControlToCompare="txtPassword" ControlToValidate="txtConfirmPassword" Enabled="False" ErrorMessage="Passwords must be the same!" EnableClientScript="False"></asp:CompareValidator>
         </div>
+        
+
         <div class="row">
-            <!--Header-->
+            <!--Start Form Header-->
             <div class="header text-xs-center">
                 <asp:Label ID="newCust" CssClass="h2-responsive" runat="server" Text="Customer Registration:"></asp:Label>
                 <asp:Label ID="AccountDetails" CssClass="h2-responsive" runat="server" Text="Change Account Details:"></asp:Label>
                 <hr class="mt-2 mb-2" />
             </div>
+            <!--End Form Header-->
+
+            <!--Start Main Form Body-->
             <div class="col-sm-6">
 
                 <div class="md-form">
@@ -118,9 +129,10 @@
                 <asp:DropDownList CssClass="col-sm-12 dropdown dropdown-menu-right" ID="ddlAgents" runat="server"></asp:DropDownList>
 
             </div>
+            <!--End Main Form Body-->
         </div>
 
-
+        <!--Start User Authentication Section-->
         <div id="LoginInfo" runat="server">
             <div class="row" id="newCustomerPassword" runat="server">
                 <div class="col-sm-6">
@@ -148,13 +160,16 @@
                 </div>
             </div>
         </div>
+        <!--End User Authentication Section-->
+
     </div>
     <div class="container ">
-  
+        <!--Start Button Section-->
         <div class="col-sm-4 col-sm-offset-5">
             <asp:Button CssClass="btn btn-primary" ID="btnUpdate" Width="100"  runat="server" OnClick="btnUpdate_Click" Text="Update Info" />
             <asp:Button CssClass="btn btn-primary" ID="btnRegister" Width="100" runat="server" Text="Register" OnClick="btnRegister_Click" />
         </div>
+        <!--End Button Section-->
     </div>
 
 </asp:Content>

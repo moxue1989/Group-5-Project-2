@@ -12,7 +12,7 @@ namespace ASP_Workshop
     /// Customer register/modify page
     /// Can be used to add or modify customer depending on session
     /// Group 5 ASP.NET
-    /// Mo Xue and Kasi Emmanuel
+    /// Mo Xue, Dhwani Desai and Kasi Emmanuel
     /// </summary>
     public partial class WebForm3 : System.Web.UI.Page
     {

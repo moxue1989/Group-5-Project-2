@@ -36,7 +36,7 @@ namespace ASP_Workshop
                 }
                 
                 CreateBookings();
-                lblTotalCost.Text = totalCost.ToString("c");
+                lblTotalCost.Text = totalCost.ToString("c");//display subtotal cost as currency
             }
             else
             {
@@ -48,13 +48,15 @@ namespace ASP_Workshop
         {
             foreach(var booking in bookings)
             {
-                // bookings row
+                // set bookings row
                 var divRowBk = new System.Web.UI.HtmlControls.HtmlGenericControl("DIV");
                 divRowBk.Attributes.Add("class", "row");
 
+                // set bookings grid columns using bootstrap classes
                 var divColTotal = new System.Web.UI.HtmlControls.HtmlGenericControl("DIV");
                 divColTotal.Attributes.Add("class", "col-sm-12");
 
+                // set bookings grid columns using bootstrap classes
                 var divColBk = new System.Web.UI.HtmlControls.HtmlGenericControl("DIV");
                 divColBk.Attributes.Add("class", "col-sm-8 col-sm-offset-2");
 
@@ -62,13 +64,15 @@ namespace ASP_Workshop
 
 
 
-                // details row
+                // set details row
                 var divRowDt = new System.Web.UI.HtmlControls.HtmlGenericControl("DIV");
                 divRowDt.Attributes.Add("class", "row");
-                
+
+                // set bookings grid columns using bootstrap classes
                 var divColDt = new System.Web.UI.HtmlControls.HtmlGenericControl("DIV");
                 divColDt.Attributes.Add("class", "col-sm-8 col-sm-offset-2");
 
+                //create table on runtime and display customer data and set headers
                 Table tableBk = new Table();
                 TableHeaderRow rowBkHead = new TableHeaderRow();
                 TableHeaderCell[] cellsBkHead = new TableHeaderCell[4];
@@ -82,8 +86,9 @@ namespace ASP_Workshop
                 cellsBkHead[3].Text = "Trip Type";
                 rowBkHead.Cells.AddRange(cellsBkHead);
                 tableBk.Rows.Add(rowBkHead);
-                rowBkHead.Attributes.Add("style", "background-color: teal; color: whitesmoke;");
+                rowBkHead.Attributes.Add("style", "background-color: teal; color: whitesmoke;");//set css style attributes to table on runtime
 
+                //insert customer booking data in row
                 TableRow rowBkData = new TableRow();
                 TableCell[] cellsBkData = new TableCell[4];
                 cellsBkData[0] = new TableCell();
@@ -97,10 +102,10 @@ namespace ASP_Workshop
                 rowBkData.Cells.AddRange(cellsBkData);
                 tableBk.Rows.Add(rowBkData);
 
-                tableBk.CssClass = "table table-responsive";
+                tableBk.CssClass = "table table-responsive";//assign a bootstrap class to table, making it responsive
 
-                
-                // details table
+
+                // set details table headers
                 details = TravelExpertsDB.GetBookingDetails(booking.BookingId);
                 Table tableDt = new Table();
                 TableHeaderRow rowDtHead = new TableHeaderRow();
@@ -119,7 +124,7 @@ namespace ASP_Workshop
 
                 rowDtHead.Cells.AddRange(cellsDtHead);
                 tableDt.Rows.Add(rowDtHead);
-                rowDtHead.Attributes.Add("style", "background-color: darkslategray; color: whitesmoke;");
+                rowDtHead.Attributes.Add("style", "background-color: darkslategray; color: whitesmoke;");//set css style attributes to table on runtime
 
                 foreach (var detail in details)
                 {
@@ -144,7 +149,7 @@ namespace ASP_Workshop
                 Label lbBkTotalHead = new Label();
                 lbBkTotalHead.Text = "Booking Total";
                 lbBkTotalHead.Width = 120;
-                lbBkTotalHead.Attributes.Add("class", "col-xs-5  col-xs-offset-6  col-md-4 col-md-offset-7");
+                lbBkTotalHead.Attributes.Add("class", "col-xs-5  col-xs-offset-6  col-md-4 col-md-offset-7");//set css style attributes to table on runtime
                 Label lbBkTotal = new Label();
                 lbBkTotal.Width = 90;
                 lbBkTotal.Text = booking.GetTotal().ToString("c");
@@ -157,7 +162,7 @@ namespace ASP_Workshop
 
                 divRowBk.Controls.Add(divColTotal);
 
-                tableDt.CssClass = "table table-responsive";
+                tableDt.CssClass = "table table-responsive";//assign a bootstrap class to table, making it responsive
 
                 
 

@@ -1,8 +1,13 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CustomerLanding.aspx.cs" Inherits="ASP_Workshop.WebForm4" %>
+
+<%--Coded by Kasi Emmanuel--%>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
    
+        <%--Account Details Section Start--%>
         <div class="col-xs-12 col-md-6  text-xs-center">
             <div class="divider-new">
                 <label class="h2-responsive">Account Details</label>
@@ -20,6 +25,9 @@
                 
             </div>
         </div>
+        <%--Account Details Section End--%>
+
+        <%--Purchase History Section Start--%>
         <div class="col-xs-12 col-md-6 ">
             <div class="divider-new">
                 <label class="h2-responsive">Purchases</label>
@@ -37,4 +45,5 @@
                 </div>
             </div>
         </div>
+        <%--Purchase Histoty Section End--%>
 </asp:Content>

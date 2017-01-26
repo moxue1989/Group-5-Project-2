@@ -18,11 +18,14 @@
     <div class="container">
 
         <form id="form1" class="form-inline  " runat="server">
+            
             <%--Start Navbar--%>
 
             <nav class="navbar navbar-default  navbar-fixed-top">
                 <div class="container-fluid">
+                    
                     <%--Navbar header--%>
+
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                             <span class="sr-only">Toggle navigation</span>
@@ -37,7 +40,7 @@
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav ">
                             <li class="active" id="CustLanding"><a href="CustomerLanding.aspx">Home <span class="sr-only">(current)</span></a></li>
-                            <%--<li><a href="Purchases.aspx">Your Account</a></li>--%>
+                           
                             <li id="CustomerMenu" class="dropdown" runat="server">
                                 <a href="CustomerLanding.aspx" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Account<span class="caret"></span></a>
                                 <ul class="dropdown-menu" role="menu">
@@ -52,7 +55,6 @@
                             <li>
                                 <asp:LinkButton ID="lblWelcome" runat="server" CssClass="welcome" Enabled="False"></asp:LinkButton>
                                 
-                              <%-- <asp:Label ID="lblWelcome" runat="server" ></asp:Label>--%>
                             </li>
                             <li id="LogoutOption" runat="server">
                                 <asp:LinkButton ID="LogOut" OnClick="Log_Out"  runat="server">Logout</asp:LinkButton>
@@ -65,9 +67,12 @@
 
             <%--End NavBar--%>
 
+            <%--Body Content--%>
+
             <div class="site-header"></div>
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
+            <%--Body Content End--%>
         </form>
 
     </div>

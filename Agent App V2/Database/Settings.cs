@@ -10,15 +10,13 @@ namespace Agent_App_V2
         /// <summary>
         /// Modify this connection string to work with local database!
         /// </summary>
-        public static string connectionString = @"Data Source=ICTVM-M1JAMLFO8\SQLEXPRESS;Initial Catalog=TravelExperts;Integrated Security=True";
-            //@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database\TravelExperts.mdf;Integrated Security=True;Connect Timeout=30";
+        public static string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database\TravelExperts.mdf;Integrated Security=True;Connect Timeout=30";
+    
+        public static string connectionString2 = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database\TravelExperts.mdf;Integrated Security=True;Connect Timeout=30";
+   
+        //@"Data Source=ICTVM-M1JAMLFO8\SQLEXPRESS;Initial Catalog=TravelExperts;Integrated Security=True";
 
-        public static string connectionString2 = @"Data Source=ICTVM-M1JAMLFO8\SQLEXPRESS;Initial Catalog=TravelExperts;Integrated Security=True";
-            //@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database\TravelExperts.mdf;Integrated Security=True;Connect Timeout=30";
-            
-            //@"Data Source=ICTVM-M1JAMLFO8\SQLEXPRESS;Initial Catalog=TravelExperts;Integrated Security=True";
-
-            //@"Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\TravelExperts.mdf;Integrated Security=True;Connect Timeout=30";
+        //@"Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\TravelExperts.mdf;Integrated Security=True;Connect Timeout=30";
 
 
 
@@ -26,7 +24,7 @@ namespace Agent_App_V2
         /// Modify this connection string to work with local database!
         /// </summary>
 
-       // Agent Login Query
+        // Agent Login Query
 
         public static string GetAgentQuery =
             @"Select * from Agents where AgtFirstName = @AgtFirstName and AgtPassword = @AgtPassword";
